@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5748A0E52A6F5A9E00A3B91E /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5748A0E42A6F5A9E00A3B91E /* FSCalendar */; };
+		5748A0E82A6F5ADB00A3B91E /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 5748A0E72A6F5ADB00A3B91E /* TextFieldEffects */; };
+		5748A0EB2A6F5B5800A3B91E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5748A0EA2A6F5B5800A3B91E /* Kingfisher */; };
+		5748A0EE2A6F5B6E00A3B91E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5748A0ED2A6F5B6E00A3B91E /* IQKeyboardManagerSwift */; };
+		578D71972A6E1E1200D78DC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578D71962A6E1E1200D78DC0 /* AppDelegate.swift */; };
+		578D71992A6E1E1200D78DC0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578D71982A6E1E1200D78DC0 /* SceneDelegate.swift */; };
+		578D719B2A6E1E1200D78DC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578D719A2A6E1E1200D78DC0 /* ViewController.swift */; };
+		578D719E2A6E1E1200D78DC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578D719C2A6E1E1200D78DC0 /* Main.storyboard */; };
+		578D71A02A6E1E1300D78DC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 578D719F2A6E1E1300D78DC0 /* Assets.xcassets */; };
+		578D71A32A6E1E1300D78DC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578D71A12A6E1E1300D78DC0 /* LaunchScreen.storyboard */; };
+		578D71AB2A6E3E7300D78DC0 /* SceneTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578D71AA2A6E3E7300D78DC0 /* SceneTransitionViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		578D71932A6E1E1200D78DC0 /* music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = music.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		578D71962A6E1E1200D78DC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		578D71982A6E1E1200D78DC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		578D719A2A6E1E1200D78DC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		578D719D2A6E1E1200D78DC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		578D719F2A6E1E1300D78DC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		578D71A22A6E1E1300D78DC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		578D71A42A6E1E1300D78DC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		578D71AA2A6E3E7300D78DC0 /* SceneTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTransitionViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		578D71902A6E1E1200D78DC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5748A0EB2A6F5B5800A3B91E /* Kingfisher in Frameworks */,
+				5748A0EE2A6F5B6E00A3B91E /* IQKeyboardManagerSwift in Frameworks */,
+				5748A0E52A6F5A9E00A3B91E /* FSCalendar in Frameworks */,
+				5748A0E82A6F5ADB00A3B91E /* TextFieldEffects in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		578D718A2A6E1E1200D78DC0 = {
+			isa = PBXGroup;
+			children = (
+				578D71952A6E1E1200D78DC0 /* music */,
+				578D71942A6E1E1200D78DC0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		578D71942A6E1E1200D78DC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				578D71932A6E1E1200D78DC0 /* music.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		578D71952A6E1E1200D78DC0 /* music */ = {
+			isa = PBXGroup;
+			children = (
+				578D71962A6E1E1200D78DC0 /* AppDelegate.swift */,
+				578D71982A6E1E1200D78DC0 /* SceneDelegate.swift */,
+				578D719A2A6E1E1200D78DC0 /* ViewController.swift */,
+				578D71AA2A6E3E7300D78DC0 /* SceneTransitionViewController.swift */,
+				578D719C2A6E1E1200D78DC0 /* Main.storyboard */,
+				578D719F2A6E1E1300D78DC0 /* Assets.xcassets */,
+				578D71A12A6E1E1300D78DC0 /* LaunchScreen.storyboard */,
+				578D71A42A6E1E1300D78DC0 /* Info.plist */,
+			);
+			path = music;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		578D71922A6E1E1200D78DC0 /* music */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 578D71A72A6E1E1300D78DC0 /* Build configuration list for PBXNativeTarget "music" */;
+			buildPhases = (
+				578D718F2A6E1E1200D78DC0 /* Sources */,
+				578D71902A6E1E1200D78DC0 /* Frameworks */,
+				578D71912A6E1E1200D78DC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = music;
+			packageProductDependencies = (
+				5748A0E42A6F5A9E00A3B91E /* FSCalendar */,
+				5748A0E72A6F5ADB00A3B91E /* TextFieldEffects */,
+				5748A0EA2A6F5B5800A3B91E /* Kingfisher */,
+				5748A0ED2A6F5B6E00A3B91E /* IQKeyboardManagerSwift */,
+			);
+			productName = music;
+			productReference = 578D71932A6E1E1200D78DC0 /* music.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		578D718B2A6E1E1200D78DC0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					578D71922A6E1E1200D78DC0 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 578D718E2A6E1E1200D78DC0 /* Build configuration list for PBXProject "music" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 578D718A2A6E1E1200D78DC0;
+			packageReferences = (
+				5748A0E32A6F5A9E00A3B91E /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				5748A0E62A6F5ADB00A3B91E /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
+				5748A0E92A6F5B5800A3B91E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5748A0EC2A6F5B6E00A3B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
+			productRefGroup = 578D71942A6E1E1200D78DC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				578D71922A6E1E1200D78DC0 /* music */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		578D71912A6E1E1200D78DC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				578D71A32A6E1E1300D78DC0 /* LaunchScreen.storyboard in Resources */,
+				578D71A02A6E1E1300D78DC0 /* Assets.xcassets in Resources */,
+				578D719E2A6E1E1200D78DC0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		578D718F2A6E1E1200D78DC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				578D719B2A6E1E1200D78DC0 /* ViewController.swift in Sources */,
+				578D71972A6E1E1200D78DC0 /* AppDelegate.swift in Sources */,
+				578D71AB2A6E3E7300D78DC0 /* SceneTransitionViewController.swift in Sources */,
+				578D71992A6E1E1200D78DC0 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		578D719C2A6E1E1200D78DC0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				578D719D2A6E1E1200D78DC0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		578D71A12A6E1E1300D78DC0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				578D71A22A6E1E1300D78DC0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		578D71A52A6E1E1300D78DC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		578D71A62A6E1E1300D78DC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		578D71A82A6E1E1300D78DC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTV3AHP8X4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = music/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.alex.music;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		578D71A92A6E1E1300D78DC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTV3AHP8X4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = music/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.alex.music;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		578D718E2A6E1E1200D78DC0 /* Build configuration list for PBXProject "music" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				578D71A52A6E1E1300D78DC0 /* Debug */,
+				578D71A62A6E1E1300D78DC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		578D71A72A6E1E1300D78DC0 /* Build configuration list for PBXNativeTarget "music" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				578D71A82A6E1E1300D78DC0 /* Debug */,
+				578D71A92A6E1E1300D78DC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5748A0E32A6F5A9E00A3B91E /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		5748A0E62A6F5ADB00A3B91E /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		5748A0E92A6F5B5800A3B91E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		5748A0EC2A6F5B6E00A3B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5748A0E42A6F5A9E00A3B91E /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5748A0E32A6F5A9E00A3B91E /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+		5748A0E72A6F5ADB00A3B91E /* TextFieldEffects */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5748A0E62A6F5ADB00A3B91E /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
+		};
+		5748A0EA2A6F5B5800A3B91E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5748A0E92A6F5B5800A3B91E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		5748A0ED2A6F5B6E00A3B91E /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5748A0EC2A6F5B6E00A3B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 578D718B2A6E1E1200D78DC0 /* Project object */;
+}
