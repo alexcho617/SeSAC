@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5723A3F42A6F93700022F8F9 /* CelebEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723A3F32A6F93700022F8F9 /* CelebEnum.swift */; };
+		5723A3F62A6F98E00022F8F9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723A3F52A6F98E00022F8F9 /* CalendarViewController.swift */; };
+		5723A3F82A6FA2E10022F8F9 /* LifeCycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5723A3F72A6FA2E10022F8F9 /* LifeCycleViewController.swift */; };
 		5748A0E52A6F5A9E00A3B91E /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 5748A0E42A6F5A9E00A3B91E /* FSCalendar */; };
 		5748A0E82A6F5ADB00A3B91E /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 5748A0E72A6F5ADB00A3B91E /* TextFieldEffects */; };
 		5748A0EB2A6F5B5800A3B91E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5748A0EA2A6F5B5800A3B91E /* Kingfisher */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5723A3F32A6F93700022F8F9 /* CelebEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebEnum.swift; sourceTree = "<group>"; };
+		5723A3F52A6F98E00022F8F9 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		5723A3F72A6FA2E10022F8F9 /* LifeCycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCycleViewController.swift; sourceTree = "<group>"; };
 		578D71932A6E1E1200D78DC0 /* music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = music.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		578D71962A6E1E1200D78DC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		578D71982A6E1E1200D78DC0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +56,7 @@
 		578D718A2A6E1E1200D78DC0 = {
 			isa = PBXGroup;
 			children = (
+				5723A3F52A6F98E00022F8F9 /* CalendarViewController.swift */,
 				578D71952A6E1E1200D78DC0 /* music */,
 				578D71942A6E1E1200D78DC0 /* Products */,
 			);
@@ -69,7 +76,9 @@
 				578D71962A6E1E1200D78DC0 /* AppDelegate.swift */,
 				578D71982A6E1E1200D78DC0 /* SceneDelegate.swift */,
 				578D719A2A6E1E1200D78DC0 /* ViewController.swift */,
+				5723A3F72A6FA2E10022F8F9 /* LifeCycleViewController.swift */,
 				578D71AA2A6E3E7300D78DC0 /* SceneTransitionViewController.swift */,
+				5723A3F32A6F93700022F8F9 /* CelebEnum.swift */,
 				578D719C2A6E1E1200D78DC0 /* Main.storyboard */,
 				578D719F2A6E1E1300D78DC0 /* Assets.xcassets */,
 				578D71A12A6E1E1300D78DC0 /* LaunchScreen.storyboard */,
@@ -161,10 +170,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5723A3F62A6F98E00022F8F9 /* CalendarViewController.swift in Sources */,
 				578D719B2A6E1E1200D78DC0 /* ViewController.swift in Sources */,
 				578D71972A6E1E1200D78DC0 /* AppDelegate.swift in Sources */,
 				578D71AB2A6E3E7300D78DC0 /* SceneTransitionViewController.swift in Sources */,
+				5723A3F82A6FA2E10022F8F9 /* LifeCycleViewController.swift in Sources */,
 				578D71992A6E1E1200D78DC0 /* SceneDelegate.swift in Sources */,
+				5723A3F42A6F93700022F8F9 /* CelebEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
