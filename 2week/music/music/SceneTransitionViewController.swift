@@ -12,7 +12,7 @@ class SceneTransitionViewController: UIViewController {
     let iuURL = "https://rare-gallery.com/thumbs/346369-IU-Lee-Ji-Eun-Beautiful-Girls.jpg"
     let newJeansURL = "https://w0.peakpx.com/wallpaper/827/366/HD-wallpaper-newjeans.jpg"
     let placeHolderImage = UIImage(systemName: "person")
-
+    let test = "test string"
     //MARK: Outlets
     @IBOutlet var sigmentedControl: UISegmentedControl!
     
