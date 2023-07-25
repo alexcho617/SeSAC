@@ -31,10 +31,10 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
-                                            <action selector="emojiButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6D-fQ-Tvl"/>
+                                            <action selector="emojiButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lht-Gw-gRm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcY-da-c1V" userLabel="2">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcY-da-c1V" userLabel="2">
                                         <rect key="frame" x="0.0" y="130" width="390" height="130"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <state key="normal" title="Button"/>
@@ -43,7 +43,7 @@
                                             <action selector="emojiButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hnI-1S-m1X"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIV-R7-kpl" userLabel="3">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIV-R7-kpl" userLabel="3">
                                         <rect key="frame" x="0.0" y="260" width="390" height="129.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <state key="normal" title="Button"/>
@@ -52,7 +52,7 @@
                                             <action selector="emojiButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A5r-Mw-xhq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rN-iZ-WtC" userLabel="4">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rN-iZ-WtC" userLabel="4">
                                         <rect key="frame" x="0.0" y="389.66666666666669" width="390" height="130.00000000000006"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <state key="normal" title="Button"/>
@@ -61,7 +61,7 @@
                                             <action selector="emojiButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KIv-uL-Sra"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPf-Kq-ca1" userLabel="5">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPf-Kq-ca1" userLabel="5">
                                         <rect key="frame" x="0.0" y="519.66666666666663" width="390" height="130"/>
                                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                                         <state key="normal" title="Button"/>
@@ -87,11 +87,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="작성하기" image="pencil.circle" catalog="system" id="rQd-NL-IaX"/>
                     <connections>
-                        <outletCollection property="emojiButtonOutletCollection" destination="nxo-hA-zuK" collectionClass="NSMutableArray" id="wbs-op-ke5"/>
-                        <outletCollection property="emojiButtonOutletCollection" destination="hcY-da-c1V" collectionClass="NSMutableArray" id="I0q-5g-goc"/>
-                        <outletCollection property="emojiButtonOutletCollection" destination="BIV-R7-kpl" collectionClass="NSMutableArray" id="MI8-FS-BWH"/>
-                        <outletCollection property="emojiButtonOutletCollection" destination="5rN-iZ-WtC" collectionClass="NSMutableArray" id="Qra-dI-BH9"/>
-                        <outletCollection property="emojiButtonOutletCollection" destination="XPf-Kq-ca1" collectionClass="NSMutableArray" id="oWP-R7-bWm"/>
+                        <outletCollection property="emojiButtonOutletCollection" destination="nxo-hA-zuK" collectionClass="NSMutableArray" id="imc-yA-83u"/>
+                        <outletCollection property="emojiButtonOutletCollection" destination="hcY-da-c1V" collectionClass="NSMutableArray" id="W3Y-em-9qB"/>
+                        <outletCollection property="emojiButtonOutletCollection" destination="BIV-R7-kpl" collectionClass="NSMutableArray" id="9Lm-0V-Iuj"/>
+                        <outletCollection property="emojiButtonOutletCollection" destination="5rN-iZ-WtC" collectionClass="NSMutableArray" id="QG7-zX-NjX"/>
+                        <outletCollection property="emojiButtonOutletCollection" destination="XPf-Kq-ca1" collectionClass="NSMutableArray" id="lTk-pO-SuS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

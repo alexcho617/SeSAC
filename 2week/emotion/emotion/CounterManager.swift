@@ -10,19 +10,19 @@ class CounterManager{
     
     
     private var counterDict = [
+        "emoji0":0,
         "emoji1":0,
         "emoji2":0,
         "emoji3":0,
-        "emoji4":0,
-        "emoji5":0
+        "emoji4":0
     ]
     
     private var orderedKeys = [
+        "emoji0",
         "emoji1",
         "emoji2",
         "emoji3",
-        "emoji4",
-        "emoji5"
+        "emoji4"
     ]
     
     func increment(_ emotion: String, by incrementValue: Int){

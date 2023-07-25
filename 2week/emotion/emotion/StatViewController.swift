@@ -44,11 +44,11 @@ class StatViewController: UIViewController {
     
     //이거 비동기처리 안해도 되는건가...??
     func updateStatFromUserDefaults(){
-        statButtonCollection[0].text = String(UserDefaults.standard.integer(forKey: "emoji1"))
-        statButtonCollection[1].text = String(UserDefaults.standard.integer(forKey: "emoji2"))
-        statButtonCollection[2].text = String(UserDefaults.standard.integer(forKey: "emoji3"))
-        statButtonCollection[3].text = String(UserDefaults.standard.integer(forKey: "emoji4"))
-        statButtonCollection[4].text = String(UserDefaults.standard.integer(forKey: "emoji5"))
+        statButtonCollection[0].text = String(UserDefaults.standard.integer(forKey: "emoji0"))
+        statButtonCollection[1].text = String(UserDefaults.standard.integer(forKey: "emoji1"))
+        statButtonCollection[2].text = String(UserDefaults.standard.integer(forKey: "emoji2"))
+        statButtonCollection[3].text = String(UserDefaults.standard.integer(forKey: "emoji3"))
+        statButtonCollection[4].text = String(UserDefaults.standard.integer(forKey: "emoji4"))
     }
     
     
