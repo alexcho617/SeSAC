@@ -8,6 +8,15 @@
 import UIKit
 
 class WordViewController: UIViewController {
+    
+    enum Fruits: String {
+        case apple
+        case banana
+        case carrot
+        case durian
+        case eggplant
+    }
+    
     var wordDict = ["apple":"1.사과, 사과나무 (※사과나무는 apple tree가 보통)","banana":"1.바나나 （나무） ; 그 열매","carrot":"1.〔식물〕 당근; [가][불] 그 뿌리.","durian":"1.두리안: 동남 아시아산 판야과의 식용 과일.","eggplant":"1.〔식물〕 가지."]
     
     //oulets
@@ -29,11 +38,22 @@ class WordViewController: UIViewController {
     
     //actions
     @IBAction func textFieldEnter(_ sender: UITextField) {
-        //dict lookup and update result
-        let key = wordTextField.text
-        if wordDict[key!] != nil {
-            resultLabel.text = wordDict[key!]
-        }else{
+//        기존 딕셔너리를 사용한 코드
+//        let key = wordTextField.text
+//        if wordDict[key!] != nil {
+//            resultLabel.text = wordDict[key!]
+//        }else{
+//            resultLabel.text = "No Result"
+//        }
+        
+        //열거형을 사용하긴 했지만 정말로 더 나은 코드인지는 의문이 든다.
+        if let selectedFruit = Fruits(rawValue: wordTextField.text ?? "") {
+            switch selectedFruit {
+            case .apple, .banana, .carrot, .durian, .eggplant:
+                let description = wordDict[selectedFruit.rawValue] ?? "No Result"
+                resultLabel.text = description
+            }
+        } else {
             resultLabel.text = "No Result"
         }
     }
