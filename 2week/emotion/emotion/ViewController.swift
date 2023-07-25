@@ -35,15 +35,13 @@ class ViewController: UIViewController {
     //Actions
     
     @IBAction func emojiButtonAction(_ sender: UIButton) {
-        //update dict
-        let selectedEmotion = emojis[sender.tag]
-//        print(selectedEmotion)
-        if ViewController.counterManager.counterDict[selectedEmotion.rawValue] != nil{
-            ViewController.counterManager.counterDict[selectedEmotion.rawValue]! += 1
+        let selectedEmotion = emojis[sender.tag].rawValue
+        if ViewController.counterManager.isValid(forKey: selectedEmotion){
+            ViewController.counterManager.increment(selectedEmotion, by: 1)
         } else{
             fatalError("key does not exist")
         }
-        print(ViewController.counterManager.counterDict)
+        ViewController.counterManager.printCounterStatus()
                 
     }
     
