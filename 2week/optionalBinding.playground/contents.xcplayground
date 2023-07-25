@@ -3,5 +3,6 @@
     <pages>
         <page name='binding'/>
         <page name='functions'/>
+        <page name='enums'/>
     </pages>
 </playground>
