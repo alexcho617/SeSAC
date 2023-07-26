@@ -7,8 +7,6 @@
 
 import Foundation
 class CounterManager{
-    
-    
     private var counterDict = [
         "emoji0":0,
         "emoji1":0,
