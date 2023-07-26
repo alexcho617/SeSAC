@@ -8,8 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    public static var counterManager = CounterManager()
-    
     enum Emotion: String, CaseIterable{
         case veryhappy =  "emoji0"
         case happy =  "emoji1"
@@ -17,10 +15,11 @@ class ViewController: UIViewController {
         case sad =  "emoji3"
         case verysad =  "emoji4"
     }
+    
     //Variables
-    
-    
+    public static var counterManager = CounterManager()
     let emojis = Emotion.allCases
+    
     //Outlets
     @IBOutlet var pullDownCollection: [UIButton]!
     
@@ -29,7 +28,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setEmojiButtons()
     }
-    
     
     //Actions
     @IBAction func pullDownClicked(_ sender: UIButton) {
@@ -48,13 +46,9 @@ class ViewController: UIViewController {
             let ten = UIAction(title: "+10", handler: { _ in
                 ViewController.counterManager.increment("emoji"+String(i), by: 10)
             })
-            
             let pullDownMenu = UIMenu(title: "감정 더하기", children: [one, five, ten])
             pullDownCollection[i].menu = pullDownMenu
             pullDownCollection[i].setImage(UIImage(named: emojis[i].rawValue), for: .normal)
-            
-            //            emojiButtonOutletCollection[i].tag = i
-            
         }
     }
 }
