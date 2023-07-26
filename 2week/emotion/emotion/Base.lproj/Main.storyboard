@@ -71,6 +71,10 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="nxo-hA-zuK" secondAttribute="trailing" id="TKK-d3-Fxi"/>
+                                    <constraint firstItem="nxo-hA-zuK" firstAttribute="leading" secondItem="vcV-mz-zpv" secondAttribute="leading" id="mxP-uy-lDT"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

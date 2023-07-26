@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O9I-w0-JlN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k1D-qG-7Ot">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -238,11 +238,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVa-kV-r7Q">
-                                <rect key="frame" x="71" y="525.66666666666663" width="250" height="34.333333333333371"/>
+                                <rect key="frame" x="71" y="485.66666666666669" width="250" height="74.333333333333314"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="K0n-dl-gkX"/>
-                                    <constraint firstAttribute="width" constant="250" id="wCm-Tf-ZLK"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -254,8 +253,8 @@
                                     <segue destination="J7q-be-hEk" kind="show" id="H5e-XX-UWT"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="O68-CG-H1i">
-                                <rect key="frame" x="71.666666666666686" y="283.66666666666669" width="250" height="194"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="O68-CG-H1i">
+                                <rect key="frame" x="71.666666666666686" y="323.66666666666669" width="250" height="114"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQK-iG-qBX">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="34"/>
@@ -269,21 +268,27 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="textFieldKeyboardTapped:" destination="JAy-pC-oF9" eventType="editingDidEndOnExit" id="PrM-M2-ee7"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zj5-Yh-gxx">
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zj5-Yh-gxx">
                                         <rect key="frame" x="0.0" y="40" width="250" height="34"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <color key="tintColor" systemColor="systemGray2Color"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="textFieldKeyboardTapped:" destination="JAy-pC-oF9" eventType="editingDidEndOnExit" id="jLt-kM-NbW"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUf-pO-XmO">
+                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUf-pO-XmO">
                                         <rect key="frame" x="0.0" y="80" width="250" height="34"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <color key="tintColor" systemColor="systemGray2Color"/>
@@ -295,37 +300,13 @@
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0H6-4x-PF9">
-                                        <rect key="frame" x="0.0" y="120" width="250" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                        <color key="tintColor" systemColor="systemGray2Color"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbH-k3-fei">
-                                        <rect key="frame" x="0.0" y="160" width="250" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                        <color key="tintColor" systemColor="systemGray2Color"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="textFieldKeyboardTapped:" destination="JAy-pC-oF9" eventType="editingDidEndOnExit" id="vbZ-bR-dfj"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="i2d-1K-Le3"/>
-                                    <constraint firstAttribute="height" constant="194" id="zGe-Bu-Gtp"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="gzG-Lw-Uxc">
@@ -354,16 +335,28 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uz8-90-fIm">
+                                <rect key="frame" x="71" y="441.66666666666669" width="59" height="34.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="save"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="JAy-pC-oF9" eventType="touchUpInside" id="Mxe-tx-YJj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="h8V-An-cLU"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="O68-CG-H1i" firstAttribute="centerX" secondItem="h8V-An-cLU" secondAttribute="centerX" id="69K-2v-xA8"/>
+                            <constraint firstItem="h8V-An-cLU" firstAttribute="trailing" secondItem="O68-CG-H1i" secondAttribute="trailing" constant="71.329999999999998" id="4nt-aS-ZPJ"/>
+                            <constraint firstItem="Uz8-90-fIm" firstAttribute="top" secondItem="O68-CG-H1i" secondAttribute="bottom" constant="4.3300000000000001" id="CPg-aV-jW9"/>
                             <constraint firstItem="gzG-Lw-Uxc" firstAttribute="top" secondItem="nUT-ru-oU7" secondAttribute="top" constant="568" id="DJc-Fb-YYq"/>
                             <constraint firstItem="O68-CG-H1i" firstAttribute="centerY" secondItem="h8V-An-cLU" secondAttribute="centerY" constant="-80" id="Kad-fV-OXu"/>
                             <constraint firstItem="gzG-Lw-Uxc" firstAttribute="leading" secondItem="h8V-An-cLU" secondAttribute="leading" constant="71" id="QpD-aW-cAp"/>
+                            <constraint firstItem="O68-CG-H1i" firstAttribute="leading" secondItem="h8V-An-cLU" secondAttribute="leading" constant="71.670000000000002" id="Ved-sV-Swr"/>
+                            <constraint firstItem="h8V-An-cLU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zVa-kV-r7Q" secondAttribute="trailing" symbolic="YES" id="c1C-CH-mqI"/>
                             <constraint firstItem="dbG-OY-BeF" firstAttribute="centerX" secondItem="h8V-An-cLU" secondAttribute="centerX" id="cGY-mm-84D"/>
+                            <constraint firstItem="Uz8-90-fIm" firstAttribute="leading" secondItem="h8V-An-cLU" secondAttribute="leading" constant="71" id="cZK-Sv-Ygl"/>
                             <constraint firstItem="dbG-OY-BeF" firstAttribute="top" secondItem="h8V-An-cLU" secondAttribute="top" id="crq-Fp-BgB"/>
                             <constraint firstItem="zVa-kV-r7Q" firstAttribute="leading" secondItem="h8V-An-cLU" secondAttribute="leading" constant="71" id="hrY-Fa-EBY"/>
                             <constraint firstItem="zVa-kV-r7Q" firstAttribute="top" secondItem="O68-CG-H1i" secondAttribute="bottom" constant="48.329999999999998" id="lSg-vo-f33"/>
@@ -375,13 +368,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="rf7-Sk-rKC"/>
                     <connections>
+                        <outlet property="emailTextField" destination="dQK-iG-qBX" id="PVS-BO-2uu"/>
+                        <outlet property="idTextField" destination="ZUf-pO-XmO" id="m7U-DW-T8P"/>
                         <outlet property="passwordField" destination="zj5-Yh-gxx" id="LSd-6u-yaJ"/>
                         <outlet property="signUpButton" destination="zVa-kV-r7Q" id="PYC-Va-uVq"/>
                         <outlet property="toggleButton" destination="GCW-79-Bet" id="4XP-3a-SNy"/>
-                        <outletCollection property="userInformationFields" destination="dQK-iG-qBX" collectionClass="NSMutableArray" id="Tn9-2t-hL5"/>
-                        <outletCollection property="userInformationFields" destination="ZUf-pO-XmO" collectionClass="NSMutableArray" id="1Ah-fe-fcg"/>
-                        <outletCollection property="userInformationFields" destination="0H6-4x-PF9" collectionClass="NSMutableArray" id="eHA-eZ-dXl"/>
-                        <outletCollection property="userInformationFields" destination="fbH-k3-fei" collectionClass="NSMutableArray" id="CFC-tQ-YWC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VyL-c9-kTo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

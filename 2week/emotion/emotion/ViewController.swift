@@ -64,7 +64,6 @@ class ViewController: UIViewController {
 
         for i in 0..<emojis.count{
             print(i,emojis[i].rawValue)
-            let image = UIImage(named: emojis[i].rawValue)
             emojiButtonOutletCollection[i].setImage(UIImage(named: emojis[i].rawValue), for: .normal)
             
 //            emojiButtonOutletCollection[i].tag = i
