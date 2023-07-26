@@ -1,5 +1,44 @@
 import UIKit
 
+class BabyMonster{
+    var name: String
+    var exp: Int
+    var speed: Int
+    var power:Int
+    
+    init(name: String, exp: Int, speed: Int, power: Int) {
+        self.exp = exp
+        self.name = name
+        self.power = power
+        self.speed = speed
+    }
+}
+//struct instances are called by value
+//memberwise initializer
+struct BabyMonsterStruct {
+    var name: String
+    var exp: Int
+    var speed: Int
+    var power: Int
+}
+let baby = BabyMonster(name: "아기몹", exp: 1, speed: 1, power: 1)
+let secondBaby = baby
+
+//same because classes are reference types
+baby.exp = 100
+print(baby.exp)
+print(secondBaby.exp)
+
+
+var structBaby = BabyMonsterStruct(name: "구조체아기몹", exp: 1, speed: 1, power: 1)
+var secondStructBaby = structBaby
+
+//different because structs are value types
+structBaby.exp = 100
+print(structBaby.exp)
+print(secondStructBaby.exp)
+
+///
 protocol Boss{
     func ultimate()
 }
@@ -32,9 +71,6 @@ class BossMonter: Monster,Boss{
             self.specialItem = specialItem
             super.init(exp: exp, clothes: clothes, speed: speed, power: power)
         }
-    
-    
-    
     
     func ultimate() {
         print("BOSS ULTIMATE")
