@@ -28,24 +28,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setEmojiButtons()
-        
     }
     
     
     //Actions
-    @IBAction func emojiButtonAction(_ sender: UIButton) {
-        let selectedEmotion = emojis[sender.tag].rawValue
-        print(selectedEmotion)
-        if ViewController.counterManager.isValid(forKey: selectedEmotion){
-            ViewController.counterManager.increment(selectedEmotion, by: 1)
-        } else{
-            fatalError("key does not exist")
-        }
-    }
-    
     @IBAction func pullDownClicked(_ sender: UIButton) {
         sender.showsMenuAsPrimaryAction.toggle()
-        
     }
     
     //Functions
@@ -53,18 +41,16 @@ class ViewController: UIViewController {
         for i in 0..<emojis.count{
             let one = UIAction(title: "+1", handler: {_ in
                 ViewController.counterManager.increment("emoji"+String(i), by: 1)
-                ViewController.counterManager.printCounterStatus()
             })
             let five = UIAction(title: "+5", handler: { _ in
                 ViewController.counterManager.increment("emoji"+String(i), by: 5)
-                ViewController.counterManager.printCounterStatus()
             })
-            let ten = UIAction(title: "+10", handler: { _ in             ViewController.counterManager.increment("emoji"+String(i), by: 10)
-                ViewController.counterManager.printCounterStatus()
+            let ten = UIAction(title: "+10", handler: { _ in
+                ViewController.counterManager.increment("emoji"+String(i), by: 10)
             })
             
-            let buttonMenu = UIMenu(title: "감정 더하기", children: [one, five, ten])
-            pullDownCollection[i].menu = buttonMenu
+            let pullDownMenu = UIMenu(title: "감정 더하기", children: [one, five, ten])
+            pullDownCollection[i].menu = pullDownMenu
             pullDownCollection[i].setImage(UIImage(named: emojis[i].rawValue), for: .normal)
             
             //            emojiButtonOutletCollection[i].tag = i

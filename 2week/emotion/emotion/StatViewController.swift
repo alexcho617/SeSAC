@@ -12,7 +12,6 @@ class StatViewController: UIViewController {
     
     @IBOutlet var statButtonCollection: [UILabel]!
     
-    
     @IBOutlet var statRowStackCollection: [UIStackView]!
     
     override func viewDidLoad() {
@@ -20,6 +19,7 @@ class StatViewController: UIViewController {
         setStatView()
         updateStatFromUserDefaults()
     }
+    
     @IBAction func resetClicked(_ sender: UIButton) {
         ViewController.counterManager.resetCounterInUserDefaults()
         updateStatFromUserDefaults()
@@ -39,11 +39,13 @@ class StatViewController: UIViewController {
             stat.textColor = .white
             stat.font = .boldSystemFont(ofSize: 24)
         }
+        
         for stackRow in statRowStackCollection{
             stackRow.layer.cornerRadius = 15
             
         }
     }
+    
     func updateStatFromUserDefaults(){
         for i in 0...4{
             statButtonCollection[i].text = String(UserDefaults.standard.integer(forKey: "emoji"+String(i))) + "점"
