@@ -285,6 +285,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="통계보기" image="chart.bar" catalog="system" id="gPO-ap-8gA"/>
                     <connections>
+                        <outlet property="resetButton" destination="ZxN-Uv-zJY" id="uYw-Pe-dy5"/>
                         <outletCollection property="statButtonCollection" destination="wg4-Vg-vb9" collectionClass="NSMutableArray" id="n0v-8e-4ZJ"/>
                         <outletCollection property="statButtonCollection" destination="Qbr-2c-CWY" collectionClass="NSMutableArray" id="UNt-VQ-O4u"/>
                         <outletCollection property="statButtonCollection" destination="7IC-UT-bmV" collectionClass="NSMutableArray" id="ewo-e6-KTK"/>

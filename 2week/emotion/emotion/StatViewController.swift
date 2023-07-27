@@ -14,6 +14,9 @@ class StatViewController: UIViewController {
     
     @IBOutlet var statRowStackCollection: [UIStackView]!
     
+    @IBOutlet weak var resetButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatView()
@@ -27,6 +30,7 @@ class StatViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         //Observer가 없기때문에 여기서 실행
+        super.viewWillAppear(animated)//super같이 실행
         updateStatFromUserDefaults()
     }
 

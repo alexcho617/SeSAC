@@ -27,7 +27,12 @@ class MovieViewController: UIViewController {
         setMovieScene()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        getSavedInfo()
 
+    }
+    
     @IBAction func playButtonClicked(_ sender: UIButton) {
         changeMainPoster()
         changePreviewPoster()
@@ -97,6 +102,12 @@ class MovieViewController: UIViewController {
         playButton.setImage(UIImage(named: "play_normal"), for: .normal)
         playButton.setImage(UIImage(named: "play_highlighted"), for: .highlighted)
     }
-    
+    func getSavedInfo(){
+        let email = UserDefaults.standard.string(forKey: "email")
+        let password = UserDefaults.standard.string(forKey: "password")
+        let id =  UserDefaults.standard.string(forKey: "id")
+        let count = UserDefaults.standard.integer(forKey: "count")
+        print(id,email,password,count)
+    }
 
 }

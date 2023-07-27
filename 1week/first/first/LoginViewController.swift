@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
         let testInt = userDefaults.integer(forKey: "wrongKey")
         let testBool = userDefaults.bool(forKey: "wrongKey")
         
-        print(testString, testInt, testBool) //nil 0 false
+        //print(testString, testInt, testBool) //nil 0 false
 
         setUpLoginScene()
         idTextField.tag = TextFieldType.id.rawValue
