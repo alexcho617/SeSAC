@@ -18,7 +18,13 @@ class ViewController: UIViewController {
     
     //Variables
     public static var counterManager = CounterManager()
-    let emojis = Emotion.allCases
+    var emojis = Emotion.allCases
+
+    var a = 0 {
+        didSet {
+            
+        }
+    }
     
     //Outlets
     @IBOutlet var pullDownCollection: [UIButton]!

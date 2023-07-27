@@ -20,7 +20,6 @@ class StatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatView()
-        updateStatFromUserDefaults()
     }
     
     @IBAction func resetClicked(_ sender: UIButton) {
@@ -29,11 +28,18 @@ class StatViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+//        //didset으로 옵저버 대체 가능
+//        var a = 10 {
+//            didSet{
+//                print("set")
+//                print(newValue)
+//            }
+//        }
         //Observer가 없기때문에 여기서 실행
         super.viewWillAppear(animated)//super같이 실행
         updateStatFromUserDefaults()
     }
-
+    
     func setStatView(){
         for label in titleLabelCollection{
             label.textColor = .white

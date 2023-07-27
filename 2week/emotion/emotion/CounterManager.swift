@@ -14,7 +14,7 @@ class CounterManager{
         "emoji3",
         "emoji4"
     ]
-    
+
     func increment(_ emotion: String, by incrementValue: Int){
         //get
         let oldValue = UserDefaults.standard.integer(forKey: emotion)
