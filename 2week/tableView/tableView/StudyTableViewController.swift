@@ -21,6 +21,7 @@ class StudyTableViewController: UITableViewController {
         return 2
     }
     
+    //100프로 케이스 대응
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return section == 0 ? "Study List" : "Chore List"
     }

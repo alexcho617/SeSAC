@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Of-TK-t4Y">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movie Table View Controller-->
+        <scene sceneID="CaH-et-6Zn">
+            <objects>
+                <tableViewController id="3Of-TK-t4Y" customClass="MovieTableViewController" customModule="MovieTable" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="C7Y-sp-nfE" customClass="Movie">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="150" id="kS5-Kw-cUc" customClass="MovieTableViewCell" customModule="MovieTable" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.333332061767578" width="353" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kS5-Kw-cUc" id="p5p-6k-Ejq">
+                                    <rect key="frame" x="0.0" y="0.0" width="353" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAg-PV-22F">
+                                            <rect key="frame" x="0.0" y="4" width="353" height="142"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FB6-5R-b0s">
+                                                    <rect key="frame" x="0.0" y="0.0" width="106" height="142"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="명량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qum-h0-aoR">
+                                                    <rect key="frame" x="114" y="0.0" width="231" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015.07.22. | 139분 | 9.1점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75k-hn-18i">
+                                                    <rect key="frame" x="114" y="29" width="231" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNf-8a-sa9">
+                                                    <rect key="frame" x="114" y="58" width="239" height="84"/>
+                                                    <string key="text">1933년 조국이 사라진 시대 대한민국 임시정부는 일본 측에 노출되지 않은 세 명을 암살작전에 지목한다. 한국 독립군 저격수 안옥윤, 신흥무관학교 출신 속사포, 폭탄 전문가 황덕삼! 김구의 두터운 신임을 받는 임시정부 경무국 대장..</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="FB6-5R-b0s" firstAttribute="height" secondItem="vAg-PV-22F" secondAttribute="height" id="4ox-qe-sae"/>
+                                                <constraint firstAttribute="bottom" secondItem="SNf-8a-sa9" secondAttribute="bottom" id="AXH-0m-3bg"/>
+                                                <constraint firstItem="Qum-h0-aoR" firstAttribute="leading" secondItem="FB6-5R-b0s" secondAttribute="trailing" constant="8" id="EmU-ai-iBB"/>
+                                                <constraint firstAttribute="trailing" secondItem="Qum-h0-aoR" secondAttribute="trailing" constant="8" id="Iig-sm-MOT"/>
+                                                <constraint firstItem="FB6-5R-b0s" firstAttribute="width" secondItem="vAg-PV-22F" secondAttribute="width" multiplier="0.3" id="R3e-20-Glb"/>
+                                                <constraint firstItem="75k-hn-18i" firstAttribute="top" secondItem="Qum-h0-aoR" secondAttribute="bottom" constant="8" id="SB8-qP-Flw"/>
+                                                <constraint firstItem="SNf-8a-sa9" firstAttribute="leading" secondItem="FB6-5R-b0s" secondAttribute="trailing" constant="8" id="Uhf-kN-Y9I"/>
+                                                <constraint firstItem="75k-hn-18i" firstAttribute="leading" secondItem="FB6-5R-b0s" secondAttribute="trailing" constant="8" id="bGh-TB-xsR"/>
+                                                <constraint firstAttribute="trailing" secondItem="75k-hn-18i" secondAttribute="trailing" constant="8" id="cjz-rF-OrV"/>
+                                                <constraint firstAttribute="trailing" secondItem="SNf-8a-sa9" secondAttribute="trailing" id="fIr-KX-cCo"/>
+                                                <constraint firstItem="SNf-8a-sa9" firstAttribute="top" secondItem="75k-hn-18i" secondAttribute="bottom" constant="8" id="kEA-eH-JRh"/>
+                                                <constraint firstItem="Qum-h0-aoR" firstAttribute="top" secondItem="FB6-5R-b0s" secondAttribute="top" id="rob-Hi-cXQ"/>
+                                                <constraint firstItem="FB6-5R-b0s" firstAttribute="leading" secondItem="vAg-PV-22F" secondAttribute="leading" id="tTe-sz-HJb"/>
+                                                <constraint firstItem="FB6-5R-b0s" firstAttribute="top" secondItem="vAg-PV-22F" secondAttribute="top" id="vpX-SK-c8j"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vAg-PV-22F" firstAttribute="leading" secondItem="p5p-6k-Ejq" secondAttribute="leading" id="HUe-3T-4Rv"/>
+                                        <constraint firstItem="vAg-PV-22F" firstAttribute="top" secondItem="p5p-6k-Ejq" secondAttribute="top" constant="4" id="cOP-nM-S9M"/>
+                                        <constraint firstAttribute="trailing" secondItem="vAg-PV-22F" secondAttribute="trailing" id="mwT-Hx-Fpz"/>
+                                        <constraint firstItem="vAg-PV-22F" firstAttribute="bottom" secondItem="p5p-6k-Ejq" secondAttribute="bottom" constant="-4" id="rcv-jb-TpV"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="SNf-8a-sa9" id="21Z-p0-Ce7"/>
+                                    <outlet property="infoLabel" destination="75k-hn-18i" id="flH-MF-LIg"/>
+                                    <outlet property="movieImageView" destination="FB6-5R-b0s" id="mln-Il-T8J"/>
+                                    <outlet property="titleLabel" destination="Qum-h0-aoR" id="Hp8-NC-wAx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3Of-TK-t4Y" id="hN5-Ia-Wi4"/>
+                            <outlet property="delegate" destination="3Of-TK-t4Y" id="d7S-EN-FWW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OMO-CG-LDL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-86.25954198473282" y="-44.366197183098592"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
