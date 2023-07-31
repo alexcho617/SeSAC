@@ -12,6 +12,12 @@
 		57B20B7D2A77B6CA00442B87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B20B7B2A77B6CA00442B87 /* Main.storyboard */; };
 		57B20B7F2A77B6CB00442B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B20B7E2A77B6CB00442B87 /* Assets.xcassets */; };
 		57B20B822A77B6CB00442B87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B20B802A77B6CB00442B87 /* LaunchScreen.storyboard */; };
+		57B20B8A2A77B73A00442B87 /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B20B892A77B73A00442B87 /* BookCollectionViewController.swift */; };
+		57B20B8C2A77B75F00442B87 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B20B8B2A77B75F00442B87 /* DetailViewController.swift */; };
+		57B20B8F2A77B78600442B87 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B20B8D2A77B78600442B87 /* BookCollectionViewCell.swift */; };
+		57B20B902A77B78600442B87 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B20B8E2A77B78600442B87 /* BookCollectionViewCell.xib */; };
+		57B7097B2A77B83A00713D96 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7097A2A77B83A00713D96 /* SearchViewController.swift */; };
+		57B7097D2A77B8C200713D96 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7097C2A77B8C200713D96 /* MovieInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		57B20B7E2A77B6CB00442B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B20B812A77B6CB00442B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57B20B832A77B6CB00442B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57B20B892A77B73A00442B87 /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
+		57B20B8B2A77B75F00442B87 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		57B20B8D2A77B78600442B87 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		57B20B8E2A77B78600442B87 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
+		57B7097A2A77B83A00713D96 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		57B7097C2A77B8C200713D96 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieInfo.swift; path = ../../../2week/MovieInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +68,13 @@
 			children = (
 				57B20B752A77B6CA00442B87 /* AppDelegate.swift */,
 				57B20B772A77B6CA00442B87 /* SceneDelegate.swift */,
+				57B20B892A77B73A00442B87 /* BookCollectionViewController.swift */,
+				57B20B8B2A77B75F00442B87 /* DetailViewController.swift */,
+				57B20B8D2A77B78600442B87 /* BookCollectionViewCell.swift */,
+				57B7097A2A77B83A00713D96 /* SearchViewController.swift */,
+				57B7097C2A77B8C200713D96 /* MovieInfo.swift */,
 				57B20B7B2A77B6CA00442B87 /* Main.storyboard */,
+				57B20B8E2A77B78600442B87 /* BookCollectionViewCell.xib */,
 				57B20B7E2A77B6CB00442B87 /* Assets.xcassets */,
 				57B20B802A77B6CB00442B87 /* LaunchScreen.storyboard */,
 				57B20B832A77B6CB00442B87 /* Info.plist */,
@@ -123,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B20B822A77B6CB00442B87 /* LaunchScreen.storyboard in Resources */,
+				57B20B902A77B78600442B87 /* BookCollectionViewCell.xib in Resources */,
 				57B20B7F2A77B6CB00442B87 /* Assets.xcassets in Resources */,
 				57B20B7D2A77B6CA00442B87 /* Main.storyboard in Resources */,
 			);
@@ -135,8 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B7097D2A77B8C200713D96 /* MovieInfo.swift in Sources */,
+				57B7097B2A77B83A00713D96 /* SearchViewController.swift in Sources */,
 				57B20B762A77B6CA00442B87 /* AppDelegate.swift in Sources */,
 				57B20B782A77B6CA00442B87 /* SceneDelegate.swift in Sources */,
+				57B20B8A2A77B73A00442B87 /* BookCollectionViewController.swift in Sources */,
+				57B20B8F2A77B78600442B87 /* BookCollectionViewCell.swift in Sources */,
+				57B20B8C2A77B75F00442B87 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
