@@ -7,82 +7,46 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class SearchCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nib = UINib(nibName: "SearchCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "SearchCollectionViewCell")
+        setCollectionViewLayout()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
+    
+    //1 셀 갯수
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        100
     }
-
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as! SearchCollectionViewCell
+        cell.backgroundColor = .brown
+        cell.ContentsLabel.text = indexPath.description
+        
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    func setCollectionViewLayout(){
+        //cell estimatd size none  으로 IB설정할것
+        let layout = UICollectionViewFlowLayout()
+        
+        //**device width
+//        item width = device.width - 2*inset padding - numberOfItemsPerRow - 1 * itemPadding / numberofItems
+        let itemSpacing: CGFloat = 20
+        let itemWidth = UIScreen.main.bounds.width - (itemSpacing * 4) //4 because 2(leading trailing padding)+2(itempadding)
+        
+        
+        
+        layout.itemSize = CGSize(width: itemWidth/3, height: itemWidth/3)
+        //scroll이펙은 주지만 패딩을 준다.여백을 주는것과는 시각적으로 차이가 많이 난다. 강제로 여백을 주면 컨텐츠가 짤리기 떄문이다.
+        layout.sectionInset = UIEdgeInsets(top: itemSpacing, left: itemSpacing, bottom: itemSpacing, right: itemSpacing)//set inset for entire collectionview
+        
+        layout.minimumLineSpacing = itemSpacing
+        layout.minimumInteritemSpacing = itemSpacing
+        collectionView.collectionViewLayout = layout
     }
-    */
 
 }

@@ -33,7 +33,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="9pe-sy-U2V">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="b0X-jE-9Ju">
+                        <barButtonItem key="leftBarButtonItem" image="magnifyingglass" catalog="system" id="dwK-Di-30I">
+                            <connections>
+                                <action selector="searchBarButtonClicked:" destination="GUb-Rh-GlU" id="tbC-sj-jle"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="b0X-jE-9Ju">
                             <connections>
                                 <action selector="AddButtonClicked:" destination="GUb-Rh-GlU" id="EPt-Lm-PUM"/>
                             </connections>
@@ -52,15 +57,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9Z-xy-bKm">
-                                <rect key="frame" x="163" y="317" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILM-2t-kZL">
-                                <rect key="frame" x="0.0" y="769" width="393" height="49"/>
+                                <rect key="frame" x="0.0" y="774" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="sVa-vT-egs"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Delete" id="Ylq-AT-gAH">
                                         <connections>
@@ -71,17 +72,28 @@
                                     <barButtonItem title="Item" id="xD7-Cw-8Ie"/>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9Z-xy-bKm">
+                                <rect key="frame" x="8" y="67" width="377" height="699"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oC7-7J-cvh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ILM-2t-kZL" firstAttribute="top" secondItem="g9Z-xy-bKm" secondAttribute="bottom" constant="8" id="52z-h4-LJ8"/>
                             <constraint firstItem="ILM-2t-kZL" firstAttribute="trailing" secondItem="oC7-7J-cvh" secondAttribute="trailing" id="9lT-Xf-SCR"/>
+                            <constraint firstItem="g9Z-xy-bKm" firstAttribute="top" secondItem="oC7-7J-cvh" secondAttribute="top" constant="8" id="Etb-kS-QKc"/>
+                            <constraint firstItem="g9Z-xy-bKm" firstAttribute="leading" secondItem="oC7-7J-cvh" secondAttribute="leading" constant="8" id="FnF-jq-rlk"/>
                             <constraint firstItem="ILM-2t-kZL" firstAttribute="leading" secondItem="oC7-7J-cvh" secondAttribute="leading" id="IIX-gr-SpF"/>
+                            <constraint firstItem="oC7-7J-cvh" firstAttribute="trailing" secondItem="g9Z-xy-bKm" secondAttribute="trailing" constant="8" id="bvj-ZG-pQH"/>
                             <constraint firstItem="ILM-2t-kZL" firstAttribute="bottom" secondItem="oC7-7J-cvh" secondAttribute="bottom" id="u8r-cr-Jbv"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="DeleteButton" destination="Ylq-AT-gAH" id="EdH-JS-Efk"/>
+                        <outlet property="contentsLabel" destination="g9Z-xy-bKm" id="GrX-Eg-Rbu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6A-vp-t3U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -119,28 +131,29 @@
             </objects>
             <point key="canvasLocation" x="2611.450381679389" y="-27.464788732394368"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Search Collection View Controller-->
         <scene sceneID="k4x-xw-Cbr">
             <objects>
-                <collectionViewController id="oq0-bp-Hus" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="SearchCollectionViewController" id="oq0-bp-Hus" customClass="SearchCollectionViewController" customModule="OneLineDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xMj-PJ-AY9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OCx-L8-9BZ">
-                            <size key="itemSize" width="128" height="128"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OCx-L8-9BZ">
+                            <size key="itemSize" width="182" height="183"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RYY-bP-rkk">
-                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="182" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Nc3-Pn-IGa">
-                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="182" height="183"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
+                                <size key="customSize" width="182" height="183"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -151,7 +164,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bj2-ne-IEL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="680"/>
+            <point key="canvasLocation" x="2609.9236641221373" y="679.57746478873241"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GLn-9O-OM0">
@@ -173,6 +186,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

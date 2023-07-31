@@ -19,6 +19,8 @@
 		5722B5792A7752A500D115FB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722B5782A7752A500D115FB /* DetailViewController.swift */; };
 		57E217762A77625800ABE482 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E217752A77625800ABE482 /* Extension+UIViewController.swift */; };
 		57E217782A77796400ABE482 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E217772A77796400ABE482 /* SearchCollectionViewController.swift */; };
+		57E2177B2A777AC100ABE482 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E217792A777AC100ABE482 /* SearchCollectionViewCell.swift */; };
+		57E2177C2A777AC100ABE482 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57E2177A2A777AC100ABE482 /* SearchCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		5722B5782A7752A500D115FB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		57E217752A77625800ABE482 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		57E217772A77796400ABE482 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
+		57E217792A777AC100ABE482 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		57E2177A2A777AC100ABE482 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +78,12 @@
 				5722B56C2A773ACD00D115FB /* DiaryTableViewController.swift */,
 				5722B5762A774E3F00D115FB /* AddViewController.swift */,
 				5722B5782A7752A500D115FB /* DetailViewController.swift */,
-				5722B5702A773BBC00D115FB /* DiaryTableViewCell.swift */,
-				5722B5712A773BBC00D115FB /* DiaryTableViewCell.xib */,
-				5722B55E2A773A5600D115FB /* Main.storyboard */,
 				57E217772A77796400ABE482 /* SearchCollectionViewController.swift */,
+				5722B5712A773BBC00D115FB /* DiaryTableViewCell.xib */,
+				5722B5702A773BBC00D115FB /* DiaryTableViewCell.swift */,
+				57E2177A2A777AC100ABE482 /* SearchCollectionViewCell.xib */,
+				57E217792A777AC100ABE482 /* SearchCollectionViewCell.swift */,
+				5722B55E2A773A5600D115FB /* Main.storyboard */,
 				5722B5612A773A5700D115FB /* Assets.xcassets */,
 				5722B5632A773A5700D115FB /* LaunchScreen.storyboard */,
 				5722B5662A773A5700D115FB /* Info.plist */,
@@ -145,6 +151,7 @@
 			files = (
 				5722B5652A773A5700D115FB /* LaunchScreen.storyboard in Resources */,
 				5722B5622A773A5700D115FB /* Assets.xcassets in Resources */,
+				57E2177C2A777AC100ABE482 /* SearchCollectionViewCell.xib in Resources */,
 				5722B5602A773A5600D115FB /* Main.storyboard in Resources */,
 				5722B5732A773BBC00D115FB /* DiaryTableViewCell.xib in Resources */,
 			);
@@ -165,6 +172,7 @@
 				5722B5792A7752A500D115FB /* DetailViewController.swift in Sources */,
 				5722B5592A773A5600D115FB /* AppDelegate.swift in Sources */,
 				5722B55B2A773A5600D115FB /* SceneDelegate.swift in Sources */,
+				57E2177B2A777AC100ABE482 /* SearchCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

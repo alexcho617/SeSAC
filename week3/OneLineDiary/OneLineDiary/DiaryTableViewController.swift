@@ -56,6 +56,15 @@ class DiaryTableViewController: UITableViewController {
         
     }
     
+    @IBAction func searchBarButtonClicked(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SearchCollectionViewController")
+        let nc = UINavigationController(rootViewController: vc)
+        present(nc, animated: true)
+    
+    }
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
@@ -85,6 +94,11 @@ class DiaryTableViewController: UITableViewController {
             print("cannot initiate detailviewcontroller")
             return
         }
+        //
+//        vc.contentsLabel.text = list[indexPath.row] //Fatal error: Unexpectedly found nil while implicitly unwrapping an Optional value
+        //contentsLabel is not made yet since its from IB
+        
+        vc.contents = list[indexPath.row]
         
         //make sure navigation controller is embedded entrypoint is set to it
         navigationController?.pushViewController(vc, animated: true)
