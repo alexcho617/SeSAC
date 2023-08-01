@@ -8,13 +8,16 @@
 import UIKit
 
 class BookCollectionViewController: UICollectionViewController {
-    let formatter = NumberFormatter()
+    var movieInfo = MovieInfo(){
+        didSet{
+            collectionView.reloadData()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "My Shelf"
         let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "BookCollectionViewCell")
-        formatter.maximumFractionDigits = 1
         setLayout()
     }
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
@@ -41,14 +44,13 @@ class BookCollectionViewController: UICollectionViewController {
             return UICollectionViewCell()
         }
         //configure cell
-        let row = MovieInfo.movies[indexPath.row]
-        cell.backgroundColor = UIColor(cgColor: .init(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: CGFloat.random(in: 0...1)))
-        cell.cellLabel?.text = row.title
-        let fs = formatter.string(for: row.rate)
-        cell.cellRatingLabel?.text = fs
-        
-        let image = UIImage(named: row.title) ?? UIImage(systemName: "picture")
-        cell.cellImageView.image = image
+        let movie = MovieInfo.movies[indexPath.row]
+        cell.tag = indexPath.row
+        print("cell tag:",cell.tag)
+        //set cell
+        cell.setCell(row: movie)
+       
+        cell.likeButton.addTarget(self, action: #selector(likeToggle), for: .touchUpInside)
         
         return cell
     }
@@ -58,6 +60,18 @@ class BookCollectionViewController: UICollectionViewController {
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         vc.titleFromParent = MovieInfo.movies[indexPath.row].title
         navigationController?.pushViewController(vc, animated: true)
+        
+        print("selected at indexPath.row:",indexPath.row)
+    }
+    
+    //issue: sender.tag로 구분 할 수가 없는 상태임
+    //현재 출력하면 태그가 모두 0으로 출력되고 있음
+    @objc func likeToggle(_ sender: UIButton){
+        print("liked button pressed at tag \(sender.tag)")
+        MovieInfo.movies[sender.tag].isLiked.toggle()
+        
+//        collectionView.reloadData()
+
     }
     
     func setLayout(){
