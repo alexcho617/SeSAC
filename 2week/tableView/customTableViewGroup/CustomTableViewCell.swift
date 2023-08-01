@@ -26,7 +26,7 @@ class CustomTableViewCell: UITableViewCell {
         mainTitleLabel.text = row.mainText
         subTitleLabel.text = row.subText
         
-        checkBox.image = row.isDone ? UIImage(systemName: "checkmark.square") : UIImage(systemName: "square")
+        checkBox.image = row.isDone ? UIImage(systemName: "drop.fill") : UIImage(systemName: "drop")
         if row.isLiked {
             likeButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         }else{

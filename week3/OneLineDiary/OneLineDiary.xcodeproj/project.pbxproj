@@ -17,6 +17,8 @@
 		5722B5732A773BBC00D115FB /* DiaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5722B5712A773BBC00D115FB /* DiaryTableViewCell.xib */; };
 		5722B5772A774E3F00D115FB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722B5762A774E3F00D115FB /* AddViewController.swift */; };
 		5722B5792A7752A500D115FB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722B5782A7752A500D115FB /* DetailViewController.swift */; };
+		57B7097F2A789B3900713D96 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7097E2A789B3900713D96 /* SettingTableViewController.swift */; };
+		57B709812A789FB700713D96 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B709802A789FB700713D96 /* SettingTableViewCell.swift */; };
 		57E217762A77625800ABE482 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E217752A77625800ABE482 /* Extension+UIViewController.swift */; };
 		57E217782A77796400ABE482 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E217772A77796400ABE482 /* SearchCollectionViewController.swift */; };
 		57E2177B2A777AC100ABE482 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E217792A777AC100ABE482 /* SearchCollectionViewCell.swift */; };
@@ -36,6 +38,8 @@
 		5722B5712A773BBC00D115FB /* DiaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaryTableViewCell.xib; sourceTree = "<group>"; };
 		5722B5762A774E3F00D115FB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		5722B5782A7752A500D115FB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		57B7097E2A789B3900713D96 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		57B709802A789FB700713D96 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingTableViewCell.swift; path = OneLineDiary/SettingTableViewCell.swift; sourceTree = "<group>"; };
 		57E217752A77625800ABE482 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		57E217772A77796400ABE482 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		57E217792A777AC100ABE482 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 		5722B54C2A773A5600D115FB = {
 			isa = PBXGroup;
 			children = (
+				57B709802A789FB700713D96 /* SettingTableViewCell.swift */,
 				5722B5572A773A5600D115FB /* OneLineDiary */,
 				5722B5562A773A5600D115FB /* Products */,
 			);
@@ -84,6 +89,7 @@
 				57E2177A2A777AC100ABE482 /* SearchCollectionViewCell.xib */,
 				57E217792A777AC100ABE482 /* SearchCollectionViewCell.swift */,
 				5722B55E2A773A5600D115FB /* Main.storyboard */,
+				57B7097E2A789B3900713D96 /* SettingTableViewController.swift */,
 				5722B5612A773A5700D115FB /* Assets.xcassets */,
 				5722B5632A773A5700D115FB /* LaunchScreen.storyboard */,
 				5722B5662A773A5700D115FB /* Info.plist */,
@@ -164,10 +170,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B709812A789FB700713D96 /* SettingTableViewCell.swift in Sources */,
 				57E217782A77796400ABE482 /* SearchCollectionViewController.swift in Sources */,
 				5722B5772A774E3F00D115FB /* AddViewController.swift in Sources */,
 				57E217762A77625800ABE482 /* Extension+UIViewController.swift in Sources */,
 				5722B5722A773BBC00D115FB /* DiaryTableViewCell.swift in Sources */,
+				57B7097F2A789B3900713D96 /* SettingTableViewController.swift in Sources */,
 				5722B56D2A773ACD00D115FB /* DiaryTableViewController.swift in Sources */,
 				5722B5792A7752A500D115FB /* DetailViewController.swift in Sources */,
 				5722B5592A773A5600D115FB /* AppDelegate.swift in Sources */,

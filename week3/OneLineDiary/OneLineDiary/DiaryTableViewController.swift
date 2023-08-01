@@ -22,8 +22,8 @@ class DiaryTableViewController: UITableViewController {
         
         //register xib file views
         //xib becomes nib
-        let nib = UINib(nibName: "DiaryTableViewCell", bundle: nil)//main bundle if nil
-        tableView.register(nib, forCellReuseIdentifier: "DiaryTableViewCell")
+        let nib = UINib(nibName: DiaryTableViewCell.identifier, bundle: nil)//main bundle if nil
+        tableView.register(nib, forCellReuseIdentifier: DiaryTableViewCell.identifier)
         
         //Dynamic Height: 1.automaticDimension, 2.label numberOfLines 3.AutoLayout
         tableView.rowHeight = UITableView.automaticDimension
@@ -33,10 +33,10 @@ class DiaryTableViewController: UITableViewController {
     //actions
     @IBAction func AddButtonClicked(_ sender: UIBarButtonItem) {
         //1. find storyboard file
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let sb = UIStoryboard(name: "Main", bundle: nil) VC가 같은 파일에 있다면 필요 없음
         
         //2. find view cont. inside sb file
-        guard let vc = sb.instantiateViewController(withIdentifier: "AddViewController") as? AddViewController else{
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "AddViewController") as? AddViewController else{
             return
         }
         
@@ -74,7 +74,7 @@ class DiaryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryTableViewCell") as? DiaryTableViewCell else{
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DiaryTableViewCell.identifier) as? DiaryTableViewCell else{
             return UITableViewCell()
         }
         cell.contentLabel.text = list[indexPath.row]

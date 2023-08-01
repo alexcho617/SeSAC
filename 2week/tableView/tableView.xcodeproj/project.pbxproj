@@ -21,6 +21,7 @@
 		5722B5202A72B2EE00D115FB /* ThirdTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722B51F2A72B2EE00D115FB /* ThirdTableViewController.swift */; };
 		5722B5222A73503900D115FB /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722B5212A73503900D115FB /* CustomTableViewController.swift */; };
 		5722B5242A73527700D115FB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722B5232A73527700D115FB /* CustomTableViewCell.swift */; };
+		57B709832A78A6E900713D96 /* TodoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B709822A78A6E900713D96 /* TodoInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		5722B51F2A72B2EE00D115FB /* ThirdTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdTableViewController.swift; sourceTree = "<group>"; };
 		5722B5212A73503900D115FB /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		5722B5232A73527700D115FB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		57B709822A78A6E900713D96 /* TodoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				5722B5232A73527700D115FB /* CustomTableViewCell.swift */,
 				5722B5212A73503900D115FB /* CustomTableViewController.swift */,
+				57B709822A78A6E900713D96 /* TodoInformation.swift */,
 			);
 			path = customTableViewGroup;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				571B2ECC2A720FEA00EEC2A2 /* TodoTableViewController.swift in Sources */,
 				571B2ECE2A7232DF00EEC2A2 /* StudyTableViewController.swift in Sources */,
 				571B2ED02A72497E00EEC2A2 /* extension.swift in Sources */,
+				57B709832A78A6E900713D96 /* TodoInformation.swift in Sources */,
 				571B2ED42A725EA900EEC2A2 /* SecondTableViewController.swift in Sources */,
 				571B2EB82A72004500EEC2A2 /* AppDelegate.swift in Sources */,
 				5722B5242A73527700D115FB /* CustomTableViewCell.swift in Sources */,
