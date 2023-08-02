@@ -16,11 +16,12 @@ class BookCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "My Shelf"
+        title = "Home"
         let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "BookCollectionViewCell")
         setLayout()
     }
+    
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
         //storyboard
         let sb = UIStoryboard(name: "Main", bundle: nil)

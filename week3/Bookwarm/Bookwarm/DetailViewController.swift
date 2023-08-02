@@ -10,6 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
     var movie: Movie?
     
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
     @IBOutlet weak var likeButton: UIButton!
@@ -43,6 +44,9 @@ class DetailViewController: UIViewController {
 
     }
 
+    @IBAction func closeButtonClicked(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
     @IBAction func likeButtonClikced(_ sender: UIButton) {
         
         //제대로 구현하려면 unique id 같은걸 부여해서 movieInfo 에도 반영되게 해야함
