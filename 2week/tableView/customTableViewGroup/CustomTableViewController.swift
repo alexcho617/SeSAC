@@ -6,7 +6,10 @@
 //
 
 import UIKit
-
+/*
+ 1. 파티를 막자
+ 2. sender.tag
+ */
 
 class CustomTableViewController: UITableViewController {
 
@@ -14,14 +17,10 @@ class CustomTableViewController: UITableViewController {
         //**달라진걸 감지
         //property observer didSet
         didSet{
-            print("refresh view")
             tableView.reloadData()
         }
         willSet{
-//            print("will set")
-            print("saving data to server")
-            sleep(1) //sleep for 1 second
-            print("data saved to server")
+            print("will set")
         }
     }
     
@@ -62,7 +61,7 @@ class CustomTableViewController: UITableViewController {
     @objc func searchBarReturnTapped(){
         if let text = searchBar.searchTextField.text{
             if !text.isEmpty{
-                let newItem = ToDo(mainText: text, subText: "23.08.01", isLiked: false, isDone: false)
+                let newItem = ToDo(mainText: text, subText: "23.08.01", isLiked: false, isDone: false, color: TodoManager.randomBackgroundColor())
                 
                 todoManager.todoList.insert(newItem, at: 0)
 //                tableView.reloadData()
@@ -83,10 +82,13 @@ class CustomTableViewController: UITableViewController {
 //        tableView.reloadData()
     }
     
-    //cell select: Todo isDone toggle
+    //cell select: 화면 전환
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        todoManager.todoList[indexPath.row].isDone.toggle()
-//        tableView.reloadData()
+//        todoManager.todoList[indexPath.row].isDone.toggle()
+        let vc = storyboard?.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
+        vc.data = todoManager.todoList[indexPath.row]
+        tableView.reloadRows(at: [indexPath], with: .none)
+        present(vc, animated: true)
     }
     
     //cell delete

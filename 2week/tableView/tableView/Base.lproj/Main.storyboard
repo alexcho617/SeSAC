@@ -132,7 +132,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="vJd-XP-Jbx" userLabel="FooterView">
-                            <rect key="frame" x="0.0" y="878.33333015441906" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="878.33333015441895" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCs-ke-2oJ">
@@ -396,6 +396,7 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emM-XU-EzF">
                                                     <rect key="frame" x="275" y="13.666666666666671" width="44" height="44"/>
+                                                    <color key="backgroundColor" systemColor="systemMintColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="MQF-Lq-Ug6"/>
                                                         <constraint firstAttribute="width" constant="44" id="gc0-Pd-Gkd"/>
@@ -469,6 +470,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWl-4o-pJt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1896.9465648854962" y="-699.29577464788736"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="eZR-Pc-uT4">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="MLO-cO-thF" customClass="DetailViewController" customModule="tableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QAH-l5-OzW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5Uh-LX-h07"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kgf-PD-rOg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2687" y="-698"/>
         </scene>
         <!--Todo Table View Controller-->
         <scene sceneID="WZa-J4-bbZ">
@@ -614,6 +630,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

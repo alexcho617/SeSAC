@@ -45,7 +45,9 @@ class BookCollectionViewController: UICollectionViewController {
         }
         //configure cell
         let movie = MovieInfo.movies[indexPath.row]
-        cell.tag = indexPath.row
+//        cell.tag = indexPath.row 버튼이 아니라 셀 자체 태그를 지정해서 안됐었다..
+        cell.likeButton.tag = indexPath.row
+        
         print("cell tag:",cell.tag)
         //set cell
         cell.setCell(row: movie)
@@ -70,7 +72,7 @@ class BookCollectionViewController: UICollectionViewController {
         print("liked button pressed at tag \(sender.tag)")
         MovieInfo.movies[sender.tag].isLiked.toggle()
         
-//        collectionView.reloadData()
+        collectionView.reloadData()
 
     }
     

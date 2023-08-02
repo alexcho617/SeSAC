@@ -34,5 +34,6 @@ class BookCollectionViewCell: UICollectionViewCell {
         cellImageView.image = image
         likeButton.setImage(cell.isLiked == true ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
         
+        
     }
 }

@@ -21,11 +21,20 @@ class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet weak var likeButton: UIButton!
     
+    //한번만 셋팅됨
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        mainTitleLabel.textColor = .label
+        mainTitleLabel.font = .boldSystemFont(ofSize: 18)
+        subTitleLabel.textColor = .secondaryLabel
+    }
+   
+   
     
     func setCell(row: ToDo){
         mainTitleLabel.text = row.mainText
         subTitleLabel.text = row.subText
-        
+        backgroundColor = row.color
         checkBox.image = row.isDone ? UIImage(systemName: "drop.fill") : UIImage(systemName: "drop")
         if row.isLiked {
             likeButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
