@@ -13,6 +13,7 @@ class BookCollectionViewController: UICollectionViewController {
             collectionView.reloadData()
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "My Shelf"
@@ -35,7 +36,7 @@ class BookCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        MovieInfo.movies.count
+        movieInfo.movies.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -44,11 +45,9 @@ class BookCollectionViewController: UICollectionViewController {
             return UICollectionViewCell()
         }
         //configure cell
-        let movie = MovieInfo.movies[indexPath.row]
-//        cell.tag = indexPath.row 버튼이 아니라 셀 자체 태그를 지정해서 안됐었다..
+        let movie = movieInfo.movies[indexPath.row]
         cell.likeButton.tag = indexPath.row
-        
-        print("cell tag:",cell.tag)
+    
         //set cell
         cell.setCell(row: movie)
        
@@ -60,19 +59,17 @@ class BookCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        vc.titleFromParent = MovieInfo.movies[indexPath.row].title
+        vc.movie = movieInfo.movies[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
         
         print("selected at indexPath.row:",indexPath.row)
     }
     
-    //issue: sender.tag로 구분 할 수가 없는 상태임
-    //현재 출력하면 태그가 모두 0으로 출력되고 있음
+   
     @objc func likeToggle(_ sender: UIButton){
         print("liked button pressed at tag \(sender.tag)")
-        MovieInfo.movies[sender.tag].isLiked.toggle()
-        
-        collectionView.reloadData()
+        movieInfo.movies[sender.tag].isLiked.toggle()
+        print(movieInfo.movies[sender.tag])
 
     }
     

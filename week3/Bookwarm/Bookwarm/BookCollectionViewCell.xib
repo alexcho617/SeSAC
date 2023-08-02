@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,8 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="250" height="243"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L74-sy-Xna">
-                                <rect key="frame" x="8" y="8" width="200" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="8" y="8" width="192.66666666666666" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -35,7 +36,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mdc-V4-gMR">
-                                <rect key="frame" x="216" y="1.3333333333333321" width="26" height="34.333333333333343"/>
+                                <rect key="frame" x="200" y="-1" width="50" height="35"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title=""/>
                             </button>
@@ -48,13 +50,13 @@
                             <constraint firstItem="dii-8U-wMf" firstAttribute="width" secondItem="5Rd-et-7A8" secondAttribute="width" multiplier="0.4" id="LV3-Ol-cg3"/>
                             <constraint firstItem="L74-sy-Xna" firstAttribute="top" secondItem="5Rd-et-7A8" secondAttribute="top" constant="8" id="RDY-jO-Xfi"/>
                             <constraint firstItem="Mdc-V4-gMR" firstAttribute="centerY" secondItem="L74-sy-Xna" secondAttribute="centerY" id="Rtq-cs-cPh"/>
-                            <constraint firstItem="L74-sy-Xna" firstAttribute="width" secondItem="5Rd-et-7A8" secondAttribute="width" multiplier="0.8" id="Xqz-UN-v4e"/>
+                            <constraint firstItem="L74-sy-Xna" firstAttribute="width" secondItem="5Rd-et-7A8" secondAttribute="width" multiplier="0.77" id="Xqz-UN-v4e"/>
                             <constraint firstItem="L74-sy-Xna" firstAttribute="leading" secondItem="5Rd-et-7A8" secondAttribute="leading" constant="8" id="Xwg-2l-KVF"/>
-                            <constraint firstItem="Mdc-V4-gMR" firstAttribute="leading" secondItem="L74-sy-Xna" secondAttribute="trailing" constant="8" id="aAr-te-fho"/>
                             <constraint firstAttribute="bottom" secondItem="dii-8U-wMf" secondAttribute="bottom" constant="8" id="czh-ST-hcd"/>
                             <constraint firstAttribute="trailing" secondItem="r9A-8W-ZEO" secondAttribute="trailing" constant="8" id="dfO-Pa-CEa"/>
                             <constraint firstItem="dii-8U-wMf" firstAttribute="leading" secondItem="5Rd-et-7A8" secondAttribute="leading" constant="8" id="g3Q-TL-7Dc"/>
-                            <constraint firstAttribute="trailing" secondItem="Mdc-V4-gMR" secondAttribute="trailing" constant="8" id="yEk-Vl-vrW"/>
+                            <constraint firstItem="Mdc-V4-gMR" firstAttribute="width" secondItem="5Rd-et-7A8" secondAttribute="width" multiplier="0.2" id="o8R-p5-Tg5"/>
+                            <constraint firstAttribute="trailing" secondItem="Mdc-V4-gMR" secondAttribute="trailing" id="yEk-Vl-vrW"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -80,5 +82,8 @@
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="photo" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
