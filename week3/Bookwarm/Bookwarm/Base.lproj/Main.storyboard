@@ -46,6 +46,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchButton" destination="NBi-fl-BO0" id="rQR-L6-pWO"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cv4-jB-GDa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,9 +122,8 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4Dj-3e-NPu">
-                                <rect key="frame" x="20" y="391.66666666666669" width="353" height="213.00000000000006"/>
+                                <rect key="frame" x="20" y="391.66666666666669" width="353" height="170.33333333333331"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -137,6 +139,25 @@
                                     <action selector="closeButtonClicked:" destination="Abj-Y9-977" eventType="touchUpInside" id="A46-PD-c4c"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5t-U4-2jm">
+                                <rect key="frame" x="20" y="570" width="29.666666666666671" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="mOW-Ug-iKo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tUJ-n2-U4j">
+                                <rect key="frame" x="20" y="594" width="353" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="vHl-ff-tlq"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ND5-re-cMH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -150,14 +171,19 @@
                             <constraint firstItem="4Dj-3e-NPu" firstAttribute="top" secondItem="Zv7-D4-MhP" secondAttribute="bottom" constant="8" id="Kte-ub-Idt"/>
                             <constraint firstItem="2KM-fH-ERA" firstAttribute="height" secondItem="6af-UN-LJF" secondAttribute="height" multiplier="0.3" id="NV4-N4-ghm"/>
                             <constraint firstItem="ND5-re-cMH" firstAttribute="trailing" secondItem="4Dj-3e-NPu" secondAttribute="trailing" constant="20" id="Nmr-ap-kNX"/>
+                            <constraint firstItem="p5t-U4-2jm" firstAttribute="leading" secondItem="ND5-re-cMH" secondAttribute="leading" constant="20" id="NqB-Yo-K9O"/>
                             <constraint firstItem="Zv7-D4-MhP" firstAttribute="top" secondItem="2KM-fH-ERA" secondAttribute="bottom" constant="8" id="Qwe-zQ-hz6"/>
                             <constraint firstItem="2KM-fH-ERA" firstAttribute="width" secondItem="6af-UN-LJF" secondAttribute="width" multiplier="0.4" id="VCA-Pm-xnL"/>
                             <constraint firstItem="pX9-BD-Op0" firstAttribute="bottom" secondItem="2KM-fH-ERA" secondAttribute="bottom" id="cFb-RV-26f"/>
-                            <constraint firstItem="4Dj-3e-NPu" firstAttribute="height" secondItem="6af-UN-LJF" secondAttribute="height" multiplier="0.25" id="ctY-BD-m4C"/>
+                            <constraint firstItem="4Dj-3e-NPu" firstAttribute="height" secondItem="6af-UN-LJF" secondAttribute="height" multiplier="0.2" id="ctY-BD-m4C"/>
+                            <constraint firstItem="tUJ-n2-U4j" firstAttribute="top" secondItem="p5t-U4-2jm" secondAttribute="bottom" constant="4" id="dli-bj-uJD"/>
                             <constraint firstItem="Zv7-D4-MhP" firstAttribute="leading" secondItem="ND5-re-cMH" secondAttribute="leading" constant="20" id="hxW-fT-Flw"/>
                             <constraint firstItem="2KM-fH-ERA" firstAttribute="top" secondItem="ND5-re-cMH" secondAttribute="top" constant="40" id="jbg-B2-1VO"/>
                             <constraint firstItem="2KM-fH-ERA" firstAttribute="leading" secondItem="ND5-re-cMH" secondAttribute="leading" constant="20" id="p5Y-JA-FOo"/>
+                            <constraint firstItem="tUJ-n2-U4j" firstAttribute="leading" secondItem="ND5-re-cMH" secondAttribute="leading" constant="20" id="qJV-8o-7by"/>
                             <constraint firstItem="4Dj-3e-NPu" firstAttribute="leading" secondItem="ND5-re-cMH" secondAttribute="leading" constant="20" id="rlR-JO-FiG"/>
+                            <constraint firstItem="p5t-U4-2jm" firstAttribute="top" secondItem="4Dj-3e-NPu" secondAttribute="bottom" constant="8" id="wBB-Vv-gA1"/>
+                            <constraint firstItem="ND5-re-cMH" firstAttribute="trailing" secondItem="tUJ-n2-U4j" secondAttribute="trailing" constant="20" id="wN4-2h-HxQ"/>
                             <constraint firstItem="A9Q-Oc-uJr" firstAttribute="top" secondItem="ND5-re-cMH" secondAttribute="top" id="z47-id-BE9"/>
                         </constraints>
                     </view>
@@ -166,13 +192,14 @@
                         <outlet property="closeButton" destination="YTK-3F-GqE" id="plJ-Qj-EiG"/>
                         <outlet property="infoLabel" destination="pX9-BD-Op0" id="xqL-Fn-BgL"/>
                         <outlet property="likeButton" destination="A9Q-Oc-uJr" id="zDa-vE-a9l"/>
+                        <outlet property="memoTextView" destination="tUJ-n2-U4j" id="utN-MQ-VgQ"/>
                         <outlet property="overviewTextView" destination="4Dj-3e-NPu" id="ZOR-UT-6SO"/>
                         <outlet property="ratingLabel" destination="WeZ-m0-cWQ" id="V7j-Qk-1dm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfi-1p-2au" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3961.0687022900761" y="-406.33802816901408"/>
+            <point key="canvasLocation" x="3003.8167938931297" y="-406.33802816901408"/>
         </scene>
         <!--Discover View Controller-->
         <scene sceneID="AWy-aS-bhE">
@@ -189,8 +216,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="264"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6M-nF-rGf">
-                                            <rect key="frame" x="8" y="0.0" width="42" height="44"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 본 영화" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6M-nF-rGf">
+                                            <rect key="frame" x="8" y="0.0" width="83" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="oTK-oe-Lvm"/>
                                             </constraints>
@@ -200,7 +227,7 @@
                                         </label>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QPL-Az-q7v">
                                             <rect key="frame" x="0.0" y="52" width="393" height="150"/>
-                                            <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="0.52431441329999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="150" id="ssA-VP-Q18"/>
                                             </constraints>
@@ -218,7 +245,6 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                     </collectionViewCellContentView>
-                                                    <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="0.79974489800000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </collectionViewCell>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Z9g-6X-EGu">
                                                     <rect key="frame" x="138" y="11" width="128" height="128"/>
@@ -238,8 +264,8 @@
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mia-mo-2rT">
-                                            <rect key="frame" x="8" y="216" width="42" height="44"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 추천 영화" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mia-mo-2rT">
+                                            <rect key="frame" x="8" y="216" width="112" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="50Z-Lr-HLs"/>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ZxR-pH-DEC"/>
@@ -361,6 +387,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -11,9 +11,12 @@ class DiscoverTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var infoLabel: UILabel!
+    
     @IBOutlet weak var posterImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 

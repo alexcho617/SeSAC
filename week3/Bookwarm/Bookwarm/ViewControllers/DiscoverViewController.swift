@@ -29,6 +29,7 @@ class DiscoverViewController: UIViewController {
         discoverTableView.dataSource = self
         let tablenib = UINib(nibName: "DiscoverTableViewCell", bundle: nil)
         discoverTableView.register(tablenib, forCellReuseIdentifier: "DiscoverTableViewCell")
+        configureTableView()
         
     }
 }
@@ -53,6 +54,10 @@ extension DiscoverViewController: UITableViewDelegate{
         190
     }
     
+    func configureTableView(){
+        discoverTableView.separatorInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    }
+    
 }
 extension DiscoverViewController: UITableViewDataSource{
     
@@ -66,6 +71,7 @@ extension DiscoverViewController: UITableViewDataSource{
         
         cell.titleLabel.text = row.title
         cell.posterImageView.image = UIImage(named: row.title)
+        cell.infoLabel.text = "\(row.releaseDate) | \(row.runtime)분"
         return cell
     }
     

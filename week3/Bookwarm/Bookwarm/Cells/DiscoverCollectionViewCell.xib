@@ -24,7 +24,7 @@
                                 <rect key="frame" x="9.6666666666666714" y="11.666666666666671" width="171" height="208.66666666666663"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
                         <constraints>
                             <constraint firstItem="0dT-ET-7EG" firstAttribute="centerY" secondItem="qEJ-PE-WhW" secondAttribute="centerY" id="2tl-G3-NbC"/>
                             <constraint firstItem="0dT-ET-7EG" firstAttribute="centerX" secondItem="qEJ-PE-WhW" secondAttribute="centerX" id="6Zl-Qt-G9k"/>
@@ -49,8 +49,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

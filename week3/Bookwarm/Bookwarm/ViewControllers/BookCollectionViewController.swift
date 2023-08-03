@@ -10,7 +10,7 @@ import UIKit
 class BookCollectionViewController: UICollectionViewController {
     
     let searchBar = UISearchBar()
-    
+    let searchPlaceHolder = "검색을 해보세요"
     //variables
     var movieInfo = MovieInfo(){
         didSet{
@@ -18,25 +18,33 @@ class BookCollectionViewController: UICollectionViewController {
         }
     }
     
+    @IBOutlet weak var searchButton: UIBarButtonItem!
     //vdl
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchButton.isHidden = true // 현재 안쓰는 기능
         navigationItem.titleView = searchBar
+        searchBar.delegate = self
+        
         let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "BookCollectionViewCell")
         setLayout()
+        setSearchBar()
     }
     
     
     //actions
+    
+    //현재 안쓰는 기능
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
         //storyboard
+        
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         //controllers
         let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
         let nc = UINavigationController(rootViewController: vc)
-
+        
         //set
         nc.modalPresentationStyle = .fullScreen
         //navigate
@@ -46,7 +54,11 @@ class BookCollectionViewController: UICollectionViewController {
     
     //functions
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        movieInfo.movies.count
+        if movieInfo.searchResults.isEmpty{
+            return movieInfo.movies.count
+        } else{
+            return movieInfo.searchResults.count
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,32 +67,40 @@ class BookCollectionViewController: UICollectionViewController {
             return UICollectionViewCell()
         }
         //configure cell
-        let movie = movieInfo.movies[indexPath.row]
-        cell.likeButton.tag = indexPath.row
-    
-        //set cell
-        cell.setCell(row: movie)
-       
-        cell.likeButton.addTarget(self, action: #selector(likeToggle), for: .touchUpInside)
-        
+        if movieInfo.searchResults.isEmpty{
+            let movie = movieInfo.movies[indexPath.row]
+            
+            // Todo search 결과에서 눌렀을때 인덱스 오류로 인해 오작동함
+            cell.likeButton.tag = indexPath.row
+            cell.setCell(row: movie)
+            cell.likeButton.addTarget(self, action: #selector(likeToggle), for: .touchUpInside)
+        }else{
+            let movie = movieInfo.searchResults[indexPath.row]
+            cell.likeButton.tag = indexPath.row
+            cell.setCell(row: movie)
+            cell.likeButton.addTarget(self, action: #selector(likeToggle), for: .touchUpInside)
+        }
         return cell
     }
     
+    //Todo search 결과에서 눌렀을때 인덱스 오류로 인해 다른 화면으로 넘어감
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         vc.movie = movieInfo.movies[indexPath.row]
+        vc.transitionStyle = .push
         navigationController?.pushViewController(vc, animated: true)
         
-        print("selected at indexPath.row:",indexPath.row)
     }
     
-   
+    
     @objc func likeToggle(_ sender: UIButton){
-        print("liked button pressed at tag \(sender.tag)")
         movieInfo.movies[sender.tag].isLiked.toggle()
-        print(movieInfo.movies[sender.tag])
-
+    }
+    
+    func setSearchBar(){
+        searchBar.placeholder = searchPlaceHolder
+        searchBar.showsCancelButton = true
     }
     
     func setLayout(){
@@ -93,4 +113,35 @@ class BookCollectionViewController: UICollectionViewController {
         layout.minimumInteritemSpacing = spacing
         collectionView.collectionViewLayout = layout
     }
+}
+
+extension BookCollectionViewController: UISearchBarDelegate{
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        search()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(#function)
+        searchBar.resignFirstResponder()
+        view.endEditing(true)
+        search()
+    }
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        searchBar.resignFirstResponder()
+    }
+    
+    func search(){
+        movieInfo.searchResults.removeAll()
+        for item in movieInfo.movies{
+            if item.title.contains(searchBar.text!){
+                movieInfo.searchResults.append(item)
+            }
+        }
+        collectionView.reloadData()
+    }
+    
 }

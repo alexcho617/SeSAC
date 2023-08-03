@@ -6,10 +6,13 @@
 //
 
 import UIKit
-
+enum TransitionStyle{
+    case modal,push
+}
 class DetailViewController: UIViewController {
     var movie: Movie?
-    //Todo: Folder divide
+    var transitionStyle: TransitionStyle = .modal
+    //Todo: Folder divide -> Done
     //Todo: Enum사용해서 closeButton 보이거나 숨기기
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -20,15 +23,24 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var overviewTextView: UITextView!
     
+    @IBOutlet weak var memoTextView: UITextView!
+    let placeholder = "메모를 입력하세요"
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        memoTextView.delegate = self
         configureScreen()
     }
     
     func configureScreen(){
+        if transitionStyle == .push{
+            closeButton.isHidden = true
+        }else if transitionStyle == .modal{
+            closeButton.isHidden = false
+        }
+        
         guard let movie else {return}
         title = movie.title
-        
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 1
         let fs: String = formatter.string(for: movie.rate)!
@@ -42,6 +54,8 @@ class DetailViewController: UIViewController {
         overviewTextView.backgroundColor = .secondarySystemBackground
         likeButton.setImage(movie.isLiked == true ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
         
+        memoTextView.backgroundColor = .secondarySystemBackground
+       setMemoTextView()
 
     }
 
@@ -50,10 +64,37 @@ class DetailViewController: UIViewController {
     }
     @IBAction func likeButtonClikced(_ sender: UIButton) {
         
-        //제대로 구현하려면 unique id 같은걸 부여해서 movieInfo 에도 반영되게 해야함
+        //제대로 구현하려면 movie unique id 같은걸 부여해서 movieInfo 에도 반영되게 해야함
 //        movie?.isLiked.toggle()
 //        likeButton.setImage(movie?.isLiked == true ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
 
     }
     
+}
+
+extension DetailViewController: UITextViewDelegate{
+
+    func setMemoTextView(){
+        if movie!.memo == nil{
+            memoTextView.text = placeholder
+            memoTextView.textColor = .systemGray
+        }else{
+            memoTextView.text = movie!.memo
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == placeholder{
+            textView.text = ""
+            textView.textColor = .label
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        print(#function)
+        //이것도 Delegate이나 closure 없이는 안됨. 디테일의 좋아요 기능이랑 마찬가지
+//        movie?.memo = textView.text
+        textView.resignFirstResponder()
+        view.endEditing(true)
+    }
 }

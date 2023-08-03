@@ -64,8 +64,8 @@
 				57B20B8D2A77B78600442B87 /* BookCollectionViewCell.swift */,
 				57B7098F2A7A8D3200713D96 /* DiscoverCollectionViewCell.xib */,
 				57B7098E2A7A8D3200713D96 /* DiscoverCollectionViewCell.swift */,
-				57B7098A2A7A86CD00713D96 /* DiscoverTableViewCell.swift */,
 				57B7098B2A7A86CD00713D96 /* DiscoverTableViewCell.xib */,
+				57B7098A2A7A86CD00713D96 /* DiscoverTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfk-tw-6fh">
-                        <rect key="frame" x="195.66666666666666" y="84.666666666666671" width="42" height="21"/>
+                        <rect key="frame" x="146" y="84.666666666666671" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -28,18 +29,27 @@
                             <constraint firstAttribute="width" secondItem="OpB-tV-MrB" secondAttribute="height" multiplier="3:4" id="MEY-Dz-kON"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eym-y6-fVY">
+                        <rect key="frame" x="146" y="113.66666666666667" width="42" height="21.000000000000014"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
-                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="0.79974489800000004" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
                 <constraints>
+                    <constraint firstItem="Vfk-tw-6fh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3kl-T6-3Po"/>
                     <constraint firstItem="OpB-tV-MrB" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="EUh-sN-icC"/>
-                    <constraint firstItem="Vfk-tw-6fh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Huv-bq-9fe"/>
                     <constraint firstItem="OpB-tV-MrB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="M09-2n-6gA"/>
+                    <constraint firstItem="Vfk-tw-6fh" firstAttribute="leading" secondItem="OpB-tV-MrB" secondAttribute="trailing" constant="8" id="Oh4-qj-wlR"/>
+                    <constraint firstItem="eym-y6-fVY" firstAttribute="top" secondItem="Vfk-tw-6fh" secondAttribute="bottom" constant="8" id="TQz-es-eyg"/>
                     <constraint firstItem="OpB-tV-MrB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="TiG-Zh-OxF"/>
-                    <constraint firstItem="Vfk-tw-6fh" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="eeV-qK-Hc8"/>
+                    <constraint firstItem="eym-y6-fVY" firstAttribute="leading" secondItem="OpB-tV-MrB" secondAttribute="trailing" constant="8" id="tSx-dr-19e"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="infoLabel" destination="eym-y6-fVY" id="Lro-zH-ULz"/>
                 <outlet property="posterImageView" destination="OpB-tV-MrB" id="v6L-cw-z7Q"/>
                 <outlet property="titleLabel" destination="Vfk-tw-6fh" id="oJX-WE-jfu"/>
             </connections>
@@ -48,5 +58,8 @@
     </objects>
     <resources>
         <image name="라라랜드" width="356" height="512"/>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
