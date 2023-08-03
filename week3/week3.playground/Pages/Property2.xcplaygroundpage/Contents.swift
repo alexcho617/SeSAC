@@ -45,21 +45,105 @@ let computedProperty = user3.userIntro
 
 
 struct BMI{
-    var weight: Double
-    var height: Double
+    var nickname: String{
+        
+        //use newValue
+        willSet{
+            print("will set \(nickname) to " + newValue)
+        }
+        
+        //use oldValue
+        didSet{
+            print("didset \(oldValue) to " + nickname)
+        }
+        
+    }
     
-    var result: String{
+    var weight: Double //instance, stored property
+    var height: Double //인스탄스 저장 프로퍼티
+    
+    var result: String{ //연산 Computed property
         get{
             let bmiValue = (height * height) / weight
             let bmiStatus = bmiValue < 18.5 ? "Low" : "Normal"
-            return "ur bmi: \(bmiValue) and u are \(bmiStatus)" //이걸 구조체 안으로 넣자
+            return "\(nickname) bmi: \(bmiValue) and u are \(bmiStatus)" //이걸 구조체 안으로 넣자
+        }
+        set{
+            nickname = newValue
         }
     }
 }
-let bmi = BMI(weight: 70, height: 180)
+var bmi = BMI(nickname: "Cheetos", weight: 70, height: 180)
+print(bmi.result)
+bmi.result = "Nachos"
 //print("ur bmi: \(bmiValue) and u are \(bmiStatus)") //이걸 구조체 안으로 넣자ㅌ
 print(bmi.result)
 //: [Next](@next)
+
+
+//as instance
+class FoodRestaurant{
+    let name = "Alchick" //stored instance property
+    var totalOrderCount = 10 //stored instance property
+    var newOrder: Int{
+        get{
+            return totalOrderCount * 5000
+        }
+        set{
+            totalOrderCount += newValue
+        }
+    }
+}
+
+let food = FoodRestaurant()
+food.newOrder
+food.newOrder = 30
+food.newOrder
+
+//as type
+class TypeFoodRestaurant{
+    static let name = "Alchick"
+    static var totalOrderCount = 10
+    static var newOrder: Int{
+        get{
+            return totalOrderCount * 5000
+        }
+        
+        set{
+            totalOrderCount += newValue
+        }
+    }
+}
+
+TypeFoodRestaurant.newOrder
+TypeFoodRestaurant.newOrder = 60
+TypeFoodRestaurant.newOrder
+
+
+class Coffee{
+    static var name = "americano"
+    static var shot = 2
+    static func addShot(){
+        shot += 1
+    }
+}
+
+
+
+class Latte: Coffee{
+    //override 할 수 없다는데 왜 하는거지?? 클래스쓴 의미가 뭐지?
+//    override class func addShot(){
+//        
+//    }
+}
+
+
+
+
+
+
+
+
 
 //Enum: 컴파일때 결정되서 instance 생성 불가 -> 인스탄스 프로퍼티/인스탄스 메서드 사용 불가
 //static let 으로 값을 저장하는것과 case rawvalue 의 차이는?

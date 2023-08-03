@@ -8,20 +8,27 @@
 import UIKit
 
 class BookCollectionViewController: UICollectionViewController {
+    
+    let searchBar = UISearchBar()
+    
+    //variables
     var movieInfo = MovieInfo(){
         didSet{
             collectionView.reloadData()
         }
     }
     
+    //vdl
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Home"
+        navigationItem.titleView = searchBar
         let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "BookCollectionViewCell")
         setLayout()
     }
     
+    
+    //actions
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
         //storyboard
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -36,6 +43,8 @@ class BookCollectionViewController: UICollectionViewController {
         present(nc, animated: true)
     }
     
+    
+    //functions
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         movieInfo.movies.count
     }

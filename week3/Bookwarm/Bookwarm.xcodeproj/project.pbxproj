@@ -38,7 +38,7 @@
 		57B20B8D2A77B78600442B87 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		57B20B8E2A77B78600442B87 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		57B7097A2A77B83A00713D96 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		57B7097C2A77B8C200713D96 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieInfo.swift; path = ../../../2week/MovieInfo.swift; sourceTree = "<group>"; };
+		57B7097C2A77B8C200713D96 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		57B709882A7A815200713D96 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		57B7098A2A7A86CD00713D96 /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewCell.swift; sourceTree = "<group>"; };
 		57B7098B2A7A86CD00713D96 /* DiscoverTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverTableViewCell.xib; sourceTree = "<group>"; };
@@ -57,6 +57,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5717D3202A7B9B4500FF0D8A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				57B20B8E2A77B78600442B87 /* BookCollectionViewCell.xib */,
+				57B20B8D2A77B78600442B87 /* BookCollectionViewCell.swift */,
+				57B7098F2A7A8D3200713D96 /* DiscoverCollectionViewCell.xib */,
+				57B7098E2A7A8D3200713D96 /* DiscoverCollectionViewCell.swift */,
+				57B7098A2A7A86CD00713D96 /* DiscoverTableViewCell.swift */,
+				57B7098B2A7A86CD00713D96 /* DiscoverTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5717D3212A7B9B6800FF0D8A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				57B20B892A77B73A00442B87 /* BookCollectionViewController.swift */,
+				57B20B8B2A77B75F00442B87 /* DetailViewController.swift */,
+				57B709882A7A815200713D96 /* DiscoverViewController.swift */,
+				57B7097A2A77B83A00713D96 /* SearchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5717D3222A7B9BBE00FF0D8A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				57B7097C2A77B8C200713D96 /* MovieInfo.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		57B20B692A77B6CA00442B87 = {
 			isa = PBXGroup;
 			children = (
@@ -78,20 +110,12 @@
 			children = (
 				57B20B752A77B6CA00442B87 /* AppDelegate.swift */,
 				57B20B772A77B6CA00442B87 /* SceneDelegate.swift */,
-				57B20B892A77B73A00442B87 /* BookCollectionViewController.swift */,
-				57B20B8B2A77B75F00442B87 /* DetailViewController.swift */,
-				57B20B8D2A77B78600442B87 /* BookCollectionViewCell.swift */,
-				57B7097A2A77B83A00713D96 /* SearchViewController.swift */,
-				57B7097C2A77B8C200713D96 /* MovieInfo.swift */,
+				5717D3222A7B9BBE00FF0D8A /* Helper */,
+				5717D3212A7B9B6800FF0D8A /* ViewControllers */,
+				5717D3202A7B9B4500FF0D8A /* Cells */,
 				57B20B7B2A77B6CA00442B87 /* Main.storyboard */,
-				57B709882A7A815200713D96 /* DiscoverViewController.swift */,
-				57B7098E2A7A8D3200713D96 /* DiscoverCollectionViewCell.swift */,
-				57B7098F2A7A8D3200713D96 /* DiscoverCollectionViewCell.xib */,
-				57B7098A2A7A86CD00713D96 /* DiscoverTableViewCell.swift */,
-				57B7098B2A7A86CD00713D96 /* DiscoverTableViewCell.xib */,
-				57B20B8E2A77B78600442B87 /* BookCollectionViewCell.xib */,
-				57B20B7E2A77B6CB00442B87 /* Assets.xcassets */,
 				57B20B802A77B6CB00442B87 /* LaunchScreen.storyboard */,
+				57B20B7E2A77B6CB00442B87 /* Assets.xcassets */,
 				57B20B832A77B6CB00442B87 /* Info.plist */,
 			);
 			path = Bookwarm;

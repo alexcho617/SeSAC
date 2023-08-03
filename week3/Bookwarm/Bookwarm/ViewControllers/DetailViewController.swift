@@ -9,7 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
     var movie: Movie?
-    
+    //Todo: Folder divide
+    //Todo: Enum사용해서 closeButton 보이거나 숨기기
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var backgroundImageView: UIImageView!
     

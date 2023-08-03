@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5717D31F2A7B72BD00FF0D8A /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717D31E2A7B72BD00FF0D8A /* LottoViewController.swift */; };
 		5722B5592A773A5600D115FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722B5582A773A5600D115FB /* AppDelegate.swift */; };
 		5722B55B2A773A5600D115FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5722B55A2A773A5600D115FB /* SceneDelegate.swift */; };
 		5722B5602A773A5600D115FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5722B55E2A773A5600D115FB /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5717D31E2A7B72BD00FF0D8A /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		5722B5552A773A5600D115FB /* OneLineDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneLineDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5722B5582A773A5600D115FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5722B55A2A773A5600D115FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				57E2177A2A777AC100ABE482 /* SearchCollectionViewCell.xib */,
 				57E217792A777AC100ABE482 /* SearchCollectionViewCell.swift */,
 				5722B55E2A773A5600D115FB /* Main.storyboard */,
+				5717D31E2A7B72BD00FF0D8A /* LottoViewController.swift */,
 				57B709862A79F21400713D96 /* TimelineViewController.swift */,
 				57B7097E2A789B3900713D96 /* SettingTableViewController.swift */,
 				5722B5612A773A5700D115FB /* Assets.xcassets */,
@@ -184,6 +187,7 @@
 				5722B5792A7752A500D115FB /* DetailViewController.swift in Sources */,
 				5722B5592A773A5600D115FB /* AppDelegate.swift in Sources */,
 				5722B55B2A773A5600D115FB /* SceneDelegate.swift in Sources */,
+				5717D31F2A7B72BD00FF0D8A /* LottoViewController.swift in Sources */,
 				57E2177B2A777AC100ABE482 /* SearchCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
