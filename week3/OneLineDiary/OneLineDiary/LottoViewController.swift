@@ -6,20 +6,17 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class LottoViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
     
-    private var list: [Int] = Array(1...100).reversed()
-//    private var list = Array(repeating: "asdf", count: 10)
-//    private var list = [
-//        "Movie",
-//        "Animation",
-//        "Drama",
-//        "SF",
-//        "Family"
-//    ]
+    private var list: [Int] = Array(1...1079).reversed()
     
+    @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var bonusLabel: UILabel!
     
     @IBOutlet weak var textField: UITextField!
     let pickerView = UIPickerView()
@@ -29,6 +26,8 @@ class LottoViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDa
         textField.inputView = pickerView
         pickerView.delegate = self
         pickerView.dataSource = self
+        let latestRound = "1079"
+        callLotteryRequest("1079")
     }
     
     
@@ -40,12 +39,31 @@ class LottoViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDa
         list.count
     }
     
+    fileprivate func callLotteryRequest(_ round: String) {
+        //Alamofire SwiftyJSON Practice
+        let url: String = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=" + round
+        
+        AF.request(url, method: .get).validate(statusCode: 200...300).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value) //SwiftyJSON
+                let date = json["drwNoDate"].stringValue
+                let firstPrize = json["firstWinamnt"].stringValue
+                self.amountLabel.text = date
+                self.bonusLabel.text = firstPrize + "원"
+            case .failure(let error):
+                print(error)
+            }
+        }
+        label.text = round
+        textField.text = round
+    }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let selected = String(list[row])
-        label.text = selected
-        textField.text = selected
+        callLotteryRequest(selected)
     }
-//
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return String(list[row])
     }
