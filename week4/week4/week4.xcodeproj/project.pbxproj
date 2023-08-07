@@ -16,6 +16,9 @@
 		57A136F52A8096AF00EAF4A2 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 57A136F42A8096AF00EAF4A2 /* SwiftyJSON */; };
 		57A136F82A8096B900EAF4A2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 57A136F72A8096B900EAF4A2 /* Alamofire */; };
 		57A136FB2A8096C300EAF4A2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 57A136FA2A8096C300EAF4A2 /* Kingfisher */; };
+		57A136FD2A809C0100EAF4A2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 57A136FC2A809C0100EAF4A2 /* .gitignore */; };
+		57A402292A809C4700B6DA20 /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A402282A809C4700B6DA20 /* TranslationViewController.swift */; };
+		57A4022B2A809C5600B6DA20 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4022A2A809C5600B6DA20 /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		57A136E82A80966E00EAF4A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A136EB2A80966E00EAF4A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57A136ED2A80966E00EAF4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57A136FC2A809C0100EAF4A2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		57A402282A809C4700B6DA20 /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
+		57A4022A2A809C5600B6DA20 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,9 @@
 				57A136DF2A80966E00EAF4A2 /* AppDelegate.swift */,
 				57A136E12A80966E00EAF4A2 /* SceneDelegate.swift */,
 				57A136E32A80966E00EAF4A2 /* ViewController.swift */,
+				57A136FC2A809C0100EAF4A2 /* .gitignore */,
+				57A402282A809C4700B6DA20 /* TranslationViewController.swift */,
+				57A4022A2A809C5600B6DA20 /* APIKey.swift */,
 				57A136E52A80966E00EAF4A2 /* Main.storyboard */,
 				57A136E82A80966E00EAF4A2 /* Assets.xcassets */,
 				57A136EA2A80966E00EAF4A2 /* LaunchScreen.storyboard */,
@@ -141,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A136FD2A809C0100EAF4A2 /* .gitignore in Resources */,
 				57A136EC2A80966E00EAF4A2 /* LaunchScreen.storyboard in Resources */,
 				57A136E92A80966E00EAF4A2 /* Assets.xcassets in Resources */,
 				57A136E72A80966E00EAF4A2 /* Main.storyboard in Resources */,
@@ -154,9 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A402292A809C4700B6DA20 /* TranslationViewController.swift in Sources */,
 				57A136E42A80966E00EAF4A2 /* ViewController.swift in Sources */,
 				57A136E02A80966E00EAF4A2 /* AppDelegate.swift in Sources */,
 				57A136E22A80966E00EAF4A2 /* SceneDelegate.swift in Sources */,
+				57A4022B2A809C5600B6DA20 /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
