@@ -12,14 +12,17 @@ import SwiftyJSON
 class LottoViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
     
     private var list: [Int] = Array(1...1079).reversed()
-    
-    @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var label: UILabel!
-    
-    @IBOutlet weak var bonusLabel: UILabel!
-    
     @IBOutlet weak var textField: UITextField!
     let pickerView = UIPickerView()
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var prizeLabel: UILabel!
+    
+    
+    
+    @IBOutlet weak var numberLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.tintColor = .clear
@@ -47,15 +50,29 @@ class LottoViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDa
             switch response.result {
             case .success(let value):
                 let json = JSON(value) //SwiftyJSON
+                print(json)
                 let date = json["drwNoDate"].stringValue
                 let firstPrize = json["firstWinamnt"].stringValue
-                self.amountLabel.text = date
-                self.bonusLabel.text = firstPrize + "원"
+                
+                var numbers:[Int] = []
+                numbers.append(json["drwtNo1"].intValue)
+                numbers.append(json["drwtNo2"].intValue)
+                numbers.append(json["drwtNo3"].intValue)
+                numbers.append(json["drwtNo4"].intValue)
+                numbers.append(json["drwtNo5"].intValue)
+                numbers.append(json["drwtNo6"].intValue)
+                
+                let bonus = json["bnusNo"].intValue
+                
+                self.dateLabel.text = date
+                self.prizeLabel.text = "1등 상금:" + firstPrize + "원"
+                self.numberLabel.text = "당첨번호:\(numbers) \n 보너스:\(bonus.description)"
+                
             case .failure(let error):
                 print(error)
             }
         }
-        label.text = round
+        label.text = round + "회차"
         textField.text = round
     }
     
