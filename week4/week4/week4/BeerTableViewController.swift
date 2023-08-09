@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 class BeerTableViewController: UITableViewController {
-    let limit = 5
+    let limit = 10
     var beerList: [String] = []
 
     override func viewDidLoad() {

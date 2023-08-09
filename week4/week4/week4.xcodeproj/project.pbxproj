@@ -11,6 +11,7 @@
 		5741006F2A81E7AF004A67AC /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5741006E2A81E7AF004A67AC /* VideoViewController.swift */; };
 		574100712A820CCD004A67AC /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574100702A820CCD004A67AC /* BeerViewController.swift */; };
 		574100732A82134D004A67AC /* BeerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574100722A82134D004A67AC /* BeerTableViewController.swift */; };
+		574100752A832315004A67AC /* tableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574100742A832315004A67AC /* tableViewCell.swift */; };
 		57A136E02A80966E00EAF4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A136DF2A80966E00EAF4A2 /* AppDelegate.swift */; };
 		57A136E22A80966E00EAF4A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A136E12A80966E00EAF4A2 /* SceneDelegate.swift */; };
 		57A136E42A80966E00EAF4A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A136E32A80966E00EAF4A2 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		5741006E2A81E7AF004A67AC /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		574100702A820CCD004A67AC /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		574100722A82134D004A67AC /* BeerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewController.swift; sourceTree = "<group>"; };
+		574100742A832315004A67AC /* tableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewCell.swift; sourceTree = "<group>"; };
 		57A136DC2A80966E00EAF4A2 /* week4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A136DF2A80966E00EAF4A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57A136E12A80966E00EAF4A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				574100722A82134D004A67AC /* BeerTableViewController.swift */,
 				574100702A820CCD004A67AC /* BeerViewController.swift */,
 				5741006E2A81E7AF004A67AC /* VideoViewController.swift */,
+				574100742A832315004A67AC /* tableViewCell.swift */,
 				5741006C2A81C4CB004A67AC /* WeatherViewController.swift */,
 				57A136E82A80966E00EAF4A2 /* Assets.xcassets */,
 				57A136EA2A80966E00EAF4A2 /* LaunchScreen.storyboard */,
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				574100712A820CCD004A67AC /* BeerViewController.swift in Sources */,
+				574100752A832315004A67AC /* tableViewCell.swift in Sources */,
 				57A402292A809C4700B6DA20 /* TranslationViewController.swift in Sources */,
 				5741006F2A81E7AF004A67AC /* VideoViewController.swift in Sources */,
 				5741006D2A81C4CB004A67AC /* WeatherViewController.swift in Sources */,
