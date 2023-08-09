@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+/*
+ 현재 사용 안함
+ */
 class SearchViewController: UIViewController {
 
     override func viewDidLoad() {

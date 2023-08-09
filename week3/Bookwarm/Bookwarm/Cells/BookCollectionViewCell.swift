@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class BookCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var likeButton: UIButton!
@@ -23,20 +23,11 @@ class BookCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
        //set
     }
-    func setCell(row cell: Movie){
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 1
-        let fs = formatter.string(for: cell.rate)
-        cellRatingLabel?.text = fs
-        
-        backgroundColor = cell.backgroundColor
-        cellLabel?.text = cell.title
-        
-        let image = UIImage(named: cell.title) ?? UIImage(systemName: "picture")
-        
-        cellImageView.image = image
-        likeButton.setImage(cell.isLiked == true ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
-        
+    func setCell(row book: Book){
+        cellRatingLabel?.text = book.authors
+        cellLabel?.text = book.title
+        cellImageView.kf.setImage(with: URL(string: book.thumbnail))
+        likeButton.setImage(book.isLiked == true ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
         
     }
 }
