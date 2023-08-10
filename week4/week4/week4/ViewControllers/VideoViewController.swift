@@ -19,7 +19,6 @@ struct Video{
      "play_time" : 403
      */
     
-    
     let date: String
     let thumb: String
     let author: String
@@ -36,6 +35,7 @@ struct Video{
 class VideoViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var searchBar: UISearchBar!
     var videoList: [Video] = []
     var page = 1

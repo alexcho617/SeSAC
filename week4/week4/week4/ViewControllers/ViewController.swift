@@ -18,19 +18,25 @@ struct Movie{
 class ViewController: UIViewController {
     @IBOutlet weak var movieTableView: UITableView!
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var movieList: [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         movieTableView.delegate = self
         movieTableView.dataSource = self
+        searchBar.delegate = self
         movieTableView.rowHeight = 70
-        callRequest()
+        indicator.isHidden = true
         
     }
     
-    func callRequest(){
-        let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=20230807"
+    func callRequest(date: String){
+        self.indicator.isHidden = false
+        self.indicator.startAnimating()
+        let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=\(date)"
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -39,15 +45,24 @@ class ViewController: UIViewController {
                 for item in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue{
                     self.movieList.append(Movie(title: item["movieNm"].stringValue, release: item["openDt"].stringValue, count: item["audiAcc"].stringValue))
                 }
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
                 self.movieTableView.reloadData()
+                
             case .failure(let error):
                 print(error)
             }
         }
     }
-
-
 }
+
+extension ViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        movieList.removeAll()
+        callRequest(date: searchBar.text!)
+    }
+}
+
 
 extension ViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,9 +76,5 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         cell.detailTextLabel?.text = "\(indexPath.row + 1)위 \(movieList[indexPath.row].release) \(movieList[indexPath.row].count)명"
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        70
-//    }
     
 }

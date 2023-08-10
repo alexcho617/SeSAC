@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yQe-4E-3os">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gjw-iw-JBm">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -56,6 +56,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="IRj-7Z-Nuw">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -64,13 +67,17 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cqo-p1-nGP" secondAttribute="trailing" id="8n6-aP-hdp"/>
                             <constraint firstItem="qVO-f5-uud" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="B8j-5L-JIk"/>
                             <constraint firstItem="Cqo-p1-nGP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BI4-pi-uS3"/>
+                            <constraint firstItem="IRj-7Z-Nuw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LGz-M9-poB"/>
                             <constraint firstItem="qVO-f5-uud" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QLX-yb-hsb"/>
+                            <constraint firstItem="IRj-7Z-Nuw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TbV-0T-eLw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cqo-p1-nGP" secondAttribute="bottom" id="cap-Gd-FUh"/>
                             <constraint firstItem="qVO-f5-uud" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sQI-td-YPf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="IRj-7Z-Nuw" id="w3J-yr-nXd"/>
                         <outlet property="movieTableView" destination="Cqo-p1-nGP" id="0yJ-GE-zNA"/>
+                        <outlet property="searchBar" destination="qVO-f5-uud" id="aFz-FH-fMh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -191,6 +198,66 @@
             </objects>
             <point key="canvasLocation" x="953" y="673"/>
         </scene>
+        <!--Translation View Controller-->
+        <scene sceneID="nUY-iU-bPC">
+            <objects>
+                <viewController storyboardIdentifier="TranslationViewController" id="gjw-iw-JBm" customClass="TranslationViewController" customModule="week4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze3-0z-zny">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="네이버 오픈 API를 이용해 창의적인 애플리케이션을 제작해 보세요." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gpF-Rt-rm0">
+                                <rect key="frame" x="20" y="79" width="353" height="314.66666666666669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uI7-cc-5Kt">
+                                <rect key="frame" x="20" y="483.66666666666674" width="353" height="314.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLw-oM-Ev8">
+                                <rect key="frame" x="20" y="413.66666666666669" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Org-6i-jb5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="requestButtonClicked:" destination="gjw-iw-JBm" eventType="touchUpInside" id="LOg-mp-SuN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bhN-kU-44h"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bhN-kU-44h" firstAttribute="trailing" secondItem="LLw-oM-Ev8" secondAttribute="trailing" constant="20" id="5a6-zJ-X2o"/>
+                            <constraint firstItem="uI7-cc-5Kt" firstAttribute="top" secondItem="LLw-oM-Ev8" secondAttribute="bottom" constant="20" id="C1g-51-jHd"/>
+                            <constraint firstItem="uI7-cc-5Kt" firstAttribute="leading" secondItem="bhN-kU-44h" secondAttribute="leading" constant="20" id="H9y-3Z-2jx"/>
+                            <constraint firstItem="bhN-kU-44h" firstAttribute="bottom" secondItem="uI7-cc-5Kt" secondAttribute="bottom" constant="20" id="HUL-4G-kXy"/>
+                            <constraint firstItem="bhN-kU-44h" firstAttribute="trailing" secondItem="uI7-cc-5Kt" secondAttribute="trailing" constant="20" id="RSJ-W6-s15"/>
+                            <constraint firstItem="gpF-Rt-rm0" firstAttribute="top" secondItem="bhN-kU-44h" secondAttribute="top" constant="20" id="Wng-M6-Kwc"/>
+                            <constraint firstItem="gpF-Rt-rm0" firstAttribute="leading" secondItem="bhN-kU-44h" secondAttribute="leading" constant="20" id="abe-1C-3KV"/>
+                            <constraint firstItem="LLw-oM-Ev8" firstAttribute="leading" secondItem="bhN-kU-44h" secondAttribute="leading" constant="20" id="abu-y6-MCc"/>
+                            <constraint firstItem="uI7-cc-5Kt" firstAttribute="height" secondItem="gpF-Rt-rm0" secondAttribute="height" id="c9l-CH-eGx"/>
+                            <constraint firstItem="LLw-oM-Ev8" firstAttribute="top" secondItem="gpF-Rt-rm0" secondAttribute="bottom" constant="20" id="k6j-jn-3Xw"/>
+                            <constraint firstItem="bhN-kU-44h" firstAttribute="trailing" secondItem="gpF-Rt-rm0" secondAttribute="trailing" constant="20" id="xk5-xz-N0W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="originalTextView" destination="gpF-Rt-rm0" id="Bg7-yP-pAa"/>
+                        <outlet property="requestButton" destination="LLw-oM-Ev8" id="EY1-GU-LJn"/>
+                        <outlet property="translatedTextView" destination="uI7-cc-5Kt" id="qL6-ir-sXJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hlr-bd-awj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1716.7938931297708" y="672.53521126760563"/>
+        </scene>
         <!--Weather View Controller-->
         <scene sceneID="uHa-G2-0s7">
             <objects>
@@ -305,6 +372,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Nbv-Fw-mcl">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9YX-rg-m49"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -313,12 +383,15 @@
                             <constraint firstItem="4CZ-Gk-eul" firstAttribute="leading" secondItem="9YX-rg-m49" secondAttribute="leading" id="DfZ-Dc-E5U"/>
                             <constraint firstItem="hPX-tH-0EB" firstAttribute="top" secondItem="4CZ-Gk-eul" secondAttribute="bottom" id="RYa-XM-Pbg"/>
                             <constraint firstItem="4CZ-Gk-eul" firstAttribute="top" secondItem="9YX-rg-m49" secondAttribute="top" id="Rg5-y1-rVC"/>
+                            <constraint firstItem="Nbv-Fw-mcl" firstAttribute="centerX" secondItem="wJd-dI-vuX" secondAttribute="centerX" id="RjX-Ye-HFZ"/>
                             <constraint firstItem="9YX-rg-m49" firstAttribute="bottom" secondItem="hPX-tH-0EB" secondAttribute="bottom" id="iSz-Yn-nNd"/>
                             <constraint firstItem="hPX-tH-0EB" firstAttribute="leading" secondItem="9YX-rg-m49" secondAttribute="leading" id="tCB-7I-HFG"/>
                             <constraint firstItem="4CZ-Gk-eul" firstAttribute="trailing" secondItem="9YX-rg-m49" secondAttribute="trailing" id="tqy-fc-1CB"/>
+                            <constraint firstItem="Nbv-Fw-mcl" firstAttribute="centerY" secondItem="wJd-dI-vuX" secondAttribute="centerY" id="zPW-cO-2Lc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="indicator" destination="Nbv-Fw-mcl" id="mcw-Zh-xKN"/>
                         <outlet property="searchBar" destination="4CZ-Gk-eul" id="NCL-te-W2T"/>
                         <outlet property="tableView" destination="hPX-tH-0EB" id="xQ9-55-gmv"/>
                     </connections>
@@ -329,6 +402,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
