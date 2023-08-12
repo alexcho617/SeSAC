@@ -24,6 +24,13 @@
 		57A136FD2A809C0100EAF4A2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 57A136FC2A809C0100EAF4A2 /* .gitignore */; };
 		57A402292A809C4700B6DA20 /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A402282A809C4700B6DA20 /* TranslationViewController.swift */; };
 		57A4022B2A809C5600B6DA20 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A4022A2A809C5600B6DA20 /* APIKey.swift */; };
+		57CAC1162A85FA2900CF5385 /* AsyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CAC1152A85FA2900CF5385 /* AsyncViewController.swift */; };
+		57E8B7112A85BD2A00F1F061 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B7102A85BD2A00F1F061 /* UserDefaultHelper.swift */; };
+		57E8B7182A85C54B00F1F061 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B7172A85C54B00F1F061 /* Endpoint.swift */; };
+		57E8B71A2A85C5CB00F1F061 /* URL + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B7192A85C5CB00F1F061 /* URL + Extension.swift */; };
+		57E8B71C2A85C78B00F1F061 /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B71B2A85C78B00F1F061 /* KakaoAPIManager.swift */; };
+		57E8B71E2A85C84B00F1F061 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B71D2A85C84B00F1F061 /* ReusableViewProtocol.swift */; };
+		57E8B7202A85E37000F1F061 /* TranslateAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E8B71F2A85E37000F1F061 /* TranslateAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +50,13 @@
 		57A136FC2A809C0100EAF4A2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		57A402282A809C4700B6DA20 /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
 		57A4022A2A809C5600B6DA20 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		57CAC1152A85FA2900CF5385 /* AsyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AsyncViewController.swift; path = week4/ViewControllers/AsyncViewController.swift; sourceTree = SOURCE_ROOT; };
+		57E8B7102A85BD2A00F1F061 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
+		57E8B7172A85C54B00F1F061 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		57E8B7192A85C5CB00F1F061 /* URL + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL + Extension.swift"; sourceTree = "<group>"; };
+		57E8B71B2A85C78B00F1F061 /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
+		57E8B71D2A85C84B00F1F061 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		57E8B71F2A85E37000F1F061 /* TranslateAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,7 @@
 		574100832A84651D004A67AC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				57CAC1152A85FA2900CF5385 /* AsyncViewController.swift */,
 				574100722A82134D004A67AC /* BeerTableViewController.swift */,
 				57A402282A809C4700B6DA20 /* TranslationViewController.swift */,
 				574100702A820CCD004A67AC /* BeerViewController.swift */,
@@ -94,15 +109,45 @@
 				57A136DF2A80966E00EAF4A2 /* AppDelegate.swift */,
 				57A136E12A80966E00EAF4A2 /* SceneDelegate.swift */,
 				574100832A84651D004A67AC /* ViewControllers */,
-				57A4022A2A809C5600B6DA20 /* APIKey.swift */,
-				574100742A832315004A67AC /* tableViewCell.swift */,
-				57A136E52A80966E00EAF4A2 /* Main.storyboard */,
-				57A136EA2A80966E00EAF4A2 /* LaunchScreen.storyboard */,
+				57E8B7142A85C51A00F1F061 /* Helpers */,
+				57E8B7162A85C53700F1F061 /* ViewCells */,
+				57E8B7152A85C52900F1F061 /* Storyboard */,
 				57A136E82A80966E00EAF4A2 /* Assets.xcassets */,
 				57A136ED2A80966E00EAF4A2 /* Info.plist */,
 				57A136FC2A809C0100EAF4A2 /* .gitignore */,
 			);
 			path = week4;
+			sourceTree = "<group>";
+		};
+		57E8B7142A85C51A00F1F061 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				57E8B71D2A85C84B00F1F061 /* ReusableViewProtocol.swift */,
+				57E8B7102A85BD2A00F1F061 /* UserDefaultHelper.swift */,
+				57A4022A2A809C5600B6DA20 /* APIKey.swift */,
+				57E8B7172A85C54B00F1F061 /* Endpoint.swift */,
+				57E8B71B2A85C78B00F1F061 /* KakaoAPIManager.swift */,
+				57E8B71F2A85E37000F1F061 /* TranslateAPIManager.swift */,
+				57E8B7192A85C5CB00F1F061 /* URL + Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		57E8B7152A85C52900F1F061 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				57A136E52A80966E00EAF4A2 /* Main.storyboard */,
+				57A136EA2A80966E00EAF4A2 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		57E8B7162A85C53700F1F061 /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				574100742A832315004A67AC /* tableViewCell.swift */,
+			);
+			path = ViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,13 +235,20 @@
 				574100712A820CCD004A67AC /* BeerViewController.swift in Sources */,
 				574100752A832315004A67AC /* tableViewCell.swift in Sources */,
 				57A402292A809C4700B6DA20 /* TranslationViewController.swift in Sources */,
+				57E8B7182A85C54B00F1F061 /* Endpoint.swift in Sources */,
 				5741006F2A81E7AF004A67AC /* VideoViewController.swift in Sources */,
+				57E8B71E2A85C84B00F1F061 /* ReusableViewProtocol.swift in Sources */,
 				5741006D2A81C4CB004A67AC /* WeatherViewController.swift in Sources */,
+				57E8B7202A85E37000F1F061 /* TranslateAPIManager.swift in Sources */,
 				57A136E42A80966E00EAF4A2 /* ViewController.swift in Sources */,
 				57A136E02A80966E00EAF4A2 /* AppDelegate.swift in Sources */,
+				57E8B71C2A85C78B00F1F061 /* KakaoAPIManager.swift in Sources */,
 				57A136E22A80966E00EAF4A2 /* SceneDelegate.swift in Sources */,
+				57E8B71A2A85C5CB00F1F061 /* URL + Extension.swift in Sources */,
 				57A4022B2A809C5600B6DA20 /* APIKey.swift in Sources */,
+				57E8B7112A85BD2A00F1F061 /* UserDefaultHelper.swift in Sources */,
 				574100732A82134D004A67AC /* BeerTableViewController.swift in Sources */,
+				57CAC1162A85FA2900CF5385 /* AsyncViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

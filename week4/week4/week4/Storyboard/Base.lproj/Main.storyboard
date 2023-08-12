@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gjw-iw-JBm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xha-9J-QIU">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -159,6 +159,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twa-ck-ZhC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="672.53521126760563"/>
+        </scene>
+        <!--Async View Controller-->
+        <scene sceneID="6Ub-mD-FVA">
+            <objects>
+                <viewController storyboardIdentifier="AsyncViewController" id="xha-9J-QIU" customClass="AsyncViewController" customModule="week4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X1p-cB-Rns">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wKT-JI-hEh">
+                                <rect key="frame" x="98.333333333333329" y="78.999999999999986" width="196.33333333333337" height="196.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wKT-JI-hEh" secondAttribute="height" multiplier="1:1" id="OZl-Ut-in4"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oxO-qT-j2L">
+                                <rect key="frame" x="20" y="409" width="353" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZEF-Hg-fAM">
+                                <rect key="frame" x="20" y="261" width="353" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ql4-ZO-hLM">
+                                <rect key="frame" x="20" y="557" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23Z-wa-8s6">
+                                <rect key="frame" x="89" y="557" width="96" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="getImage"/>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="xha-9J-QIU" eventType="touchUpInside" id="ebo-8e-axu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgi-RA-Vvj">
+                                <rect key="frame" x="205" y="557" width="64" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Clear"/>
+                                <connections>
+                                    <action selector="clearButtonClicked:" destination="xha-9J-QIU" eventType="touchUpInside" id="d85-zp-ANF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ilF-6Z-Cxn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wKT-JI-hEh" firstAttribute="top" secondItem="ilF-6Z-Cxn" secondAttribute="top" constant="20" id="12C-cf-Ea1"/>
+                            <constraint firstItem="wKT-JI-hEh" firstAttribute="centerX" secondItem="X1p-cB-Rns" secondAttribute="centerX" id="Fd8-QZ-MP7"/>
+                            <constraint firstItem="wKT-JI-hEh" firstAttribute="width" secondItem="X1p-cB-Rns" secondAttribute="width" multiplier="0.5" id="jyX-Z3-UwR"/>
+                            <constraint firstItem="wKT-JI-hEh" firstAttribute="centerX" secondItem="X1p-cB-Rns" secondAttribute="centerX" id="vEQ-hU-mxY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="first" destination="wKT-JI-hEh" id="ohm-NP-R7v"/>
+                        <outlet property="second" destination="ZEF-Hg-fAM" id="6ez-my-wjz"/>
+                        <outlet property="third" destination="oxO-qT-j2L" id="6Ji-gk-TxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z9N-TW-P07" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="1352"/>
         </scene>
         <!--Beer Table View Controller-->
         <scene sceneID="V7X-3b-a8l">
@@ -391,9 +455,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Nbv-Fw-mcl">
-                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9YX-rg-m49"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -402,15 +463,12 @@
                             <constraint firstItem="4CZ-Gk-eul" firstAttribute="leading" secondItem="9YX-rg-m49" secondAttribute="leading" id="DfZ-Dc-E5U"/>
                             <constraint firstItem="hPX-tH-0EB" firstAttribute="top" secondItem="4CZ-Gk-eul" secondAttribute="bottom" id="RYa-XM-Pbg"/>
                             <constraint firstItem="4CZ-Gk-eul" firstAttribute="top" secondItem="9YX-rg-m49" secondAttribute="top" id="Rg5-y1-rVC"/>
-                            <constraint firstItem="Nbv-Fw-mcl" firstAttribute="centerX" secondItem="wJd-dI-vuX" secondAttribute="centerX" id="RjX-Ye-HFZ"/>
                             <constraint firstItem="9YX-rg-m49" firstAttribute="bottom" secondItem="hPX-tH-0EB" secondAttribute="bottom" id="iSz-Yn-nNd"/>
                             <constraint firstItem="hPX-tH-0EB" firstAttribute="leading" secondItem="9YX-rg-m49" secondAttribute="leading" id="tCB-7I-HFG"/>
                             <constraint firstItem="4CZ-Gk-eul" firstAttribute="trailing" secondItem="9YX-rg-m49" secondAttribute="trailing" id="tqy-fc-1CB"/>
-                            <constraint firstItem="Nbv-Fw-mcl" firstAttribute="centerY" secondItem="wJd-dI-vuX" secondAttribute="centerY" id="zPW-cO-2Lc"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="indicator" destination="Nbv-Fw-mcl" id="mcw-Zh-xKN"/>
                         <outlet property="searchBar" destination="4CZ-Gk-eul" id="NCL-te-W2T"/>
                         <outlet property="tableView" destination="hPX-tH-0EB" id="xQ9-55-gmv"/>
                     </connections>

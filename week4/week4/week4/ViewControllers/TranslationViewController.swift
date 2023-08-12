@@ -11,9 +11,6 @@ import SwiftyJSON
 
 class TranslationViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
-   
-    
     @IBOutlet weak var sourceTextField: UITextField!
     
     @IBOutlet weak var targetTextField: UITextField!
@@ -30,6 +27,8 @@ class TranslationViewController: UIViewController, UIPickerViewDelegate, UIPicke
     let targetPickerView = UIPickerView()
     var source: String = "ko"
     var target: String = "en"
+  /// Singleton pattern
+//    let helper = UserDefaultHelper()
     override func viewDidLoad() {
         super.viewDidLoad()
         sourcePickerView.delegate = self
@@ -40,10 +39,31 @@ class TranslationViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         sourceTextField.inputView = sourcePickerView
         targetTextField.inputView = targetPickerView
-
+        
+        configureView()
+//
+//        //before refactoring
+//        UserDefaults.standard.set("Alex", forKey: "nickname")
+//        UserDefaults.standard.set(12, forKey: "age")
+//
+//        UserDefaults.standard.string(forKey: "nickname")
+//        UserDefaults.standard.integer(forKey: "age")
+//
+//        //after refactoring
+//        UserDefaultHelper.standard.nickname = "alex"
+//        UserDefaultHelper.standard.age = 14
+//
+//        print(UserDefaultHelper.standard.nickname)
+//        print(UserDefaultHelper.standard.age)
+//
     }
     
-    
+    func configureView(){
+        source = langCode[0]
+        sourceTextField.text = languages[0]
+        target = langCode[1]
+        targetTextField.text = languages[1]
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
@@ -67,32 +87,10 @@ class TranslationViewController: UIViewController, UIPickerViewDelegate, UIPicke
         }
     }
     
-//    "Content-Type" : "application/x-www-form-urlencoded" Alamofire가 이미 처리
     @IBAction func requestButtonClicked(_ sender: UIButton) {
-        let url = "https://openapi.naver.com/v1/papago/n2mt"
-        let headers: HTTPHeaders = [
-            "X-Naver-Client-Id": "eJG7WB__DcOjqApdVE1E",
-            "X-Naver-Client-Secret": APIKey.naverKey,
-        ]
-        let param: Parameters = [
-            "source": source,
-            "target": target,
-            "text": originalTextView.text ?? ""
-        ]
-        
-        AF.request(url, method: .post, parameters: param ,headers: headers).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                self.translatedTextView.text = json["message"]["result"]["translatedText"].stringValue
-                
-                
-            case .failure(let error):
-                print(error)
-            }
+        TranslateAPIManager.shared.callRequest(source: source, target: target, text: originalTextView.text ?? ""){ result in
+            self.translatedTextView.text = result
         }
     }
-    
     
 }
