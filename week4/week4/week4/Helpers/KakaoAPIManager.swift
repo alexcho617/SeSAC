@@ -29,5 +29,6 @@ class KakaoAPIManager{
             case .failure(let error):
                 print(error)
             }
-        }    }
+        }
+    }
 }
