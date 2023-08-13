@@ -14,9 +14,21 @@ enum Endpoint{
     var requestURL: String{
         switch self {
         case .trend:
-            return URL.makeEndPointString("trending/movie/week?api_key=\(APIKey.tmdbKey)")
+            return URL.makeEndPointString("trending/")
         case .credits:
             return URL.makeEndPointString("movie/")
         }
     }
+}
+
+enum Media: String{
+    case all = "all"
+    case movie = "movie"
+    case tv = "tv"
+    case person = "person"
+}
+
+enum TimeWindow: String{
+    case day = "day"
+    case week = "week"
 }

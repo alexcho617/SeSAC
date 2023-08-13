@@ -15,9 +15,9 @@ class TmdbAPIManager{
         
     }
     
-    func callTrendsRequest(){
-        let url = Endpoint.trend.requestURL
- 
+    func callTrendsRequest(type: Media, timeWindow: TimeWindow){
+        let url = Endpoint.trend.requestURL + "\(type.rawValue)/\(timeWindow.rawValue)" + "?api_key=\(APIKey.tmdbKey)"
+        print(url)
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -30,8 +30,9 @@ class TmdbAPIManager{
     }
     
     
-    func callCreditsRequest(of movieId: Int){
-        let url = Endpoint.credits.requestURL + "\(String(movieId))/credits?api_key=\(APIKey.tmdbKey)"
+    func callCreditsRequest(of mediaId: Int){
+        let url = Endpoint.credits.requestURL + "\(String(mediaId))/credits?api_key=\(APIKey.tmdbKey)"
+        print(url)
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):

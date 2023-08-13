@@ -19,7 +19,7 @@
 		5769B0242A87C183008DC72A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5769B0232A87C183008DC72A /* Alamofire */; };
 		5769B0272A87C197008DC72A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5769B0262A87C196008DC72A /* Kingfisher */; };
 		5769B0292A87CA72008DC72A /* URL + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B0282A87CA72008DC72A /* URL + Extension.swift */; };
-		5769B02C2A87CBF5008DC72A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B02B2A87CBF5008DC72A /* Endpoint.swift */; };
+		5769B02C2A87CBF5008DC72A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B02B2A87CBF5008DC72A /* Enums.swift */; };
 		5769B02E2A87D0F9008DC72A /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B02D2A87D0F9008DC72A /* CreditsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +35,7 @@
 		5769B01A2A87C0DF008DC72A /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
 		5769B01D2A87C15A008DC72A /* TmdbAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbAPIManager.swift; sourceTree = "<group>"; };
 		5769B0282A87CA72008DC72A /* URL + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL + Extension.swift"; sourceTree = "<group>"; };
-		5769B02B2A87CBF5008DC72A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5769B02B2A87CBF5008DC72A /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		5769B02D2A87D0F9008DC72A /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,14 +73,13 @@
 		574D572A2A873AA30007996C /* tmdb */ = {
 			isa = PBXGroup;
 			children = (
-				5769B02A2A87CBD3008DC72A /* Enums */,
 				574D572B2A873AA30007996C /* AppDelegate.swift */,
-				5769B0192A87C0CA008DC72A /* ViewControllers */,
 				574D572D2A873AA30007996C /* SceneDelegate.swift */,
+				5769B0192A87C0CA008DC72A /* ViewControllers */,
 				5769B01C2A87C114008DC72A /* Helpers */,
-				574D57342A873AA40007996C /* Assets.xcassets */,
-				574D57362A873AA40007996C /* LaunchScreen.storyboard */,
 				574D57312A873AA30007996C /* Main.storyboard */,
+				574D57362A873AA40007996C /* LaunchScreen.storyboard */,
+				574D57342A873AA40007996C /* Assets.xcassets */,
 				574D57392A873AA40007996C /* Info.plist */,
 			);
 			path = tmdb;
@@ -98,18 +97,11 @@
 		5769B01C2A87C114008DC72A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				5769B02B2A87CBF5008DC72A /* Enums.swift */,
 				5769B01D2A87C15A008DC72A /* TmdbAPIManager.swift */,
 				5769B0282A87CA72008DC72A /* URL + Extension.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		5769B02A2A87CBD3008DC72A /* Enums */ = {
-			isa = PBXGroup;
-			children = (
-				5769B02B2A87CBF5008DC72A /* Endpoint.swift */,
-			);
-			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5769B02C2A87CBF5008DC72A /* Endpoint.swift in Sources */,
+				5769B02C2A87CBF5008DC72A /* Enums.swift in Sources */,
 				5769B01B2A87C0DF008DC72A /* TrendViewController.swift in Sources */,
 				574D572C2A873AA30007996C /* AppDelegate.swift in Sources */,
 				5769B02E2A87D0F9008DC72A /* CreditsViewController.swift in Sources */,

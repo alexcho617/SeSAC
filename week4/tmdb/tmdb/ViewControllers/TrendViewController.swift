@@ -12,6 +12,6 @@ class TrendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("calling trends")
-        TmdbAPIManager.shared.callTrendsRequest()
+        TmdbAPIManager.shared.callTrendsRequest(type: Media.movie, timeWindow: TimeWindow.week)
     }
 }
