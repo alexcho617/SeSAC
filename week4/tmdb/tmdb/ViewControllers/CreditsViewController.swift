@@ -8,11 +8,27 @@
 import UIKit
 
 class CreditsViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var textView: UITextView!
+    
+    var mediaId: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("calling credits")
-        TmdbAPIManager.shared.callCreditsRequest(of: 569094)
+        if let mediaId{
+            titleLabel.text = "Credits of " + String(mediaId)
 
+            print("calling credits")
+            TmdbAPIManager.shared.callCreditsRequest(of: mediaId){json in
+//                print(json)
+                self.textView.text = json["cast"].arrayValue[0].description + json["cast"].arrayValue[1].description + json["cast"].arrayValue[2].description
+            }
+        }
+        
+    }
+    func configureView(){
     }
 }

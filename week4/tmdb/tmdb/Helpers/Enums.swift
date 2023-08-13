@@ -21,14 +21,15 @@ enum Endpoint{
     }
 }
 
-enum Media: String{
+enum MediaType: String{
     case all = "all"
     case movie = "movie"
     case tv = "tv"
-    case person = "person"
+    case person = "pe4rson"
 }
 
 enum TimeWindow: String{
     case day = "day"
     case week = "week"
 }
+
