@@ -12,6 +12,7 @@
 		574100712A820CCD004A67AC /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574100702A820CCD004A67AC /* BeerViewController.swift */; };
 		574100732A82134D004A67AC /* BeerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574100722A82134D004A67AC /* BeerTableViewController.swift */; };
 		574100752A832315004A67AC /* tableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574100742A832315004A67AC /* tableViewCell.swift */; };
+		5769B03E2A8A024D008DC72A /* BoxOfficeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5769B03D2A8A024D008DC72A /* BoxOfficeData.swift */; };
 		57A136E02A80966E00EAF4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A136DF2A80966E00EAF4A2 /* AppDelegate.swift */; };
 		57A136E22A80966E00EAF4A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A136E12A80966E00EAF4A2 /* SceneDelegate.swift */; };
 		57A136E42A80966E00EAF4A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A136E32A80966E00EAF4A2 /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 		574100702A820CCD004A67AC /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		574100722A82134D004A67AC /* BeerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewController.swift; sourceTree = "<group>"; };
 		574100742A832315004A67AC /* tableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewCell.swift; sourceTree = "<group>"; };
+		5769B03D2A8A024D008DC72A /* BoxOfficeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeData.swift; sourceTree = "<group>"; };
 		57A136DC2A80966E00EAF4A2 /* week4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A136DF2A80966E00EAF4A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57A136E12A80966E00EAF4A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				57E8B71D2A85C84B00F1F061 /* ReusableViewProtocol.swift */,
+				5769B03D2A8A024D008DC72A /* BoxOfficeData.swift */,
 				57E8B7102A85BD2A00F1F061 /* UserDefaultHelper.swift */,
 				57A4022A2A809C5600B6DA20 /* APIKey.swift */,
 				57E8B7172A85C54B00F1F061 /* Endpoint.swift */,
@@ -243,6 +246,7 @@
 				57A136E42A80966E00EAF4A2 /* ViewController.swift in Sources */,
 				57A136E02A80966E00EAF4A2 /* AppDelegate.swift in Sources */,
 				57E8B71C2A85C78B00F1F061 /* KakaoAPIManager.swift in Sources */,
+				5769B03E2A8A024D008DC72A /* BoxOfficeData.swift in Sources */,
 				57A136E22A80966E00EAF4A2 /* SceneDelegate.swift in Sources */,
 				57E8B71A2A85C5CB00F1F061 /* URL + Extension.swift in Sources */,
 				57A4022B2A809C5600B6DA20 /* APIKey.swift in Sources */,

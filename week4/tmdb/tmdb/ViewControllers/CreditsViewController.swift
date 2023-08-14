@@ -7,6 +7,9 @@
 
 import UIKit
 
+//TODO: 줄거리 부분 줄었다 늘었다 구현: TableView Cell /automaticDimension, layout, label.numberOfLines = 0 혹은 n으로 변경. var isExpanded: Bool 같은 변수로 토글하면서 관리
+
+//TODO: Credits Cast가 엄청 많던데 주연, 조연 순으로 주요 배우들만 정렬 어떻게 하나?
 class CreditsViewController: UIViewController {
     
     

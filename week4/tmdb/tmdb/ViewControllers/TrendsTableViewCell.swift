@@ -11,35 +11,47 @@ class TrendsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backdropImage: UIImageView!
     
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var genreLabel: UILabel!
+    
     @IBOutlet weak var rating: UILabel!
     
     @IBOutlet weak var title: UILabel!
     
     @IBOutlet weak var info: UILabel!
     
-    @IBOutlet weak var detailButton: UIButton!
-    
-    var media: Media?
+    var media: Result?
     var nf = NumberFormatter()
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         nf.maximumSignificantDigits = 2
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
     
     func configureView() {
+        var genre = ""
         if let media{
+            for id in media.genreIDS{
+                genre += "#\(Genre.genreDictionary[id]!) "
+            }
+            dateLabel.text = media.releaseDate
+            
+            genreLabel.text = genre
+            
             backdropImage.contentMode = .scaleAspectFill
-            backdropImage.kf.setImage(with: URL(string: media.backdropImageURL))
-            rating.text = "평점: " + (nf.string(for: media.vote_average) ?? "0.0")
+            backdropImage.kf.setImage(with: URL.getEndPointImageURL(media.backdropPath))
+            backdropImage.layer.cornerRadius = 12
+            backdropImage.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            backdropImage.layer.masksToBounds = true
+            backdropImage.clipsToBounds = true
+            
+            rating.text = "평점: " + (nf.string(for: media.voteAverage) ?? "0.0")
+            
             title.text = media.title
-            info.text = media.release_date
+            
+            info.text = media.overview
         }
         
     }

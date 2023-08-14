@@ -6,11 +6,13 @@
 //
 
 import Foundation
-    
+
+//Enums must not contain stored properties -> Instance not possible.
 enum Nasa: String, CaseIterable {
     
     static let baseURL = "https://apod.nasa.gov/apod/image/"
     
+    //case rawvalue는 데이터 아닌가?
     case one = "2308/sombrero_spitzer_3000.jpg"
     case two = "2212/NGC1365-CDK24-CDK17.jpg"
     case three = "2307/M64Hubble.jpg"
@@ -21,7 +23,15 @@ enum Nasa: String, CaseIterable {
     case eight = "2308/SunMonster_Wenz_960.jpg"
     case nine = "2307/AldrinVisor_Apollo11_4096.jpg"
     
+    //not stored proeprty, but computed properties are possible
     static var photo: URL {
         return URL(string: baseURL + self.allCases.randomElement()!.rawValue)!
+    }
+    var photo: URL {
+        return URL(string: Nasa.baseURL + Nasa.allCases.randomElement()!.rawValue)!
+    }
+    //test: instance computed property. Does not store any data, only acts as a passage
+    var test: URL{
+        return URL(string: "www.naver.com")!
     }
 }

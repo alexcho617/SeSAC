@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
   
         syncButton.addTarget(self, action: #selector(syncButtonClicked), for: .touchUpInside)
-        
+        asyncButton.addTarget(self, action: #selector(asyncButtonClicked), for: .touchUpInside)
     }
         
     @objc func syncButtonClicked() {
@@ -32,18 +32,47 @@ class ViewController: UIViewController {
         downloadImage(imageView: secondImageView, value: "second")
         downloadImage(imageView: thirdImageView, value: "third")
         downloadImage(imageView: fourthImageView, value: "fourth")
-        print("sync end")
+        print("sync end") //synchronous serial
         
     }
     
+    @objc func asyncButtonClicked(){
+        print("Async start")
+        asyncDownloadImage(imageView: firstImageView, value: "first"){ isDone in
+            print(#function,"JobState:",isDone)
+            
+        }
+//        asyncDownloadImage(imageView: secondImageView, value: "second")
+//        asyncDownloadImage(imageView: thirdImageView, value: "third")
+//        asyncDownloadImage(imageView: fourthImageView, value: "fourth")
+        print("Async end")
+    }
+    
+    //글로벌 Concurrnet 큐에 작업을 동시로 보냄
+    //언제끝날지는 모름
+    //UI는 메인 시리얼 큐에서 처리
+    func asyncDownloadImage(imageView: UIImageView, value: String, completionHandler: @escaping (Bool) -> ()) {
+        var isDone = false
+        DispatchQueue.global().async {
+            print("===1===\(value)===", Thread.isMainThread)
+            let data = try! Data(contentsOf: Nasa.photo)
+            DispatchQueue.main.async {
+                imageView.image = UIImage(data: data) //UI는  main queue 에서만 가능
+                print("===2===\(value)===",Thread.isMainThread)
+                isDone = true
+                completionHandler(isDone)
+            }
+        }
+    }
     func downloadImage(imageView: UIImageView, value: String) {
-         
+
         print("===1===\(value)===")
         let data = try! Data(contentsOf: Nasa.photo)
         imageView.image = UIImage(data: data)
         print("===2===\(value)===")
-        
+
     }
+    
      
 }
 
