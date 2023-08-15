@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
     }
     
     private func configureView(){
-        title = "detailview"
+        title = media?.title
         let nib = UINib(nibName: CastTableViewCell.identifier, bundle: nil)
         detailTableView.register(nib, forCellReuseIdentifier: CastTableViewCell.identifier)
         detailTableView.rowHeight = UITableView.automaticDimension
