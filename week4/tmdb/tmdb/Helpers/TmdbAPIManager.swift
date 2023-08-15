@@ -24,18 +24,12 @@ class TmdbAPIManager{
         }
     }
     
-    func callCreditsRequest(of mediaId: Int, completionHandler: @escaping (JSON) -> ()){
+    func callCreditsRequest(of mediaId: Int, completionHandler: @escaping (AFDataResponse<Credits>) -> ()){
         let url = Endpoint.credits.requestURL + "\(String(mediaId))/credits?api_key=\(APIKey.tmdbKey)"
-        print(url)
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                completionHandler(json)
-            case .failure(let error):
-                print(error)
-            }
+        AF.request(url, method: .get).validate().responseDecodable(of: Credits.self) { response in
+            completionHandler(response)
         }
+        
     }
     
 }
