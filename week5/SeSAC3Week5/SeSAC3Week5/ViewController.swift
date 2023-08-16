@@ -55,6 +55,7 @@ class ViewController: UIViewController {
         var isDone = false
         DispatchQueue.global().async {
             print("===1===\(value)===", Thread.isMainThread)
+            //throws try catch 한묶음
             let data = try! Data(contentsOf: Nasa.photo)
             DispatchQueue.main.async {
                 imageView.image = UIImage(data: data) //UI는  main queue 에서만 가능

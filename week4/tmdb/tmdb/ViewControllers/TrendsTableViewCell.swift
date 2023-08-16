@@ -23,6 +23,7 @@ class TrendsTableViewCell: UITableViewCell {
     
     var media: Result?
     var nf = NumberFormatter()
+    var credits: Credits?
 
     override func awakeFromNib() {
         super.awakeFromNib()
