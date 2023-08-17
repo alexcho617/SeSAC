@@ -27,6 +27,13 @@ class CodableViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        showAlert(title: "Test", message: "Testing...", buttonTitle: "Change") {
+            print("showed alert")
+            self.view.backgroundColor = .systemMint
+        }
+    }
     func validateUserInput(text: String) -> Bool{
         //empty
         guard !(text.isEmpty) else{

@@ -1,35 +1,33 @@
 //
-//  WeatherViewController.swift
+//  WeatherManager.swift
 //  week4
 //
-//  Created by Alex Cho on 2023/08/08.
+//  Created by Alex Cho on 2023/08/17.
 //
 
-import UIKit
+import Foundation
 import Alamofire
 import SwiftyJSON
-class WeatherViewController: UIViewController {
 
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var humidityLabel: UILabel!
-    @IBOutlet weak var tempLabel: UILabel!
-    @IBOutlet weak var weatherLabel: UILabel!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        WeatherManager.shared.callRequest { data in
-            self.tempLabel.text = String(data.main.temp)
-            self.humidityLabel.text = String(data.main.humidity)
-            
-        } failureHandler: {
-            self.showAlert(title: "Fail", message: "Failed to retrive weather")
-        }
-
-        
+class WeatherManager{
+    static let shared = WeatherManager()
+    private init(){
         
     }
+    
+    func callRequest(successHandler: @escaping (Weather) -> Void, failureHandler: @escaping() -> Void ){
+        let url = "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&units=metric&appid=\(APIKey.weatherKey)"
+        AF.request(url, method: .get).validate(statusCode: 200...300).responseDecodable(of: Weather.self) { response in
+            switch response.result{
+            case .success(let value):
+                successHandler(value)
+            case .failure(let error):
+                print(error)
+                failureHandler()
+            }
+        }
+    }
+
     
 //    func callRequest(){
 //        let url = "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&units=metric&appid=\(APIKey.weatherKey)"
@@ -57,13 +55,4 @@ class WeatherViewController: UIViewController {
 //            }
 //        }
 //    }
-    
-    func showAlert(title: String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Ok", style: .cancel)
-        
-        alert.addAction(cancel)
-        present(alert,animated: true)
-    }
-    
 }
