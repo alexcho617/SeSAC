@@ -15,8 +15,41 @@ class GCDBasicViewController: UIViewController {
         //        serialSync()
         //        serialAsync()
         //        concurrentSync()
-        concurrentAsyncMultiple()
+        //        concurrentAsyncMultiple()
+        groupTask()
     }
+    
+    func groupTask(){
+        let group = DispatchGroup()
+        
+        DispatchQueue.global(qos: .userInitiated).async(group: group) {
+            for i in 1...100{
+                print(i, terminator: " ")
+            }
+        }
+        DispatchQueue.global(qos: .background).async(group: group) {
+            for i in 101...200{
+                print(i, terminator: " ")
+            }
+        }
+        DispatchQueue.global(qos: .background).async(group: group) {
+            for i in 201...300{
+                print(i, terminator: " ")
+            }
+        }
+        DispatchQueue.global(qos: .background).async(group: group) {
+            for i in 301...400{
+                print(i, terminator: " ")
+            }
+        }
+        //UI update at main so generally notified at main
+        group.notify(queue: .main){
+            //update view etc
+            print("Done")
+        }
+        
+    }
+    
     
     func serialAsync(){
         print("Start")
@@ -85,16 +118,17 @@ class GCDBasicViewController: UIViewController {
     
     func concurrentAsyncMultiple(){
         print("Start")
-        for i in 1...500{
+        for i in 100...500{
             DispatchQueue.global().async {
                 sleep(1)
-                print(i, "isMain:", Thread.isMainThread, terminator: " ")
+                print(i, Thread.isMainThread, terminator: " ")
+                //                print(i, "isMain:", Thread.isMainThread, terminator: " ")
             }
             
         }
-        for i in 101...110{
+        for i in 1...10{
             sleep(1)
-            print(i, "isMain:", Thread.isMainThread, terminator: " ")
+            print(i, Thread.isMainThread, terminator: " ")
         }
         print("End")
         
