@@ -96,17 +96,11 @@
 				041AE3CC2A899B28007724AE /* AppDelegate.swift */,
 				041AE3CE2A899B28007724AE /* SceneDelegate.swift */,
 				57D664662A8EEFF5002ED603 /* Font */,
+				57D6646D2A8FCCEA002ED603 /* Models */,
+				57D6646B2A8FCC7F002ED603 /* ViewControllers */,
 				5728DB282A8C74C8009A00EB /* View */,
 				041AE3E02A899B9F007724AE /* Network */,
-				5728DB392A8DAB79009A00EB /* Lotto */,
-				041AE3D02A899B28007724AE /* ViewController.swift */,
-				041AE3D22A899B28007724AE /* Main.storyboard */,
-				5728DB312A8C777E009A00EB /* PosterViewController.swift */,
-				5728DB482A8DEC4E009A00EB /* RecommendationModel.swift */,
-				5728DB3C2A8DB068009A00EB /* CollectionViewAttributeProtocol.swift */,
-				5728DB3E2A8DB250009A00EB /* ReusableViewProtocol.swift */,
-				5728DB372A8DA31C009A00EB /* Extension + Alert.swift */,
-				5728DB262A8C4B0F009A00EB /* CodableViewController.swift */,
+				57D6646C2A8FCCA9002ED603 /* Helpers */,
 				041AE3D52A899B29007724AE /* Assets.xcassets */,
 				041AE3D72A899B29007724AE /* LaunchScreen.storyboard */,
 				041AE3DA2A899B29007724AE /* Info.plist */,
@@ -119,7 +113,7 @@
 			children = (
 				041AE3E32A899D2C007724AE /* APIKey.swift */,
 				041AE3E62A899D84007724AE /* Endpoint.swift */,
-				041AE3E82A89A265007724AE /* GCDBasicViewController.swift */,
+				5728DB3A2A8DABF1009A00EB /* LottoManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -127,6 +121,7 @@
 		5728DB282A8C74C8009A00EB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				041AE3D22A899B28007724AE /* Main.storyboard */,
 				5728DB292A8C7503009A00EB /* PosterCollectionViewCell.swift */,
 				5728DB2A2A8C7503009A00EB /* PosterCollectionViewCell.xib */,
 				5728DB2D2A8C7527009A00EB /* HeaderPosterCollectionReusableView.swift */,
@@ -135,20 +130,41 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		5728DB392A8DAB79009A00EB /* Lotto */ = {
-			isa = PBXGroup;
-			children = (
-				5728DB3A2A8DABF1009A00EB /* LottoManager.swift */,
-			);
-			path = Lotto;
-			sourceTree = "<group>";
-		};
 		57D664662A8EEFF5002ED603 /* Font */ = {
 			isa = PBXGroup;
 			children = (
 				57D664672A8EF053002ED603 /* Ramche.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		57D6646B2A8FCC7F002ED603 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				041AE3E82A89A265007724AE /* GCDBasicViewController.swift */,
+				041AE3D02A899B28007724AE /* ViewController.swift */,
+				5728DB312A8C777E009A00EB /* PosterViewController.swift */,
+				5728DB262A8C4B0F009A00EB /* CodableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		57D6646C2A8FCCA9002ED603 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5728DB3C2A8DB068009A00EB /* CollectionViewAttributeProtocol.swift */,
+				5728DB3E2A8DB250009A00EB /* ReusableViewProtocol.swift */,
+				5728DB372A8DA31C009A00EB /* Extension + Alert.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		57D6646D2A8FCCEA002ED603 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5728DB482A8DEC4E009A00EB /* RecommendationModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

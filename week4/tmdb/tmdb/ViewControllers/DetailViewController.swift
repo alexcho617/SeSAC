@@ -11,6 +11,8 @@ import Kingfisher
 class DetailViewController: UIViewController {
     
     private var expandOverview = false
+    private var expandCast = false
+
     var media: Result?
     var credits: Credits?
     private let sectionInfo = ["Overview", "Cast"]
@@ -26,12 +28,24 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var headerPoster: UIImageView!
     
+    @IBOutlet weak var footerView: UIView!
+    
+    @IBOutlet weak var footerMoreButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         detailTableView.delegate = self
         detailTableView.dataSource = self
         configureView()
     }
+    
+    @IBAction func footerMoreClicked(_ sender: UIButton) {
+        expandCast.toggle()
+        detailTableView.reloadData()
+        footerMoreButton.setTitle(expandCast ? "Less" : "Show All...", for: .normal)
+
+    }
+    
     
     private func configureView(){
         title = media?.title
@@ -44,13 +58,16 @@ class DetailViewController: UIViewController {
         headerBackdrop.kf.setImage(with: URL.getEndPointImageURL(media?.backdropPath ?? ""))
         
         filterView.alpha = 0.1
-        
+
         headerTitle.text = media?.title
         headerTitle.textColor = .white
         
         headerPoster.contentMode = .scaleAspectFill
         headerPoster.kf.setImage(with: URL.getEndPointImageURL(media?.posterPath ?? ""))
-
+        
+        //font 적용이 안되네...?
+        footerMoreButton.setTitle(expandCast ? "Less" : "Show All...", for: .normal)
+        
     }
 }
 
@@ -58,10 +75,12 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            expandOverview.toggle()
+            if indexPath.row == 1{
+                expandOverview.toggle()
+                tableView.reloadSections([0], with: .automatic)
+
+            }
         }
-        tableView.reloadData()
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,11 +93,15 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
-            return 1
+            return 2
         }
         else{
-//            return credits!.cast.count
-            return 20
+            if expandCast == true{
+                return credits!.cast.count
+            }else{
+                return 3
+            }
+            
         }
                 
     }
@@ -87,11 +110,18 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource{
         
         //overview
         if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as? OverviewTableViewCell else {return UITableViewCell()}
+            if indexPath.row == 0{
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as? OverviewTableViewCell else {return UITableViewCell()}
+                
+                cell.overviewLabel.numberOfLines = expandOverview == true ? 0:2
+                cell.overviewLabel.text = media?.overview
+                return cell
+            } else{
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: MoreButtonTableViewCell.identifier) as? MoreButtonTableViewCell else {return UITableViewCell()}
+                cell.titleLabel.text = expandOverview ? "Less" : "More..."
+                return cell
+            }
             
-            cell.overviewLabel.numberOfLines = expandOverview == true ? 0:2
-            cell.overviewLabel.text = media?.overview
-            return cell
         }
         //casts
         else{

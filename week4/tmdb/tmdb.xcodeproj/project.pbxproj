@@ -29,6 +29,7 @@
 		57754D902A8B3A0200095B71 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57754D8E2A8B3A0200095B71 /* CastTableViewCell.swift */; };
 		57754D912A8B3A0200095B71 /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57754D8F2A8B3A0200095B71 /* CastTableViewCell.xib */; };
 		5786903F2A8B4EBA004C4B00 /* OverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786903E2A8B4EBA004C4B00 /* OverviewTableViewCell.swift */; };
+		57D6646F2A8FD044002ED603 /* MoreButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6646E2A8FD044002ED603 /* MoreButtonTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		57754D8E2A8B3A0200095B71 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		57754D8F2A8B3A0200095B71 /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
 		5786903E2A8B4EBA004C4B00 /* OverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTableViewCell.swift; sourceTree = "<group>"; };
+		57D6646E2A8FD044002ED603 /* MoreButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreButtonTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			children = (
 				5769B01A2A87C0DF008DC72A /* TrendViewController.swift */,
 				5769B02D2A87D0F9008DC72A /* DetailViewController.swift */,
+				57D6646E2A8FD044002ED603 /* MoreButtonTableViewCell.swift */,
 				5769B0322A88E70F008DC72A /* TrendsTableViewCell.swift */,
 				57754D8E2A8B3A0200095B71 /* CastTableViewCell.swift */,
 				5786903E2A8B4EBA004C4B00 /* OverviewTableViewCell.swift */,
@@ -237,6 +240,7 @@
 				5769B0342A88E70F008DC72A /* TrendsTableViewCell.swift in Sources */,
 				57754D902A8B3A0200095B71 /* CastTableViewCell.swift in Sources */,
 				5769B02E2A87D0F9008DC72A /* DetailViewController.swift in Sources */,
+				57D6646F2A8FD044002ED603 /* MoreButtonTableViewCell.swift in Sources */,
 				574D57422A873B710007996C /* APIKey.swift in Sources */,
 				5769B01E2A87C15A008DC72A /* TmdbAPIManager.swift in Sources */,
 				574D572E2A873AA30007996C /* SceneDelegate.swift in Sources */,

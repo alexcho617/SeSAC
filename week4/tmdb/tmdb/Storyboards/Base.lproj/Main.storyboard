@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -107,6 +108,29 @@
                                         <constraint firstItem="F5t-h5-gfR" firstAttribute="bottom" secondItem="8s8-lA-8ai" secondAttribute="bottom" id="yQQ-wq-0rE"/>
                                     </constraints>
                                 </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="Lyz-1A-9to">
+                                    <rect key="frame" x="0.0" y="535" width="393" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6G-v1-npK">
+                                            <rect key="frame" x="4" y="4" width="385" height="36"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="????">
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="footerMoreClicked:" destination="pGX-hl-9B4" eventType="touchUpInside" id="Heh-NA-a4q"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="k6G-v1-npK" secondAttribute="bottom" constant="4" id="Nfq-cX-vCU"/>
+                                        <constraint firstAttribute="trailing" secondItem="k6G-v1-npK" secondAttribute="trailing" constant="4" id="srn-iO-xqK"/>
+                                        <constraint firstItem="k6G-v1-npK" firstAttribute="top" secondItem="Lyz-1A-9to" secondAttribute="top" constant="4" id="uwa-iq-DJp"/>
+                                        <constraint firstItem="k6G-v1-npK" firstAttribute="leading" secondItem="Lyz-1A-9to" secondAttribute="leading" constant="4" id="yKu-GQ-OnW"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OverviewTableViewCell" rowHeight="140" id="al0-ZR-QvE" customClass="OverviewTableViewCell" customModule="tmdb" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="300" width="393" height="140"/>
@@ -134,6 +158,26 @@
                                             <outlet property="overviewLabel" destination="vt5-d0-LG7" id="brK-89-iN0"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoreButtonTableViewCell" textLabel="hNa-tK-Hd7" rowHeight="67" style="IBUITableViewCellStyleDefault" id="hTX-BX-I6h" customClass="MoreButtonTableViewCell" customModule="tmdb" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="440" width="393" height="67"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hTX-BX-I6h" id="FSU-Pv-8S3">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="67"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="More..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hNa-tK-Hd7">
+                                                    <rect key="frame" x="20" y="0.0" width="353" height="67"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <color key="textColor" name="AccentColor"/>
+                                                    <color key="highlightedColor" systemColor="linkColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="hNa-tK-Hd7" id="c5x-UY-rmc"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -149,6 +193,8 @@
                     <connections>
                         <outlet property="detailTableView" destination="gbJ-l1-8y0" id="1kk-nj-pWV"/>
                         <outlet property="filterView" destination="f04-VF-QZT" id="o0l-zg-Kq3"/>
+                        <outlet property="footerMoreButton" destination="k6G-v1-npK" id="Ylg-cN-hn1"/>
+                        <outlet property="footerView" destination="Lyz-1A-9to" id="75b-Ry-9IC"/>
                         <outlet property="headerBackdrop" destination="8s8-lA-8ai" id="ujU-a0-LyH"/>
                         <outlet property="headerPoster" destination="F5t-h5-gfR" id="iOj-bH-YpV"/>
                         <outlet property="headerTitle" destination="ByP-92-eCY" id="CfG-kY-jTv"/>
@@ -179,6 +225,12 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
