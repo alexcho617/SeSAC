@@ -13,7 +13,6 @@
 		57B162662A8FDE6C00873EDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B162642A8FDE6C00873EDF /* Main.storyboard */; };
 		57B162682A8FDE6D00873EDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B162672A8FDE6D00873EDF /* Assets.xcassets */; };
 		57B1626B2A8FDE6D00873EDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B162692A8FDE6D00873EDF /* LaunchScreen.storyboard */; };
-		57B162732A8FDE7400873EDF /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B162722A8FDE7400873EDF /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		57B162672A8FDE6D00873EDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B1626A2A8FDE6D00873EDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57B1626C2A8FDE6D00873EDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57B162722A8FDE7400873EDF /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +59,6 @@
 				57B1625E2A8FDE6C00873EDF /* AppDelegate.swift */,
 				57B162602A8FDE6C00873EDF /* SceneDelegate.swift */,
 				57B162622A8FDE6C00873EDF /* ViewController.swift */,
-				57B162722A8FDE7400873EDF /* APIKey.swift */,
 				57B162642A8FDE6C00873EDF /* Main.storyboard */,
 				57B162672A8FDE6D00873EDF /* Assets.xcassets */,
 				57B162692A8FDE6D00873EDF /* LaunchScreen.storyboard */,
@@ -143,7 +140,6 @@
 			files = (
 				57B162632A8FDE6C00873EDF /* ViewController.swift in Sources */,
 				57B1625F2A8FDE6C00873EDF /* AppDelegate.swift in Sources */,
-				57B162732A8FDE7400873EDF /* APIKey.swift in Sources */,
 				57B162612A8FDE6C00873EDF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
