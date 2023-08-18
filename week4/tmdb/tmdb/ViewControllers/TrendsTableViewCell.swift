@@ -22,8 +22,9 @@ class TrendsTableViewCell: UITableViewCell {
     @IBOutlet weak var info: UILabel!
     
     var media: Result?
-    var nf = NumberFormatter()
     var credits: Credits?
+    var nf = NumberFormatter()
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,6 +53,7 @@ class TrendsTableViewCell: UITableViewCell {
             
             title.text = media.title
             
+            //MARK: 원래 여기서 배우들을 보여줘야하나 현재 안쓰고 있음. 이것때문에 트렌드 안에 크레딧까지 콜백으로 너은건데 안쓰는중
             info.text = media.overview
         }
         

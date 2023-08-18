@@ -28,6 +28,7 @@ class TrendViewController: UIViewController {
         trendTableView.rowHeight = UITableView.automaticDimension
     }
     
+    //DispatchGroup 사용 가능
     //High cost api - provide indicator view
     private func callRequest(){
         TmdbAPIManager.shared.callTrendsRequest(type: MediaType.movie, timeWindow: TimeWindow.week){ response in
