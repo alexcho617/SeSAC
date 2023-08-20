@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var filterView: UIView!
     @IBOutlet weak var headerTitle: UILabel!
     
+    @IBOutlet weak var headerRelatedButton: UIView!
     @IBOutlet weak var detailTableView: UITableView!
     
     @IBOutlet weak var headerPoster: UIImageView!
@@ -46,6 +47,12 @@ class DetailViewController: UIViewController {
 
     }
     
+    //go to related screen
+    @IBAction func headerRelatedClicked(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(identifier: RelatedViewController.identifier) as! RelatedViewController
+        vc.mediaId = media?.id
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     private func configureView(){
         title = media?.title

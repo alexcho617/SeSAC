@@ -10,6 +10,7 @@ import Foundation
 enum Endpoint{
     case trend
     case credits
+    case base
     
     var requestURL: String{
         switch self {
@@ -17,7 +18,11 @@ enum Endpoint{
             return URL.makeEndPointString("trending/")
         case .credits:
             return URL.makeEndPointString("movie/")
+        case .base:
+            return URL.makeEndPointString("movie/")
+            
         }
+        
     }
 }
 

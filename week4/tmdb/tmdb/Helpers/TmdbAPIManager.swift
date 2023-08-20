@@ -32,4 +32,22 @@ class TmdbAPIManager{
         
     }
     
+    func callRecommendRequest(of mediaId: Int, completionHandler: @escaping (AFDataResponse<Recommendation>) -> ()){
+        let url = Endpoint.base.requestURL + "\(String(mediaId))/recommendations?api_key=\(APIKey.tmdbKey)"
+        print(url)
+        AF.request(url, method: .get).validate().responseDecodable(of: Recommendation.self) { response in
+            completionHandler(response)
+        }
+        
+    }
+    
+    func callSimilarRequest(of mediaId: Int, completionHandler: @escaping (AFDataResponse<Similars>) -> ()){
+        let url = Endpoint.base.requestURL + "\(String(mediaId))/similar?api_key=\(APIKey.tmdbKey)"
+        print(url)
+        AF.request(url, method: .get).validate().responseDecodable(of: Similars.self) { response in
+            completionHandler(response)
+        }
+        
+    }
+    
 }
