@@ -43,6 +43,15 @@ extension AppDelegate: UNUserNotificationCenterDelegate{
     
     //foreground notification
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        //특정화면에서, 특정 조건에서만 받기 특정화면에선 안받기
         completionHandler([.sound,.badge,.banner,.list])
+        
+        //특정 푸시 클릭하면 어떠한 화면으로 이동 - Deep linking
+        //알림 갯수 제한: 하루에 identifier기반으로 64개가 제한 되어있다. 그렇다면 챗 서비스 들은? 64개의 카톡방만 제한 되어있나?
+        //카톡은 메신저이기 때문에 매우 복잡하게 대응을 해놨을것으로 예상
+        //카톡은 켜기만하면 모든 알림이 다 사라진다. -> 포어그라운드로 앱을 키는 순간 등록되어있는 모든 알림들을 제거.
+        //만약 알림을 차단했거나 나간 톡방에 대해 모두 대응을 해야한다면 많은 케이스들이 생길것. 차라리 모두 지우는게 낫다는 판단
+        //잔디는 업무 기반이기 때문에 다른 정책을 사용
     }
 }

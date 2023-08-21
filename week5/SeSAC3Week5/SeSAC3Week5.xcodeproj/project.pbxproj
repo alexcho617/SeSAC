@@ -30,6 +30,7 @@
 		5728DB3D2A8DB068009A00EB /* CollectionViewAttributeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5728DB3C2A8DB068009A00EB /* CollectionViewAttributeProtocol.swift */; };
 		5728DB3F2A8DB250009A00EB /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5728DB3E2A8DB250009A00EB /* ReusableViewProtocol.swift */; };
 		5728DB492A8DEC4E009A00EB /* RecommendationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5728DB482A8DEC4E009A00EB /* RecommendationModel.swift */; };
+		578B891C2A92F50100AE212F /* SeSACButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B891B2A92F50100AE212F /* SeSACButton.swift */; };
 		57D664682A8EF053002ED603 /* Ramche.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57D664672A8EF053002ED603 /* Ramche.otf */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		5728DB3C2A8DB068009A00EB /* CollectionViewAttributeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAttributeProtocol.swift; sourceTree = "<group>"; };
 		5728DB3E2A8DB250009A00EB /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		5728DB482A8DEC4E009A00EB /* RecommendationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationModel.swift; sourceTree = "<group>"; };
+		578B891B2A92F50100AE212F /* SeSACButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACButton.swift; sourceTree = "<group>"; };
 		57D664672A8EF053002ED603 /* Ramche.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ramche.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				041AE3D22A899B28007724AE /* Main.storyboard */,
+				578B891B2A92F50100AE212F /* SeSACButton.swift */,
 				5728DB292A8C7503009A00EB /* PosterCollectionViewCell.swift */,
 				5728DB2A2A8C7503009A00EB /* PosterCollectionViewCell.xib */,
 				5728DB2D2A8C7527009A00EB /* HeaderPosterCollectionReusableView.swift */,
@@ -257,6 +260,7 @@
 				041AE3E92A89A265007724AE /* GCDBasicViewController.swift in Sources */,
 				5728DB272A8C4B0F009A00EB /* CodableViewController.swift in Sources */,
 				5728DB322A8C777E009A00EB /* PosterViewController.swift in Sources */,
+				578B891C2A92F50100AE212F /* SeSACButton.swift in Sources */,
 				5728DB382A8DA31C009A00EB /* Extension + Alert.swift in Sources */,
 				041AE3E42A899D2C007724AE /* APIKey.swift in Sources */,
 				5728DB2B2A8C7503009A00EB /* PosterCollectionViewCell.swift in Sources */,

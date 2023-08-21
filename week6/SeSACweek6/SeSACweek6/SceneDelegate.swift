@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  SeSAC3Week5
+//  SeSACweek6
 //
-//  Created by jack on 2023/08/14.
+//  Created by Alex Cho on 2023/08/21.
 //
 
 import UIKit
@@ -29,12 +29,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-        
-        //뱃지 갯수 설정
-        UIApplication.shared.applicationIconBadgeNumber = 0
-        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-//        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: <#T##[String]#>) 특정 삭제 가능
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

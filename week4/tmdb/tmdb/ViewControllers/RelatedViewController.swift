@@ -52,7 +52,7 @@ class RelatedViewController: UIViewController {
         
         
     }
-    
+    //실패시 에러핸들링
     private func callGroupRequest(of media: Int){
         let group = DispatchGroup()
         group.enter()

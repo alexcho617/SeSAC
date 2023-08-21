@@ -39,14 +39,19 @@ class PosterViewController: UIViewController {
         content.badge = 100
         
         //2 when: time trigger, calendar trigger
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        var component = DateComponents()
+        component.minute = 5
+        component.hour = 10
+        let trigger = UNCalendarNotificationTrigger(dateMatching: component, repeats: false)
         
         //3 id가 다르면 새로운 알림, 같으면 내용만 다른 하나의 알림
         let request = UNNotificationRequest(identifier: "\(Date())", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { error in
             print(error)
+        
             
-        //dynamic navigation, deep linking은 어떻게?
+        //deep linking은 어떻게?
         }
     }
     
