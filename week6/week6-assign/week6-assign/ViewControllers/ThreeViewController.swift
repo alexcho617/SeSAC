@@ -38,6 +38,18 @@ class ThreeViewController: UIViewController {
     let tempLabel = getLabel(text: labelStrings[2])
     let humidLabel = getLabel(text: labelStrings[3])
     let windLabel = getLabel(text: labelStrings[4])
+    let greetingLabel = getLabel(text: labelStrings[5])
+    
+    lazy var weatherStackView = { [self] in //capture self 는 뭘까?
+        let stackView = UIStackView(arrangedSubviews: [tempLabel,humidLabel,windLabel,greetingLabel])
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        stackView.alignment = .leading
+        stackView.distribution = .fill
+        return stackView
+        
+    }()
+    
 
     
     override func viewDidLoad() {
@@ -53,9 +65,7 @@ class ThreeViewController: UIViewController {
         view.addSubview(shareButton)
         view.addSubview(refreshButton)
         
-        view.addSubview(tempLabel)
-        view.addSubview(humidLabel)
-        view.addSubview(windLabel)
+        view.addSubview(weatherStackView)
 
         
         //3layout
@@ -99,30 +109,15 @@ class ThreeViewController: UIViewController {
             make.size.equalTo(20)
         }
         
-        //TODO: intrinsic size를 감안하여 패딩을 어떻게 주지? 패딩 뷰 위에 올린다고 해도 패딩 뷰의 사이즈는 라벨뷰에 의해 정해져야는데...
-        tempLabel.snp.makeConstraints { make in
+        weatherStackView.snp.makeConstraints { make in
             make.leading.equalTo(timeLabel.snp.leading)
             make.top.equalTo(locationImage.snp.bottom).offset(defaultOffset)
-            make.height.equalTo(24)
-            make.width.equalTo(140)
-        }
-        humidLabel.snp.makeConstraints { make in
-            make.leading.equalTo(timeLabel.snp.leading)
-            make.top.equalTo(tempLabel.snp.bottom).offset(defaultOffset)
-            make.height.equalTo(24)
-            make.width.equalTo(160)
-        }
-        windLabel.snp.makeConstraints { make in
-            make.leading.equalTo(timeLabel.snp.leading)
-            make.top.equalTo(humidLabel.snp.bottom).offset(defaultOffset)
-            make.height.equalTo(24)
-            make.width.equalTo(200)
         }
         
     }
    
     private static func getLabel(text: String) -> UILabel{
-        let label = UILabel()
+        let label = BasePaddingLabel()
         label.text = text
         label.layer.cornerRadius = 8
         label.clipsToBounds = true
@@ -153,5 +148,28 @@ class ThreeViewController: UIViewController {
     
     private static func ramchefont (size: CGFloat) -> UIFont{
         return UIFont(name: FontNames.ramche.rawValue, size: size) ?? .systemFont(ofSize: size)
+    }
+}
+
+//https://ios-development.tistory.com/698
+fileprivate class BasePaddingLabel: UILabel { //uilabel 상속
+    private var padding = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0) //이걸 밖으로 빼고싶은데 쉽지 않네
+
+    //이건 또 뭐야...?
+    convenience init(padding: UIEdgeInsets) {
+        self.init()
+        self.padding = padding
+    }
+
+    override func drawText(in rect: CGRect) {
+        super.drawText(in: rect.inset(by: padding))
+    }
+
+    override var intrinsicContentSize: CGSize {
+        var contentSize = super.intrinsicContentSize
+        contentSize.height += padding.top + padding.bottom
+        contentSize.width += padding.left + padding.right
+
+        return contentSize
     }
 }
