@@ -17,6 +17,7 @@
 		578B896B2A94A10000AE212F /* OneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B896A2A94A10000AE212F /* OneViewController.swift */; };
 		578B896D2A94C1C200AE212F /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B896C2A94C1C200AE212F /* TwoViewController.swift */; };
 		578B896F2A94C1DC00AE212F /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B896E2A94C1DC00AE212F /* ThreeViewController.swift */; };
+		578B89722A94E2C700AE212F /* Ramche.otf in Resources */ = {isa = PBXBuildFile; fileRef = 578B89712A94E2C700AE212F /* Ramche.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		578B896A2A94A10000AE212F /* OneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneViewController.swift; sourceTree = "<group>"; };
 		578B896C2A94C1C200AE212F /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
 		578B896E2A94C1DC00AE212F /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
+		578B89712A94E2C700AE212F /* Ramche.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ramche.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				578B89522A94A09800AE212F /* AppDelegate.swift */,
 				578B89542A94A09800AE212F /* SceneDelegate.swift */,
 				578B89692A94A0F500AE212F /* ViewControllers */,
+				578B89702A94E2B900AE212F /* Fonts */,
 				578B89582A94A09800AE212F /* Main.storyboard */,
 				578B895B2A94A09900AE212F /* Assets.xcassets */,
 				578B895D2A94A09900AE212F /* LaunchScreen.storyboard */,
@@ -84,6 +87,14 @@
 				578B896E2A94C1DC00AE212F /* ThreeViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		578B89702A94E2B900AE212F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				578B89712A94E2C700AE212F /* Ramche.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				578B895F2A94A09900AE212F /* LaunchScreen.storyboard in Resources */,
+				578B89722A94E2C700AE212F /* Ramche.otf in Resources */,
 				578B895C2A94A09900AE212F /* Assets.xcassets in Resources */,
 				578B895A2A94A09800AE212F /* Main.storyboard in Resources */,
 			);
