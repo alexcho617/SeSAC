@@ -85,7 +85,8 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource{
         if indexPath.section == 0 {
             if indexPath.row == 1{
                 expandOverview.toggle()
-                tableView.reloadSections([0], with: .automatic)
+                let path = IndexPath(row: 0, section: 0)
+                tableView.reloadRows(at: [path], with: .automatic)
 
             }
         }

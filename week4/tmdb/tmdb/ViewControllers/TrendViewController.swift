@@ -33,6 +33,10 @@ class TrendViewController: UIViewController {
     private func callRequest(){
         TmdbAPIManager.shared.callTrendsRequest(type: MediaType.movie, timeWindow: TimeWindow.week){ response in
             self.trendResults = response.value
+            if let err = response.error{
+                print("SHOW ALERT")
+                self.showAlert(title: "아앗!", message: "네트워크 이슈 같아요", buttonTitle: "돌아가기")
+            }
             if self.trendResults != nil{
                 for result in self.trendResults!.results{
                     TmdbAPIManager.shared.callCreditsRequest(of: result.id){response in
@@ -78,5 +82,15 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
         //        present(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
         
+    }
+    
+    func showAlert(title: String, message: String, buttonTitle: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: buttonTitle, style: .default)
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(action)
+        alert.addAction(cancel)
+        present(alert,animated: true)
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import UIKit
 
 class TmdbAPIManager{
     static let shared = TmdbAPIManager() //singleton
@@ -20,14 +21,26 @@ class TmdbAPIManager{
     func callTrendsRequest(type: MediaType, timeWindow: TimeWindow, completionHandler: @escaping (AFDataResponse<Trends>) -> ()){ //escaping closure of function type JSON -> ()
         let url = Endpoint.trend.requestURL + "\(type.rawValue)/\(timeWindow.rawValue)" + "?api_key=\(APIKey.tmdbKey)"
         AF.request(url, method: .get).validate().responseDecodable(of: Trends.self) { response in
-            completionHandler(response)
+            switch response.result{
+            case.success:
+                completionHandler(response)
+            case.failure(let error):
+                completionHandler(response)
+                print(#function, error, "ALERT")
+            }
         }
     }
     
     func callCreditsRequest(of mediaId: Int, completionHandler: @escaping (AFDataResponse<Credits>) -> ()){
         let url = Endpoint.credits.requestURL + "\(String(mediaId))/credits?api_key=\(APIKey.tmdbKey)"
         AF.request(url, method: .get).validate().responseDecodable(of: Credits.self) { response in
-            completionHandler(response)
+            switch response.result{
+            case.success:
+                completionHandler(response)
+            case.failure(let error):
+                completionHandler(response)
+                print(#function, error, "ALERT")
+            }
         }
         
     }
@@ -40,11 +53,8 @@ class TmdbAPIManager{
             case.success:
                 completionHandler(response)
             case.failure(let error):
-                print(error)
-                print(url)
+                print(#function, error, "ALERT")
             }
-            
-            
         }
         
     }
@@ -57,10 +67,12 @@ class TmdbAPIManager{
             case.success:
                 completionHandler(response)
             case.failure(let error):
-                print(error)
-                print(url)
-            }        }
+                print(#function, error, "ALERT")
+            }
+        }
         
     }
     
+ 
 }
+
