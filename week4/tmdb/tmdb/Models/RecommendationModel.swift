@@ -24,10 +24,10 @@ struct Recommendation: Codable {
 // MARK: - Result
 struct Movie: Codable {
     let adult: Bool
-    let backdropPath: String?
+    var backdropPath: String?
     let id: Int
     let title: String
-    let originalLanguage: String?
+    let originalLanguage: String
     let originalTitle, overview: String
     let posterPath: String?
     let mediaType: MediaType

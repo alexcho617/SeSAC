@@ -13,6 +13,10 @@
 		578B89312A930A1900AE212F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578B892F2A930A1900AE212F /* Main.storyboard */; };
 		578B89332A930A1A00AE212F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 578B89322A930A1A00AE212F /* Assets.xcassets */; };
 		578B89362A930A1A00AE212F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 578B89342A930A1A00AE212F /* LaunchScreen.storyboard */; };
+		578B893F2A94461900AE212F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 578B893E2A94461900AE212F /* SnapKit */; };
+		578B89412A94465D00AE212F /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B89402A94465D00AE212F /* SnapViewController.swift */; };
+		578B89432A945D2200AE212F /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B89422A945D2200AE212F /* TextViewController.swift */; };
+		578B89452A94792900AE212F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B89442A94792900AE212F /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,9 @@
 		578B89322A930A1A00AE212F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		578B89352A930A1A00AE212F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		578B89372A930A1A00AE212F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		578B89402A94465D00AE212F /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapViewController.swift; path = test/SnapViewController.swift; sourceTree = "<group>"; };
+		578B89422A945D2200AE212F /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		578B89442A94792900AE212F /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				578B893F2A94461900AE212F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +67,9 @@
 				578B89292A930A1900AE212F /* AppDelegate.swift */,
 				578B892B2A930A1900AE212F /* SceneDelegate.swift */,
 				578B892D2A930A1900AE212F /* ViewController.swift */,
+				578B89442A94792900AE212F /* LocationViewController.swift */,
+				578B89402A94465D00AE212F /* SnapViewController.swift */,
+				578B89422A945D2200AE212F /* TextViewController.swift */,
 				578B892F2A930A1900AE212F /* Main.storyboard */,
 				578B89322A930A1A00AE212F /* Assets.xcassets */,
 				578B89342A930A1A00AE212F /* LaunchScreen.storyboard */,
@@ -83,6 +94,9 @@
 			dependencies = (
 			);
 			name = SeSACweek6;
+			packageProductDependencies = (
+				578B893E2A94461900AE212F /* SnapKit */,
+			);
 			productName = SeSACweek6;
 			productReference = 578B89262A930A1900AE212F /* SeSACweek6.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,9 @@
 				Base,
 			);
 			mainGroup = 578B891D2A930A1900AE212F;
+			packageReferences = (
+				578B893D2A94461900AE212F /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 578B89272A930A1900AE212F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				578B89432A945D2200AE212F /* TextViewController.swift in Sources */,
+				578B89412A94465D00AE212F /* SnapViewController.swift in Sources */,
 				578B892E2A930A1900AE212F /* ViewController.swift in Sources */,
+				578B89452A94792900AE212F /* LocationViewController.swift in Sources */,
 				578B892A2A930A1900AE212F /* AppDelegate.swift in Sources */,
 				578B892C2A930A1900AE212F /* SceneDelegate.swift in Sources */,
 			);
@@ -358,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		578B893D2A94461900AE212F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		578B893E2A94461900AE212F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 578B893D2A94461900AE212F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 578B891E2A930A1900AE212F /* Project object */;
 }

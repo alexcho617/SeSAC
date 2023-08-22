@@ -19,6 +19,7 @@ class TrendsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
     
+    @IBOutlet weak var originalTitle: UILabel!
     @IBOutlet weak var info: UILabel!
     
     var media: Result?
@@ -52,6 +53,7 @@ class TrendsTableViewCell: UITableViewCell {
             rating.text = "평점: " + (nf.string(for: media.voteAverage) ?? "0.0")
             
             title.text = media.title
+            originalTitle.text = media.originalTitle
             
             //MARK: 원래 여기서 배우들을 보여줘야하나 현재 안쓰고 있음. 이것때문에 트렌드 안에 크레딧까지 콜백으로 너은건데 안쓰는중
             info.text = media.overview

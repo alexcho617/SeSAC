@@ -12,10 +12,15 @@ class RelatedViewController: UIViewController {
         case similar
         case recommend
     }
-    var mediaId: Int?
+    
     var similars: Similars?
     var recommendations: Recommendation?
-    var currentlyDisplaying = DisplayCase.similar
+    var mediaId: Int?
+    
+    private var currentlyDisplaying = DisplayCase.similar
+    
+    
+ 
     
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
@@ -32,7 +37,9 @@ class RelatedViewController: UIViewController {
         super.viewWillAppear(true)
         if let mediaId{
             callGroupRequest(of: mediaId)
+
         }
+        
         
     }
     
@@ -52,22 +59,22 @@ class RelatedViewController: UIViewController {
         
         
     }
-    //실패시 에러핸들링
+    
+    //test
     private func callGroupRequest(of media: Int){
+        //poster path에 문제가 있는 상태
         let group = DispatchGroup()
         group.enter()
         TmdbAPIManager.shared.callRecommendRequest(of: media) { response in
-            self.recommendations = response.value
-            print("recommendation complete", self.recommendations?.results.count)
+            print("Recommendation Complete",response.value?.results.count)
+            self.recommendations = response.value ?? Recommendation(page: 1, results: [], totalPages: 1, totalResults: 1)
             group.leave()
         }
         
         group.enter()
         TmdbAPIManager.shared.callSimilarRequest(of: media) { response in
-            self.similars = response.value
-            //TODO: API주소는 확인 되었으나 첫번째 영화를 제외한 다른 영화들에서는 reponse가 nil 인 상황
-            print("similar complete", self.similars?.results.count)
-            print(response.value)
+            print("Similar Complete",response.value?.results.count)
+            self.similars = response.value ?? Similars(page: 1, results: [], totalPages: 1, totalResults: 1)
             group.leave()
         }
         
@@ -77,6 +84,7 @@ class RelatedViewController: UIViewController {
         }
         
     }
+
     
     private func configureView(){
         title = "연관 컨텐츠"
@@ -113,11 +121,14 @@ extension RelatedViewController: UICollectionViewDelegate, UICollectionViewDataS
                 cell.posterImage.kf.setImage(with: URL.getEndPointImageURL(item.posterPath ?? ""))
                 cell.titleLabel.text = item.title
             }
+            
         case .similar:
             if let item = similars?.results[indexPath.item]{
-                cell.posterImage.kf.setImage(with: URL.getEndPointImageURL(item.posterPath))
+                cell.posterImage.kf.setImage(with: URL.getEndPointImageURL(item.posterPath ?? ""))
                 cell.titleLabel.text = item.title
             }
+            
+            
         }
         
         return cell

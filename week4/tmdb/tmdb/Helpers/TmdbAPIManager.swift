@@ -36,7 +36,15 @@ class TmdbAPIManager{
         let url = Endpoint.base.requestURL + "\(String(mediaId))/recommendations?api_key=\(APIKey.tmdbKey)"
         print(url)
         AF.request(url, method: .get).validate().responseDecodable(of: Recommendation.self) { response in
-            completionHandler(response)
+            switch response.result{
+            case.success:
+                completionHandler(response)
+            case.failure(let error):
+                print(error)
+                print(url)
+            }
+            
+            
         }
         
     }
@@ -45,8 +53,13 @@ class TmdbAPIManager{
         let url = Endpoint.base.requestURL + "\(String(mediaId))/similar?api_key=\(APIKey.tmdbKey)"
         print(url)
         AF.request(url, method: .get).validate().responseDecodable(of: Similars.self) { response in
-            completionHandler(response)
-        }
+            switch response.result{
+            case.success:
+                completionHandler(response)
+            case.failure(let error):
+                print(error)
+                print(url)
+            }        }
         
     }
     

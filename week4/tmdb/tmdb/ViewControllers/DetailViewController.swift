@@ -50,8 +50,9 @@ class DetailViewController: UIViewController {
     //go to related screen
     @IBAction func headerRelatedClicked(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(identifier: RelatedViewController.identifier) as! RelatedViewController
-        vc.mediaId = media?.id
+        vc.mediaId = media?.id ?? 0
         navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     private func configureView(){

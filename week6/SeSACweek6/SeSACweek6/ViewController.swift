@@ -24,10 +24,11 @@ class ViewController: UIViewController {
     
     let emailTextField = UITextField()
     let passwordTextField = UITextField()
+    let signButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setLayoutAnchor()
         view.addSubview(emailTextField)
         emailTextField.backgroundColor = .lightGray
         emailTextField.keyboardType = .emailAddress
@@ -40,15 +41,46 @@ class ViewController: UIViewController {
         //스토리보드에서 하나의 constraint를 잡을 때 생기는 거랑 같음
         //AutoResizingMask랑 AutoLayout은 같이 못쓰기 때문에 코드에선 autolayout을 쓰게 되면 autoresizingmask 를 해제해야한다.
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint(item: passwordTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50).isActive = true
         
-        NSLayoutConstraint(item: passwordTextField, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1, constant: -50).isActive = true
         
-        NSLayoutConstraint(item: passwordTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 60).isActive = true
+        //addConstraints
+        let leading = NSLayoutConstraint(item: passwordTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50)
         
-        NSLayoutConstraint(item: passwordTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: 50).isActive = true
+        let trailing = NSLayoutConstraint(item: passwordTextField, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1, constant: -50)
+        
+        let height = NSLayoutConstraint(item: passwordTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 60)
+        
+        let top = NSLayoutConstraint(item: passwordTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: 50)
+        view.addConstraints([leading,trailing,height,top])
+        //isActive
+        //근데 이거는 클래스를 인스탄스화 하고 property까지 동시에 접근하네?
+        //@MainActor가 뭐지?
+//        NSLayoutConstraint(item: passwordTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50).isActive = true
+//
+//        NSLayoutConstraint(item: passwordTextField, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1, constant: -50).isActive = true
+//
+//        NSLayoutConstraint(item: passwordTextField, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 60).isActive = true
+//
+//        NSLayoutConstraint(item: passwordTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: 50).isActive = true
     }
 
+    @objc func signButtonClicked(){
+        present(LocationViewController(), animated: true)
+        
+    }
+    func setLayoutAnchor(){
+        view.addSubview(signButton)
+        signButton.translatesAutoresizingMaskIntoConstraints = false
+        signButton.backgroundColor = .blue
+        signButton.addTarget(self, action: #selector(signButtonClicked), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            signButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signButton.widthAnchor.constraint(equalToConstant: 300),
+            signButton.heightAnchor.constraint(equalToConstant:  50),
+            signButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
 
 }
 
