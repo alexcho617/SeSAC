@@ -17,9 +17,7 @@ struct DataSample{
         }
         return text
     }
-    var isExpand: Bool{
-        return Bool.random()
-    }
+    var isExpand: Bool = Bool.random()
 }
 
 class CustomTableViewController: UIViewController {
@@ -64,7 +62,7 @@ extension CustomTableViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        isExpand.toggle()
+        self.list[indexPath.row].isExpand.toggle()
         tableView.reloadData()
     }
 }

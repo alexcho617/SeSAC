@@ -112,6 +112,27 @@ class LocationViewController: UIViewController {
         alert.addAction(cancel)
         present(alert,animated: true)
     }
+
+    
+    func checkDeviceLocationAuthorization(){
+        print(#function)
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled(){
+                let auth: CLAuthorizationStatus
+                if #available(iOS 14.0, *) {
+                    auth = self.locationManager.authorizationStatus
+                } else{
+                    auth = CLLocationManager.authorizationStatus()
+                }
+                DispatchQueue.main.async {
+                    self.checkCurrentLocationAuthorization(status: auth)
+                }
+            }else{
+                print("no")
+            }
+        }
+       
+    }
     func checkCurrentLocationAuthorization(status: CLAuthorizationStatus){
         print(#function, terminator: "")
         switch status {
@@ -142,28 +163,6 @@ class LocationViewController: UIViewController {
             print("fatal error")
         }
     }
-    
-    func checkDeviceLocationAuthorization(){
-        print(#function)
-        DispatchQueue.global().async {
-            if CLLocationManager.locationServicesEnabled(){
-                let auth: CLAuthorizationStatus
-                if #available(iOS 14.0, *) {
-                    auth = self.locationManager.authorizationStatus
-                } else{
-                    auth = CLLocationManager.authorizationStatus()
-                }
-                DispatchQueue.main.async {
-                    self.checkCurrentLocationAuthorization(status: auth)
-                }
-                
-            }else{
-                print("no")
-            }
-        }
-       
-    }
-    
 }
 //4 protocol
 extension LocationViewController: CLLocationManagerDelegate{
