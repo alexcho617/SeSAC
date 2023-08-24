@@ -20,6 +20,7 @@
 		578B89722A94E2C700AE212F /* Ramche.otf in Resources */ = {isa = PBXBuildFile; fileRef = 578B89712A94E2C700AE212F /* Ramche.otf */; };
 		57AAF1BF2A964BEF00DD6782 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF1BE2A964BEF00DD6782 /* LocationViewController.swift */; };
 		57AAF1CD2A973DD600DD6782 /* sampleCode_map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF1CC2A973DD600DD6782 /* sampleCode_map.swift */; };
+		57AAF1D12A979D7500DD6782 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF1D02A979D7500DD6782 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		578B89712A94E2C700AE212F /* Ramche.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ramche.otf; sourceTree = "<group>"; };
 		57AAF1BE2A964BEF00DD6782 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		57AAF1CC2A973DD600DD6782 /* sampleCode_map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = sampleCode_map.swift; path = ../../sampleCode_map.swift; sourceTree = "<group>"; };
+		57AAF1D02A979D7500DD6782 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				578B896C2A94C1C200AE212F /* TwoViewController.swift */,
 				578B896E2A94C1DC00AE212F /* ThreeViewController.swift */,
 				57AAF1BE2A964BEF00DD6782 /* LocationViewController.swift */,
+				57AAF1D02A979D7500DD6782 /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57AAF1D12A979D7500DD6782 /* LoginViewController.swift in Sources */,
 				57AAF1BF2A964BEF00DD6782 /* LocationViewController.swift in Sources */,
 				57AAF1CD2A973DD600DD6782 /* sampleCode_map.swift in Sources */,
 				578B896D2A94C1C200AE212F /* TwoViewController.swift in Sources */,

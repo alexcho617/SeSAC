@@ -64,12 +64,32 @@
                                     <action selector="locationPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kj3-vw-LfB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6Z-cL-y2M">
+                                <rect key="frame" x="20" y="363" width="353" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Codebase Login"/>
+                                <connections>
+                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vvw-oS-0tK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAx-NN-P2l">
+                                <rect key="frame" x="20" y="418" width="353" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Codebase Netflix"/>
+                                <connections>
+                                    <action selector="netflixPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hze-hl-Mkm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f6Z-cL-y2M" secondAttribute="trailing" constant="20" id="1Pr-O6-Tzx"/>
                             <constraint firstItem="2ys-Dq-1zM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3LF-tG-9F1"/>
                             <constraint firstItem="ZsK-ge-cs4" firstAttribute="top" secondItem="J5h-io-zo6" secondAttribute="bottom" constant="20" id="DLA-eP-oXq"/>
+                            <constraint firstItem="TAx-NN-P2l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="How-2s-DzQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TAx-NN-P2l" secondAttribute="trailing" constant="20" id="JXv-Cl-Ppq"/>
+                            <constraint firstItem="f6Z-cL-y2M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JqR-xu-4bR"/>
                             <constraint firstItem="ZsK-ge-cs4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="K3X-AW-Ws3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2ys-Dq-1zM" secondAttribute="trailing" constant="20" id="UA4-lk-BiH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZsK-ge-cs4" secondAttribute="trailing" constant="20" id="ZEi-4X-9MP"/>
@@ -79,6 +99,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ey4-OR-kZP" secondAttribute="trailing" constant="20" id="elT-1e-TC1"/>
                             <constraint firstItem="J5h-io-zo6" firstAttribute="top" secondItem="ey4-OR-kZP" secondAttribute="bottom" constant="20" id="i8A-jv-J2b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J5h-io-zo6" secondAttribute="trailing" constant="20" id="msQ-4k-Avs"/>
+                            <constraint firstItem="TAx-NN-P2l" firstAttribute="top" secondItem="f6Z-cL-y2M" secondAttribute="bottom" constant="20" id="oLD-yy-4tR"/>
+                            <constraint firstItem="f6Z-cL-y2M" firstAttribute="top" secondItem="ZsK-ge-cs4" secondAttribute="bottom" constant="20" id="qf9-kT-dVs"/>
                             <constraint firstItem="ey4-OR-kZP" firstAttribute="top" secondItem="2ys-Dq-1zM" secondAttribute="bottom" constant="20" id="r0G-YY-BPP"/>
                         </constraints>
                     </view>

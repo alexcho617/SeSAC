@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        navigationController?.pushViewController(LoginViewController(), animated: true)
+
     }
 
     @IBAction func onePressed(_ sender: UIButton) {
@@ -26,6 +28,14 @@ class ViewController: UIViewController {
     }
     @IBAction func locationPressed(_ sender: UIButton) {
         navigationController?.pushViewController(LocationViewController(), animated: true)
+    }
+    
+    @IBAction func loginPressed(_ sender: UIButton) {
+        navigationController?.pushViewController(LoginViewController(), animated: true)
+
+    }
+    
+    @IBAction func netflixPressed(_ sender: UIButton) {
     }
     
 }
