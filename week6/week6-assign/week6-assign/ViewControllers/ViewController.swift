@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     @IBAction func threePressed(_ sender: UIButton) {
         navigationController?.pushViewController(ThreeViewController(), animated: true)
     }
+    @IBAction func locationPressed(_ sender: UIButton) {
+        navigationController?.pushViewController(LocationViewController(), animated: true)
+    }
     
 }
 

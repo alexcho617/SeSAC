@@ -18,6 +18,7 @@
 		578B896D2A94C1C200AE212F /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B896C2A94C1C200AE212F /* TwoViewController.swift */; };
 		578B896F2A94C1DC00AE212F /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B896E2A94C1DC00AE212F /* ThreeViewController.swift */; };
 		578B89722A94E2C700AE212F /* Ramche.otf in Resources */ = {isa = PBXBuildFile; fileRef = 578B89712A94E2C700AE212F /* Ramche.otf */; };
+		57AAF1BF2A964BEF00DD6782 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF1BE2A964BEF00DD6782 /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		578B896C2A94C1C200AE212F /* TwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
 		578B896E2A94C1DC00AE212F /* ThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeViewController.swift; sourceTree = "<group>"; };
 		578B89712A94E2C700AE212F /* Ramche.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ramche.otf; sourceTree = "<group>"; };
+		57AAF1BE2A964BEF00DD6782 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				578B896A2A94A10000AE212F /* OneViewController.swift */,
 				578B896C2A94C1C200AE212F /* TwoViewController.swift */,
 				578B896E2A94C1DC00AE212F /* ThreeViewController.swift */,
+				57AAF1BE2A964BEF00DD6782 /* LocationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57AAF1BF2A964BEF00DD6782 /* LocationViewController.swift in Sources */,
 				578B896D2A94C1C200AE212F /* TwoViewController.swift in Sources */,
 				578B89572A94A09800AE212F /* ViewController.swift in Sources */,
 				578B89532A94A09800AE212F /* AppDelegate.swift in Sources */,

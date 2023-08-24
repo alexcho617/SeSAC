@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setLayoutAnchor()
         view.addSubview(emailTextField)
         emailTextField.backgroundColor = .lightGray
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         
         
-        //addConstraints
+        //addConstraints 방식
         let leading = NSLayoutConstraint(item: passwordTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50)
         
         let trailing = NSLayoutConstraint(item: passwordTextField, attribute: .trailing, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .trailing, multiplier: 1, constant: -50)
@@ -52,7 +53,9 @@ class ViewController: UIViewController {
         
         let top = NSLayoutConstraint(item: passwordTextField, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .bottom, multiplier: 1, constant: 50)
         view.addConstraints([leading,trailing,height,top])
-        //isActive
+        
+        
+        //isActive 방식
         //근데 이거는 클래스를 인스탄스화 하고 property까지 동시에 접근하네?
         //@MainActor가 뭐지?
 //        NSLayoutConstraint(item: passwordTextField, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1, constant: 50).isActive = true
@@ -65,9 +68,10 @@ class ViewController: UIViewController {
     }
 
     @objc func signButtonClicked(){
-        present(LocationViewController(), animated: true)
-        
+        //sb 이름 열거형으로 개선가능
+        transition(style: .present, viewController: GenericViewController.self) //class itself
     }
+    
     func setLayoutAnchor(){
         view.addSubview(signButton)
         signButton.translatesAutoresizingMaskIntoConstraints = false
