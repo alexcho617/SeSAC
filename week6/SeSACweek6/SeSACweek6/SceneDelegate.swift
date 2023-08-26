@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         //첫 시작 분기처리
-        let vc = CustomTableViewController()
+        let vc = ViewController()
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }

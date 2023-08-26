@@ -69,7 +69,7 @@ class ViewController: UIViewController {
 
     @objc func signButtonClicked(){
         //sb 이름 열거형으로 개선가능
-        transition(style: .present, viewController: GenericViewController.self) //class itself
+        transition(style: .present, viewController: TextViewController.self) //class itself
     }
     
     func setLayoutAnchor(){

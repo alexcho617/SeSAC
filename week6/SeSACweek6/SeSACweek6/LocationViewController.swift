@@ -71,7 +71,7 @@ class LocationViewController: UIViewController {
         pharmaAnno.coordinate = CLLocationCoordinate2D(latitude: 45.437084, longitude: 12.330136)
         
         if type == 0{
-            mapView.uilatations([gelatoAnno,pharmaAnno])
+            mapView.addAnnotations([gelatoAnno,pharmaAnno])
         }else if type == 1{
 ///            mapView.removeAnnotation(gelatoAnno) 이게 안되는 이유: gelatoAnno는 function local variable임 Array 안에있는 annotation은 다른 객체임
             mapView.removeAnnotations(mapView.annotations)

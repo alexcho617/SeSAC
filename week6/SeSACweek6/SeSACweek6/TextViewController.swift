@@ -10,7 +10,7 @@ import SnapKit
 class TextViewController: UIViewController {
     
     //image 1 declare
-    let picker = UIImagePickerController()
+    let picker = UIImagePickerController() //영상은 안되네
     let fontPicker = UIFontPickerViewController() // 시스템 폰트 고를 수 있음
     let colorPicker = UIColorPickerViewController()
     //closure: unnamed method with call
@@ -62,7 +62,7 @@ class TextViewController: UIViewController {
     //여기서 호출했기 때문에 카메라를 사용하면 계속 다시 함수가 실행됨
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-//        presentPicker()
+        presentPicker()
     }
     
     fileprivate func setUpConstraints() {
@@ -88,7 +88,8 @@ class TextViewController: UIViewController {
             return
         }
         picker.delegate = self
-        picker.sourceType = .camera
+        picker.sourceType = .photoLibrary
+//        picker.sourceType = .camera
         picker.allowsEditing = true
 //        picker.sourceType = .photoLibrary
         present(picker, animated: true)
