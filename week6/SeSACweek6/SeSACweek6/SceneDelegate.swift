@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         //첫 시작 분기처리
-        let vc = ViewController()
+        let vc = OnboardingViewController()
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
     }

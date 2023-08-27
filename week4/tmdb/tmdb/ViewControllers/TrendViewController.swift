@@ -15,6 +15,7 @@ class TrendViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        UserDefaults.standard.set(true, forKey: "isLaunchedBefore")
         trendTableView.dataSource = self
         trendTableView.delegate = self
         configureView()
