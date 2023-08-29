@@ -38,6 +38,11 @@
 		57AAF28E2A9DE55700DD6782 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF28D2A9DE55700DD6782 /* BaseViewController.swift */; };
 		57AAF2902A9DE56A00DD6782 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF28F2A9DE56A00DD6782 /* BaseTableViewCell.swift */; };
 		57AAF2972A9DE78300DD6782 /* TrendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF2962A9DE78300DD6782 /* TrendCell.swift */; };
+		57AAF2992A9DFDF000DD6782 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF2982A9DFDF000DD6782 /* TabViewController.swift */; };
+		57AAF29B2A9E007D00DD6782 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF29A2A9E007D00DD6782 /* ProfileViewController.swift */; };
+		57AAF29D2A9E0B7200DD6782 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF29C2A9E0B7200DD6782 /* NameViewController.swift */; };
+		57AAF29F2A9E606400DD6782 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF29E2A9E606400DD6782 /* IntroViewController.swift */; };
+		57AAF2A12A9E629300DD6782 /* IdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF2A02A9E629300DD6782 /* IdViewController.swift */; };
 		57D6646F2A8FD044002ED603 /* MoreButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D6646E2A8FD044002ED603 /* MoreButtonTableViewCell.swift */; };
 		57F9AA962A92354B008EA550 /* RelatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9AA952A92354B008EA550 /* RelatedViewController.swift */; };
 		57F9AA992A92386A008EA550 /* RelatedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F9AA982A92386A008EA550 /* RelatedCollectionViewCell.swift */; };
@@ -103,6 +108,11 @@
 		57AAF28D2A9DE55700DD6782 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		57AAF28F2A9DE56A00DD6782 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		57AAF2962A9DE78300DD6782 /* TrendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCell.swift; sourceTree = "<group>"; };
+		57AAF2982A9DFDF000DD6782 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		57AAF29A2A9E007D00DD6782 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		57AAF29C2A9E0B7200DD6782 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		57AAF29E2A9E606400DD6782 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		57AAF2A02A9E629300DD6782 /* IdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdViewController.swift; sourceTree = "<group>"; };
 		57D6646E2A8FD044002ED603 /* MoreButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreButtonTableViewCell.swift; sourceTree = "<group>"; };
 		57F9AA952A92354B008EA550 /* RelatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedViewController.swift; sourceTree = "<group>"; };
 		57F9AA982A92386A008EA550 /* RelatedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -234,6 +244,11 @@
 			isa = PBXGroup;
 			children = (
 				57AAF2952A9DE76E00DD6782 /* Cells */,
+				57AAF2982A9DFDF000DD6782 /* TabViewController.swift */,
+				57AAF29A2A9E007D00DD6782 /* ProfileViewController.swift */,
+				57AAF29C2A9E0B7200DD6782 /* NameViewController.swift */,
+				57AAF2A02A9E629300DD6782 /* IdViewController.swift */,
+				57AAF29E2A9E606400DD6782 /* IntroViewController.swift */,
 			);
 			path = Codebased;
 			sourceTree = "<group>";
@@ -367,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57AAF2992A9DFDF000DD6782 /* TabViewController.swift in Sources */,
 				578B891A2A92474E00AE212F /* SimilarModel.swift in Sources */,
 				5769B0392A89197A008DC72A /* TrendsModel.swift in Sources */,
 				5769B02C2A87CBF5008DC72A /* Enums.swift in Sources */,
@@ -379,15 +395,19 @@
 				5769B01B2A87C0DF008DC72A /* TrendViewController.swift in Sources */,
 				57F9AA962A92354B008EA550 /* RelatedViewController.swift in Sources */,
 				574D572C2A873AA30007996C /* AppDelegate.swift in Sources */,
+				57AAF2A12A9E629300DD6782 /* IdViewController.swift in Sources */,
 				5769B0342A88E70F008DC72A /* TrendsTableViewCell.swift in Sources */,
 				57754D902A8B3A0200095B71 /* CastTableViewCell.swift in Sources */,
 				5769B02E2A87D0F9008DC72A /* DetailViewController.swift in Sources */,
 				57D6646F2A8FD044002ED603 /* MoreButtonTableViewCell.swift in Sources */,
+				57AAF29D2A9E0B7200DD6782 /* NameViewController.swift in Sources */,
+				57AAF29F2A9E606400DD6782 /* IntroViewController.swift in Sources */,
 				57AAF2902A9DE56A00DD6782 /* BaseTableViewCell.swift in Sources */,
 				574D57422A873B710007996C /* APIKey.swift in Sources */,
 				5769B01E2A87C15A008DC72A /* TmdbAPIManager.swift in Sources */,
 				57AAF2972A9DE78300DD6782 /* TrendCell.swift in Sources */,
 				574D572E2A873AA30007996C /* SceneDelegate.swift in Sources */,
+				57AAF29B2A9E007D00DD6782 /* ProfileViewController.swift in Sources */,
 				5769B0292A87CA72008DC72A /* Extensions.swift in Sources */,
 				57F9AA992A92386A008EA550 /* RelatedCollectionViewCell.swift in Sources */,
 			);

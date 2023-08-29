@@ -11,6 +11,10 @@ protocol ReusableViewProtocol{
     static var identifier: String {get}
 }
 
+protocol PassDataDelegate{
+    func receiveData(data: String)
+}
+
 extension UIViewController: ReusableViewProtocol{
    
     

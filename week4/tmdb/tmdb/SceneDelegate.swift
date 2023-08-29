@@ -21,12 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //debug
 //        UserDefaults.standard.set(false, forKey: "isLaunchedBefore")
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
         let isLaunchedBefore = UserDefaults.standard.bool(forKey: "isLaunchedBefore")
-        print("isLaunchedBefore", isLaunchedBefore)
-        let vc = isLaunchedBefore ? sb.instantiateViewController(withIdentifier: TrendViewController.identifier) as? TrendViewController : OnboardingViewController()
+        let vc = isLaunchedBefore ? TabViewController() : OnboardingViewController()
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = UINavigationController(rootViewController: vc!)
+        window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
     }
