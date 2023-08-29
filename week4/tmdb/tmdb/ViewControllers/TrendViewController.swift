@@ -18,15 +18,16 @@ class TrendViewController: UIViewController {
         super.viewDidLoad()
         trendTableView.dataSource = self
         trendTableView.delegate = self
+        trendTableView.register(TrendCell.self, forCellReuseIdentifier: TrendCell.identifier)
         configureView()
         callRequest()
+        trendTableView.rowHeight = UIScreen.main.bounds.height * 0.4
     }
     
     private func configureView(){
         title = "Trending"
         let nib = UINib(nibName: TrendsTableViewCell.identifier, bundle: nil)
         trendTableView.register(nib, forCellReuseIdentifier: TrendsTableViewCell.identifier)
-        trendTableView.rowHeight = UITableView.automaticDimension
     }
     
     //DispatchGroup 사용 가능
@@ -48,6 +49,7 @@ class TrendViewController: UIViewController {
                 }
             }
             self.trendTableView.reloadData()
+            
         }
     }
 }
@@ -60,14 +62,13 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
             return 0
         }
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TrendsTableViewCell.identifier) as? TrendsTableViewCell else{
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TrendCell.identifier) as? TrendCell else{
             print("Fail Loading Tableview Cell")
             return UITableViewCell()
         }
         cell.media = trendResults?.results[indexPath.row]
-        cell.configureView()
+        cell.assignDataToView()
         return cell
     }
     
@@ -82,12 +83,4 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
         
     }
     
-//    func showAlert(title: String, message: String, buttonTitle: String){
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//        let action = UIAlertAction(title: buttonTitle, style: .default)
-//        let cancel = UIAlertAction(title: "취소", style: .cancel)
-//        alert.addAction(action)
-//        alert.addAction(cancel)
-//        present(alert,animated: true)
-//    }
 }
