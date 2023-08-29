@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TMDBHelperFramework
 
 class TrendViewController: UIViewController {
     private var trendResults: Trends?
@@ -15,7 +16,6 @@ class TrendViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        UserDefaults.standard.set(true, forKey: "isLaunchedBefore")
         trendTableView.dataSource = self
         trendTableView.delegate = self
         configureView()
@@ -35,8 +35,10 @@ class TrendViewController: UIViewController {
         TmdbAPIManager.shared.callTrendsRequest(type: MediaType.movie, timeWindow: TimeWindow.week){ response in
             self.trendResults = response.value
             if let err = response.error{
-                print("SHOW ALERT")
-                self.showAlert(title: "아앗!", message: "네트워크 이슈 같아요", buttonTitle: "돌아가기")
+                
+                print(err)
+                
+                self.showAlert(title: "삐빅!", message: "네트워크 이슈 같아요", buttonTitle: "돌아가기")
             }
             if self.trendResults != nil{
                 for result in self.trendResults!.results{
@@ -51,7 +53,6 @@ class TrendViewController: UIViewController {
 }
 
 extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let trendResults{
             return trendResults.results.count
@@ -76,22 +77,17 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
         guard let trendResults else { return }
         vc.media = trendResults.results[indexPath.row]
         vc.credits = creditResultsDictionary[trendResults.results[indexPath.row].id]
-        
-        
-        
         navigationController?.pushViewController(vc, animated: true)
-        //        present(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
-    func showAlert(title: String, message: String, buttonTitle: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: buttonTitle, style: .default)
-        let cancel = UIAlertAction(title: "취소", style: .cancel)
-        
-        alert.addAction(action)
-        alert.addAction(cancel)
-        present(alert,animated: true)
-    }
+//    func showAlert(title: String, message: String, buttonTitle: String){
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//        let action = UIAlertAction(title: buttonTitle, style: .default)
+//        let cancel = UIAlertAction(title: "취소", style: .cancel)
+//        alert.addAction(action)
+//        alert.addAction(cancel)
+//        present(alert,animated: true)
+//    }
 }

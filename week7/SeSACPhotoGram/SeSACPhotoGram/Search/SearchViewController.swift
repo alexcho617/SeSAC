@@ -10,6 +10,8 @@ import UIKit
 class SearchViewController: BaseViewController {
     let mainView = SearchView()
     let imageList = ["pencil","star","person","star.fill","xmark","person.circle"]
+    //2
+    var delegate: PassImageDelegate?
     
     override func loadView() {
         self.view = mainView
@@ -27,6 +29,7 @@ class SearchViewController: BaseViewController {
         print(#function)
         print("GOT REC")
         //sleep을 줘도 아에 그냥 실행이 안되는데?
+        //dispatchqueue로 넘어와도 안됨
     }
     
     override func configureView() {
@@ -48,9 +51,15 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //여기서 이제 다시 역으로 AddView에 보내야함
         //notification 방식
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "고래밥"])
+//        NotificationCenter.default.post(name: .selectImage, object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "고래밥"])
+        
+        //delegate 방식
+        let name = imageList[indexPath.item]
+        print(name)
+        //3
+        delegate?.passImage(image: name)
+        
         dismiss(animated: true)
     }
     

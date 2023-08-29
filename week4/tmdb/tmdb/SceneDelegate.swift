@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         print("isLaunchedBefore", isLaunchedBefore)
         let vc = isLaunchedBefore ? sb.instantiateViewController(withIdentifier: TrendViewController.identifier) as? TrendViewController : OnboardingViewController()
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = vc
+        window?.rootViewController = UINavigationController(rootViewController: vc!)
         window?.makeKeyAndVisible()
         
     }

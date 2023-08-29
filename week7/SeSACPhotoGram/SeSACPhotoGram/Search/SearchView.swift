@@ -29,7 +29,7 @@ class SearchView: BaseView{
     
     override func setConstraints() {
         searchBar.snp.makeConstraints { make in
-            make.top.horizontalEdges.equalToSuperview()
+            make.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide)//이거 view safearea 로 어떻게 바꾸지?
         }
         
         collectionView.snp.makeConstraints { make in
@@ -39,7 +39,7 @@ class SearchView: BaseView{
         
     }
     
-    func collectionViewLayout() -> UICollectionViewFlowLayout{
+    private func collectionViewLayout() -> UICollectionViewFlowLayout{
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
