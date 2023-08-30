@@ -11,20 +11,23 @@ class AddView: BaseView{
     let photoImageView = {
         let view = UIImageView()
         view.backgroundColor = .lightGray
-        view.contentMode = .scaleAspectFill
-        
+        view.contentMode = .scaleAspectFit
+        view.clipsToBounds = true
         return view
     }()
     
-    let searchButon = {
+    let rightSearchButton = {
         let view = UIButton()
-        view.backgroundColor = .systemGreen
+        view.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        view.tintColor = .white
+        view.backgroundColor = .systemMint
         return view
     }()
     
-    let searchProtocolButon = {
+    let leftSearchProtocolButton = {
         let view = UIButton()
-        view.backgroundColor = .systemGreen
+        view.setTitle("Prtc", for: .normal)
+        view.backgroundColor = .systemCyan
         return view
     }()
     
@@ -58,12 +61,12 @@ class AddView: BaseView{
             make.height.equalTo(self).multipliedBy(0.3)
         }
         
-        searchButon.snp.makeConstraints { make in
+        rightSearchButton.snp.makeConstraints { make in
             make.size.equalTo(50)
             make.bottom.trailing.equalTo(photoImageView)
         }
         
-        searchProtocolButon.snp.makeConstraints { make in
+        leftSearchProtocolButton.snp.makeConstraints { make in
             make.size.equalTo(50)
             make.bottom.leading.equalTo(photoImageView)
         }
@@ -92,9 +95,9 @@ class AddView: BaseView{
     
     override func configureView() {
         addSubview(photoImageView) //자기 자신임
-        addSubview(searchButon)
+        addSubview(rightSearchButton)
         addSubview(dateButton)
-        addSubview(searchProtocolButon)
+        addSubview(leftSearchProtocolButton)
         addSubview(titleButton)
         addSubview(labelButton)
     }

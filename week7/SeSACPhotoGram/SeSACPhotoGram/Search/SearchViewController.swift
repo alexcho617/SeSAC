@@ -55,15 +55,16 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //notification 방식
-//        NotificationCenter.default.post(name: .selectImage, object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "고래밥"])
+        NotificationCenter.default.post(name: .selectImage, object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "고래밥"])
         
         //delegate 방식
-        let name = imageList[indexPath.item]
-        print(name)
-        //3
-        delegate?.passImage(image: name)
+//        let name = imageList[indexPath.item]
+//        print(name)
+//        //3
+//        delegate?.passImage(image: name)
         
-        dismiss(animated: true)
+//        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     

@@ -10,7 +10,7 @@ import Foundation
 extension DateFormatter{
     static let format = {
         let format = DateFormatter()
-        format.dateFormat = "yy년 MM월 dd일"
+        format.dateFormat = "yyyy년 MM월 dd일"
         return format
     }()
     

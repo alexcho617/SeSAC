@@ -8,12 +8,14 @@
 import UIKit
 extension UIViewController{
     
-    public func sesacShowAlert(title: String, message: String, buttonTitle: String, buttonAction: @escaping (UIAlertAction) -> Void){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    public func sesacShowAlert(title: String, message: String, actionOneTitle: String, actionOne: @escaping (UIAlertAction) -> Void, actionTwoTitle: String, actionTwo: @escaping (UIAlertAction) -> Void){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         let cancel = UIAlertAction(title: "취소", style: .cancel)
-        let ok = UIAlertAction(title: buttonTitle, style: .default, handler: buttonAction)
+        let menuOne = UIAlertAction(title: actionOneTitle, style: .default, handler: actionOne)
+        let menuTwo = UIAlertAction(title: actionTwoTitle, style: .default, handler: actionTwo)
         alert.addAction(cancel)
-        alert.addAction(ok)
+        alert.addAction(menuOne)
+        alert.addAction(menuTwo)
         present(alert, animated: true)
         
     }
