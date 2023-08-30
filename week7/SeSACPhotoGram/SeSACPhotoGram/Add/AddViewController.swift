@@ -17,7 +17,7 @@ class AddViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        APIService.shared.callRequest()
     }
     
     //vDL에 있던걸 vWA로 옮김

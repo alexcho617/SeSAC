@@ -30,6 +30,8 @@
 		57AAF2542A9DB54A00DD6782 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF2532A9DB54A00DD6782 /* TitleViewController.swift */; };
 		57AAF2562A9DC18400DD6782 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF2552A9DC18400DD6782 /* TextViewController.swift */; };
 		57AAF2582A9DC75F00DD6782 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF2572A9DC75F00DD6782 /* WebViewController.swift */; };
+		57AAF2A72A9EC74400DD6782 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF2A62A9EC74400DD6782 /* APIService.swift */; };
+		57F411912A9EEBD100724284 /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F411902A9EEBD100724284 /* URLSessionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		57AAF2532A9DB54A00DD6782 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		57AAF2552A9DC18400DD6782 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		57AAF2572A9DC75F00DD6782 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		57AAF2A62A9EC74400DD6782 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		57F411902A9EEBD100724284 /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 		57AAF1E92A9C1D6800DD6782 /* SeSACPhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				57AAF2A52A9EC72C00DD6782 /* Network */,
 				57AAF2122A9D7BC700DD6782 /* Extension */,
 				57AAF2012A9C23E900DD6782 /* Base */,
 				57AAF20B2A9C302B00DD6782 /* Add */,
@@ -194,6 +199,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57AAF2A52A9EC72C00DD6782 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				57AAF2A62A9EC74400DD6782 /* APIService.swift */,
+				57F411902A9EEBD100724284 /* URLSessionViewController.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57AAF2142A9D7BE200DD6782 /* Notification+Extension.swift in Sources */,
+				57AAF2A72A9EC74400DD6782 /* APIService.swift in Sources */,
 				57AAF2582A9DC75F00DD6782 /* WebViewController.swift in Sources */,
 				57AAF20A2A9C300A00DD6782 /* AddView.swift in Sources */,
 				57AAF2062A9C273500DD6782 /* SearchViewController.swift in Sources */,
@@ -310,6 +325,7 @@
 				57AAF2032A9C243F00DD6782 /* BaseViewController.swift in Sources */,
 				57AAF21A2A9D89F000DD6782 /* Protocols.swift in Sources */,
 				57AAF20D2A9C338000DD6782 /* SearchView.swift in Sources */,
+				57F411912A9EEBD100724284 /* URLSessionViewController.swift in Sources */,
 				57AAF2082A9C2EDE00DD6782 /* BaseView.swift in Sources */,
 				57AAF2562A9DC18400DD6782 /* TextViewController.swift in Sources */,
 				57AAF1EB2A9C1D6800DD6782 /* AppDelegate.swift in Sources */,

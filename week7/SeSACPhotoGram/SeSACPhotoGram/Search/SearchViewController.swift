@@ -22,6 +22,9 @@ class SearchViewController: BaseViewController {
         print("Search VDL")
         NotificationCenter.default.addObserver(self, selector: #selector(recommendKeyObserver), name: NSNotification.Name("RecommendKey"), object: nil)
         
+        mainView.searchBar.becomeFirstResponder()
+        mainView.searchBar.delegate = self
+        
     }
     
     //B->A는 되었는데 A->B는 안되고 있는상황: 포스트 전에 옵저빙을 하고 있어야하기 때문에 받을 수 없다. 따라서 일반적으로 Notification은 B->A상황에서만 쓴다.
@@ -64,4 +67,11 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     
+}
+
+extension SearchViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        mainView.searchBar.resignFirstResponder()
+//        view.endEditing(true) 이것도 되지만 위에가 더 적합한가?
+    }
 }
