@@ -18,7 +18,14 @@ class SearchView: BaseView{
         //frame과 layout 워닝을 따로 알려주지 않으니 주의해야함
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "SearchCollectionViewCell")
-        view.collectionViewLayout = collectionViewLayout()
+        
+        let layout = UICollectionViewFlowLayout()
+        let size = (UIScreen.main.bounds.width - 20) * 0.33
+        
+        layout.itemSize = CGSize(width: size, height: size)
+//        layout.minimumLineSpacing = 8
+//        layout.minimumInteritemSpacing = 8
+        view.collectionViewLayout = layout
         return view
     }()
     

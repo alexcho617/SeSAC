@@ -62,13 +62,11 @@ class AddViewController: BaseViewController {
     }
     
     @objc func selectImageNotificationObserver(notification: NSNotification){
-        print(#function)
-        guard let name = notification.userInfo?["name"] as? String else{ return }
-        mainView.photoImageView.image = UIImage(systemName: name)
+        guard let imageURL = notification.userInfo?["name"] as? String else{ return }
+        mainView.photoImageView.kf.setImage(with: URL(string: imageURL))
     }
     
     @objc func searchButtonClicked(){
-        //TODO: Alert
         sesacShowAlert(title: "사진", message: "메뉴에서 선택", actionOneTitle: "검색", actionOne: { actionOne in
             self.navigationController?.pushViewController(SearchViewController(), animated: true)
         }, actionTwoTitle: "촬영") { actionTwo in

@@ -4,15 +4,16 @@
 //
 //  Created by Alex Cho on 2023/08/28.
 //
-
 import UIKit
+import Alamofire
+import Kingfisher
 
 class SearchViewController: BaseViewController {
+    private var unsplash: Unsplash?
     let mainView = SearchView()
-    let imageList = ["pencil","star","person","star.fill","xmark","person.circle"]
+    
     //2
     var delegate: PassImageDelegate?
-    
     override func loadView() {
         self.view = mainView
     }
@@ -20,19 +21,8 @@ class SearchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Search VDL")
-        NotificationCenter.default.addObserver(self, selector: #selector(recommendKeyObserver), name: NSNotification.Name("RecommendKey"), object: nil)
-        
         mainView.searchBar.becomeFirstResponder()
         mainView.searchBar.delegate = self
-        
-    }
-    
-    //B->A는 되었는데 A->B는 안되고 있는상황: 포스트 전에 옵저빙을 하고 있어야하기 때문에 받을 수 없다. 따라서 일반적으로 Notification은 B->A상황에서만 쓴다.
-    @objc func recommendKeyObserver(notification: NSNotification){
-        print(#function)
-        print("GOT REC")
-        //sleep을 줘도 아에 그냥 실행이 안되는데?
-        //dispatchqueue로 넘어와도 안됨
     }
     
     override func configureView() {
@@ -40,22 +30,30 @@ class SearchViewController: BaseViewController {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
     }
+    
+    func callRequest(query: String){
+        APIService.shared.callRequestWithAF(query: query) { response in
+            self.unsplash = response.value
+            self.mainView.collectionView.reloadData()
+        }
+    }
 }
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        imageList.count
+        unsplash?.results.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as! SearchCollectionViewCell
-        cell.imageView.image = UIImage(systemName: imageList[indexPath.row])
+        let item = unsplash?.results[indexPath.item]
+        cell.imageView.kf.setImage(with: URL(string: item?.urls.regular ?? ""))
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //notification 방식
-        NotificationCenter.default.post(name: .selectImage, object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "고래밥"])
+        NotificationCenter.default.post(name: .selectImage, object: nil, userInfo: ["name": unsplash?.results[indexPath.item].urls.regular, "sample": "고래밥"])
         
         //delegate 방식
 //        let name = imageList[indexPath.item]
@@ -72,7 +70,9 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
 extension SearchViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let query = searchBar.text{
+            callRequest(query: query)
+        }
         mainView.searchBar.resignFirstResponder()
-//        view.endEditing(true) 이것도 되지만 위에가 더 적합한가?
     }
 }

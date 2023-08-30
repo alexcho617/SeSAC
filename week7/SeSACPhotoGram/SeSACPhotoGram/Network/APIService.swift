@@ -23,9 +23,36 @@ class APIService{
         }.resume() //이게 있어야 시작
     }
     
-//https://api.unsplash.com/search/photos?query=sky&client_id=sbHxAxoUWQQasbaPZVJU2ZJ7bW2yXUUdocDy4STY-w8#
-    func callRequestWithAF(query: String){
+//https://api.unsplash.com/search/photos?query=sky&client_id=sbHxAxoUWQQasbaPZVJU2ZJ7bW2yXUUdocDy4STY-w8
+    func callRequestWithAF(query: String, completionHandler: @escaping (AFDataResponse<Unsplash>) ->()){
+        let url = Endpoint.search.requestURL + query + "&client_id=" + APIKey.unsplash
+        print("URL",url)
+        
+        AF.request(url, method: .get).validate().responseDecodable(of: Unsplash.self) { response in
+            switch response.result{
+            case .success:
+                completionHandler(response)
+            case .failure(let error):
+                print(#function, error)
+            }
+        }
         
     }
     private init(){}
+}
+
+
+extension URL{
+    static let base = "https://api.unsplash.com/"
+}
+
+enum Endpoint{
+    case search
+    
+    var requestURL: String{
+        switch self {
+        case .search:
+            return URL.base + "search/photos?query="
+        }
+    }
 }
