@@ -12,18 +12,15 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Base VDL")
         configureView()
         setConstraints()
     }
     
     func configureView(){
-        print("Base configure")
         view.backgroundColor = .white
     }
     
     func setConstraints() {
-        print("Base setConstraints")
     }
 
 }

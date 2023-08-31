@@ -23,6 +23,10 @@ class DateViewController: BaseViewController {
         self.view = mainView
     }
     
+    deinit {
+        print("deinit", self)
+    }
+    
     //어느 시점에 함수를 실행할지 정함
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)

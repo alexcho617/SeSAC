@@ -28,6 +28,10 @@ class AddViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: NSNotification.Name("SelectImage"), object: nil)
     }
     
+    deinit {
+        print("deinit", self)
+    }
+    
     override func setConstraints() {
         super.setConstraints()
     }
@@ -56,9 +60,11 @@ class AddViewController: BaseViewController {
     }
     
     @objc func dateButtonClicked(){
-        let vc = DateViewController()
-        vc.delegate = self
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = DateViewController()
+//        vc.delegate = self
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        navigationController?.pushViewController(HomeViewController(), animated: true)
     }
     
     @objc func selectImageNotificationObserver(notification: NSNotification){
@@ -95,7 +101,7 @@ class AddViewController: BaseViewController {
     }
     
     @objc func labelButtonClicked(){
-        let vc = TextViewController()
+        let vc = ContentViewController()
         vc.completionHandler = { response in
             print("completionHandler")
             self.mainView.labelButton.setTitle(response, for: .normal)

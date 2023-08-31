@@ -24,7 +24,9 @@ class SearchViewController: BaseViewController {
         mainView.searchBar.becomeFirstResponder()
         mainView.searchBar.delegate = self
     }
-    
+    deinit {
+        print("deinit", self)
+    }
     override func configureView() {
         super.configureView()
         mainView.collectionView.delegate = self

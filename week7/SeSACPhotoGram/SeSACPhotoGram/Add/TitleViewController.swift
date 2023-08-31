@@ -27,7 +27,9 @@ class TitleViewController: BaseViewController {
         print(#function, #file)
 
     }
-    
+    deinit {
+        print("deinit", self)
+    }
     override func configureView() {
         view.addSubview(textField)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(doneClicked))
