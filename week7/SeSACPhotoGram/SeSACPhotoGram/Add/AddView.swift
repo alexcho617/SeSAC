@@ -72,23 +72,20 @@ class AddView: BaseView{
         }
         
         dateButton.snp.makeConstraints { make in
-            make.size.equalTo(50)
             make.top.equalTo(photoImageView.snp.bottom).offset(10)
             make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(10)
             
         }
         
         titleButton.snp.makeConstraints { make in
-            make.size.equalTo(50)
             make.top.equalTo(dateButton.snp.bottom).offset(10)
-            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
+            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide).offset(10)
             
         }
         
         labelButton.snp.makeConstraints { make in
-            make.size.equalTo(50)
             make.top.equalTo(titleButton.snp.bottom).offset(10)
-            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
+            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide).offset(10)
             
         }
     }

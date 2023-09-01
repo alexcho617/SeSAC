@@ -57,3 +57,21 @@ struct Urls: Codable {
         case smallS3 = "small_s3"
     }
 }
+
+///
+///퀵타입 안쓰고 만듬
+struct Photo: Codable {
+    let total: Int
+    let total_pages: Int
+    let results: [PhotoResult]
+}
+
+struct PhotoResult: Codable {
+    let id: String
+    let urls: PhotoURL
+}
+
+struct PhotoURL: Codable {
+    let full: String
+    let thumb: String
+}

@@ -16,14 +16,15 @@ class HomeView: BaseView{
 
     //'weak' must not be applied to non-class-bound 'any HomeViewProtocol'; consider adding a protocol conformance that has a class bound
     //weak은 클래스에서만 써야하는데 프로토콜에서 클래스 제약을 안걸었기 때문에 구조체 등 다른것들이 올 수 있어서 에러가남
-    weak var delegate: HomeViewProtocol?
+    
+    weak var delegate: HomeViewProtocol? //여기를 weak으로 안하면 순환참조가 되어 메모리가 누수되었음
    
     lazy var collectionView = {
         //frame과 layout 워닝을 따로 알려주지 않으니 주의해야함
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "SearchCollectionViewCell")
-        view.dataSource = self
-        view.delegate = self
+//        view.dataSource = self
+//        view.delegate = self
         return view
     }()
     
@@ -51,24 +52,24 @@ class HomeView: BaseView{
     }
 }
 
-
-extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
-        cell.imageView.backgroundColor = .systemRed
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(#function, indexPath)
-        //어떠한 navigation 불가: View Controller가 담당하고 있기 때문
-        //delegate pattern을 사용한 값 전달
-        delegate?.didSelectItemAt(indexPath: indexPath)
-    }
-    
-    
-}
+//
+//extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource{
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 100
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
+//        cell.imageView.backgroundColor = .systemRed
+//        return cell
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        print(#function, indexPath)
+//        //어떠한 navigation 불가: View Controller가 담당하고 있기 때문
+//        //delegate pattern을 사용한 값 전달
+//        delegate?.didSelectItemAt(indexPath: indexPath)
+//    }
+//    
+//    
+//}
