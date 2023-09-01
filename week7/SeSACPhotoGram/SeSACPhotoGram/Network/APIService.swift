@@ -43,39 +43,32 @@ class APIService{
     func callRequestWithURLSession(query: String, completionHandler: @escaping (Photo?) -> Void){
         let urlString = Endpoint.search.requestURL + query + "&client_id=" + APIKey.unsplash
         guard let url = URL(string: urlString) else {return}
-        print(#function,#line,url)
         let request = URLRequest(url: url, timeoutInterval: 5)
-        print("reuqest",request) //여기까지 정상출력
-
-        //내부적으로 글로벌 큐라 UI 업데이트시 문제가 생길 여지 있음
+        //내부적으로 Global Queue임으로 완료 후 UI 업데이트시 Main Queue에서 실행
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error {
-                print("error")
                 completionHandler(nil)
                 return
             }
             
             guard let response = response as? HTTPURLResponse, (200...500).contains(response.statusCode) else {
-                print("response error")
                 completionHandler(nil)
                 return
             }
+            
             guard let data = data else {
-                print("data error")
                 completionHandler(nil)
                 return
             }
+            
             do{
-                print("do phrase")
                 let result = try JSONDecoder().decode(Photo.self,from:data)
-                print(result)
                 completionHandler(result)
                 
             }catch{
-                print("catch error")
                 completionHandler(nil)
-            }   
-        }
+            }
+        }.resume()
     }
 }
 

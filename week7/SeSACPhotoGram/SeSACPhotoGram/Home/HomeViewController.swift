@@ -35,9 +35,10 @@ class HomeViewController: BaseViewController {
                 return
             }
             self.list = photos
-            print(self.list)
+            DispatchQueue.main.async {
+                self.mainView.collectionView.reloadData()
+            }
             
-            self.mainView.collectionView.reloadData()
         }
     }
     //delegate를 연결하니 deinit이 안되고이씀
@@ -57,14 +58,11 @@ extension HomeViewController: HomeViewProtocol{
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        print(#function, #line)
         return list.results.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
-        print(#function)
         let item = list.results[indexPath.item].urls.thumb
         let url = URL(string: item) // 이 부분 네트워크 통신임
         
@@ -75,8 +73,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             
         }
-        
-        
+
         return cell
     }
     
