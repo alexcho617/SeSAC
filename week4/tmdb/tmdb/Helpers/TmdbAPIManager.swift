@@ -31,6 +31,36 @@ class TmdbAPIManager{
         }
     }
     
+    func callTrendsRequestWithURLSession(type: MediaType, timeWindow: TimeWindow, completionHandler: @escaping (Trends) -> Void){
+        let urlString = Endpoint.trend.requestURL + "\(type.rawValue)/\(timeWindow.rawValue)" + "?api_key=\(APIKey.tmdbKey)"
+        let url = URL(string: urlString)
+        let request = URLRequest(url: url!)
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error{
+                print(error)
+                return
+            }
+            guard let response = response as? HTTPURLResponse, (200...500).contains(response.statusCode) else{
+                print("response error")
+                return
+            }
+            
+            guard let data = data else {
+                print("data error")
+                return
+            }
+            
+            do{
+                let result = try JSONDecoder().decode(Trends.self, from:data)
+                completionHandler(result)
+            }
+            catch{
+                print("decode error")
+                return
+            }
+        }.resume()
+    }
     func callCreditsRequest(of mediaId: Int, completionHandler: @escaping (AFDataResponse<Credits>) -> ()){
         let url = Endpoint.credits.requestURL + "\(String(mediaId))/credits?api_key=\(APIKey.tmdbKey)"
         AF.request(url, method: .get).validate().responseDecodable(of: Credits.self) { response in

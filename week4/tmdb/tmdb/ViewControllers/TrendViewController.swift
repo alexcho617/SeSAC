@@ -20,7 +20,8 @@ class TrendViewController: UIViewController {
         trendTableView.delegate = self
         trendTableView.register(TrendCell.self, forCellReuseIdentifier: TrendCell.identifier)
         configureView()
-        callRequest()
+//        callRequest()
+        callRequestWithURLSession()
         trendTableView.rowHeight = UIScreen.main.bounds.height * 0.4
     }
     
@@ -49,6 +50,24 @@ class TrendViewController: UIViewController {
                 }
             }
             self.trendTableView.reloadData()
+            
+        }
+    }
+    
+    private func callRequestWithURLSession(){
+        TmdbAPIManager.shared.callTrendsRequestWithURLSession(type: MediaType.movie, timeWindow: TimeWindow.week) { response in
+            
+            self.trendResults = response
+            if self.trendResults != nil{
+                for result in self.trendResults!.results{
+                    TmdbAPIManager.shared.callCreditsRequest(of: result.id){response in
+                        self.creditResultsDictionary[result.id] = response.value
+                    }
+                }
+            }
+            DispatchQueue.main.async {
+                self.trendTableView.reloadData()
+            }
             
         }
     }
