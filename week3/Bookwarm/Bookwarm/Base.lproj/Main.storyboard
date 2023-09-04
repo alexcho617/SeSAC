@@ -54,30 +54,6 @@
             </objects>
             <point key="canvasLocation" x="2189" y="-406"/>
         </scene>
-        <!--Search View Controller-->
-        <scene sceneID="XYB-gr-A7X">
-            <objects>
-                <viewController storyboardIdentifier="SearchViewController" id="5Gi-I1-yiO" customClass="SearchViewController" customModule="Bookwarm" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kuz-S6-p6s">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SEARCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzG-3u-olM">
-                                <rect key="frame" x="175" y="416" width="66" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6T5-UQ-THl"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q5j-73-fbf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1308" y="314"/>
-        </scene>
         <!--Detail View Controller-->
         <scene sceneID="voF-tw-87a">
             <objects>
@@ -330,8 +306,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="sdC-td-R2w" kind="relationship" relationship="viewControllers" id="9o4-rd-gup"/>
-                        <segue destination="FCt-dd-sKj" kind="relationship" relationship="viewControllers" id="8Wt-09-liB"/>
+                        <segue destination="7FE-H4-C6y" kind="relationship" relationship="viewControllers" id="CzV-wA-wbt"/>
+                        <segue destination="sdC-td-R2w" kind="relationship" relationship="viewControllers" id="byx-8h-9kB"/>
+                        <segue destination="FCt-dd-sKj" kind="relationship" relationship="viewControllers" id="00m-WT-2Nv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wc0-9r-hvx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -339,10 +316,26 @@
             <point key="canvasLocation" x="-302" y="-851"/>
         </scene>
         <!--Home-->
+        <scene sceneID="vBe-V5-RWE">
+            <objects>
+                <viewController id="7FE-H4-C6y" customClass="HomeViewController" customModule="Bookwarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ktt-M9-7dZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fkP-Zw-Kyk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="Upa-k3-yFH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KbD-nw-YUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1308" y="289"/>
+        </scene>
+        <!--Book-->
         <scene sceneID="n91-Ki-OjG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sdC-td-R2w" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="XBr-Gy-Bqj"/>
+                    <tabBarItem key="tabBarItem" title="Book" image="book" catalog="system" id="XBr-Gy-Bqj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P7o-kI-KbD">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -357,11 +350,11 @@
             </objects>
             <point key="canvasLocation" x="1309" y="-406"/>
         </scene>
-        <!--Discover-->
+        <!--Movie-->
         <scene sceneID="oPe-ae-QSP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FCt-dd-sKj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Discover" image="magnifyingglass" catalog="system" id="Ciz-ff-Igi"/>
+                    <tabBarItem key="tabBarItem" title="Movie" image="popcorn" catalog="system" id="Ciz-ff-Igi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5UQ-EV-smN">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -378,9 +371,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="popcorn" catalog="system" width="102" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-
+import RealmSwift
 class BookCollectionViewController: UICollectionViewController {
     
     //variables
@@ -18,13 +18,7 @@ class BookCollectionViewController: UICollectionViewController {
     let searchPlaceHolder = "검색을 해보세요"
     var bookList: [Book] = []
     
-    
-//    var movieInfo = MovieInfo(){
-//        didSet{
-//            collectionView.reloadData()
-//        }
-//    }
-//
+
     @IBOutlet weak var searchButton: UIBarButtonItem!
     //vdl
     override func viewDidLoad() {
@@ -41,6 +35,8 @@ class BookCollectionViewController: UICollectionViewController {
     
     
     //actions
+    
+    //TODO: Scroll error
     func callRequest(query: String, page: Int){
         let headers: HTTPHeaders = ["Authorization": APIKey.kakaoKey]
         let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
@@ -52,7 +48,6 @@ class BookCollectionViewController: UICollectionViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("JSON: \(json)")
                 
                 //list
                 self.isEnd = json["meta"]["is_End"].boolValue
@@ -104,13 +99,18 @@ class BookCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    //Todo search 결과에서 눌렀을때 인덱스 오류로 인해 다른 화면으로 넘어감
+    //TODO: add to realm database
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let sb = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-//        vc.movie = movieInfo.movies[indexPath.row]
-//        vc.transitionStyle = .push
-//        navigationController?.pushViewController(vc, animated: true)
+        //create
+        let data = bookList[indexPath.row]
+
+        let book = RealmBook(authors: data.authors, title: data.title, thumbnail: data.thumbnail, url: data.url, isLiked: data.isLiked)
+        //write
+        let realm = try! Realm()
+        try! realm.write{
+            realm.add(book)
+            print("book added")
+        }
         
     }
     
@@ -150,26 +150,18 @@ extension BookCollectionViewController: UISearchBarDelegate{
         page = 1
         guard let query = searchBar.text else {return}
 //        search()
-        callRequest(query: searchBar.text!, page: page)
+        callRequest(query: query, page: page)
     }
     
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = nil
+        bookList.removeAll()
+
+        collectionView.reloadData()
         searchBar.resignFirstResponder()
     }
-    
-    //안쓰는중
-//    func search(){
-//        movieInfo.searchResults.removeAll()
-//        for item in movieInfo.movies{
-//            if item.title.contains(searchBar.text!){
-//                movieInfo.searchResults.append(item)
-//            }
-//        }
-//        collectionView.reloadData()
-//    }
-    
+ 
 }
 
 extension BookCollectionViewController: UICollectionViewDataSourcePrefetching{
