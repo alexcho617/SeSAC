@@ -11,7 +11,7 @@ class APIService {
     
     static let shared = APIService()
     
-    private let key = ""
+    private let key = APIKey.unsplash
     
     private init() { }
     

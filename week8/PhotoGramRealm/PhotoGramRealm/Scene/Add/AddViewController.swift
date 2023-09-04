@@ -7,44 +7,44 @@
 
 import UIKit
 import SnapKit
-
+import RealmSwift
 class AddViewController: BaseViewController {
-     
-     let userImageView: PhotoImageView = {
-         let view = PhotoImageView(frame: .zero)
-         return view
-     }()
-     
-     let titleTextField: WriteTextField = {
-         let view = WriteTextField()
-         view.placeholder = "제목을 입력해주세요"
-         return view
-     }()
-     
-     let dateTextField: WriteTextField = {
-         let view = WriteTextField()
-         view.placeholder = "날짜를 입력해주세요"
-         return view
-     }()
-     
-     let contentTextView: UITextView = {
-         let view = UITextView()
-         view.font = .systemFont(ofSize: 14)
-         view.layer.borderWidth = Constants.Desgin.borderWidth
-         view.layer.borderColor = Constants.BaseColor.border
-         view.layer.cornerRadius = Constants.Desgin.cornerRadius
-         return view
-     }()
-     
-     lazy var searchImageButton: UIButton = {
-         let view = UIButton()
-         view.setImage(UIImage(systemName: "photo"), for: .normal)
-         view.tintColor = Constants.BaseColor.text
-         view.backgroundColor = Constants.BaseColor.point
-         view.layer.cornerRadius = 25
-         view.addTarget(self, action: #selector(searchImageButtonClicked), for: .touchUpInside)
-         return view
-     }()
+    
+    let userImageView: PhotoImageView = {
+        let view = PhotoImageView(frame: .zero)
+        return view
+    }()
+    
+    let titleTextField: WriteTextField = {
+        let view = WriteTextField()
+        view.placeholder = "제목을 입력해주세요"
+        return view
+    }()
+    
+    let dateTextField: WriteTextField = {
+        let view = WriteTextField()
+        view.placeholder = "날짜를 입력해주세요"
+        return view
+    }()
+    
+    let contentTextView: UITextView = {
+        let view = UITextView()
+        view.font = .systemFont(ofSize: 14)
+        view.layer.borderWidth = Constants.Desgin.borderWidth
+        view.layer.borderColor = Constants.BaseColor.border
+        view.layer.cornerRadius = Constants.Desgin.cornerRadius
+        return view
+    }()
+    
+    lazy var searchImageButton: UIButton = {
+        let view = UIButton()
+        view.setImage(UIImage(systemName: "photo"), for: .normal)
+        view.tintColor = Constants.BaseColor.text
+        view.backgroundColor = Constants.BaseColor.point
+        view.layer.cornerRadius = 25
+        view.addTarget(self, action: #selector(searchImageButtonClicked), for: .touchUpInside)
+        return view
+    }()
     
     lazy var searchWebButton: UIButton = {
         let view = UIButton()
@@ -55,15 +55,23 @@ class AddViewController: BaseViewController {
         view.addTarget(self, action: #selector(searchWebButtonClicked), for: .touchUpInside)
         return view
     }()
-      
+    
     override func viewDidLoad() {
-        super.viewDidLoad() //안하는 경우 생기는 문제
+        super.viewDidLoad() //안하는 경우 BaseVC VDL 호출되지 않으면서 버벅임 발생
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonClicked))
     }
     
     @objc func saveButtonClicked() {
-          
+        //realm file 위치 찾는 코드
+        let realm = try! Realm() //근데 try에 느낌표는 왜 붙지??
+//        let task = Diary(title: "제목테스트 \(Int.random(in: 1...100))", date: Date(), content: "내용테스트 \(Int.random(in: 200...300))", PhotoURL: nil)
+        
+        let task = Diary(title: titleTextField.text!, date: Date(), content: contentTextView.text!, PhotoURL: nil)
+        try! realm.write{
+            realm.add(task)
+            print(#line, "Realm Add Suceed")
+        }
         navigationController?.popViewController(animated: true)
     }
     
@@ -97,11 +105,11 @@ class AddViewController: BaseViewController {
         [userImageView, titleTextField, dateTextField, contentTextView, searchImageButton, searchWebButton].forEach {
             view.addSubview($0)
         }
-
+        
     }
     
     override func setConstraints() {
-          
+        
         userImageView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(12)
             make.leading.equalTo(view).offset(20)
