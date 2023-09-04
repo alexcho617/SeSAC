@@ -19,6 +19,7 @@ class TrendViewController: UIViewController {
         trendTableView.dataSource = self
         trendTableView.delegate = self
         trendTableView.register(TrendCell.self, forCellReuseIdentifier: TrendCell.identifier)
+        trendTableView.register(TrendsPersonTableViewCell.self, forCellReuseIdentifier: TrendsPersonTableViewCell.identifier)
         configureView()
 //        callRequest()
         callRequestWithURLSession()
@@ -81,14 +82,28 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource{
             return 0
         }
     }
+    
+    
+    //TODO: Categorize cell type by MediaType and make it return approporiate view cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TrendCell.identifier) as? TrendCell else{
-            print("Fail Loading Tableview Cell")
-            return UITableViewCell()
+        //Testing: for even rows, force return persontableviewcell
+        if indexPath.row % 2 == 0{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TrendsPersonTableViewCell.identifier) as? TrendsPersonTableViewCell else{
+                print("Fail Loading Person Tableview Cell")
+                return UITableViewCell()
+            }
+            return cell
         }
-        cell.media = trendResults?.results[indexPath.row]
-        cell.assignDataToView()
-        return cell
+        else{
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TrendCell.identifier) as? TrendCell else{
+                print("Fail Loading Tableview Cell")
+                return UITableViewCell()
+            }
+            cell.media = trendResults?.results[indexPath.row]
+            cell.assignDataToView()
+            return cell
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

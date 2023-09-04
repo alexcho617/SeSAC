@@ -31,6 +31,7 @@
 		5786903F2A8B4EBA004C4B00 /* OverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786903E2A8B4EBA004C4B00 /* OverviewTableViewCell.swift */; };
 		578B89182A9246FD00AE212F /* RecommendationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B89172A9246FD00AE212F /* RecommendationModel.swift */; };
 		578B891A2A92474E00AE212F /* SimilarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578B89192A92474E00AE212F /* SimilarModel.swift */; };
+		57A193672AA4AC400077C224 /* TrendsPersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A193662AA4AC400077C224 /* TrendsPersonTableViewCell.swift */; };
 		57AAF1DA2A9BA2A800DD6782 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAF1D92A9BA2A700DD6782 /* OnboardingViewController.swift */; };
 		57AAF1DD2A9BA49400DD6782 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 57AAF1DC2A9BA49400DD6782 /* SnapKit */; };
 		57AAF2892A9DDC3A00DD6782 /* TMDBHelperFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57AAF2852A9DDC2D00DD6782 /* TMDBHelperFramework.framework */; };
@@ -103,6 +104,7 @@
 		5786903E2A8B4EBA004C4B00 /* OverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTableViewCell.swift; sourceTree = "<group>"; };
 		578B89172A9246FD00AE212F /* RecommendationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationModel.swift; sourceTree = "<group>"; };
 		578B89192A92474E00AE212F /* SimilarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarModel.swift; sourceTree = "<group>"; };
+		57A193662AA4AC400077C224 /* TrendsPersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendsPersonTableViewCell.swift; sourceTree = "<group>"; };
 		57AAF1D92A9BA2A700DD6782 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		57AAF27F2A9DDC2D00DD6782 /* TMDBHelperFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TMDBHelperFramework.xcodeproj; path = ../TMDBHelperFramework/TMDBHelperFramework.xcodeproj; sourceTree = "<group>"; };
 		57AAF28D2A9DE55700DD6782 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 		57AAF2952A9DE76E00DD6782 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				57A193662AA4AC400077C224 /* TrendsPersonTableViewCell.swift */,
 				57AAF2962A9DE78300DD6782 /* TrendCell.swift */,
 			);
 			path = Cells;
@@ -402,6 +405,7 @@
 				57D6646F2A8FD044002ED603 /* MoreButtonTableViewCell.swift in Sources */,
 				57AAF29D2A9E0B7200DD6782 /* NameViewController.swift in Sources */,
 				57AAF29F2A9E606400DD6782 /* IntroViewController.swift in Sources */,
+				57A193672AA4AC400077C224 /* TrendsPersonTableViewCell.swift in Sources */,
 				57AAF2902A9DE56A00DD6782 /* BaseTableViewCell.swift in Sources */,
 				574D57422A873B710007996C /* APIKey.swift in Sources */,
 				5769B01E2A87C15A008DC72A /* TmdbAPIManager.swift in Sources */,
