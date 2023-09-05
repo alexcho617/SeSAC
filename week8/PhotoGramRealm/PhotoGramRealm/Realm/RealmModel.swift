@@ -14,6 +14,7 @@ class Diary: Object {
     @Persisted var date: Date
     @Persisted var content: String?
     @Persisted var PhotoURL: String?
+    @Persisted var isLiked: Bool
     
     convenience init(title: String, date: Date, content: String? = nil, PhotoURL: String? = nil) {
         self.init()
@@ -22,5 +23,6 @@ class Diary: Object {
         self.date = date
         self.content = content
         self.PhotoURL = PhotoURL
+        self.isLiked = Bool.random()
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import RealmSwift
 class AddViewController: BaseViewController {
-    
+    var selectedPhotoURL: String?
     let userImageView: PhotoImageView = {
         let view = PhotoImageView(frame: .zero)
         return view
@@ -17,13 +17,18 @@ class AddViewController: BaseViewController {
     
     let titleTextField: WriteTextField = {
         let view = WriteTextField()
-        view.placeholder = "제목을 입력해주세요"
+        view.textColor = Constants.BaseColor.text
+        view.attributedPlaceholder = NSAttributedString(string: "제목을 입력해주세요", attributes: [NSAttributedString.Key.foregroundColor : Constants.BaseColor.placeholder])
+
+
         return view
     }()
     
     let dateTextField: WriteTextField = {
         let view = WriteTextField()
-        view.placeholder = "날짜를 입력해주세요"
+        view.textColor = Constants.BaseColor.text
+        view.attributedPlaceholder = NSAttributedString(string: "날짜를 입력해주세요", attributes: [NSAttributedString.Key.foregroundColor : Constants.BaseColor.placeholder])
+
         return view
     }()
     
@@ -33,6 +38,8 @@ class AddViewController: BaseViewController {
         view.layer.borderWidth = Constants.Desgin.borderWidth
         view.layer.borderColor = Constants.BaseColor.border
         view.layer.cornerRadius = Constants.Desgin.cornerRadius
+        view.textColor = Constants.BaseColor.text
+        view.backgroundColor = Constants.BaseColor.background
         return view
     }()
     
@@ -48,7 +55,7 @@ class AddViewController: BaseViewController {
     
     lazy var searchWebButton: UIButton = {
         let view = UIButton()
-        view.setImage(UIImage(systemName: "web"), for: .normal)
+        view.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         view.tintColor = Constants.BaseColor.text
         view.backgroundColor = Constants.BaseColor.point
         view.layer.cornerRadius = 25
@@ -67,10 +74,13 @@ class AddViewController: BaseViewController {
         let realm = try! Realm() //근데 try에 느낌표는 왜 붙지??
 //        let task = Diary(title: "제목테스트 \(Int.random(in: 1...100))", date: Date(), content: "내용테스트 \(Int.random(in: 200...300))", PhotoURL: nil)
         
-        let task = Diary(title: titleTextField.text!, date: Date(), content: contentTextView.text!, PhotoURL: nil)
+        let task = Diary(title: titleTextField.text!, date: Date(), content: contentTextView.text!, PhotoURL: selectedPhotoURL)
         try! realm.write{
             realm.add(task)
-            print(#line, "Realm Add Suceed")
+        }
+        
+        if let image = userImageView.image{
+            saveImageToDocument(filename: "alex_\(task._id).jpg", image: image)
         }
         navigationController?.popViewController(animated: true)
     }
@@ -93,6 +103,7 @@ class AddViewController: BaseViewController {
                     DispatchQueue.main.async {
                         self?.userImageView.image = UIImage(data: data)
                     }
+                    self?.selectedPhotoURL = value
                 }
             }
         }

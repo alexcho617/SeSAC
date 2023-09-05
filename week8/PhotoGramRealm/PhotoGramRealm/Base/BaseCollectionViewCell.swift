@@ -11,6 +11,10 @@ class BaseCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        //MARK: configure, setConstraint를 init에서 호출하지 않으면 상속받은 child class에서도 호출이 안된다. 왜지?
+        configure()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {

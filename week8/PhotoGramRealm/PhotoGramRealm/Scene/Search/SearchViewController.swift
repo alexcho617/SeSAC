@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class SearchViewController: BaseViewController {
      
@@ -29,17 +30,19 @@ class SearchViewController: BaseViewController {
     
     private var imageList: Photo = Photo(total: 0, total_pages: 0, results: [])
      
-    override func viewDidLoad() {
-        super.viewDidLoad()
-         
-        APIService.shared.searchPhoto(query: "sky") { data in
+    fileprivate func callRequest(with query: String) {
+        APIService.shared.searchPhoto(query: query) { data in
             guard let data = data else { return }
             self.imageList = data
-            print(data)
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        searchBar.delegate = self
     }
      
     override func configure() {
@@ -72,7 +75,8 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
         
         let data = imageList.results![indexPath.item].urls.thumb
-        cell.backgroundColor = .yellow        
+        cell.imageView.kf.setImage(with: URL(string: data))
+        cell.backgroundColor = .yellow
         return cell
     }
     
@@ -90,5 +94,12 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
         let size = UIScreen.main.bounds.width - 40 //self.frame.width
         layout.itemSize = CGSize(width: size / 4, height: size / 4)
         return layout
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        callRequest(with: searchBar.text ?? "")
+
     }
 }
