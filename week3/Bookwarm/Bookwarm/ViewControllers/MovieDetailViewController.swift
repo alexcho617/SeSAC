@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  MovieDetailViewController.swift
 //  Bookwarm
 //
 //  Created by Alex Cho on 2023/07/31.
@@ -9,11 +9,9 @@ import UIKit
 enum TransitionStyle{
     case modal,push
 }
-class DetailViewController: UIViewController {
+class MovieDetailViewController: UIViewController {
     var movie: Movie?
     var transitionStyle: TransitionStyle = .modal
-    //Todo: Folder divide -> Done
-    //Todo: Enum사용해서 closeButton 보이거나 숨기기
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
@@ -72,7 +70,7 @@ class DetailViewController: UIViewController {
     
 }
 
-extension DetailViewController: UITextViewDelegate{
+extension MovieDetailViewController: UITextViewDelegate{
 
     func setMemoTextView(){
         if movie!.memo == nil{

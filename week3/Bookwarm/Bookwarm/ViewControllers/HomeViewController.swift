@@ -10,6 +10,8 @@ import RealmSwift
 import SnapKit
 
 class HomeViewController: UIViewController {
+    let realm = try! Realm()
+
     var books: Results<RealmBook>!
     let deleteButton = {
         let view = UIButton()
@@ -39,6 +41,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(realm.configuration.fileURL)
         
         view.addSubview(deleteButton)
         view.addSubview(tableView)
@@ -56,10 +59,15 @@ class HomeViewController: UIViewController {
     }
     
     @objc func deleteRealm(){
-        let realm = try! Realm()
-        try! realm.write{
-            realm.deleteAll()
+        //delete file
+        for book in books{
+            deleteFileFromDocument(filename: "\(book._id.stringValue).jpeg")
+            try! realm.write{
+                realm.delete(book)
+            }
         }
+        
+        
         tableView.reloadData()
     }
     
@@ -78,6 +86,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         cell.setView()
         cell.titleLabel.text = data.title
         cell.coverImageView.kf.setImage(with: URL(string: data.thumbnail))
+        cell.infoLabel.text = data.memo
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        let vc = BookDetailViewController()
+        vc.book = books[indexPath.row]
+//        present(vc,animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

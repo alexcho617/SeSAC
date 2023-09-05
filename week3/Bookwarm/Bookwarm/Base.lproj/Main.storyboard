@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="2189" y="-406"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Movie Detail View Controller-->
         <scene sceneID="voF-tw-87a">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="Abj-Y9-977" customClass="DetailViewController" customModule="Bookwarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieDetailViewController" id="Abj-Y9-977" customClass="MovieDetailViewController" customModule="Bookwarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6af-UN-LJF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,10 +177,10 @@
             </objects>
             <point key="canvasLocation" x="3003.8167938931297" y="-406.33802816901408"/>
         </scene>
-        <!--Discover View Controller-->
+        <!--Movie View Controller-->
         <scene sceneID="AWy-aS-bhE">
             <objects>
-                <viewController id="2Kk-JY-08N" customClass="DiscoverViewController" customModule="Bookwarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Kk-JY-08N" customClass="MovieViewController" customModule="Bookwarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="luL-Za-g74">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -286,8 +286,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="rsv-p7-5zp"/>
                     <connections>
-                        <outlet property="discoverCollectionView" destination="QPL-Az-q7v" id="tvM-dc-8Di"/>
-                        <outlet property="discoverTableView" destination="faY-nN-6i2" id="iNl-zO-YcT"/>
+                        <outlet property="movieCollectionView" destination="QPL-Az-q7v" id="tvM-dc-8Di"/>
+                        <outlet property="movieTableView" destination="faY-nN-6i2" id="iNl-zO-YcT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZq-bC-7YX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -306,7 +306,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="7FE-H4-C6y" kind="relationship" relationship="viewControllers" id="CzV-wA-wbt"/>
+                        <segue destination="TVY-h4-vnM" kind="relationship" relationship="viewControllers" id="CzV-wA-wbt"/>
                         <segue destination="sdC-td-R2w" kind="relationship" relationship="viewControllers" id="byx-8h-9kB"/>
                         <segue destination="FCt-dd-sKj" kind="relationship" relationship="viewControllers" id="00m-WT-2Nv"/>
                     </connections>
@@ -315,7 +315,7 @@
             </objects>
             <point key="canvasLocation" x="-302" y="-851"/>
         </scene>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="vBe-V5-RWE">
             <objects>
                 <viewController id="7FE-H4-C6y" customClass="HomeViewController" customModule="Bookwarm" customModuleProvider="target" sceneMemberID="viewController">
@@ -325,11 +325,11 @@
                         <viewLayoutGuide key="safeArea" id="fkP-Zw-Kyk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="Upa-k3-yFH"/>
+                    <navigationItem key="navigationItem" id="KdP-MV-12T"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KbD-nw-YUZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1308" y="289"/>
+            <point key="canvasLocation" x="2234.3511450381679" y="288.73239436619718"/>
         </scene>
         <!--Book-->
         <scene sceneID="n91-Ki-OjG">
@@ -368,6 +368,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gj2-ZY-VWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1308" y="-1146"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="qod-Df-mqs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TVY-h4-vnM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="Upa-k3-yFH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s4P-FV-2ui">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7FE-H4-C6y" kind="relationship" relationship="rootViewController" id="VYW-Xu-0mO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYJ-o7-ah6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1307.6335877862596" y="288.73239436619718"/>
         </scene>
     </scenes>
     <resources>

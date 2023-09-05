@@ -1,5 +1,5 @@
 //
-//  DiscoverTableViewCell.swift
+//  MovieTableViewCell.swift
 //  Bookwarm
 //
 //  Created by Alex Cho on 2023/08/02.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DiscoverTableViewCell: UITableViewCell {
+class MovieTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     

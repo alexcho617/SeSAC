@@ -18,21 +18,23 @@
 		57A1937F2AA5AF520077C224 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 57A1937E2AA5AF520077C224 /* SnapKit */; };
 		57A193812AA5F4260077C224 /* RealmBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A193802AA5F4260077C224 /* RealmBookModel.swift */; };
 		57A193832AA5F8110077C224 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A193822AA5F8110077C224 /* HomeTableViewCell.swift */; };
+		57A1938C2AA720420077C224 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A1938B2AA720420077C224 /* FileManager+Extension.swift */; };
 		57B20B762A77B6CA00442B87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B20B752A77B6CA00442B87 /* AppDelegate.swift */; };
 		57B20B782A77B6CA00442B87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B20B772A77B6CA00442B87 /* SceneDelegate.swift */; };
 		57B20B7D2A77B6CA00442B87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B20B7B2A77B6CA00442B87 /* Main.storyboard */; };
 		57B20B7F2A77B6CB00442B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B20B7E2A77B6CB00442B87 /* Assets.xcassets */; };
 		57B20B822A77B6CB00442B87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B20B802A77B6CB00442B87 /* LaunchScreen.storyboard */; };
 		57B20B8A2A77B73A00442B87 /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B20B892A77B73A00442B87 /* BookCollectionViewController.swift */; };
-		57B20B8C2A77B75F00442B87 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B20B8B2A77B75F00442B87 /* DetailViewController.swift */; };
+		57B20B8C2A77B75F00442B87 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B20B8B2A77B75F00442B87 /* MovieDetailViewController.swift */; };
 		57B20B8F2A77B78600442B87 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B20B8D2A77B78600442B87 /* BookCollectionViewCell.swift */; };
 		57B20B902A77B78600442B87 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B20B8E2A77B78600442B87 /* BookCollectionViewCell.xib */; };
 		57B7097D2A77B8C200713D96 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7097C2A77B8C200713D96 /* MovieInfo.swift */; };
-		57B709892A7A815200713D96 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B709882A7A815200713D96 /* DiscoverViewController.swift */; };
-		57B7098C2A7A86CD00713D96 /* DiscoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7098A2A7A86CD00713D96 /* DiscoverTableViewCell.swift */; };
-		57B7098D2A7A86CD00713D96 /* DiscoverTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B7098B2A7A86CD00713D96 /* DiscoverTableViewCell.xib */; };
-		57B709902A7A8D3200713D96 /* DiscoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7098E2A7A8D3200713D96 /* DiscoverCollectionViewCell.swift */; };
-		57B709912A7A8D3200713D96 /* DiscoverCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B7098F2A7A8D3200713D96 /* DiscoverCollectionViewCell.xib */; };
+		57B709892A7A815200713D96 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B709882A7A815200713D96 /* MovieViewController.swift */; };
+		57B7098C2A7A86CD00713D96 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7098A2A7A86CD00713D96 /* MovieTableViewCell.swift */; };
+		57B7098D2A7A86CD00713D96 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B7098B2A7A86CD00713D96 /* MovieTableViewCell.xib */; };
+		57B709902A7A8D3200713D96 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7098E2A7A8D3200713D96 /* MovieCollectionViewCell.swift */; };
+		57B709912A7A8D3200713D96 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B7098F2A7A8D3200713D96 /* MovieCollectionViewCell.xib */; };
+		57C22D852AA75C640043CA45 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C22D842AA75C640043CA45 /* BookDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,7 @@
 		57A1937B2AA5AF0B0077C224 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		57A193802AA5F4260077C224 /* RealmBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBookModel.swift; sourceTree = "<group>"; };
 		57A193822AA5F8110077C224 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		57A1938B2AA720420077C224 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		57B20B722A77B6CA00442B87 /* Bookwarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookwarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B20B752A77B6CA00442B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57B20B772A77B6CA00442B87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,15 +52,16 @@
 		57B20B812A77B6CB00442B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57B20B832A77B6CB00442B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57B20B892A77B73A00442B87 /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
-		57B20B8B2A77B75F00442B87 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		57B20B8B2A77B75F00442B87 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		57B20B8D2A77B78600442B87 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		57B20B8E2A77B78600442B87 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		57B7097C2A77B8C200713D96 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
-		57B709882A7A815200713D96 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
-		57B7098A2A7A86CD00713D96 /* DiscoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewCell.swift; sourceTree = "<group>"; };
-		57B7098B2A7A86CD00713D96 /* DiscoverTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverTableViewCell.xib; sourceTree = "<group>"; };
-		57B7098E2A7A8D3200713D96 /* DiscoverCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCollectionViewCell.swift; sourceTree = "<group>"; };
-		57B7098F2A7A8D3200713D96 /* DiscoverCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverCollectionViewCell.xib; sourceTree = "<group>"; };
+		57B709882A7A815200713D96 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		57B7098A2A7A86CD00713D96 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		57B7098B2A7A86CD00713D96 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
+		57B7098E2A7A8D3200713D96 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		57B7098F2A7A8D3200713D96 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
+		57C22D842AA75C640043CA45 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +86,10 @@
 			children = (
 				57B20B8E2A77B78600442B87 /* BookCollectionViewCell.xib */,
 				57B20B8D2A77B78600442B87 /* BookCollectionViewCell.swift */,
-				57B7098F2A7A8D3200713D96 /* DiscoverCollectionViewCell.xib */,
-				57B7098E2A7A8D3200713D96 /* DiscoverCollectionViewCell.swift */,
-				57B7098B2A7A86CD00713D96 /* DiscoverTableViewCell.xib */,
-				57B7098A2A7A86CD00713D96 /* DiscoverTableViewCell.swift */,
+				57B7098F2A7A8D3200713D96 /* MovieCollectionViewCell.xib */,
+				57B7098E2A7A8D3200713D96 /* MovieCollectionViewCell.swift */,
+				57B7098B2A7A86CD00713D96 /* MovieTableViewCell.xib */,
+				57B7098A2A7A86CD00713D96 /* MovieTableViewCell.swift */,
 				57A193822AA5F8110077C224 /* HomeTableViewCell.swift */,
 			);
 			path = Cells;
@@ -94,10 +98,11 @@
 		5717D3212A7B9B6800FF0D8A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				57B20B892A77B73A00442B87 /* BookCollectionViewController.swift */,
-				57B20B8B2A77B75F00442B87 /* DetailViewController.swift */,
-				57B709882A7A815200713D96 /* DiscoverViewController.swift */,
 				57A1937B2AA5AF0B0077C224 /* HomeViewController.swift */,
+				57B20B892A77B73A00442B87 /* BookCollectionViewController.swift */,
+				57B709882A7A815200713D96 /* MovieViewController.swift */,
+				57B20B8B2A77B75F00442B87 /* MovieDetailViewController.swift */,
+				57C22D842AA75C640043CA45 /* BookDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 				574100782A8377B5004A67AC /* BookInfo.swift */,
 				57A193802AA5F4260077C224 /* RealmBookModel.swift */,
 				574100762A8375F4004A67AC /* API Key.swift */,
+				57A1938B2AA720420077C224 /* FileManager+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -218,8 +224,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B7098D2A7A86CD00713D96 /* DiscoverTableViewCell.xib in Resources */,
-				57B709912A7A8D3200713D96 /* DiscoverCollectionViewCell.xib in Resources */,
+				57B7098D2A7A86CD00713D96 /* MovieTableViewCell.xib in Resources */,
+				57B709912A7A8D3200713D96 /* MovieCollectionViewCell.xib in Resources */,
 				57B20B822A77B6CB00442B87 /* LaunchScreen.storyboard in Resources */,
 				57B20B902A77B78600442B87 /* BookCollectionViewCell.xib in Resources */,
 				57B20B7F2A77B6CB00442B87 /* Assets.xcassets in Resources */,
@@ -238,16 +244,18 @@
 				57B7097D2A77B8C200713D96 /* MovieInfo.swift in Sources */,
 				57A193832AA5F8110077C224 /* HomeTableViewCell.swift in Sources */,
 				574100772A8375F4004A67AC /* API Key.swift in Sources */,
-				57B7098C2A7A86CD00713D96 /* DiscoverTableViewCell.swift in Sources */,
+				57B7098C2A7A86CD00713D96 /* MovieTableViewCell.swift in Sources */,
 				57B20B762A77B6CA00442B87 /* AppDelegate.swift in Sources */,
+				57C22D852AA75C640043CA45 /* BookDetailViewController.swift in Sources */,
 				57A193812AA5F4260077C224 /* RealmBookModel.swift in Sources */,
-				57B709902A7A8D3200713D96 /* DiscoverCollectionViewCell.swift in Sources */,
+				57B709902A7A8D3200713D96 /* MovieCollectionViewCell.swift in Sources */,
 				57B20B782A77B6CA00442B87 /* SceneDelegate.swift in Sources */,
 				57B20B8A2A77B73A00442B87 /* BookCollectionViewController.swift in Sources */,
-				57B709892A7A815200713D96 /* DiscoverViewController.swift in Sources */,
+				57B709892A7A815200713D96 /* MovieViewController.swift in Sources */,
+				57A1938C2AA720420077C224 /* FileManager+Extension.swift in Sources */,
 				57B20B8F2A77B78600442B87 /* BookCollectionViewCell.swift in Sources */,
 				57A1937C2AA5AF0B0077C224 /* HomeViewController.swift in Sources */,
-				57B20B8C2A77B75F00442B87 /* DetailViewController.swift in Sources */,
+				57B20B8C2A77B75F00442B87 /* MovieDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

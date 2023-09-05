@@ -17,7 +17,6 @@ class BookCollectionViewController: UICollectionViewController {
     let searchBar = UISearchBar()
     let searchPlaceHolder = "검색을 해보세요"
     var bookList: [Book] = []
-    
 
     @IBOutlet weak var searchButton: UIBarButtonItem!
     //vdl
@@ -26,7 +25,7 @@ class BookCollectionViewController: UICollectionViewController {
         searchButton.isHidden = true // 현재 안쓰는 기능
         navigationItem.titleView = searchBar //여기서 서치바 가운데에 놓았음
         searchBar.delegate = self
-        collectionView.prefetchDataSource = self
+//        collectionView.prefetchDataSource = self
         let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "BookCollectionViewCell")
         setLayout()
@@ -36,7 +35,6 @@ class BookCollectionViewController: UICollectionViewController {
     
     //actions
     
-    //TODO: Scroll error
     func callRequest(query: String, page: Int){
         let headers: HTTPHeaders = ["Authorization": APIKey.kakaoKey]
         let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
@@ -91,7 +89,6 @@ class BookCollectionViewController: UICollectionViewController {
         //configure cell
         let book = bookList[indexPath.row]
         
-        // Todo search 결과에서 눌렀을때 인덱스 오류로 인해 오작동함
         cell.likeButton.tag = indexPath.row
         cell.setCell(row: book)
         cell.likeButton.addTarget(self, action: #selector(likeToggle), for: .touchUpInside)
@@ -99,18 +96,36 @@ class BookCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    //TODO: add to realm database
+    //TODO: Create ImageFile
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //create
         let data = bookList[indexPath.row]
 
-        let book = RealmBook(authors: data.authors, title: data.title, thumbnail: data.thumbnail, url: data.url, isLiked: data.isLiked)
+        let book = RealmBook(authors: data.authors, title: data.title, thumbnail: data.thumbnail, url: data.url, isLiked: data.isLiked, memo: nil)
         //write
         let realm = try! Realm()
         try! realm.write{
             realm.add(book)
             print("book added")
         }
+        
+        //imageurl -> data -> uiimage
+        if let url = URL(string: data.thumbnail){
+            DispatchQueue.global().async {
+                let data = try! Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    self.saveImageToDocument(filename: "\(book._id.stringValue).jpeg", image: UIImage(data: data)!)
+                    print("image added")
+                }
+                
+            }
+            
+            //use pk as file name
+
+        }
+        
+        
+        
         
     }
     
@@ -163,19 +178,19 @@ extension BookCollectionViewController: UISearchBarDelegate{
     }
  
 }
-
-extension BookCollectionViewController: UICollectionViewDataSourcePrefetching{
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            if bookList.count - 1 == indexPath.row && page < 15 && !isEnd{
-                page += 1
-                callRequest(query: searchBar.text!, page: page)
-            }
-        }
-    }
-    
-    
-    
-   
-    
-}
+//TODO: Scroll error due to Prefetching
+//extension BookCollectionViewController: UICollectionViewDataSourcePrefetching{
+//    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+//        for indexPath in indexPaths {
+//            if bookList.count - 1 == indexPath.row && page < 15 && !isEnd{
+//                page += 1
+//                callRequest(query: searchBar.text!, page: page)
+//            }
+//        }
+//    }
+//
+//
+//
+//
+//
+//}

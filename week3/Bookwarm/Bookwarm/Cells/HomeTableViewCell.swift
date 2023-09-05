@@ -16,6 +16,11 @@ class HomeTableViewCell: UITableViewCell {
         return view
     }()
     
+    var infoLabel = {
+        let view = UILabel()
+        return view
+    }()
+    
     var coverImageView = {
         let view = UIImageView()
         view.backgroundColor = .systemMint
@@ -26,12 +31,18 @@ class HomeTableViewCell: UITableViewCell {
         self.backgroundColor = .gray
         self.contentView.addSubview(titleLabel)
         self.contentView.addSubview(coverImageView)
+        self.contentView.addSubview(infoLabel)
         coverImageView.snp.makeConstraints { make in
             make.top.leading.equalToSuperview()
             make.size.equalTo(100)
         }
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(coverImageView)
+            make.leading.equalTo(coverImageView.snp.trailing)
+            make.trailing.equalToSuperview()
+        }
+        infoLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.leading.equalTo(coverImageView.snp.trailing)
             make.trailing.equalToSuperview()
         }

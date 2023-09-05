@@ -14,13 +14,15 @@ class RealmBook: Object {
     @Persisted var thumbnail: String
     @Persisted var url: String
     @Persisted var isLiked: Bool = false
+    @Persisted var memo: String?
     
-    convenience init(authors: String, title: String, thumbnail: String, url: String, isLiked: Bool) {
+    convenience init(authors: String, title: String, thumbnail: String, url: String, isLiked: Bool, memo: String?) {
         self.init()
         self.authors = authors
         self.title = title
         self.thumbnail = thumbnail
         self.url = url
         self.isLiked = isLiked
+        self.memo = memo
     }
 }
