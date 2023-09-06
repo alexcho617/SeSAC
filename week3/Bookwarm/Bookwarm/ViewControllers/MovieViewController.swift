@@ -7,8 +7,8 @@
 
 import UIKit
 
-class MovieViewController: UIViewController {
-    let movieManager = MovieInfo()
+final class MovieViewController: UIViewController {
+    private let movieManager = MovieInfo()
     
     @IBOutlet weak var movieCollectionView: UICollectionView!
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieCollectionViewCell: UICollectionViewCell {
+final class MovieCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var posterImageView: UIImageView!
     override func awakeFromNib() {

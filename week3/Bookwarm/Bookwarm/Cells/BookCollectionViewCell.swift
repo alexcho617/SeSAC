@@ -7,7 +7,7 @@
 
 import UIKit
 import Kingfisher
-class BookCollectionViewCell: UICollectionViewCell {
+final class BookCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var likeButton: UIButton!
     

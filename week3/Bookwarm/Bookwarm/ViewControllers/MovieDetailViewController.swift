@@ -9,9 +9,9 @@ import UIKit
 enum TransitionStyle{
     case modal,push
 }
-class MovieDetailViewController: UIViewController {
+final class MovieDetailViewController: UIViewController {
     var movie: Movie?
-    var transitionStyle: TransitionStyle = .modal
+    private var transitionStyle: TransitionStyle = .modal
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var backgroundImageView: UIImageView!
     
@@ -22,7 +22,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var overviewTextView: UITextView!
     
     @IBOutlet weak var memoTextView: UITextView!
-    let placeholder = "메모를 입력하세요"
+    private let placeholder = "메모를 입력하세요"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class MovieDetailViewController: UIViewController {
         configureScreen()
     }
     
-    func configureScreen(){
+    private func configureScreen(){
         if transitionStyle == .push{
             closeButton.isHidden = true
         }else if transitionStyle == .modal{

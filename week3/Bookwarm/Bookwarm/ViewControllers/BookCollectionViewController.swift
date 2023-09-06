@@ -12,11 +12,11 @@ import RealmSwift
 final class BookCollectionViewController: UICollectionViewController {
     
     //variables
-    var page = 1
-    var isEnd = false
-    let searchBar = UISearchBar()
-    let searchPlaceHolder = "검색을 해보세요"
-    var bookList: [RealmBook] = []
+    private var page = 1
+    private var isEnd = false
+    private let searchBar = UISearchBar()
+    private let searchPlaceHolder = "검색을 해보세요"
+    private var bookList: [RealmBook] = []
 
     @IBOutlet weak var searchButton: UIBarButtonItem!
     //vdl
@@ -34,8 +34,7 @@ final class BookCollectionViewController: UICollectionViewController {
     
     
     //actions
-    
-    func callRequest(query: String, page: Int){
+    private func callRequest(query: String, page: Int){
         let headers: HTTPHeaders = ["Authorization": APIKey.kakaoKey]
         let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let size = 20
@@ -121,12 +120,9 @@ final class BookCollectionViewController: UICollectionViewController {
                 
             }
             
-            //use pk as file name
+            //use primary key as file name
 
         }
-        
-        
-        
         
     }
     
@@ -135,12 +131,12 @@ final class BookCollectionViewController: UICollectionViewController {
         bookList[sender.tag].userDidLike.toggle()
     }
     
-    func setSearchBar(){
+    private func setSearchBar(){
         searchBar.placeholder = searchPlaceHolder
         searchBar.showsCancelButton = true
     }
     
-    func setLayout(){
+    private func setLayout(){
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 20
         let itemWidth = (UIScreen.main.bounds.width - (spacing * 3)) / 2

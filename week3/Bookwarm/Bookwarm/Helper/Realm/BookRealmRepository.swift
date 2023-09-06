@@ -13,7 +13,7 @@ protocol RealmRepositoryProtocol{
     func delete(_ item: RealmBook)
     func update(_ id: ObjectId, title: String, memo: String)
 }
-class BookRealmRepository: RealmRepositoryProtocol{
+final class BookRealmRepository: RealmRepositoryProtocol{
     
     
     static let shared = BookRealmRepository()

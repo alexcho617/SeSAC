@@ -8,10 +8,10 @@
 import UIKit
 import SnapKit
 import RealmSwift
-class BookDetailViewController: UIViewController {
+final class BookDetailViewController: UIViewController {
     var book: RealmBook?
     
-    let titleTextField = {
+    private let titleTextField = {
         let view = UITextField()
         view.backgroundColor = .systemGray
         view.placeholder = "제목"
@@ -19,7 +19,7 @@ class BookDetailViewController: UIViewController {
         return view
     }()
     
-    let memoTextView = {
+    private  let memoTextView = {
         let view = UITextView()
         view.backgroundColor = .systemGray
         return view
@@ -43,7 +43,7 @@ class BookDetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    func setConstraints(){
+    private func setConstraints(){
         titleTextField.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.top.equalTo(view.safeAreaLayoutGuide)
@@ -59,7 +59,7 @@ class BookDetailViewController: UIViewController {
         }
         
     }
-    func setView(){
+    private func setView(){
         view.addSubview(titleTextField)
         view.addSubview(memoTextView)
         titleTextField.text = book?.title

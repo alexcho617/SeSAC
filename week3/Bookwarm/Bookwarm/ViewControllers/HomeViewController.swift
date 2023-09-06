@@ -9,9 +9,9 @@ import UIKit
 import RealmSwift
 import SnapKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
-    var books: Results<RealmBook>!
+    private var books: Results<RealmBook>!
     let deleteButton = {
         let view = UIButton()
         view.setTitle("전체 삭제", for: .normal)
@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
         
     }()
     
-    lazy var tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let view = UITableView()
         view.rowHeight = 100
         view.delegate = self
