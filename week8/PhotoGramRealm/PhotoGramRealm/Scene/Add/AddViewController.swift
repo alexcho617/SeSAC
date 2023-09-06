@@ -10,6 +10,8 @@ import SnapKit
 import RealmSwift
 class AddViewController: BaseViewController {
     var selectedPhotoURL: String?
+    let repository = DiaryTableRepository()
+
     let userImageView: PhotoImageView = {
         let view = PhotoImageView(frame: .zero)
         return view
@@ -70,17 +72,13 @@ class AddViewController: BaseViewController {
     }
     
     @objc func saveButtonClicked() {
-        //realm file 위치 찾는 코드
-        let realm = try! Realm() //근데 try에 느낌표는 왜 붙지??
-//        let task = Diary(title: "제목테스트 \(Int.random(in: 1...100))", date: Date(), content: "내용테스트 \(Int.random(in: 200...300))", PhotoURL: nil)
+    
+        let diary = Diary(title: titleTextField.text!, date: Date(), contents: contentTextView.text!, PhotoURL: selectedPhotoURL)
         
-        let task = Diary(title: titleTextField.text!, date: Date(), content: contentTextView.text!, PhotoURL: selectedPhotoURL)
-        try! realm.write{
-            realm.add(task)
-        }
+        repository.create(diary)
         
         if let image = userImageView.image{
-            saveImageToDocument(filename: "alex_\(task._id).jpg", image: image)
+            saveImageToDocument(filename: "alex_\(diary._id).jpg", image: image)
         }
         navigationController?.popViewController(animated: true)
     }

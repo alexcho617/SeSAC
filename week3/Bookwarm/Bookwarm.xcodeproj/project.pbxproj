@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		574100772A8375F4004A67AC /* API Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574100762A8375F4004A67AC /* API Key.swift */; };
-		574100792A8377B5004A67AC /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574100782A8377B5004A67AC /* BookInfo.swift */; };
 		5741007C2A83D7DA004A67AC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5741007B2A83D7DA004A67AC /* Alamofire */; };
 		5741007F2A83D7E3004A67AC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 5741007E2A83D7E3004A67AC /* SwiftyJSON */; };
 		574100822A83D7ED004A67AC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 574100812A83D7ED004A67AC /* Kingfisher */; };
@@ -35,11 +34,11 @@
 		57B709902A7A8D3200713D96 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7098E2A7A8D3200713D96 /* MovieCollectionViewCell.swift */; };
 		57B709912A7A8D3200713D96 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57B7098F2A7A8D3200713D96 /* MovieCollectionViewCell.xib */; };
 		57C22D852AA75C640043CA45 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C22D842AA75C640043CA45 /* BookDetailViewController.swift */; };
+		57C22D892AA86A060043CA45 /* BookRealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C22D882AA86A060043CA45 /* BookRealmRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		574100762A8375F4004A67AC /* API Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API Key.swift"; sourceTree = "<group>"; };
-		574100782A8377B5004A67AC /* BookInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfo.swift; sourceTree = "<group>"; };
 		57A1937B2AA5AF0B0077C224 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		57A193802AA5F4260077C224 /* RealmBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBookModel.swift; sourceTree = "<group>"; };
 		57A193822AA5F8110077C224 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		57B7098E2A7A8D3200713D96 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		57B7098F2A7A8D3200713D96 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		57C22D842AA75C640043CA45 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		57C22D882AA86A060043CA45 /* BookRealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRealmRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				57B7097C2A77B8C200713D96 /* MovieInfo.swift */,
-				574100782A8377B5004A67AC /* BookInfo.swift */,
-				57A193802AA5F4260077C224 /* RealmBookModel.swift */,
+				57C22D8A2AA873A00043CA45 /* Realm */,
 				574100762A8375F4004A67AC /* API Key.swift */,
 				57A1938B2AA720420077C224 /* FileManager+Extension.swift */,
 			);
@@ -149,6 +148,15 @@
 				57B20B832A77B6CB00442B87 /* Info.plist */,
 			);
 			path = Bookwarm;
+			sourceTree = "<group>";
+		};
+		57C22D8A2AA873A00043CA45 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				57A193802AA5F4260077C224 /* RealmBookModel.swift */,
+				57C22D882AA86A060043CA45 /* BookRealmRepository.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +248,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				574100792A8377B5004A67AC /* BookInfo.swift in Sources */,
 				57B7097D2A77B8C200713D96 /* MovieInfo.swift in Sources */,
 				57A193832AA5F8110077C224 /* HomeTableViewCell.swift in Sources */,
 				574100772A8375F4004A67AC /* API Key.swift in Sources */,
@@ -251,6 +258,7 @@
 				57B709902A7A8D3200713D96 /* MovieCollectionViewCell.swift in Sources */,
 				57B20B782A77B6CA00442B87 /* SceneDelegate.swift in Sources */,
 				57B20B8A2A77B73A00442B87 /* BookCollectionViewController.swift in Sources */,
+				57C22D892AA86A060043CA45 /* BookRealmRepository.swift in Sources */,
 				57B709892A7A815200713D96 /* MovieViewController.swift in Sources */,
 				57A1938C2AA720420077C224 /* FileManager+Extension.swift in Sources */,
 				57B20B8F2A77B78600442B87 /* BookCollectionViewCell.swift in Sources */,

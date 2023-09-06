@@ -10,7 +10,6 @@ import SnapKit
 import RealmSwift
 class BookDetailViewController: UIViewController {
     var book: RealmBook?
-    let realm = try! Realm()
     
     let titleTextField = {
         let view = UITextField()
@@ -36,27 +35,10 @@ class BookDetailViewController: UIViewController {
     }
 
     @objc func saveClicked(){
-        print(#function)
         //realm update
         if let book{
-            let item = RealmBook(value: [
-                "_id":book._id,
-                "title": titleTextField.text!,
-                "thumbnail":book.thumbnail,
-                "url":book.url,
-                "isLiked":book.isLiked,
-                "memo": memoTextView.text
-            ])
-            
-            do {
-                try realm.write{
-                    realm.add(item, update: .modified)
-                }
-            } catch let error {
-                print(error)
-            }
+            BookRealmRepository.shared.update(book._id, title: titleTextField.text!, memo: memoTextView.text!)
         }
-        
         //pop
         navigationController?.popViewController(animated: true)
     }

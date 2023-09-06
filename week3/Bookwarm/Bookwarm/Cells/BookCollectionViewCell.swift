@@ -23,11 +23,11 @@ class BookCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
        //set
     }
-    func setCell(row book: Book){
+    func setCell(row book: RealmBook){
         cellRatingLabel?.text = book.authors
         cellLabel?.text = book.title
-        cellImageView.kf.setImage(with: URL(string: book.thumbnail))
-        likeButton.setImage(book.isLiked == true ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
+        cellImageView.kf.setImage(with: URL(string: book.thumbnailImageURL))
+        likeButton.setImage(book.userDidLike == true ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart"), for: .normal)
         
     }
 }

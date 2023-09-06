@@ -28,7 +28,7 @@ class HomeTableViewCell: UITableViewCell {
     }()
     
     func setView(){
-        self.backgroundColor = .gray
+        self.backgroundColor = .secondarySystemBackground
         self.contentView.addSubview(titleLabel)
         self.contentView.addSubview(coverImageView)
         self.contentView.addSubview(infoLabel)

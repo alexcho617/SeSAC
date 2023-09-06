@@ -23,6 +23,7 @@ class HomeViewController: BaseViewController {
     }()
     var tasks: Results<Diary>!
     let realm = try! Realm()
+    let repository = DiaryTableRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,10 @@ class HomeViewController: BaseViewController {
         //        tasks = realm.objects(Diary.self) //현재 정렬을 내부적으로 날짜 기준으로 하고있는데 명시적으로 정해줘야함.
         
         //제목순 정렬
-        tasks = realm.objects(Diary.self).sorted(byKeyPath: "title", ascending: true)
+        tasks = repository.fetch()
+        print(tasks)
+        repository.fileURL()
+        repository.checkSchemaVersion()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,12 +87,7 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func filterButtonClicked() {
-        let result = realm.objects(Diary.self).where {
-            //            $0.title.contains("제목", options: .caseInsensitive)
-            //            $0.isLiked == true
-            $0.PhotoURL != nil
-        }
-        tasks = result
+        tasks = repository.fetchFilter()
         tableView.reloadData()
     }
 }
@@ -104,7 +103,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell() }
         let data = tasks[indexPath.row]
         cell.titleLabel.text = data.title
-        cell.contentLabel.text = data.content
+        cell.contentLabel.text = data.contents
         cell.dateLabel.text = "\(data.date)"
         
         //let urlString = data.PhotoURL ?? ""
@@ -112,7 +111,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         ///        kf 로 하는게 스크롤이 훨씬 잘 되고있음
         //        cell.diaryImageView.kf.setImage(with: URL(string:data.PhotoURL ?? ""))
         //접두어 + primary key를 사용해서 파일 이름을 저장한 상태
-        cell.diaryImageView.image = loadImagFromDocument(filename: "alex_\(data._id).jpg")
+ 
         
         ///        URLSession
         //string -> url -> data -> UIImage
@@ -126,7 +125,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         //            }
         //        }
         
-        //TODO: change this into file now.
+        ///change this into file now.
+        cell.diaryImageView.image = loadImagFromDocument(filename: "alex_\(data._id).jpg")
         return cell
     }
     
@@ -146,7 +146,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 self.tasks[indexPath.row].isLiked.toggle()
             }
             tableView.reloadData()
-//            tableView.reloadRows(at: [indexPath], with: .none)
             
         }
         like.backgroundColor = .orange

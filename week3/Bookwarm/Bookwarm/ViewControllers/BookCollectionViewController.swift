@@ -9,14 +9,14 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import RealmSwift
-class BookCollectionViewController: UICollectionViewController {
+final class BookCollectionViewController: UICollectionViewController {
     
     //variables
     var page = 1
     var isEnd = false
     let searchBar = UISearchBar()
     let searchPlaceHolder = "검색을 해보세요"
-    var bookList: [Book] = []
+    var bookList: [RealmBook] = []
 
     @IBOutlet weak var searchButton: UIBarButtonItem!
     //vdl
@@ -50,7 +50,14 @@ class BookCollectionViewController: UICollectionViewController {
                 //list
                 self.isEnd = json["meta"]["is_End"].boolValue
                 for item in json["documents"].arrayValue{
-                    let book = Book(authors: item["authors"].arrayValue[0].stringValue, title: item["title"].stringValue, thumbnail: item["thumbnail"].stringValue, url: item["url"].stringValue)
+                    let book = RealmBook(
+                        authors: item["authors"].arrayValue[0].stringValue,
+                        title: item["title"].stringValue,
+                        thumbnail: item["thumbnail"].stringValue,
+                        url: item["url"].stringValue,
+                        isLiked: false,
+                        memo: nil
+                    )
                     self.bookList.append(book)
                     self.collectionView.reloadData()
                 }
@@ -100,17 +107,11 @@ class BookCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //create
         let data = bookList[indexPath.row]
-
-        let book = RealmBook(authors: data.authors, title: data.title, thumbnail: data.thumbnail, url: data.url, isLiked: data.isLiked, memo: nil)
-        //write
-        let realm = try! Realm()
-        try! realm.write{
-            realm.add(book)
-            print("book added")
-        }
+        let book = RealmBook(authors: data.authors, title: data.title, thumbnail: data.thumbnailImageURL, url: data.webPageURL, isLiked: data.userDidLike, memo: nil)
+        BookRealmRepository.shared.create(book)
         
         //imageurl -> data -> uiimage
-        if let url = URL(string: data.thumbnail){
+        if let url = URL(string: data.thumbnailImageURL){
             DispatchQueue.global().async {
                 let data = try! Data(contentsOf: url)
                 DispatchQueue.main.async {
@@ -131,7 +132,7 @@ class BookCollectionViewController: UICollectionViewController {
     
     
     @objc func likeToggle(_ sender: UIButton){
-        bookList[sender.tag].isLiked.toggle()
+        bookList[sender.tag].userDidLike.toggle()
     }
     
     func setSearchBar(){

@@ -11,18 +11,18 @@ class RealmBook: Object {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var authors: String
     @Persisted var title: String
-    @Persisted var thumbnail: String
-    @Persisted var url: String
-    @Persisted var isLiked: Bool = false
+    @Persisted var thumbnailImageURL: String
+    @Persisted var webPageURL: String
+    @Persisted var userDidLike: Bool = false
     @Persisted var memo: String?
     
     convenience init(authors: String, title: String, thumbnail: String, url: String, isLiked: Bool, memo: String?) {
         self.init()
         self.authors = authors
         self.title = title
-        self.thumbnail = thumbnail
-        self.url = url
-        self.isLiked = isLiked
+        self.thumbnailImageURL = thumbnail
+        self.webPageURL = url
+        self.userDidLike = isLiked
         self.memo = memo
     }
 }

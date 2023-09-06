@@ -10,7 +10,6 @@ import RealmSwift
 import SnapKit
 
 class HomeViewController: UIViewController {
-    let realm = try! Realm()
 
     var books: Results<RealmBook>!
     let deleteButton = {
@@ -33,15 +32,17 @@ class HomeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        let realm = try! Realm()
-        books = realm.objects(RealmBook.self)
+        
+        books = BookRealmRepository.shared.read()
         tableView.reloadData()
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(realm.configuration.fileURL)
+        BookRealmRepository.shared.getFileURL()
+        BookRealmRepository.shared.checkSchemaVersion()
+
         
         view.addSubview(deleteButton)
         view.addSubview(tableView)
@@ -62,11 +63,8 @@ class HomeViewController: UIViewController {
         //delete file
         for book in books{
             deleteFileFromDocument(filename: "\(book._id.stringValue).jpeg")
-            try! realm.write{
-                realm.delete(book)
-            }
+            BookRealmRepository.shared.delete(book)
         }
-        
         
         tableView.reloadData()
     }
@@ -85,7 +83,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         let data = books[indexPath.row]
         cell.setView()
         cell.titleLabel.text = data.title
-        cell.coverImageView.kf.setImage(with: URL(string: data.thumbnail))
+        cell.coverImageView.kf.setImage(with: URL(string: data.thumbnailImageURL))
         cell.infoLabel.text = data.memo
         
         return cell
@@ -98,4 +96,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
 //        present(vc,animated: true)
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    //TODO: AddTrailingSwipeAction
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        
+//    }
 }

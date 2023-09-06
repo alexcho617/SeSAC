@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import RealmSwift
 class DetailViewController: BaseViewController {
-    let realm = try! Realm()
+    let repository = DiaryTableRepository()
     var diary: Diary?
     let titleTextField: WriteTextField = {
         let view = WriteTextField()
@@ -53,18 +53,9 @@ class DetailViewController: BaseViewController {
     
     @objc func editButtonClicked(){
         //Realm update
-        if let diary{
-            let item = Diary(value: ["_id": diary._id, "title": titleTextField.text!, "content": contentTextField.text!] as [String : Any])
-            do {
-                try realm.write{
-                    realm.add(item, update: .modified)
-                }
-            } catch let error {
-                print(error)
-            }
-            
-            
-        }
+        guard let diary = diary else {return}
+        
+        repository.update(id: diary._id, title: titleTextField.text!, contents: contentTextField.text!)
         navigationController?.popViewController(animated: true)
         
         
@@ -82,7 +73,7 @@ class DetailViewController: BaseViewController {
     func bindData(){
         if let diary{
             titleTextField.text = diary.title
-            contentTextField.text = diary.content
+            contentTextField.text = diary.contents
         }
     }
     
