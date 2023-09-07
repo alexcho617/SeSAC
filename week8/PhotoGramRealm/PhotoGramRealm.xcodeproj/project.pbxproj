@@ -36,6 +36,8 @@
 		57A193882AA6CB5D0077C224 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A193872AA6CB5D0077C224 /* FileManager+Extension.swift */; };
 		57A1938A2AA6F2550077C224 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A193892AA6F2550077C224 /* DetailViewController.swift */; };
 		57C22D872AA800120043CA45 /* DiaryTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C22D862AA800120043CA45 /* DiaryTableRepository.swift */; };
+		57C6CBC92AA954E50076D430 /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C6CBC82AA954E50076D430 /* BackupViewController.swift */; };
+		57C6CBCC2AA95BBB0076D430 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 57C6CBCB2AA95BBB0076D430 /* Zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,7 @@
 		57A193872AA6CB5D0077C224 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		57A193892AA6F2550077C224 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		57C22D862AA800120043CA45 /* DiaryTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableRepository.swift; sourceTree = "<group>"; };
+		57C6CBC82AA954E50076D430 /* BackupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 				57A193732AA564C70077C224 /* RealmSwift in Frameworks */,
 				57A193712AA564C70077C224 /* Realm in Frameworks */,
 				04BAEB2A2AA4C1D1005A3A69 /* SnapKit in Frameworks */,
+				57C6CBCC2AA95BBB0076D430 /* Zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +135,7 @@
 		04BAEB0D2AA4BF52005A3A69 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				57C6CBC72AA954D20076D430 /* Backup */,
 				04BAEB2F2AA550A1005A3A69 /* Search */,
 				04BAEB0E2AA4BF5A005A3A69 /* Home */,
 				04BAEB102AA4BF63005A3A69 /* Add */,
@@ -220,6 +225,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		57C6CBC72AA954D20076D430 /* Backup */ = {
+			isa = PBXGroup;
+			children = (
+				57C6CBC82AA954E50076D430 /* BackupViewController.swift */,
+			);
+			path = Backup;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,6 +254,7 @@
 				57A193702AA564C70077C224 /* Realm */,
 				57A193722AA564C70077C224 /* RealmSwift */,
 				57A193852AA6BD570077C224 /* Kingfisher */,
+				57C6CBCB2AA95BBB0076D430 /* Zip */,
 			);
 			productName = PhotoGramRealm;
 			productReference = 04BAEAF52AA4BF3F005A3A69 /* PhotoGramRealm.app */;
@@ -274,6 +288,7 @@
 				04BAEB282AA4C1D1005A3A69 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				57A1936F2AA564C70077C224 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				57A193842AA6BD570077C224 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				57C6CBCA2AA95BBB0076D430 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 04BAEAF62AA4BF3F005A3A69 /* Products */;
 			projectDirPath = "";
@@ -303,6 +318,7 @@
 			files = (
 				04BAEB312AA550A7005A3A69 /* SearchViewController.swift in Sources */,
 				57A1936E2AA558150077C224 /* APIKey.swift in Sources */,
+				57C6CBC92AA954E50076D430 /* BackupViewController.swift in Sources */,
 				04BAEB1E2AA4C090005A3A69 /* BaseTableViewCell.swift in Sources */,
 				04BAEB252AA4C0DF005A3A69 /* Constants.swift in Sources */,
 				04BAEAFD2AA4BF3F005A3A69 /* ViewController.swift in Sources */,
@@ -462,6 +478,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTV3AHP8X4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoGramRealm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -473,7 +490,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.PhotoGramRealm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.alexcho617.PhotoGramRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -491,6 +508,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTV3AHP8X4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoGramRealm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -502,7 +520,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.PhotoGramRealm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.alexcho617.PhotoGramRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -561,6 +579,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		57C6CBCA2AA95BBB0076D430 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -583,6 +609,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 57A193842AA6BD570077C224 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		57C6CBCB2AA95BBB0076D430 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57C6CBCA2AA95BBB0076D430 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

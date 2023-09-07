@@ -67,7 +67,8 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func backupButtonClicked() {
-        print(#function)
+        let vc = BackupViewController()
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     @objc func deleteButtonClicked() {

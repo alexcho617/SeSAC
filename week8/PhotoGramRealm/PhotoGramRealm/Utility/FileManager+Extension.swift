@@ -7,11 +7,13 @@
 
 import UIKit
 extension UIViewController{
-    
+    func documentDirectoryPath() -> URL? {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return nil}
+        return documentDirectory
+    }
     func removeImageFromDocument(filename: String){
         //1 go to doc folder
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
-        
         //2 append directory + filename
         let fileURL = documentDirectory.appendingPathComponent(filename)
         
