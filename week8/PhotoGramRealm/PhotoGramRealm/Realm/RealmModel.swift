@@ -28,3 +28,5 @@ class Diary: Object {
         self.summary = "제목은:\(title)  내용은:\(contents)"
     }
 }
+
+

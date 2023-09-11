@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  unsplash-mvvm
+
+  Created by Alex Cho on 2023/09/11.
+  
+*/
+"nickname_placeholder" = "ニックネームを入力してください";
+"nickname_result" = "와타시와 %@ 데스";
+"age_result" = "와타시 %d 년 데스";

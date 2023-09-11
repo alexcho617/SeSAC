@@ -8,11 +8,6 @@
 import UIKit
 import WebKit
 
-
-import UIKit
-import WebKit
-
-
 class WebViewController: UIViewController, WKUIDelegate {
     
     var webView = WKWebView()
