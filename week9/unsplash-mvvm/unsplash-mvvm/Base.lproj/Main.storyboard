@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="74a-BW-C63">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ahw-Kq-nFk">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -260,6 +260,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yR2-bP-Kk6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1981" y="2054"/>
+        </scene>
+        <!--Calculate View Controller-->
+        <scene sceneID="m3z-CV-Y1U">
+            <objects>
+                <viewController id="Ahw-Kq-nFk" customClass="CalculateViewController" customModule="unsplash_mvvm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tSO-70-Toa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PTW-lY-Sub">
+                                <rect key="frame" x="20" y="79" width="353" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xPl-eb-e4A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7bW-a3-38h">
+                                <rect key="frame" x="20" y="139" width="353" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Hn2-bd-FWO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0A-oh-amZ">
+                                <rect key="frame" x="20" y="199" width="353" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Wu9-Uo-oCM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqU-vs-Qrs">
+                                <rect key="frame" x="20" y="259" width="353" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="yIV-ao-TPK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yoL-WA-G4N"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yoL-WA-G4N" firstAttribute="trailing" secondItem="7bW-a3-38h" secondAttribute="trailing" constant="20" id="3D4-Fd-zec"/>
+                            <constraint firstItem="SqU-vs-Qrs" firstAttribute="leading" secondItem="yoL-WA-G4N" secondAttribute="leading" constant="20" id="A14-GN-LFn"/>
+                            <constraint firstItem="q0A-oh-amZ" firstAttribute="top" secondItem="7bW-a3-38h" secondAttribute="bottom" constant="20" id="EFf-lv-CXB"/>
+                            <constraint firstItem="q0A-oh-amZ" firstAttribute="leading" secondItem="yoL-WA-G4N" secondAttribute="leading" constant="20" id="FT9-RG-mq8"/>
+                            <constraint firstItem="yoL-WA-G4N" firstAttribute="trailing" secondItem="q0A-oh-amZ" secondAttribute="trailing" constant="20" id="QRq-kh-b75"/>
+                            <constraint firstItem="7bW-a3-38h" firstAttribute="top" secondItem="PTW-lY-Sub" secondAttribute="bottom" constant="20" id="TUJ-mB-v8t"/>
+                            <constraint firstItem="7bW-a3-38h" firstAttribute="leading" secondItem="yoL-WA-G4N" secondAttribute="leading" constant="20" id="gSk-Qk-Vd9"/>
+                            <constraint firstItem="PTW-lY-Sub" firstAttribute="leading" secondItem="yoL-WA-G4N" secondAttribute="leading" constant="20" id="m4T-SK-TYT"/>
+                            <constraint firstItem="PTW-lY-Sub" firstAttribute="top" secondItem="yoL-WA-G4N" secondAttribute="top" constant="20" id="qPr-14-W58"/>
+                            <constraint firstItem="SqU-vs-Qrs" firstAttribute="top" secondItem="q0A-oh-amZ" secondAttribute="bottom" constant="20" id="vqV-pR-n34"/>
+                            <constraint firstItem="yoL-WA-G4N" firstAttribute="trailing" secondItem="PTW-lY-Sub" secondAttribute="trailing" constant="20" id="xNV-Qf-zq2"/>
+                            <constraint firstItem="yoL-WA-G4N" firstAttribute="trailing" secondItem="SqU-vs-Qrs" secondAttribute="trailing" constant="20" id="zsc-Wu-ID2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstTextField" destination="PTW-lY-Sub" id="bXK-u2-9Gc"/>
+                        <outlet property="resultLabel" destination="q0A-oh-amZ" id="Vdc-SV-Ml0"/>
+                        <outlet property="secondTextField" destination="7bW-a3-38h" id="BG9-jM-qGF"/>
+                        <outlet property="tempLabel" destination="SqU-vs-Qrs" id="87d-q6-Hrw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OyU-h5-lTt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1982" y="2739"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xCc-ZO-6Oa">
