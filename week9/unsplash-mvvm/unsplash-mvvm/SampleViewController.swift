@@ -53,9 +53,11 @@ extension SampleViewController: UITableViewDelegate, UITableViewDataSource{
     }
     //뷰에 보여주기만 한다
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SampleCell")!
-        let data = viewModel.cellForRowAt(at: indexPath)
-        cell.textLabel?.text = data.introduce
+        let cell = UITableViewCell()
+        var content = cell.defaultContentConfiguration() //구조체이다. let을 사용하여 내부 프로퍼티를 변경할수 없다.
+        content.text = "Text"
+        content.secondaryText = "Hello \(indexPath.row)"
+        cell.contentConfiguration = content //타입으로써의 프로토콜
         return cell
     }
 }
