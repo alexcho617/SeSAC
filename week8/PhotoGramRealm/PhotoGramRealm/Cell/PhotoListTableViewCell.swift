@@ -50,6 +50,7 @@ class PhotoListTableViewCell: BaseTableViewCell {
         
 
     }
+
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -58,7 +59,6 @@ class PhotoListTableViewCell: BaseTableViewCell {
     
     override func configure() {
         
-        selectionStyle = .none
         backgroundColor = Constants.BaseColor.background
         
         [diaryImageView, stackView].forEach {

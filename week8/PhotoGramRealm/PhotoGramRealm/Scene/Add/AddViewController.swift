@@ -93,15 +93,15 @@ class AddViewController: BaseViewController {
     
     @objc func searchWebButtonClicked() {
         let vc = SearchViewController()
-        vc.didSelectItemHandler = { [weak self] value in
+        vc.didSelectItemHandler = { [weak self] imageURLString in
             
             DispatchQueue.global().async {
-                if let url = URL(string: value), let data = try? Data(contentsOf: url ) {
+                if let url = URL(string: imageURLString), let data = try? Data(contentsOf: url ) {
                     
                     DispatchQueue.main.async {
                         self?.userImageView.image = UIImage(data: data)
                     }
-                    self?.selectedPhotoURL = value
+                    self?.selectedPhotoURL = imageURLString
                 }
             }
         }
