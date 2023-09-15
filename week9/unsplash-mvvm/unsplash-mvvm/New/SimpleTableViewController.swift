@@ -9,8 +9,10 @@ import UIKit
 
 class SimpleTableViewController: UITableViewController {
     
-    var list = [User(name: "Alex", age: 21),User(name: "Blex", age: 22),User(name: "Clex", age: 23)]
-    
+    var list = [User(name: "Alex", age: 21),
+                User(name: "Alex", age: 21),
+                User(name: "Clex", age: 23)
+                ]
     override func viewDidLoad() {
         super.viewDidLoad()
     }

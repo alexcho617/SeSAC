@@ -8,13 +8,30 @@
 import UIKit
 
 //Model
-struct User{
+class User: Hashable, Equatable{
+    
+    //Equatable
+    static func == (lhs: User, rhs: User) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    //Hashable
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    let id = UUID().uuidString
     let name: String
     let age: Int
     
     //data process
     var introduce: String{
         return "\(name), \(age) 살"
+    }
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
     }
 }
 
