@@ -32,6 +32,8 @@
 		579ABF4D2AB02B4600E295D9 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579ABF4C2AB02B4600E295D9 /* PhotoViewController.swift */; };
 		579ABF4F2AB02B9600E295D9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579ABF4E2AB02B9600E295D9 /* APIKey.swift */; };
 		579ABF512AB02DB400E295D9 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579ABF502AB02DB400E295D9 /* PhotoViewModel.swift */; };
+		57A925D62AB5944E008010E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A925D52AB5944E008010E8 /* SettingsViewController.swift */; };
+		57A925D82AB59C86008010E8 /* SettingsTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A925D72AB59C86008010E8 /* SettingsTwoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		579ABF4C2AB02B4600E295D9 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		579ABF4E2AB02B9600E295D9 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		579ABF502AB02DB400E295D9 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		57A925D52AB5944E008010E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		57A925D72AB59C86008010E8 /* SettingsTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTwoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 				575ACCDD2AB139B6005E54BB /* Calculate */,
 				579ABF3C2AAFED3F00E295D9 /* Login */,
 				579ABF472AB02A4C00E295D9 /* Photo */,
+				57A925D42AB5941F008010E8 /* Settings */,
 				57351C762AAE9923009A7116 /* Main.storyboard */,
 				57351C792AAE9924009A7116 /* Assets.xcassets */,
 				57351C7B2AAE9925009A7116 /* LaunchScreen.storyboard */,
@@ -162,6 +167,15 @@
 				579ABF502AB02DB400E295D9 /* PhotoViewModel.swift */,
 			);
 			path = Photo;
+			sourceTree = "<group>";
+		};
+		57A925D42AB5941F008010E8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				57A925D52AB5944E008010E8 /* SettingsViewController.swift */,
+				57A925D72AB59C86008010E8 /* SettingsTwoViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +262,7 @@
 				57351C922AAEBAAF009A7116 /* Extension+String.swift in Sources */,
 				57351C752AAE9923009A7116 /* ViewController.swift in Sources */,
 				57351C712AAE9923009A7116 /* AppDelegate.swift in Sources */,
+				57A925D62AB5944E008010E8 /* SettingsViewController.swift in Sources */,
 				579ABF3E2AAFED5500E295D9 /* LoginViewController.swift in Sources */,
 				579ABF4B2AB02A7900E295D9 /* APIService.swift in Sources */,
 				579ABF4D2AB02B4600E295D9 /* PhotoViewController.swift in Sources */,
@@ -264,6 +279,7 @@
 				575ACCE62AB29703005E54BB /* SimpleTableViewController.swift in Sources */,
 				579ABF4F2AB02B9600E295D9 /* APIKey.swift in Sources */,
 				579ABF462AB00E5A00E295D9 /* LoginViewModel.swift in Sources */,
+				57A925D82AB59C86008010E8 /* SettingsTwoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

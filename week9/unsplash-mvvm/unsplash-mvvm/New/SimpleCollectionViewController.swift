@@ -81,7 +81,7 @@ class SimpleCollectionViewController: UIViewController {
         //UICollectionview cellregistration
         //ios 14+ 메소드 대신 제네릭 사용, 셀 생성될때마다 handler 클로저 호출
         //Registration 생성 및 초기화 동시 진행
-        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell,User>(handler: { cell, indexPath, itemIdentifier in
+        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell,User>{ cell, indexPath, itemIdentifier in
             //cell design
             var content = UIListContentConfiguration.valueCell()
             content.text = itemIdentifier.name
@@ -98,7 +98,7 @@ class SimpleCollectionViewController: UIViewController {
             bgconfig.strokeWidth = 2
             bgconfig.strokeColor = .systemPink
             cell.backgroundConfiguration = bgconfig
-        })
+        }
         //Diffable Datasource
         //CellForItemAt 이랑 비슷
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in

@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        let vc = SimpleCollectionViewController() //Entry Point View Controller
+        let vc = SettingsTwoViewController() //Entry Point View Controller
         window?.rootViewController = UINavigationController(rootViewController: vc)
         window?.makeKeyAndVisible()
         
