@@ -34,6 +34,9 @@
 		579ABF512AB02DB400E295D9 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579ABF502AB02DB400E295D9 /* PhotoViewModel.swift */; };
 		57A925D62AB5944E008010E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A925D52AB5944E008010E8 /* SettingsViewController.swift */; };
 		57A925D82AB59C86008010E8 /* SettingsTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A925D72AB59C86008010E8 /* SettingsTwoViewController.swift */; };
+		57A925DA2AB7D345008010E8 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A925D92AB7D345008010E8 /* NumberViewController.swift */; };
+		57A925DC2AB7D934008010E8 /* NumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A925DB2AB7D934008010E8 /* NumberViewModel.swift */; };
+		57A925DE2AB7E78F008010E8 /* SimpleCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A925DD2AB7E78F008010E8 /* SimpleCollectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,9 @@
 		579ABF502AB02DB400E295D9 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		57A925D52AB5944E008010E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		57A925D72AB59C86008010E8 /* SettingsTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTwoViewController.swift; sourceTree = "<group>"; };
+		57A925D92AB7D345008010E8 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		57A925DB2AB7D934008010E8 /* NumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewModel.swift; sourceTree = "<group>"; };
+		57A925DD2AB7E78F008010E8 /* SimpleCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 			children = (
 				575ACCE52AB29703005E54BB /* SimpleTableViewController.swift */,
 				575ACCE72AB2A01C005E54BB /* SimpleCollectionViewController.swift */,
+				57A925DD2AB7E78F008010E8 /* SimpleCollectionViewModel.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -153,6 +160,8 @@
 				579ABF3D2AAFED5500E295D9 /* LoginViewController.swift */,
 				579ABF3F2AAFF2F600E295D9 /* Observable.swift */,
 				579ABF452AB00E5A00E295D9 /* LoginViewModel.swift */,
+				57A925D92AB7D345008010E8 /* NumberViewController.swift */,
+				57A925DB2AB7D934008010E8 /* NumberViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -263,6 +272,7 @@
 				57351C752AAE9923009A7116 /* ViewController.swift in Sources */,
 				57351C712AAE9923009A7116 /* AppDelegate.swift in Sources */,
 				57A925D62AB5944E008010E8 /* SettingsViewController.swift in Sources */,
+				57A925DE2AB7E78F008010E8 /* SimpleCollectionViewModel.swift in Sources */,
 				579ABF3E2AAFED5500E295D9 /* LoginViewController.swift in Sources */,
 				579ABF4B2AB02A7900E295D9 /* APIService.swift in Sources */,
 				579ABF4D2AB02B4600E295D9 /* PhotoViewController.swift in Sources */,
@@ -273,11 +283,13 @@
 				579ABF512AB02DB400E295D9 /* PhotoViewModel.swift in Sources */,
 				579ABF442AB0015900E295D9 /* SampleViewModel.swift in Sources */,
 				579ABF422AAFFDFB00E295D9 /* SampleViewController.swift in Sources */,
+				57A925DC2AB7D934008010E8 /* NumberViewModel.swift in Sources */,
 				575ACCE12AB13A83005E54BB /* CalculateViewModel.swift in Sources */,
 				575ACCE82AB2A01C005E54BB /* SimpleCollectionViewController.swift in Sources */,
 				575ACCE32AB13DBD005E54BB /* CustomObservable.swift in Sources */,
 				575ACCE62AB29703005E54BB /* SimpleTableViewController.swift in Sources */,
 				579ABF4F2AB02B9600E295D9 /* APIKey.swift in Sources */,
+				57A925DA2AB7D345008010E8 /* NumberViewController.swift in Sources */,
 				579ABF462AB00E5A00E295D9 /* LoginViewModel.swift in Sources */,
 				57A925D82AB59C86008010E8 /* SettingsTwoViewController.swift in Sources */,
 			);

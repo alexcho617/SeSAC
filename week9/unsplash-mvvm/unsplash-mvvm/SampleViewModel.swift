@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+//ViewModel
 //데이터 가공 역활
 class SampleViewModel{
     var list = [User(name: "Alex", age: 21),

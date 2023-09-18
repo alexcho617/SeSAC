@@ -35,6 +35,7 @@ class User: Hashable, Equatable{
     }
 }
 
+//View
 class SampleViewController: UIViewController {
     let viewModel = SampleViewModel()
     @IBOutlet weak var tableView: UITableView!

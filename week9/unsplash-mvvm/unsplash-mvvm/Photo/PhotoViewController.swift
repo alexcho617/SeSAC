@@ -9,36 +9,70 @@ import UIKit
 
 class PhotoViewController: UIViewController {
     let vm = PhotoViewModel()
-    @IBOutlet weak var tableView: UITableView!
+    var dataSource: UICollectionViewDiffableDataSource<Int, PhotoResult>!
+    var snapshot = NSDiffableDataSourceSnapshot<Int, PhotoResult>()
+
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
+        print(#file)
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        vm.fetchPhoto()
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
+        collectionView.collectionViewLayout = createLayout()
+        configureDataSource()
+        
         vm.list.bind { _ in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            self.updateSnapshot()
+           
         }
         
     }
     
+    private func updateSnapshot(){
+        //MARK: 여기서 계속 에러가 나네... section identifier 때문인것 같다
+        snapshot.appendSections([0])
+        snapshot.appendItems(vm.list.value.results!, toSection: 0)
+    }
+    private func configureDataSource(){
+        let cellregi = UICollectionView.CellRegistration<UICollectionViewListCell,PhotoResult> { cell, indexPath, itemIdentifier in
+            var content = UIListContentConfiguration.valueCell()
+            content.text = "\(itemIdentifier.likes)"
+            DispatchQueue.global().async {
+                let url = URL(string: itemIdentifier.urls.thumb)!
+                let data = try? Data(contentsOf: url)
+                
+                DispatchQueue.main.async {
+                    content.image = UIImage(data: data!)
+                    //MARK: 시점이 중요
+                    cell.contentConfiguration = content
 
+                }
+                
+            }
+            
+            
+        }
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            let cell = collectionView.dequeueConfiguredReusableCell(using: cellregi, for: indexPath, item: itemIdentifier)
+            return cell
+        })
+    }
+    
+    
+    private func createLayout() -> UICollectionViewLayout{
+        var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped) //Looks like tableview
+        config.showsSeparators = false
+        config.backgroundColor = .secondarySystemBackground
+        var layout = UICollectionViewCompositionalLayout.list(using: config)
+        return layout
+    }
 }
 
-extension PhotoViewController: UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vm.numberOfRowsInSection
+extension PhotoViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        vm.fetchPhoto(text: searchBar.text!)
+        print(searchBar.text!)
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "photocell")!
-        
-        let data = vm.cellForRowAt(indexPath)
-        cell.textLabel?.text = data.id
-        cell.backgroundColor = .lightGray
-        return cell
-    }
-    
-    
 }

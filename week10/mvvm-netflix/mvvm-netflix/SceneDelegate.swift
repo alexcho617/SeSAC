@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  unsplash-mvvm
+//  mvvm-netflix
 //
-//  Created by Alex Cho on 2023/09/11.
+//  Created by Alex Cho on 2023/09/18.
 //
 
 import UIKit
@@ -13,14 +13,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-      
-//        guard let scene = (scene as? UIWindowScene) else { return }
-//        window = UIWindow(windowScene: scene)
-//        let vc = SimpleCollectionViewController() //Entry Point View Controller
-//        window?.rootViewController = UINavigationController(rootViewController: vc)
-//        window?.makeKeyAndVisible()
-//
-        
+        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
+        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
+        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        guard let scene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: scene)
+        let vc = LoginViewController() //Entry Point View Controller
+        window?.rootViewController = UINavigationController(rootViewController: vc)
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

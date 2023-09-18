@@ -11,59 +11,42 @@ private let reuseIdentifier = "Cell"
 
 
 class SimpleCollectionViewController: UIViewController {
-    enum Section: Int, CaseIterable{
-        case first,second,third
+    enum Section: Int{
+        case one,twi
     }
-    var list = [User(name: "Alex", age: 21),
-                User(name: "Alex", age: 21),
-                User(name: "Al", age: 23)
-                ]
-    var list2 = [User(name: "Blex", age: 21),
-                User(name: "Blex", age: 21),
-                User(name: "Blex", age: 23)
-                ]
     
-    var list3 = [User(name: "Clex", age: 21),
-                User(name: "Clex", age: 21),
-                User(name: "Clex", age: 23)
-                ]
-    
+    var vm = SimpleCollectionViewModel()
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-//    var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, User>! //system cell, Data
-    var dataSource: UICollectionViewDiffableDataSource<String, User>! //Hashable
-    var snapshot = NSDiffableDataSourceSnapshot<String, User>() //    var dataSource: UICollectionViewDiffableDataSource<Int, User>! 이거랑 맞춤
+    var dataSource: UICollectionViewDiffableDataSource<Section, User>! //Hashable
+    var snapshot = NSDiffableDataSourceSnapshot<Section, User>() //    var dataSource: UICollectionViewDiffableDataSource<Int, User>! 이거랑 맞춤
 
-    var dataButton = {
-        let view = UIButton()
-        view.setTitle("Add Section", for: .normal)
-        view.setTitleColor(UIColor.systemBlue, for: .normal)
-        return view
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
         view.addSubview(collectionView)
-        view.addSubview(dataButton)
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        dataButton.snp.makeConstraints { make in
-            make.top.trailing.equalTo(view.safeAreaLayoutGuide)
-        }
-        dataButton.addTarget(self, action: #selector(dataClick), for: .touchUpInside)
+        snapshot.appendSections([Section.one]) //찰칵 섹션추가
+
         configureDataSource()  //적용
 
-        //snapshot
-        //        var snapshot = NSDiffableDataSourceSnapshot<Section, User>() //    var dataSource: UICollectionViewDiffableDataSource<Int, User>! 이거랑 맞춤
-        //열거형으로 사용 section{case first = 0}
-        //        snapshot.appendSections(Section.allCases) //찰칵 섹션추가
-        //        snapshot.appendItems(list, toSection: Section.first)
-        //        snapshot.appendItems(list2, toSection: Section.second)
+        updateSnapshot()
+        vm.list.bind { user in
+            self.updateSnapshot()
+        }
         
-        snapshot.appendSections(["mysection1", "mysection2", "mysection3"]) //찰칵 섹션추가
-        snapshot.appendItems(list, toSection: "mysection1")  //찰칵 로우 추가
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1){ [self] in
+            self.vm.append()
+            dataSource.apply(snapshot)
+        }
+    }
+    
+    func updateSnapshot(){
+        snapshot.appendItems(vm.list.value, toSection: Section.one)  //찰칵 로우 추가
         dataSource.apply(snapshot)
     }
     
@@ -109,29 +92,20 @@ class SimpleCollectionViewController: UIViewController {
         })
 
     }
-    
-    @objc func dataClick(){
-        snapshot.appendItems(list2, toSection: "mysection2")  //찰칵 로우 추가
-        snapshot.appendItems(list3, toSection: "mysection3")
-        dataSource.apply(snapshot)
+}
+
+extension SimpleCollectionViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        guard let item = dataSource.itemIdentifier(for: indexPath) else {return}
+        dump(item)
+        vm.removeOneUser(at: indexPath.item)
     }
 }
 
-//MARK: Diffable Data Source
-
-
-//extension SimpleCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-//    //MARK: DataSource is still using old method.
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        list.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: list[indexPath.item])
-//        return cell
-//
-//    }
-//
-//
-//}
+extension SimpleCollectionViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        vm.insertUser(name: searchBar.text!)
+    }
+}

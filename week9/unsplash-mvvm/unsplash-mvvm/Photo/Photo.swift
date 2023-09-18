@@ -14,7 +14,7 @@ struct Photo: Codable {
     let results: [PhotoResult]?
 }
 
-struct PhotoResult: Codable {
+struct PhotoResult: Codable, Hashable {
     let id: String
     let created_at: String
     let description: String?
@@ -24,15 +24,15 @@ struct PhotoResult: Codable {
     let user: PhotoUser
 }
 
-struct PhotoURL: Codable {
+struct PhotoURL: Codable,Hashable {
     let full: String
     let thumb: String
 }
 
-struct PhotoLink: Codable {
+struct PhotoLink: Codable,Hashable {
     let html: String
 }
 
-struct PhotoUser: Codable {
+struct PhotoUser: Codable,Hashable {
     let username: String
 }

@@ -1,14 +1,13 @@
 //
 //  AppDelegate.swift
-//  unsplash-mvvm
+//  mvvm-netflix
 //
-//  Created by Alex Cho on 2023/09/11.
+//  Created by Alex Cho on 2023/09/18.
 //
 
 import UIKit
 
-//@main
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 

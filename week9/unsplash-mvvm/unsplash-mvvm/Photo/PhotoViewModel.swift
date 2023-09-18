@@ -12,12 +12,19 @@ class PhotoViewModel{
     var numberOfRowsInSection: Int {
         return list.value.results?.count ?? 0
     }
-    func fetchPhoto(){
-        APIService.shared.searchPhoto(query: "sky") { photo in
-            guard let photo = photo else {return}
-            self.list.value = photo
+    func fetchPhoto(text: String){
+        APIService.shared.searchPhoto(query: text) { photo in
+            
+            //MARK: 통신 후 메인에서 UI 처리
+            DispatchQueue.main.async {
+                guard let photo = photo else {return}
+                self.list.value = photo
+                dump(self.list)
+            }
+            
         }
     }
+    
     func cellForRowAt(_ indexPath: IndexPath) -> PhotoResult{
         return list.value.results![indexPath.row]
     }

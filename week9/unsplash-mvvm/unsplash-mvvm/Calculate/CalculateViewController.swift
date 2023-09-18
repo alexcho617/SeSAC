@@ -19,7 +19,7 @@ class CalculateViewController: UIViewController {
     
     var vm = CalculateViewModel()
     
-    //View(ViewController) -> ViewModel
+    //MARK: View(ViewController) -> ViewModel
     @objc func firstTextFieldChanged(){
         vm.firstNumber.value = firstTextField.text
         vm.calculate()
@@ -37,7 +37,7 @@ class CalculateViewController: UIViewController {
         
         secondTextField.addTarget(self, action: #selector(secondTextFieldChanged), for: .editingChanged)
         
-        //ViewModel -> View (ViewController)
+        //MARK: ViewModel -> View (ViewController)
         vm.firstNumber.bind { number in
             self.firstTextField.text = number
         }
