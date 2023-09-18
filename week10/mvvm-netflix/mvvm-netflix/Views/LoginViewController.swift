@@ -27,16 +27,16 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-    let email = CustomGrayTextField(placeholder: "이메일")
-    let emmailLabel = {
+    let emailTextField = CustomGrayTextField(placeholder: "이메일")
+    let emailWarningLabel = {
         let view = UILabel()
         view.textColor = .systemRed
         view.text = LoginStatus.emailError.rawValue
         return view
     }()
 
-    let password = CustomGrayTextField(placeholder: "비밀번호", isSecureText: true)
-    let passwordLabel = {
+    let passwordTextField = CustomGrayTextField(placeholder: "비밀번호", isSecureText: true)
+    let passwordWarningLabel = {
         let view = UILabel()
         view.textColor = .systemRed
         view.text = LoginStatus.passwordError.rawValue
@@ -46,8 +46,8 @@ class LoginViewController: UIViewController {
     let nickname = CustomGrayTextField(placeholder: "닉네임")
     let location = CustomGrayTextField(placeholder: "위치")
     
-    let refer = CustomGrayTextField(placeholder: "추천 코드 입력")
-    let referLabel = {
+    let referTextField = CustomGrayTextField(placeholder: "추천 코드 입력")
+    let referWarningLabel = {
         let view = UILabel()
         view.textColor = .systemRed
         view.text = LoginStatus.referalError.rawValue
@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
     }()
 
     lazy var stackView = {
-        lazy var view = UIStackView(arrangedSubviews: [self.email,self.emmailLabel, self.password,self.passwordLabel, self.nickname, self.location, self.refer, self.referLabel])
+        lazy var view = UIStackView(arrangedSubviews: [self.emailTextField,self.emailWarningLabel, self.passwordTextField,self.passwordWarningLabel, self.nickname, self.location, self.referTextField, self.referWarningLabel])
         view.axis = .vertical
         view.spacing = 20
         view.alignment = .fill
@@ -103,18 +103,18 @@ class LoginViewController: UIViewController {
         view.addSubview(switchButton)
         signUpButton.addTarget(self, action: #selector(registerButtonClicked), for: .touchUpInside)
         
-        email.delegate = self
-        password.delegate = self
-        refer.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        referTextField.delegate = self
 
         emailCheck.bind { value in
-            self.emmailLabel.isHidden = self.vm.validateEmail(value) ? true : false
+            self.emailWarningLabel.isHidden = self.vm.validateEmail(value) ? true : false
         }
         passwordCheck.bind { value in
-            self.passwordLabel.isHidden = self.vm.validatePW(value) ? true : false
+            self.passwordWarningLabel.isHidden = self.vm.validatePW(value) ? true : false
         }
         referCheck.bind { value in
-            self.referLabel.isHidden = self.vm.validateRefer(value) ? true : false
+            self.referWarningLabel.isHidden = self.vm.validateRefer(value) ? true : false
         }
         
     }
@@ -148,11 +148,11 @@ class LoginViewController: UIViewController {
     }
     
     @objc func registerButtonClicked(){
-        vm.id = email.text
-        vm.pw = password.text
+        vm.id = emailTextField.text
+        vm.pw = passwordTextField.text
         vm.nickname = nickname.text
         vm.location = location.text
-        vm.refer = refer.text
+        vm.refer = referTextField.text
 
         let status = vm.login()
 
@@ -176,13 +176,13 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField == email{
+        if textField == emailTextField{
             emailCheck.value = textField.text ?? ""
         }
-        else if textField == password{
+        else if textField == passwordTextField{
             passwordCheck.value = textField.text ?? ""
         }
-        else if textField == refer{
+        else if textField == referTextField{
             referCheck.value = textField.text ?? ""
         }
         
