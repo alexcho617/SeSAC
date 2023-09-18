@@ -14,12 +14,39 @@ class LoginViewModel{
     var location: String?
     var refer: String?
     
-    
-    func validate(){
-        
+    func validateEmail(_ id: String?) -> Bool{
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: id)
+    }
+    func validatePW(_ pw: String?) -> Bool{
+        guard let pw = pw else { return false }
+        if 6 <= pw.count && pw.count <= 10{
+            return true
+        }
+        return false
+    }
+    func validateRefer(_ refer: String?) -> Bool{
+        guard let refer = refer else { return false }
+        if refer.count == 6 {
+            return true
+        }
+        return false
     }
     
-    func login(){
+ 
+    func login() -> LoginStatus{
+        if !validateEmail(self.id){
+            return .emailError
+        }
+        if !validatePW(self.pw){
+            return .passwordError
+        }
+        if !validateRefer(self.refer){
+            return .referalError
+        }
         
+        return .success
     }
 }
+
