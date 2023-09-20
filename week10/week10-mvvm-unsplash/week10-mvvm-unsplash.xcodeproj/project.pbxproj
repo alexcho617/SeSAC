@@ -21,6 +21,8 @@
 		575171052AB9743B00AFA280 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575171042AB9743B00AFA280 /* Network.swift */; };
 		5751712A2AB9DE7B00AFA280 /* BeerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575171292AB9DE7B00AFA280 /* BeerNetwork.swift */; };
 		5751712C2AB9DE8400AFA280 /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751712B2AB9DE8400AFA280 /* BeerModel.swift */; };
+		5751712E2ABA765300AFA280 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751712D2ABA765300AFA280 /* Router.swift */; };
+		575171302ABA999600AFA280 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751712F2ABA999600AFA280 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		575171042AB9743B00AFA280 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		575171292AB9DE7B00AFA280 /* BeerNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerNetwork.swift; sourceTree = "<group>"; };
 		5751712B2AB9DE8400AFA280 /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
+		5751712D2ABA765300AFA280 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		5751712F2ABA999600AFA280 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 				575170E22AB9293700AFA280 /* AppDelegate.swift */,
 				575170E42AB9293700AFA280 /* SceneDelegate.swift */,
 				575170E62AB9293700AFA280 /* ViewController.swift */,
+				5751712F2ABA999600AFA280 /* ViewModel.swift */,
 				575171282AB9DE6D00AFA280 /* Beer */,
 				575170FF2AB93CBC00AFA280 /* Network */,
 				575170E82AB9293700AFA280 /* Main.storyboard */,
@@ -91,6 +96,7 @@
 				575171002AB93CDC00AFA280 /* NetworkBasic.swift */,
 				575171022AB964A500AFA280 /* SeSACAPI.swift */,
 				575171042AB9743B00AFA280 /* Network.swift */,
+				5751712D2ABA765300AFA280 /* Router.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -185,10 +191,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				575171302ABA999600AFA280 /* ViewModel.swift in Sources */,
 				575170E72AB9293700AFA280 /* ViewController.swift in Sources */,
 				5751712C2AB9DE8400AFA280 /* BeerModel.swift in Sources */,
 				575171012AB93CDC00AFA280 /* NetworkBasic.swift in Sources */,
 				575171052AB9743B00AFA280 /* Network.swift in Sources */,
+				5751712E2ABA765300AFA280 /* Router.swift in Sources */,
 				575171032AB964A500AFA280 /* SeSACAPI.swift in Sources */,
 				5751712A2AB9DE7B00AFA280 /* BeerNetwork.swift in Sources */,
 				575170E32AB9293700AFA280 /* AppDelegate.swift in Sources */,
