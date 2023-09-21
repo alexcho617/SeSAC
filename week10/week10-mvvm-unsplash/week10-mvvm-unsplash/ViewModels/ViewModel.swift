@@ -9,7 +9,7 @@ import Foundation
 import Combine
 final class ViewModel{
     
-    //publish
+    //publisher
     @Published var urlString: String = ""{
         didSet{
             print("ViewModel-urlString-didSet: \(urlString)")

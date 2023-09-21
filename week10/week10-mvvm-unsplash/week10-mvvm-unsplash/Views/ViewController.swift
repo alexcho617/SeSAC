@@ -12,9 +12,6 @@ import SnapKit
 import Combine
 
 class ViewController: UIViewController{
-    private let vm = ViewModel()
-    private var cancelBag = Set<AnyCancellable>()
-
     private lazy var scrollView = {
         let view = UIScrollView()
         view.delegate = self
@@ -26,14 +23,18 @@ class ViewController: UIViewController{
         view.showsHorizontalScrollIndicator = false
         
         imageView.isUserInteractionEnabled = true
-
+        
         return view
     }()
+    
     private let imageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
         return view
     }()
+    
+    private let vm = ViewModel()
+    private var cancelBag = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +52,11 @@ class ViewController: UIViewController{
         vm.$urlString
             .receive(on: DispatchQueue.main)
             .sink { urlString in
+                print("ViewController-setUpViewModel: urlString \(urlString)")
                 self.imageView.kf.setImage(with: URL(string: urlString))
             }
             .store(in: &cancelBag)
-
+        
     }
     
     private func setGesture(){
@@ -87,7 +89,7 @@ class ViewController: UIViewController{
             make.size.equalTo(scrollView)
         }
     }
-
+    
 }
 
 extension ViewController: UIScrollViewDelegate{
@@ -149,15 +151,15 @@ struct PhotoURL: Decodable{
 //                print(failure)
 //            }
 //        }
-    
-        
-        //Result<> 쓰지 않았기 때문에 Optional check 해야함
+
+
+//Result<> 쓰지 않았기 때문에 Optional check 해야함
 //        NetworkBasic.shared.random { photo, error in
 //            guard let photo = photo else {return} //early exit 해버리면 에러는?
 //            guard let error = error else {return} //error not nil but exited
 //        }
-        
-        //Result를 썼기 때문에 response라는 하나의 값만 들어옴
+
+//Result를 썼기 때문에 response라는 하나의 값만 들어옴
 //        NetworkBasic.shared.detailPhoto(id: "") { response in
 //            switch response {
 //            case .success(let success):
