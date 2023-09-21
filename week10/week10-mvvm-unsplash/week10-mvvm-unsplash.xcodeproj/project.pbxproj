@@ -24,6 +24,10 @@
 		575171302ABA999600AFA280 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751712F2ABA999600AFA280 /* ViewModel.swift */; };
 		575171322ABBCB3C00AFA280 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575171312ABBCB3C00AFA280 /* SearchViewController.swift */; };
 		575171362ABBE10800AFA280 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575171352ABBE10800AFA280 /* SearchCell.swift */; };
+		575171382ABC61F100AFA280 /* BeerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575171372ABC61F100AFA280 /* BeerRouter.swift */; };
+		5751713B2ABC842000AFA280 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751713A2ABC842000AFA280 /* BeerViewController.swift */; };
+		5751713E2ABC84D900AFA280 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751713D2ABC84D900AFA280 /* PhotoModel.swift */; };
+		575171402ABC88B200AFA280 /* BeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751713F2ABC88B200AFA280 /* BeerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,10 @@
 		5751712F2ABA999600AFA280 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		575171312ABBCB3C00AFA280 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		575171352ABBE10800AFA280 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		575171372ABC61F100AFA280 /* BeerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerRouter.swift; sourceTree = "<group>"; };
+		5751713A2ABC842000AFA280 /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
+		5751713D2ABC84D900AFA280 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		5751713F2ABC88B200AFA280 /* BeerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,7 @@
 		575170E12AB9293700AFA280 /* week10-mvvm-unsplash */ = {
 			isa = PBXGroup;
 			children = (
+				5751713C2ABC84D000AFA280 /* Models */,
 				575171332ABBCB3F00AFA280 /* Views */,
 				575171342ABBCB5000AFA280 /* ViewModels */,
 				575171282AB9DE6D00AFA280 /* Beer */,
@@ -106,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				575171292AB9DE7B00AFA280 /* BeerNetwork.swift */,
+				575171372ABC61F100AFA280 /* BeerRouter.swift */,
 				5751712B2AB9DE8400AFA280 /* BeerModel.swift */,
 			);
 			path = Beer;
@@ -115,8 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				575170E62AB9293700AFA280 /* ViewController.swift */,
-				575171312ABBCB3C00AFA280 /* SearchViewController.swift */,
-				575171352ABBE10800AFA280 /* SearchCell.swift */,
+				575171392ABC840D00AFA280 /* Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,8 +134,27 @@
 			isa = PBXGroup;
 			children = (
 				5751712F2ABA999600AFA280 /* ViewModel.swift */,
+				5751713F2ABC88B200AFA280 /* BeerViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		575171392ABC840D00AFA280 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				575171312ABBCB3C00AFA280 /* SearchViewController.swift */,
+				575171352ABBE10800AFA280 /* SearchCell.swift */,
+				5751713A2ABC842000AFA280 /* BeerViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5751713C2ABC84D000AFA280 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5751713D2ABC84D900AFA280 /* PhotoModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,10 +238,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				575171302ABA999600AFA280 /* ViewModel.swift in Sources */,
+				575171382ABC61F100AFA280 /* BeerRouter.swift in Sources */,
+				5751713B2ABC842000AFA280 /* BeerViewController.swift in Sources */,
+				5751713E2ABC84D900AFA280 /* PhotoModel.swift in Sources */,
 				575171362ABBE10800AFA280 /* SearchCell.swift in Sources */,
 				575171322ABBCB3C00AFA280 /* SearchViewController.swift in Sources */,
 				575170E72AB9293700AFA280 /* ViewController.swift in Sources */,
 				5751712C2AB9DE8400AFA280 /* BeerModel.swift in Sources */,
+				575171402ABC88B200AFA280 /* BeerViewModel.swift in Sources */,
 				575171012AB93CDC00AFA280 /* NetworkBasic.swift in Sources */,
 				575171052AB9743B00AFA280 /* Network.swift in Sources */,
 				5751712E2ABA765300AFA280 /* Router.swift in Sources */,
