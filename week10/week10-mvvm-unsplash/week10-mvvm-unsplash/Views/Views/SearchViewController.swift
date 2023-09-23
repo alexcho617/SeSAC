@@ -10,14 +10,14 @@ import SnapKit
 
 //MARK: CollectionView + Diffable Data Source
 class SearchViewController: UIViewController{
-    let list = Array(0...100)
+    let list = Array(0...40)
     var dataSource: UICollectionViewDiffableDataSource<Int, Int>!
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .systemBackground
         configureHierarchy()
         configureLayout()
         configureDataSource()
@@ -34,13 +34,34 @@ class SearchViewController: UIViewController{
         }
     }
     
-    //collectionviewflowlayout -> compositional layout
-    func layout() -> UICollectionViewFlowLayout{
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 50, height: 50)
-        layout.scrollDirection = .vertical
+    //MARK: compositional layout
+    func layout() -> UICollectionViewLayout{
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/4), heightDimension: .fractionalHeight(1.0)) //아이템: 넓이 = 그룹의 1/3, 높이 = 80 * 1.0 = 80
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        //바구니
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(80)) // 그룹: 넓이 = 컬렉션뷰 사이즈 * 1.0, 높이 = 80
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 4) //아이템이 1/3 크기면 3개를 넣으면 꽉 참 1/n * n = 1
+        group.interItemSpacing = .fixed(8)
+        
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 20
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+            
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
         return layout
     }
+
+    //    func layout() -> UICollectionViewFlowLayout{
+//        let layout = UICollectionViewFlowLayout()
+//        layout.itemSize = CGSize(width: 50, height: 50)
+//        layout.scrollDirection = .vertical
+//        layout.sectionInset = .init(top: <#T##CGFloat#>, left: <#T##CGFloat#>, bottom: <#T##CGFloat#>, right: <#T##CGFloat#>)
+//        return layout
+//    }
     
     func configureDataSource(){
         let cellRegi = UICollectionView.CellRegistration<SearchCell, Int> { cell, indexPath, itemIdentifier in

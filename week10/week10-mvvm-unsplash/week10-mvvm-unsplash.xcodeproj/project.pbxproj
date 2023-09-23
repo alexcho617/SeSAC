@@ -28,6 +28,7 @@
 		5751713B2ABC842000AFA280 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751713A2ABC842000AFA280 /* BeerViewController.swift */; };
 		5751713E2ABC84D900AFA280 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751713D2ABC84D900AFA280 /* PhotoModel.swift */; };
 		575171402ABC88B200AFA280 /* BeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751713F2ABC88B200AFA280 /* BeerViewModel.swift */; };
+		57ADDF742ABD172700EA0EFE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDF732ABD172700EA0EFE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		5751713A2ABC842000AFA280 /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		5751713D2ABC84D900AFA280 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		5751713F2ABC88B200AFA280 /* BeerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewModel.swift; sourceTree = "<group>"; };
+		57ADDF732ABD172700EA0EFE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				575171282AB9DE6D00AFA280 /* Beer */,
 				575170FF2AB93CBC00AFA280 /* Network */,
 				575170E22AB9293700AFA280 /* AppDelegate.swift */,
+				57ADDF732ABD172700EA0EFE /* Constants.swift */,
 				575170E42AB9293700AFA280 /* SceneDelegate.swift */,
 				575170EB2AB9293800AFA280 /* Assets.xcassets */,
 				575170ED2AB9293800AFA280 /* LaunchScreen.storyboard */,
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				575171302ABA999600AFA280 /* ViewModel.swift in Sources */,
+				57ADDF742ABD172700EA0EFE /* Constants.swift in Sources */,
 				575171382ABC61F100AFA280 /* BeerRouter.swift in Sources */,
 				5751713B2ABC842000AFA280 /* BeerViewController.swift in Sources */,
 				5751713E2ABC84D900AFA280 /* PhotoModel.swift in Sources */,
