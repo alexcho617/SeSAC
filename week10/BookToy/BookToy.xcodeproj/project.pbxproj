@@ -16,6 +16,7 @@
 		57ADDFA92AC06E5D00EA0EFE /* BookToyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDFA82AC06E5D00EA0EFE /* BookToyTests.swift */; };
 		57ADDFB32AC06E5D00EA0EFE /* BookToyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDFB22AC06E5D00EA0EFE /* BookToyUITests.swift */; };
 		57ADDFB52AC06E5D00EA0EFE /* BookToyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDFB42AC06E5D00EA0EFE /* BookToyUITestsLaunchTests.swift */; };
+		57ADDFC92AC0700900EA0EFE /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDFC82AC0700900EA0EFE /* Key.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		57ADDFAE2AC06E5D00EA0EFE /* BookToyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookToyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57ADDFB22AC06E5D00EA0EFE /* BookToyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookToyUITests.swift; sourceTree = "<group>"; };
 		57ADDFB42AC06E5D00EA0EFE /* BookToyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookToyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		57ADDFC82AC0700900EA0EFE /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				57ADDF912AC06E5C00EA0EFE /* AppDelegate.swift */,
 				57ADDF932AC06E5C00EA0EFE /* SceneDelegate.swift */,
+				57ADDFC72AC06FF400EA0EFE /* API */,
 				57ADDF952AC06E5C00EA0EFE /* ViewController.swift */,
 				57ADDF972AC06E5C00EA0EFE /* Main.storyboard */,
 				57ADDF9A2AC06E5D00EA0EFE /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				57ADDFB42AC06E5D00EA0EFE /* BookToyUITestsLaunchTests.swift */,
 			);
 			path = BookToyUITests;
+			sourceTree = "<group>";
+		};
+		57ADDFC72AC06FF400EA0EFE /* API */ = {
+			isa = PBXGroup;
+			children = (
+				57ADDFC82AC0700900EA0EFE /* Key.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57ADDF962AC06E5C00EA0EFE /* ViewController.swift in Sources */,
+				57ADDFC92AC0700900EA0EFE /* Key.swift in Sources */,
 				57ADDF922AC06E5C00EA0EFE /* AppDelegate.swift in Sources */,
 				57ADDF942AC06E5C00EA0EFE /* SceneDelegate.swift in Sources */,
 			);
