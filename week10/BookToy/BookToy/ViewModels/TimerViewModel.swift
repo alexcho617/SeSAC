@@ -8,18 +8,28 @@
 import Foundation
 
 class TimerViewModel{
+    
+    enum TimerState{
+        case on
+        case off
+    }
     let timer = Timer()
     //TODO: Check from UD if timer was going on
-//    var isTimerOn = Observable(#valueFromUserDefaults)
+    var timerState: Observable<TimerState>
+    
+    init() {
+        self.timerState = Observable(.off) //#VALUE FROM UserDefaults
+    }
 
-    var isTimerOn = Observable(false)
+    
     func mainButtonClicked(){
-        if isTimerOn.value{
+        switch timerState.value{
+        case .on:
             print("Turned Off")
-            isTimerOn.value.toggle()
-        }else{
+            timerState.value = .off
+        case .off:
             print("Turned On")
-            isTimerOn.value.toggle()
+            timerState.value = .on
         }
     }
     func stopButtonClicked(){

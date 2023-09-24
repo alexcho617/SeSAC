@@ -50,8 +50,8 @@ class TimerViewController: UIViewController {
     }
     
     private func bindView(){
-        vm.isTimerOn.bind { [self] value in
-            if value == true{
+        vm.timerState.bind { [self] value in
+            if value == .on{
                 mainButton.setTitle("Pause", for: .normal)
                 mainButton.setImage(UIImage(systemName:"pause"), for: .normal)
             }else{
