@@ -25,6 +25,7 @@
 		57ADDFDD2AC0761400EA0EFE /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDFDB2AC0761400EA0EFE /* TimerViewModel.swift */; };
 		57ADDFE32AC079E000EA0EFE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDFE22AC079E000EA0EFE /* Observable.swift */; };
 		57ADDFE42AC079E000EA0EFE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDFE22AC079E000EA0EFE /* Observable.swift */; };
+		57ADE0312AC1CDF200EA0EFE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 57ADE0302AC1CDF200EA0EFE /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57ADE0312AC1CDF200EA0EFE /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +101,7 @@
 				57ADDFA72AC06E5D00EA0EFE /* BookToyTests */,
 				57ADDFB12AC06E5D00EA0EFE /* BookToyUITests */,
 				57ADDF8F2AC06E5C00EA0EFE /* Products */,
+				57ADE02F2AC1CDF200EA0EFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,6 +190,13 @@
 			path = Reactive;
 			sourceTree = "<group>";
 		};
+		57ADE02F2AC1CDF200EA0EFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,6 +236,9 @@
 				57ADDFA62AC06E5D00EA0EFE /* PBXTargetDependency */,
 			);
 			name = BookToyTests;
+			packageProductDependencies = (
+				57ADE0302AC1CDF200EA0EFE /* RealmSwift */,
+			);
 			productName = BookToyTests;
 			productReference = 57ADDFA42AC06E5D00EA0EFE /* BookToyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -699,6 +712,11 @@
 			productName = Realm;
 		};
 		57ADDFD62AC0759A00EA0EFE /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57ADDFD32AC0759A00EA0EFE /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		57ADE0302AC1CDF200EA0EFE /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 57ADDFD32AC0759A00EA0EFE /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;

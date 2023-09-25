@@ -6,13 +6,13 @@
 //
 
 import Foundation
-
+enum TimerState{
+    case on
+    case off
+}
 class TimerViewModel{
     
-    enum TimerState{
-        case on
-        case off
-    }
+    
     let timer = Timer()
     //TODO: Check from UD if timer was going on
     var timerState: Observable<TimerState>
