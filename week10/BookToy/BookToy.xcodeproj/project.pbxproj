@@ -26,6 +26,7 @@
 		57ADDFE32AC079E000EA0EFE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDFE22AC079E000EA0EFE /* Observable.swift */; };
 		57ADDFE42AC079E000EA0EFE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDFE22AC079E000EA0EFE /* Observable.swift */; };
 		57ADE0312AC1CDF200EA0EFE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 57ADE0302AC1CDF200EA0EFE /* RealmSwift */; };
+		57ADE0322AC1D68800EA0EFE /* BookToyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDFB22AC06E5D00EA0EFE /* BookToyUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -354,9 +355,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57ADDFA92AC06E5D00EA0EFE /* BookToyTests.swift in Sources */,
+				57ADE0322AC1D68800EA0EFE /* BookToyUITests.swift in Sources */,
 				57ADDFDD2AC0761400EA0EFE /* TimerViewModel.swift in Sources */,
 				57ADDFE42AC079E000EA0EFE /* Observable.swift in Sources */,
-				57ADDFA92AC06E5D00EA0EFE /* BookToyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

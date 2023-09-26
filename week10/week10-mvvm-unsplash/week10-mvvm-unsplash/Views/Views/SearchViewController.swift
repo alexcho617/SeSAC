@@ -7,13 +7,14 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 //MARK: CollectionView + Diffable Data Source
-class SearchViewController: UIViewController{
-    let list = Array(0...40)
-    var dataSource: UICollectionViewDiffableDataSource<Int, Int>!
+class SearchViewController: UIViewController, UISearchBarDelegate{
+    let list = ["이모티콘이모티콘이모티콘이모티콘이모티콘이", "새싹새싹새싹새싹새싹새싹새싹새싹", "추석추석추석추석추석추석추석추석추석추석", "고래밥","컬렉션뷰레이아웃"]
+    var dataSource: UICollectionViewDiffableDataSource<Int, PhotoResult>!
     
-    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureTagLayout())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,9 @@ class SearchViewController: UIViewController{
         configureHierarchy()
         configureLayout()
         configureDataSource()
+        let bar = UISearchBar()
+        bar.delegate = self
+        navigationItem.titleView = bar
     }
     
     func configureHierarchy(){
@@ -34,39 +38,94 @@ class SearchViewController: UIViewController{
         }
     }
     
-    //MARK: compositional layout
-    func layout() -> UICollectionViewLayout{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        Network.shared.requestConvertible(type: Photo.self, api: .search(query: searchBar.text!)) { response in
+            switch response {
+            case .success(let photo):
+                dump(photo)
+                //data + UI snapshot
+                let ratios = photo.results.map {
+                    Ratio(ratio: $0.width/$0.height)
+                }
+                
+                let layout = PinterestLayout(columnsCount: 2, itemRatios: ratios, spacing: 8, contentWidth: self.view.frame.width)
+                
+                //이 순서 중요
+                self.collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(section: layout.section)
+                self.configureSnapshot(photo)
+                
+            case .failure(let failure):
+                //alert or toast
+                print(failure.localizedDescription)
+            }
+        }
+    }
+    
+    fileprivate func configureSnapshot(_ item: Photo) {
+        var snapshot = NSDiffableDataSourceSnapshot<Int, PhotoResult>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(item.results)
+        dataSource.apply(snapshot)
+    }
+    
+    //아이템 넓이 고정, 높이를 유동적으로
+    static func configurePinterestLayout() -> UICollectionViewLayout{
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .estimated(150))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/4), heightDimension: .fractionalHeight(1.0)) //아이템: 넓이 = 그룹의 1/3, 높이 = 80 * 1.0 = 80
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(150))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 2)
+        group.interItemSpacing = .fixed(10)
+
+        
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 10
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        
+    
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.scrollDirection = .vertical
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        layout.configuration = config
+        
+        return layout
+    }
+    
+    //MARK: compositional layout
+    //크기는 3가지 종류로 잡을 수 있음: .fractional, .absolute, .estimated
+    func configureTagLayout() -> UICollectionViewLayout{
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(60), heightDimension: .fractionalHeight(1.0)) //아이템: 넓이 = 그룹의 1/3, 높이 = 80 * 1.0 = 80
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         //바구니
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(80)) // 그룹: 넓이 = 컬렉션뷰 사이즈 * 1.0, 높이 = 80
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 4) //아이템이 1/3 크기면 3개를 넣으면 꽉 참 1/n * n = 1
+        let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(200), heightDimension: .absolute(30)) // 그룹: 넓이 = 컬렉션뷰 사이즈 * 1.0, 높이 = 80
+        //그룹 내에서 가로 설정된것
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+//        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 3) //아이템이 1/3 크기면 3개를 넣으면 꽉 참 1/n * n = 1
         group.interItemSpacing = .fixed(8)
         
         
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 20
+        section.interGroupSpacing = 10
         section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-            
+        
+        //수평 스크롤
+        //layout config
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.scrollDirection = .vertical
         let layout = UICollectionViewCompositionalLayout(section: section)
+        layout.configuration = config
         
         return layout
     }
 
-    //    func layout() -> UICollectionViewFlowLayout{
-//        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: 50, height: 50)
-//        layout.scrollDirection = .vertical
-//        layout.sectionInset = .init(top: <#T##CGFloat#>, left: <#T##CGFloat#>, bottom: <#T##CGFloat#>, right: <#T##CGFloat#>)
-//        return layout
-//    }
     
     func configureDataSource(){
-        let cellRegi = UICollectionView.CellRegistration<SearchCell, Int> { cell, indexPath, itemIdentifier in
-            cell.label.text = "\(itemIdentifier)"
-            cell.imageView.image = UIImage(systemName: "star")
+        let cellRegi = UICollectionView.CellRegistration<SearchCell, PhotoResult> { cell, indexPath, itemIdentifier in
+            cell.imageView.kf.setImage(with: URL(string: itemIdentifier.urls.thumb))
+            cell.label.text = itemIdentifier.created_at
             cell.backgroundColor = .darkGray
         }
         
@@ -74,10 +133,6 @@ class SearchViewController: UIViewController{
             return collectionView.dequeueConfiguredReusableCell(using: cellRegi, for: indexPath, item: itemIdentifier)
         })
         
-        var snapshot = NSDiffableDataSourceSnapshot<Int, Int>()
-        snapshot.appendSections([1])
-        snapshot.appendItems(list,toSection: 1)
-        dataSource.apply(snapshot)
     }
 }
 

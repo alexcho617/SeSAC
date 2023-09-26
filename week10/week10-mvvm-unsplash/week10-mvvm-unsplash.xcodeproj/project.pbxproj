@@ -29,6 +29,7 @@
 		5751713E2ABC84D900AFA280 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751713D2ABC84D900AFA280 /* PhotoModel.swift */; };
 		575171402ABC88B200AFA280 /* BeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751713F2ABC88B200AFA280 /* BeerViewModel.swift */; };
 		57ADDF742ABD172700EA0EFE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDF732ABD172700EA0EFE /* Constants.swift */; };
+		57ADE0342AC2707D00EA0EFE /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADE0332AC2707D00EA0EFE /* Sample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		5751713D2ABC84D900AFA280 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		5751713F2ABC88B200AFA280 /* BeerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewModel.swift; sourceTree = "<group>"; };
 		57ADDF732ABD172700EA0EFE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		57ADE0332AC2707D00EA0EFE /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				575171312ABBCB3C00AFA280 /* SearchViewController.swift */,
 				575171352ABBE10800AFA280 /* SearchCell.swift */,
 				5751713A2ABC842000AFA280 /* BeerViewController.swift */,
+				57ADE0332AC2707D00EA0EFE /* Sample.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				575171302ABA999600AFA280 /* ViewModel.swift in Sources */,
+				57ADE0342AC2707D00EA0EFE /* Sample.swift in Sources */,
 				57ADDF742ABD172700EA0EFE /* Constants.swift in Sources */,
 				575171382ABC61F100AFA280 /* BeerRouter.swift in Sources */,
 				5751713B2ABC842000AFA280 /* BeerViewController.swift in Sources */,

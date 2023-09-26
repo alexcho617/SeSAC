@@ -18,14 +18,14 @@ final class BookToyTests: XCTestCase {
     override func tearDownWithError() throws {
         sut = nil
     }
-
+      
     func test_Toggle() throws {
         //given
         sut.timerState.value = .off
         //when
         sut.mainButtonClicked() //toggle timerState
         //then
-        XCTAssert(sut.timerState.value == TimerState.on, "TimerState Toggle")
+        XCTAssertTrue(sut.timerState.value == TimerState.on, "TimerState Toggle")
 
     }
 
