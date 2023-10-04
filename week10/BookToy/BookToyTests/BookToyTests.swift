@@ -8,7 +8,7 @@
 import XCTest
 @testable import BookToy
 
-final class BookToyTests: XCTestCase {
+ class BookToyTests: XCTestCase {
     private var sut: TimerViewModel!
 
     override func setUpWithError() throws {
@@ -24,9 +24,9 @@ final class BookToyTests: XCTestCase {
         sut.timerState.value = .off
         //when
         sut.mainButtonClicked() //toggle timerState
+        print("hi")
         //then
-        XCTAssertTrue(sut.timerState.value == TimerState.on, "TimerState Toggle")
-
+        XCTAssert(sut.timerState.value == TimerState.on, "TimerState Toggle")
     }
 
 //    func testPerformanceExample() throws {
