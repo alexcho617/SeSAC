@@ -39,6 +39,17 @@ class TimerViewController: UIViewController {
         setView()
         setConstraints()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print(#function)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(#function)
+    }
+    
     func setView() {
         view.backgroundColor = .systemBackground
         view.addSubview(timerLabel)
@@ -50,6 +61,10 @@ class TimerViewController: UIViewController {
     }
     
     private func bindView(){
+        vm.currentTime.bind { time in
+            self.timerLabel.text = String(time)
+        }
+        
         vm.timerState.bind { [self] value in
             if value == .on{
                 mainButton.setTitle("Pause", for: .normal)
@@ -65,6 +80,7 @@ class TimerViewController: UIViewController {
     }
     @objc func stopButtonClicked(){
         vm.stopButtonClicked()
+        
         
     }
     func setConstraints(){

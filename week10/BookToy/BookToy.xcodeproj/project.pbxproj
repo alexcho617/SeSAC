@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5790CEFF2AD52E750066D517 /* MagicTimer in Frameworks */ = {isa = PBXBuildFile; productRef = 5790CEFE2AD52E750066D517 /* MagicTimer */; };
 		57ADDF922AC06E5C00EA0EFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDF912AC06E5C00EA0EFE /* AppDelegate.swift */; };
 		57ADDF942AC06E5C00EA0EFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDF932AC06E5C00EA0EFE /* SceneDelegate.swift */; };
 		57ADDF962AC06E5C00EA0EFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADDF952AC06E5C00EA0EFE /* ViewController.swift */; };
@@ -71,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5790CEFF2AD52E750066D517 /* MagicTimer in Frameworks */,
 				57ADDFD72AC0759A00EA0EFE /* RealmSwift in Frameworks */,
 				57ADDFD52AC0759A00EA0EFE /* Realm in Frameworks */,
 				57ADDFD22AC0757700EA0EFE /* SnapKit in Frameworks */,
@@ -218,6 +220,7 @@
 				57ADDFD12AC0757700EA0EFE /* SnapKit */,
 				57ADDFD42AC0759A00EA0EFE /* Realm */,
 				57ADDFD62AC0759A00EA0EFE /* RealmSwift */,
+				5790CEFE2AD52E750066D517 /* MagicTimer */,
 			);
 			productName = BookToy;
 			productReference = 57ADDF8E2AC06E5C00EA0EFE /* BookToy.app */;
@@ -297,6 +300,7 @@
 			packageReferences = (
 				57ADDFD02AC0757700EA0EFE /* XCRemoteSwiftPackageReference "SnapKit" */,
 				57ADDFD32AC0759A00EA0EFE /* XCRemoteSwiftPackageReference "realm-swift" */,
+				5790CEFD2AD52E750066D517 /* XCRemoteSwiftPackageReference "MagicTimer" */,
 			);
 			productRefGroup = 57ADDF8F2AC06E5C00EA0EFE /* Products */;
 			projectDirPath = "";
@@ -684,6 +688,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5790CEFD2AD52E750066D517 /* XCRemoteSwiftPackageReference "MagicTimer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MagicTimerFW/MagicTimer.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		57ADDFD02AC0757700EA0EFE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -703,6 +715,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5790CEFE2AD52E750066D517 /* MagicTimer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5790CEFD2AD52E750066D517 /* XCRemoteSwiftPackageReference "MagicTimer" */;
+			productName = MagicTimer;
+		};
 		57ADDFD12AC0757700EA0EFE /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 57ADDFD02AC0757700EA0EFE /* XCRemoteSwiftPackageReference "SnapKit" */;
