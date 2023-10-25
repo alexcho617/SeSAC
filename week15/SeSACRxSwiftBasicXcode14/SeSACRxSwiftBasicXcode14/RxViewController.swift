@@ -15,6 +15,7 @@ class RxViewController: UIViewController {
     @IBOutlet var changeButton: UIButton!
 //    var nickname = Observable.just("고래밥") //just 연산자
     var nickname = BehaviorSubject(value: "고래밥")
+//    var nickname = BehaviorRelay(value: "고래밥")
     @IBOutlet var timerLabel: UILabel!
     
     var disposeBag = DisposeBag()
