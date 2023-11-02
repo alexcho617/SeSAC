@@ -7,6 +7,8 @@
  
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class BirthdayViewController: UIViewController {
     
@@ -65,6 +67,8 @@ class BirthdayViewController: UIViewController {
     }()
   
     let nextButton = PointButton(title: "가입하기")
+    let vm = BirthdayViewModel()
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,8 +78,17 @@ class BirthdayViewController: UIViewController {
         configureLayout()
         
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+        bind()
     }
-    
+    func bind(){
+        birthDayPicker.rx.date
+            .subscribe(with: self) { owner, date in
+                self.vm.birthday.onNext(date)
+            }.disposed(by: disposeBag)
+        
+        vm.isNotEligible.bind(to: nextButton.rx.isHidden)
+            .disposed(by: disposeBag)
+    }
     @objc func nextButtonClicked() {
         print("가입완료")
     }
