@@ -68,13 +68,9 @@ class BirthdayViewController: UIViewController {
   
     let nextButton = PointButton(title: "가입하기")
     
-    //data
+    let vm = BirthdayViewModel()
     let disposeBag = DisposeBag()
-    let birthday: BehaviorSubject<Date> = BehaviorSubject(value: .now)
-    let year = BehaviorSubject(value: 2020)
-    let month = BehaviorSubject(value: 12)
-    let day = BehaviorSubject(value: 31)
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,24 +87,10 @@ class BirthdayViewController: UIViewController {
     func bind(){
         
         birthDayPicker.rx.date
-            .bind(to: birthday)
+            .bind(to: vm.birthday)
             .disposed(by: disposeBag)
         
-        birthday
-            .subscribe(with: self) { owner, date in
-                //extract date components
-                let component = Calendar.current.dateComponents([.year, .month, .day], from: date)
-                owner.year.onNext(component.year!)
-                owner.month.onNext(component.month!)
-                owner.day.onNext(component.day!)
-                
-            }onDisposed: { owner in
-                print(owner,"bday", "disposed")
-            }
-//            .dispose() //즉시 해제
-            .disposed(by: disposeBag)
-        
-        year
+        vm.year
             .map { "\($0)년" }
             .observe(on: MainScheduler.instance) //scheduler for running on main thread
             .subscribe(with: self) { owner, value in
@@ -118,7 +100,7 @@ class BirthdayViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        month
+        vm.month
             .observe(on: MainScheduler.instance)
             .subscribe(with: self) { owner, value in
                 owner.monthLabel.text = "\(value)월"
@@ -127,7 +109,7 @@ class BirthdayViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        day
+        vm.day
             .map {"\($0)일"}
             .bind(to: dayLabel.rx.text) //bind로 해도 됨, bind는 rxcocoa에서 mainthread동작
             .disposed(by: disposeBag)

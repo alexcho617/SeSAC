@@ -80,6 +80,7 @@ class PhoneViewController: UIViewController {
                 let result = value.formated(by: "###-####-####") //jack custom extension function
                 print(value, result)
                 self.phone.onNext(result)
+
             }
             .disposed(by: disposeBag)
         
