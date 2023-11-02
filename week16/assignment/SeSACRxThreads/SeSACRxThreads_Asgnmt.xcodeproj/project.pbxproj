@@ -49,16 +49,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		041280202AEF9BAB00972552 /* SeSACRxThreads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACRxThreads.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		041280202AEF9BAB00972552 /* SeSACRxThreads_Asgnmt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACRxThreads_Asgnmt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		041280232AEF9BAB00972552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		041280252AEF9BAB00972552 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		041280272AEF9BAB00972552 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0412802C2AEF9BAC00972552 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0412802F2AEF9BAC00972552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		041280312AEF9BAC00972552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		041280362AEF9BAC00972552 /* SeSACRxThreadsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeSACRxThreadsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		041280362AEF9BAC00972552 /* SeSACRxThreads_AsgnmtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeSACRxThreads_AsgnmtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0412803A2AEF9BAC00972552 /* SeSACRxThreadsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACRxThreadsTests.swift; sourceTree = "<group>"; };
-		041280402AEF9BAC00972552 /* SeSACRxThreadsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeSACRxThreadsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		041280402AEF9BAC00972552 /* SeSACRxThreads_AsgnmtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeSACRxThreads_AsgnmtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		041280442AEF9BAC00972552 /* SeSACRxThreadsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACRxThreadsUITests.swift; sourceTree = "<group>"; };
 		041280462AEF9BAC00972552 /* SeSACRxThreadsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACRxThreadsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		041280552AEFA04800972552 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -115,9 +115,9 @@
 		041280212AEF9BAB00972552 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				041280202AEF9BAB00972552 /* SeSACRxThreads.app */,
-				041280362AEF9BAC00972552 /* SeSACRxThreadsTests.xctest */,
-				041280402AEF9BAC00972552 /* SeSACRxThreadsUITests.xctest */,
+				041280202AEF9BAB00972552 /* SeSACRxThreads_Asgnmt.app */,
+				041280362AEF9BAC00972552 /* SeSACRxThreads_AsgnmtTests.xctest */,
+				041280402AEF9BAC00972552 /* SeSACRxThreads_AsgnmtUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,9 +198,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0412801F2AEF9BAB00972552 /* SeSACRxThreads */ = {
+		0412801F2AEF9BAB00972552 /* SeSACRxThreads_Asgnmt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0412804A2AEF9BAC00972552 /* Build configuration list for PBXNativeTarget "SeSACRxThreads" */;
+			buildConfigurationList = 0412804A2AEF9BAC00972552 /* Build configuration list for PBXNativeTarget "SeSACRxThreads_Asgnmt" */;
 			buildPhases = (
 				0412801C2AEF9BAB00972552 /* Sources */,
 				0412801D2AEF9BAB00972552 /* Frameworks */,
@@ -210,19 +210,19 @@
 			);
 			dependencies = (
 			);
-			name = SeSACRxThreads;
+			name = SeSACRxThreads_Asgnmt;
 			packageProductDependencies = (
 				0412805A2AEFA09E00972552 /* RxCocoa */,
 				0412805C2AEFA09E00972552 /* RxSwift */,
 				0412805F2AEFA0AC00972552 /* SnapKit */,
 			);
 			productName = SeSACRxThreads;
-			productReference = 041280202AEF9BAB00972552 /* SeSACRxThreads.app */;
+			productReference = 041280202AEF9BAB00972552 /* SeSACRxThreads_Asgnmt.app */;
 			productType = "com.apple.product-type.application";
 		};
-		041280352AEF9BAC00972552 /* SeSACRxThreadsTests */ = {
+		041280352AEF9BAC00972552 /* SeSACRxThreads_AsgnmtTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0412804D2AEF9BAC00972552 /* Build configuration list for PBXNativeTarget "SeSACRxThreadsTests" */;
+			buildConfigurationList = 0412804D2AEF9BAC00972552 /* Build configuration list for PBXNativeTarget "SeSACRxThreads_AsgnmtTests" */;
 			buildPhases = (
 				041280322AEF9BAC00972552 /* Sources */,
 				041280332AEF9BAC00972552 /* Frameworks */,
@@ -233,14 +233,14 @@
 			dependencies = (
 				041280382AEF9BAC00972552 /* PBXTargetDependency */,
 			);
-			name = SeSACRxThreadsTests;
+			name = SeSACRxThreads_AsgnmtTests;
 			productName = SeSACRxThreadsTests;
-			productReference = 041280362AEF9BAC00972552 /* SeSACRxThreadsTests.xctest */;
+			productReference = 041280362AEF9BAC00972552 /* SeSACRxThreads_AsgnmtTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0412803F2AEF9BAC00972552 /* SeSACRxThreadsUITests */ = {
+		0412803F2AEF9BAC00972552 /* SeSACRxThreads_AsgnmtUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 041280502AEF9BAC00972552 /* Build configuration list for PBXNativeTarget "SeSACRxThreadsUITests" */;
+			buildConfigurationList = 041280502AEF9BAC00972552 /* Build configuration list for PBXNativeTarget "SeSACRxThreads_AsgnmtUITests" */;
 			buildPhases = (
 				0412803C2AEF9BAC00972552 /* Sources */,
 				0412803D2AEF9BAC00972552 /* Frameworks */,
@@ -251,9 +251,9 @@
 			dependencies = (
 				041280422AEF9BAC00972552 /* PBXTargetDependency */,
 			);
-			name = SeSACRxThreadsUITests;
+			name = SeSACRxThreads_AsgnmtUITests;
 			productName = SeSACRxThreadsUITests;
-			productReference = 041280402AEF9BAC00972552 /* SeSACRxThreadsUITests.xctest */;
+			productReference = 041280402AEF9BAC00972552 /* SeSACRxThreads_AsgnmtUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -279,7 +279,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0412801B2AEF9BAB00972552 /* Build configuration list for PBXProject "SeSACRxThreads" */;
+			buildConfigurationList = 0412801B2AEF9BAB00972552 /* Build configuration list for PBXProject "SeSACRxThreads_Asgnmt" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -296,9 +296,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0412801F2AEF9BAB00972552 /* SeSACRxThreads */,
-				041280352AEF9BAC00972552 /* SeSACRxThreadsTests */,
-				0412803F2AEF9BAC00972552 /* SeSACRxThreadsUITests */,
+				0412801F2AEF9BAB00972552 /* SeSACRxThreads_Asgnmt */,
+				041280352AEF9BAC00972552 /* SeSACRxThreads_AsgnmtTests */,
+				0412803F2AEF9BAC00972552 /* SeSACRxThreads_AsgnmtUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -373,12 +373,12 @@
 /* Begin PBXTargetDependency section */
 		041280382AEF9BAC00972552 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0412801F2AEF9BAB00972552 /* SeSACRxThreads */;
+			target = 0412801F2AEF9BAB00972552 /* SeSACRxThreads_Asgnmt */;
 			targetProxy = 041280372AEF9BAC00972552 /* PBXContainerItemProxy */;
 		};
 		041280422AEF9BAC00972552 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0412801F2AEF9BAB00972552 /* SeSACRxThreads */;
+			target = 0412801F2AEF9BAB00972552 /* SeSACRxThreads_Asgnmt */;
 			targetProxy = 041280412AEF9BAC00972552 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -595,7 +595,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeSACRxThreads.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SeSACRxThreads";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeSACRxThreads_Asgnmt.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SeSACRxThreads_Asgnmt";
 			};
 			name = Debug;
 		};
@@ -614,7 +614,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeSACRxThreads.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SeSACRxThreads";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SeSACRxThreads_Asgnmt.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SeSACRxThreads_Asgnmt";
 			};
 			name = Release;
 		};
@@ -655,7 +655,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0412801B2AEF9BAB00972552 /* Build configuration list for PBXProject "SeSACRxThreads" */ = {
+		0412801B2AEF9BAB00972552 /* Build configuration list for PBXProject "SeSACRxThreads_Asgnmt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				041280482AEF9BAC00972552 /* Debug */,
@@ -664,7 +664,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0412804A2AEF9BAC00972552 /* Build configuration list for PBXNativeTarget "SeSACRxThreads" */ = {
+		0412804A2AEF9BAC00972552 /* Build configuration list for PBXNativeTarget "SeSACRxThreads_Asgnmt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0412804B2AEF9BAC00972552 /* Debug */,
@@ -673,7 +673,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0412804D2AEF9BAC00972552 /* Build configuration list for PBXNativeTarget "SeSACRxThreadsTests" */ = {
+		0412804D2AEF9BAC00972552 /* Build configuration list for PBXNativeTarget "SeSACRxThreads_AsgnmtTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0412804E2AEF9BAC00972552 /* Debug */,
@@ -682,7 +682,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		041280502AEF9BAC00972552 /* Build configuration list for PBXNativeTarget "SeSACRxThreadsUITests" */ = {
+		041280502AEF9BAC00972552 /* Build configuration list for PBXNativeTarget "SeSACRxThreads_AsgnmtUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				041280512AEF9BAC00972552 /* Debug */,
