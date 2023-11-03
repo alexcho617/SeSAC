@@ -13,7 +13,7 @@ import RxSwift
 final class SearchTableViewCell: UITableViewCell {
     
     static let identifier = "SearchTableViewCell"
-    var disposeBag = DisposeBag()
+    
     let appNameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
@@ -39,6 +39,7 @@ final class SearchTableViewCell: UITableViewCell {
         return button
     }()
     
+    var disposeBag = DisposeBag()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -46,13 +47,13 @@ final class SearchTableViewCell: UITableViewCell {
         configure()
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func configure() {

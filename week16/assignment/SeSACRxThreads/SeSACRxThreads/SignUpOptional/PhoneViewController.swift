@@ -38,8 +38,8 @@ class PhoneViewController: UIViewController {
             .observe(on: MainScheduler.instance)
             .subscribe(with: self, onNext: { owner, value in
                 print("vm.buttonEnabled:",value)
-                owner.nextButton.tintColor = value ? UIColor.black : UIColor.red
-                owner.nextButton.layer.borderColor = value ? UIColor.black.cgColor : UIColor.red.cgColor
+                owner.phoneTextField.layer.borderColor = value ? UIColor.black.cgColor : UIColor.red.cgColor
+                owner.nextButton.backgroundColor = value ? UIColor.black : UIColor.red
             })
             .disposed(by: disposeBag)
         
