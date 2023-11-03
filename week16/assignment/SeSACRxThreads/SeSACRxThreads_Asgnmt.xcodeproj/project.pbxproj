@@ -532,7 +532,7 @@
 				DEVELOPMENT_TEAM = YTV3AHP8X4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACRxThreads/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Week16;
+				INFOPLIST_KEY_CFBundleDisplayName = "Week16과제";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -565,7 +565,7 @@
 				DEVELOPMENT_TEAM = YTV3AHP8X4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACRxThreads/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Week16;
+				INFOPLIST_KEY_CFBundleDisplayName = "Week16과제";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

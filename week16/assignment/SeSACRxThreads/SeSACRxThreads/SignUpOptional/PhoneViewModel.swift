@@ -16,7 +16,7 @@ class PhoneViewModel{
     
     
     init() {
-        //number -> bool <->button enabled, buttonColor
+        //number -> bool <->button enabled
         phoneNumber.map {$0.count == 13}
             .subscribe(with: self) { owner, value in
                 owner.buttonEnabled.onNext(value)

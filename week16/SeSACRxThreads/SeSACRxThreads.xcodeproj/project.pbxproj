@@ -30,6 +30,8 @@
 		041280782AF1D14000972552 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280772AF1D14000972552 /* Resource.swift */; };
 		57C739692AF1E974001BA66E /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C739682AF1E974001BA66E /* Extension+String.swift */; };
 		57C7396D2AF376EA001BA66E /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C7396C2AF376EA001BA66E /* BirthdayViewModel.swift */; };
+		57C739772AF47C3D001BA66E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C739752AF47C3D001BA66E /* SearchViewController.swift */; };
+		57C739782AF47C3D001BA66E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C739762AF47C3D001BA66E /* SearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		041280772AF1D14000972552 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		57C739682AF1E974001BA66E /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Extension+String.swift"; path = "../../Extension+String.swift"; sourceTree = "<group>"; };
 		57C7396C2AF376EA001BA66E /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
+		57C739752AF47C3D001BA66E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		57C739762AF47C3D001BA66E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 				0412806D2AEFAD0F00972552 /* SignUpOptional */,
 				041280612AEFA0BE00972552 /* CustomView */,
 				041280232AEF9BAB00972552 /* AppDelegate.swift */,
+				57C739742AF47C3D001BA66E /* SearchView */,
 				041280252AEF9BAB00972552 /* SceneDelegate.swift */,
 				041280272AEF9BAB00972552 /* ViewController.swift */,
 				57C739682AF1E974001BA66E /* Extension+String.swift */,
@@ -196,6 +201,16 @@
 				041280722AEFAD4B00972552 /* NicknameViewController.swift */,
 			);
 			path = SignUpOptional;
+			sourceTree = "<group>";
+		};
+		57C739742AF47C3D001BA66E /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				57C739752AF47C3D001BA66E /* SearchViewController.swift */,
+				57C739762AF47C3D001BA66E /* SearchTableViewCell.swift */,
+			);
+			name = SearchView;
+			path = ../../SearchView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +362,8 @@
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
 				57C739692AF1E974001BA66E /* Extension+String.swift in Sources */,
 				57C7396D2AF376EA001BA66E /* BirthdayViewModel.swift in Sources */,
+				57C739772AF47C3D001BA66E /* SearchViewController.swift in Sources */,
+				57C739782AF47C3D001BA66E /* SearchTableViewCell.swift in Sources */,
 				041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */,
 				0412806A2AEFA91E00972552 /* SignUpViewController.swift in Sources */,
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,
