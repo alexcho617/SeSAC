@@ -7,11 +7,15 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class NicknameViewController: UIViewController {
    
     let nicknameTextField = SignTextField(placeholderText: "닉네임을 입력해주세요")
     let nextButton = PointButton(title: "다음")
+    let vm = NicknameViewModel()
+    let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +25,20 @@ class NicknameViewController: UIViewController {
         configureLayout()
        
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
-
+        bind()
     }
     
+    func bind(){
+        nicknameTextField.rx.text.orEmpty
+            .bind(to: vm.name)
+            .disposed(by: bag)
+        
+        vm.isValid
+            .subscribe(with: self) { owner, value in
+                owner.nicknameTextField.layer.borderColor = value ? UIColor.black.cgColor : UIColor.red.cgColor
+                owner.nextButton.rx.isHidden.onNext(!value)
+            }.disposed(by: bag)
+    }
     @objc func nextButtonClicked() {
         navigationController?.pushViewController(BirthdayViewController(), animated: true)
     }

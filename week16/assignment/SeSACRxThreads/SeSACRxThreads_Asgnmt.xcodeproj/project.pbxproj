@@ -33,6 +33,9 @@
 		57C739712AF3F236001BA66E /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C739702AF3F236001BA66E /* BirthdayViewModel.swift */; };
 		57C739862AF51FEA001BA66E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C739842AF51FEA001BA66E /* SearchViewController.swift */; };
 		57C739872AF51FEA001BA66E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C739852AF51FEA001BA66E /* SearchTableViewCell.swift */; };
+		57C739892AF52CBC001BA66E /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C739882AF52CBC001BA66E /* NicknameViewModel.swift */; };
+		57C7398C2AF667EF001BA66E /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C7398B2AF667EF001BA66E /* TodoViewController.swift */; };
+		57C7398E2AF667FB001BA66E /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C7398D2AF667FB001BA66E /* TodoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,9 @@
 		57C739702AF3F236001BA66E /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		57C739842AF51FEA001BA66E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		57C739852AF51FEA001BA66E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		57C739882AF52CBC001BA66E /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
+		57C7398B2AF667EF001BA66E /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		57C7398D2AF667FB001BA66E /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +144,7 @@
 				0412806D2AEFAD0F00972552 /* SignUpOptional */,
 				041280612AEFA0BE00972552 /* CustomView */,
 				57C739832AF51FEA001BA66E /* SearchView */,
+				57C7398A2AF667DA001BA66E /* TodoView */,
 				041280252AEF9BAB00972552 /* SceneDelegate.swift */,
 				041280272AEF9BAB00972552 /* ViewController.swift */,
 				041280232AEF9BAB00972552 /* AppDelegate.swift */,
@@ -202,6 +209,7 @@
 				57C7396E2AF3D4FC001BA66E /* PhoneViewModel.swift */,
 				041280702AEFAD3D00972552 /* PhoneViewController.swift */,
 				041280722AEFAD4B00972552 /* NicknameViewController.swift */,
+				57C739882AF52CBC001BA66E /* NicknameViewModel.swift */,
 			);
 			path = SignUpOptional;
 			sourceTree = "<group>";
@@ -214,6 +222,15 @@
 			);
 			name = SearchView;
 			path = ../../SearchView;
+			sourceTree = "<group>";
+		};
+		57C7398A2AF667DA001BA66E /* TodoView */ = {
+			isa = PBXGroup;
+			children = (
+				57C7398B2AF667EF001BA66E /* TodoViewController.swift */,
+				57C7398D2AF667FB001BA66E /* TodoViewModel.swift */,
+			);
+			path = TodoView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57C7398C2AF667EF001BA66E /* TodoViewController.swift in Sources */,
 				041280782AF1D14000972552 /* Resource.swift in Sources */,
 				0412806F2AEFAD2D00972552 /* BirthdayViewController.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
@@ -366,11 +384,13 @@
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				57C739872AF51FEA001BA66E /* SearchTableViewCell.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
+				57C7398E2AF667FB001BA66E /* TodoViewModel.swift in Sources */,
 				57C7396B2AF2ACCD001BA66E /* Extension+String.swift in Sources */,
 				041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */,
 				0412806A2AEFA91E00972552 /* SignUpViewController.swift in Sources */,
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,
 				57C7396F2AF3D4FC001BA66E /* PhoneViewModel.swift in Sources */,
+				57C739892AF52CBC001BA66E /* NicknameViewModel.swift in Sources */,
 				041280262AEF9BAB00972552 /* SceneDelegate.swift in Sources */,
 				041280582AEFA05300972552 /* SignInViewModel.swift in Sources */,
 			);

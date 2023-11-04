@@ -96,6 +96,5 @@ class SampleVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
-        title = "\(Int.random(in: 0...10))"
     }
 }

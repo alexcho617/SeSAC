@@ -86,14 +86,39 @@ class BirthdayViewController: UIViewController {
                 self.vm.birthday.onNext(date)
             }.disposed(by: disposeBag)
         
-        vm.isNotEligible.bind(to: nextButton.rx.isHidden)
+        vm.year
+            .map{ "\($0)" }
+            .bind(to: yearLabel.rx.text)
             .disposed(by: disposeBag)
+        vm.month
+            .map{ "\($0)" }
+            .bind(to: monthLabel.rx.text)
+            .disposed(by: disposeBag)
+        vm.day
+            .map{ "\($0)"}
+            .bind(to: dayLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        vm.isEligible.subscribe(with: self) { owner, value in
+            owner.nextButton.rx.isHidden.onNext(!value)
+        }.disposed(by: disposeBag)
+        
     }
     @objc func nextButtonClicked() {
-        print("가입완료")
+        showAlert(title: "가입완료", message: "", buttonTitle: "OK")
+        
     }
 
-    
+    func showAlert(title: String, message: String, buttonTitle: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: buttonTitle, style: .default) { _ in
+            self.navigationController?.popToRootViewController(animated: true)
+
+        }
+        
+        alert.addAction(action)
+        present(alert,animated: true)
+    }
     func configureLayout() {
         view.addSubview(infoLabel)
         view.addSubview(containerStackView)
