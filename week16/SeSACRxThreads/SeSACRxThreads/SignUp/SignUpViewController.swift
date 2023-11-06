@@ -35,7 +35,7 @@ class SignUpViewController: UIViewController {
 //        incrementExample()
 //        aboutPublishSubject()
 //        aboutReplaySubject()
-        aboutAsyncSubject()
+//        aboutAsyncSubject()
     }
     
     //publish subject는 초기값이 없음

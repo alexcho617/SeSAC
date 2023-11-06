@@ -7,11 +7,14 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class NicknameViewController: UIViewController {
    
     let nicknameTextField = SignTextField(placeholderText: "닉네임을 입력해주세요")
     let nextButton = PointButton(title: "다음")
+    let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +23,31 @@ class NicknameViewController: UIViewController {
         
         configureLayout()
        
-        nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
-
+//        nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+        bind()
     }
     
-    @objc func nextButtonClicked() {
-        navigationController?.pushViewController(BirthdayViewController(), animated: true)
+    func bind(){
+        let tap = nextButton.rx.tap
+            .map{"Foo\(Int.random(in: 1...100))"} //observable 특성으로 unicast
+            .asDriver(onErrorJustReturn: "") //Driver<String>
+        
+        tap.drive(with: self) { owner, value in
+            owner.nextButton.setTitle(value, for: .normal)
+        }.disposed(by: bag)
+        
+        tap.drive(with: self) { owner, value in
+            owner.nicknameTextField.text = value
+        }.disposed(by: bag)
+        
+        tap.drive(with: self) { owner, value in
+            owner.navigationItem.title = value
+        }.disposed(by: bag)
     }
+    
+//    @objc func nextButtonClicked() {
+//        navigationController?.pushViewController(BirthdayViewController(), animated: true)
+//    }
 
     
     func configureLayout() {

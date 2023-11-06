@@ -36,7 +36,7 @@ class SignInViewController: UIViewController {
         signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
         
         bind()
-        aboutCombineLatest()
+//        aboutCombineLatest()
     }
     
     //전달하려는 observable이 한번이상 방출 되어야 결합한다. 따라서 publish는 초기값이 없기때문에 실행되지 않았다. Behavior는 초기값이 있기 때문에 모두 전달이 되었다.
