@@ -12,35 +12,18 @@
 		57ADE5182AFA2A96001DE1B2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADE5172AFA2A96001DE1B2 /* SearchViewController.swift */; };
 		57ADE51D2AFA2A97001DE1B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57ADE51C2AFA2A97001DE1B2 /* Assets.xcassets */; };
 		57ADE5202AFA2A97001DE1B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57ADE51E2AFA2A97001DE1B2 /* LaunchScreen.storyboard */; };
-		57ADE52B2AFA2A97001DE1B2 /* MiniAppStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADE52A2AFA2A97001DE1B2 /* MiniAppStoreTests.swift */; };
-		57ADE5352AFA2A97001DE1B2 /* MiniAppStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADE5342AFA2A97001DE1B2 /* MiniAppStoreUITests.swift */; };
-		57ADE5372AFA2A97001DE1B2 /* MiniAppStoreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADE5362AFA2A97001DE1B2 /* MiniAppStoreUITestsLaunchTests.swift */; };
 		57ADE5442AFA2C17001DE1B2 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADE5432AFA2C17001DE1B2 /* SearchViewModel.swift */; };
 		57ADE5472AFA2C31001DE1B2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 57ADE5462AFA2C31001DE1B2 /* Kingfisher */; };
 		57ADE54A2AFA2C45001DE1B2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 57ADE5492AFA2C45001DE1B2 /* RxCocoa */; };
 		57ADE54C2AFA2C45001DE1B2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 57ADE54B2AFA2C45001DE1B2 /* RxSwift */; };
-		57ADE54E2AFA2C45001DE1B2 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 57ADE54D2AFA2C45001DE1B2 /* RxTest */; };
 		57ADE5512AFA2C54001DE1B2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 57ADE5502AFA2C54001DE1B2 /* SnapKit */; };
 		57ADE5542AFA2C75001DE1B2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 57ADE5532AFA2C75001DE1B2 /* Alamofire */; };
 		57ADE5582AFA2CC8001DE1B2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADE5572AFA2CC8001DE1B2 /* ViewModel.swift */; };
+		57ADE55A2AFA5920001DE1B2 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADE5592AFA5920001DE1B2 /* SearchTableViewCell.swift */; };
+		57ADE55C2AFA5C43001DE1B2 /* AppstoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADE55B2AFA5C43001DE1B2 /* AppstoreModel.swift */; };
+		57ADE5612AFA7B63001DE1B2 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 57ADE5602AFA7B63001DE1B2 /* Then */; };
+		57ADE5632AFA80D1001DE1B2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADE5622AFA80D1001DE1B2 /* APIManager.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		57ADE5272AFA2A97001DE1B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 57ADE5082AFA2A96001DE1B2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 57ADE50F2AFA2A96001DE1B2;
-			remoteInfo = MiniAppStore;
-		};
-		57ADE5312AFA2A97001DE1B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 57ADE5082AFA2A96001DE1B2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 57ADE50F2AFA2A96001DE1B2;
-			remoteInfo = MiniAppStore;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		57ADE5102AFA2A96001DE1B2 /* MiniAppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniAppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,13 +33,11 @@
 		57ADE51C2AFA2A97001DE1B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57ADE51F2AFA2A97001DE1B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57ADE5212AFA2A97001DE1B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		57ADE5262AFA2A97001DE1B2 /* MiniAppStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniAppStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		57ADE52A2AFA2A97001DE1B2 /* MiniAppStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniAppStoreTests.swift; sourceTree = "<group>"; };
-		57ADE5302AFA2A97001DE1B2 /* MiniAppStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniAppStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		57ADE5342AFA2A97001DE1B2 /* MiniAppStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniAppStoreUITests.swift; sourceTree = "<group>"; };
-		57ADE5362AFA2A97001DE1B2 /* MiniAppStoreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniAppStoreUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		57ADE5432AFA2C17001DE1B2 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		57ADE5572AFA2CC8001DE1B2 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		57ADE5592AFA5920001DE1B2 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		57ADE55B2AFA5C43001DE1B2 /* AppstoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppstoreModel.swift; sourceTree = "<group>"; };
+		57ADE5622AFA80D1001DE1B2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,26 +45,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57ADE54E2AFA2C45001DE1B2 /* RxTest in Frameworks */,
 				57ADE54C2AFA2C45001DE1B2 /* RxSwift in Frameworks */,
+				57ADE5612AFA7B63001DE1B2 /* Then in Frameworks */,
 				57ADE54A2AFA2C45001DE1B2 /* RxCocoa in Frameworks */,
 				57ADE5542AFA2C75001DE1B2 /* Alamofire in Frameworks */,
 				57ADE5472AFA2C31001DE1B2 /* Kingfisher in Frameworks */,
 				57ADE5512AFA2C54001DE1B2 /* SnapKit in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		57ADE5232AFA2A97001DE1B2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		57ADE52D2AFA2A97001DE1B2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				57ADE5122AFA2A96001DE1B2 /* MiniAppStore */,
-				57ADE5292AFA2A97001DE1B2 /* MiniAppStoreTests */,
-				57ADE5332AFA2A97001DE1B2 /* MiniAppStoreUITests */,
 				57ADE5112AFA2A96001DE1B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,8 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				57ADE5102AFA2A96001DE1B2 /* MiniAppStore.app */,
-				57ADE5262AFA2A97001DE1B2 /* MiniAppStoreTests.xctest */,
-				57ADE5302AFA2A97001DE1B2 /* MiniAppStoreUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +80,7 @@
 				57ADE5152AFA2A96001DE1B2 /* SceneDelegate.swift */,
 				57ADE5172AFA2A96001DE1B2 /* SearchViewController.swift */,
 				57ADE5432AFA2C17001DE1B2 /* SearchViewModel.swift */,
+				57ADE5592AFA5920001DE1B2 /* SearchTableViewCell.swift */,
 				57ADE5562AFA2CBA001DE1B2 /* Network */,
 				57ADE5552AFA2CB0001DE1B2 /* Protocols */,
 				57ADE51C2AFA2A97001DE1B2 /* Assets.xcassets */,
@@ -124,23 +88,6 @@
 				57ADE5212AFA2A97001DE1B2 /* Info.plist */,
 			);
 			path = MiniAppStore;
-			sourceTree = "<group>";
-		};
-		57ADE5292AFA2A97001DE1B2 /* MiniAppStoreTests */ = {
-			isa = PBXGroup;
-			children = (
-				57ADE52A2AFA2A97001DE1B2 /* MiniAppStoreTests.swift */,
-			);
-			path = MiniAppStoreTests;
-			sourceTree = "<group>";
-		};
-		57ADE5332AFA2A97001DE1B2 /* MiniAppStoreUITests */ = {
-			isa = PBXGroup;
-			children = (
-				57ADE5342AFA2A97001DE1B2 /* MiniAppStoreUITests.swift */,
-				57ADE5362AFA2A97001DE1B2 /* MiniAppStoreUITestsLaunchTests.swift */,
-			);
-			path = MiniAppStoreUITests;
 			sourceTree = "<group>";
 		};
 		57ADE5552AFA2CB0001DE1B2 /* Protocols */ = {
@@ -154,6 +101,8 @@
 		57ADE5562AFA2CBA001DE1B2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				57ADE55B2AFA5C43001DE1B2 /* AppstoreModel.swift */,
+				57ADE5622AFA80D1001DE1B2 /* APIManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -178,49 +127,13 @@
 				57ADE5462AFA2C31001DE1B2 /* Kingfisher */,
 				57ADE5492AFA2C45001DE1B2 /* RxCocoa */,
 				57ADE54B2AFA2C45001DE1B2 /* RxSwift */,
-				57ADE54D2AFA2C45001DE1B2 /* RxTest */,
 				57ADE5502AFA2C54001DE1B2 /* SnapKit */,
 				57ADE5532AFA2C75001DE1B2 /* Alamofire */,
+				57ADE5602AFA7B63001DE1B2 /* Then */,
 			);
 			productName = MiniAppStore;
 			productReference = 57ADE5102AFA2A96001DE1B2 /* MiniAppStore.app */;
 			productType = "com.apple.product-type.application";
-		};
-		57ADE5252AFA2A97001DE1B2 /* MiniAppStoreTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 57ADE53D2AFA2A97001DE1B2 /* Build configuration list for PBXNativeTarget "MiniAppStoreTests" */;
-			buildPhases = (
-				57ADE5222AFA2A97001DE1B2 /* Sources */,
-				57ADE5232AFA2A97001DE1B2 /* Frameworks */,
-				57ADE5242AFA2A97001DE1B2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				57ADE5282AFA2A97001DE1B2 /* PBXTargetDependency */,
-			);
-			name = MiniAppStoreTests;
-			productName = MiniAppStoreTests;
-			productReference = 57ADE5262AFA2A97001DE1B2 /* MiniAppStoreTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		57ADE52F2AFA2A97001DE1B2 /* MiniAppStoreUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 57ADE5402AFA2A97001DE1B2 /* Build configuration list for PBXNativeTarget "MiniAppStoreUITests" */;
-			buildPhases = (
-				57ADE52C2AFA2A97001DE1B2 /* Sources */,
-				57ADE52D2AFA2A97001DE1B2 /* Frameworks */,
-				57ADE52E2AFA2A97001DE1B2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				57ADE5322AFA2A97001DE1B2 /* PBXTargetDependency */,
-			);
-			name = MiniAppStoreUITests;
-			productName = MiniAppStoreUITests;
-			productReference = 57ADE5302AFA2A97001DE1B2 /* MiniAppStoreUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -234,14 +147,6 @@
 				TargetAttributes = {
 					57ADE50F2AFA2A96001DE1B2 = {
 						CreatedOnToolsVersion = 14.3.1;
-					};
-					57ADE5252AFA2A97001DE1B2 = {
-						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = 57ADE50F2AFA2A96001DE1B2;
-					};
-					57ADE52F2AFA2A97001DE1B2 = {
-						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = 57ADE50F2AFA2A96001DE1B2;
 					};
 				};
 			};
@@ -259,14 +164,13 @@
 				57ADE5482AFA2C45001DE1B2 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				57ADE54F2AFA2C54001DE1B2 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				57ADE5522AFA2C75001DE1B2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				57ADE55F2AFA7B63001DE1B2 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = 57ADE5112AFA2A96001DE1B2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				57ADE50F2AFA2A96001DE1B2 /* MiniAppStore */,
-				57ADE5252AFA2A97001DE1B2 /* MiniAppStoreTests */,
-				57ADE52F2AFA2A97001DE1B2 /* MiniAppStoreUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -281,20 +185,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		57ADE5242AFA2A97001DE1B2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		57ADE52E2AFA2A97001DE1B2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -302,45 +192,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57ADE5632AFA80D1001DE1B2 /* APIManager.swift in Sources */,
 				57ADE5582AFA2CC8001DE1B2 /* ViewModel.swift in Sources */,
 				57ADE5182AFA2A96001DE1B2 /* SearchViewController.swift in Sources */,
+				57ADE55C2AFA5C43001DE1B2 /* AppstoreModel.swift in Sources */,
 				57ADE5142AFA2A96001DE1B2 /* AppDelegate.swift in Sources */,
+				57ADE55A2AFA5920001DE1B2 /* SearchTableViewCell.swift in Sources */,
 				57ADE5442AFA2C17001DE1B2 /* SearchViewModel.swift in Sources */,
 				57ADE5162AFA2A96001DE1B2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		57ADE5222AFA2A97001DE1B2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				57ADE52B2AFA2A97001DE1B2 /* MiniAppStoreTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		57ADE52C2AFA2A97001DE1B2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				57ADE5352AFA2A97001DE1B2 /* MiniAppStoreUITests.swift in Sources */,
-				57ADE5372AFA2A97001DE1B2 /* MiniAppStoreUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		57ADE5282AFA2A97001DE1B2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 57ADE50F2AFA2A96001DE1B2 /* MiniAppStore */;
-			targetProxy = 57ADE5272AFA2A97001DE1B2 /* PBXContainerItemProxy */;
-		};
-		57ADE5322AFA2A97001DE1B2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 57ADE50F2AFA2A96001DE1B2 /* MiniAppStore */;
-			targetProxy = 57ADE5312AFA2A97001DE1B2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		57ADE51E2AFA2A97001DE1B2 /* LaunchScreen.storyboard */ = {
@@ -489,9 +352,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexcho617.MiniAppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -516,85 +382,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexcho617.MiniAppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		57ADE53E2AFA2A97001DE1B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YTV3AHP8X4;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexcho617.MiniAppStoreTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiniAppStore.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MiniAppStore";
-			};
-			name = Debug;
-		};
-		57ADE53F2AFA2A97001DE1B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YTV3AHP8X4;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexcho617.MiniAppStoreTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MiniAppStore.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MiniAppStore";
-			};
-			name = Release;
-		};
-		57ADE5412AFA2A97001DE1B2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YTV3AHP8X4;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexcho617.MiniAppStoreUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MiniAppStore;
-			};
-			name = Debug;
-		};
-		57ADE5422AFA2A97001DE1B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YTV3AHP8X4;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexcho617.MiniAppStoreUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MiniAppStore;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -615,24 +408,6 @@
 			buildConfigurations = (
 				57ADE53B2AFA2A97001DE1B2 /* Debug */,
 				57ADE53C2AFA2A97001DE1B2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		57ADE53D2AFA2A97001DE1B2 /* Build configuration list for PBXNativeTarget "MiniAppStoreTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				57ADE53E2AFA2A97001DE1B2 /* Debug */,
-				57ADE53F2AFA2A97001DE1B2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		57ADE5402AFA2A97001DE1B2 /* Build configuration list for PBXNativeTarget "MiniAppStoreUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				57ADE5412AFA2A97001DE1B2 /* Debug */,
-				57ADE5422AFA2A97001DE1B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -672,6 +447,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		57ADE55F2AFA7B63001DE1B2 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -690,11 +473,6 @@
 			package = 57ADE5482AFA2C45001DE1B2 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-		57ADE54D2AFA2C45001DE1B2 /* RxTest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 57ADE5482AFA2C45001DE1B2 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxTest;
-		};
 		57ADE5502AFA2C54001DE1B2 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 57ADE54F2AFA2C54001DE1B2 /* XCRemoteSwiftPackageReference "SnapKit" */;
@@ -704,6 +482,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 57ADE5522AFA2C75001DE1B2 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		57ADE5602AFA7B63001DE1B2 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57ADE55F2AFA7B63001DE1B2 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
