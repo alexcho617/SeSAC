@@ -29,7 +29,7 @@ class APIManager{
                 return Disposables.create()
             }
             
-            var request = URLRequest(url: url, timeoutInterval: 5.0)
+            let request = URLRequest(url: url, timeoutInterval: 5.0)
             URLSession.shared.dataTask(with: request) { data,response,error in
                 print("URLSession")
                 if let _ = error {
