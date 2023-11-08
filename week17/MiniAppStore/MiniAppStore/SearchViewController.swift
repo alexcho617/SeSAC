@@ -31,22 +31,15 @@ class SearchViewController: UIViewController {
     }
     
     func bind(){
-        vm.items.bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) {row,element,cell in
+        let input = SearchViewModel.Input(searchButtonClicked: searchBar.rx.searchButtonClicked, query: searchBar.rx.text.orEmpty)
+        
+        let output = vm.transform(input: input)
+                
+        output.items.bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) {row,element,cell in
             cell.appNameLabel.text = element.trackName
             cell.appIconImageView.kf.setImage(with: URL(string: element.artworkUrl512))
-            
         }.disposed(by: disposeBag)
         
-        searchBar.rx.searchButtonClicked
-            .throttle(.seconds(1), scheduler: MainScheduler.instance)
-            .withLatestFrom(searchBar.rx.text.orEmpty) {$1}
-            .distinctUntilChanged()
-            .flatMap { query in
-                APIManager.fetchData(query: query)
-            }
-            .subscribe(with: self) { owner, appstoreModel in
-                owner.vm.items.onNext(appstoreModel.results)
-            }.disposed(by: disposeBag)
     }
     
     private func setView(){
