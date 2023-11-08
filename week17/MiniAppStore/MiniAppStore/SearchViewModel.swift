@@ -12,7 +12,6 @@ import RxCocoa
 class SearchViewModel{
     
     var data: [AppInfo] = []
-//    var data = ["1","2","3","4","5"]
     lazy var items = BehaviorSubject(value: data)
     var disposeBag = DisposeBag()
     

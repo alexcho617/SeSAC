@@ -15,19 +15,57 @@ class BoxOfficeViewController: UIViewController {
     let tableView = UITableView()
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout() )
     let searchBar = UISearchBar()
-    let items = PublishSubject<[DailyBoxOfficeList]>()
-    //    let items = Observable.just(["1","2","3"])//BoxOfficeNetwork.fetchBoxOfficeData(date: )
-    let recent = BehaviorRelay(value: ["4","5","6"])
+    
+    let recent = BehaviorRelay(value: ["4","5","6"]) //collectionview 클릭한 것
+    
+    let items = PublishSubject<[DailyBoxOfficeList]>() //서버통신 결과
+    
     let disposeBag = DisposeBag()
     var nickname = BehaviorSubject(value: "Alex")
+    
+    let vm = BoxOfficeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        bind()
+        bindInOut()
         
     }
     
-    func bind() {
+    func bindInOut() {
+        let recentText = PublishSubject<String>()
+        let input = BoxOfficeViewModel.Input(searchButtonClicked: searchBar.rx.searchButtonClicked, query: searchBar.rx.text.orEmpty, recentText: recentText)
+        
+        let output = vm.transform(input: input)
+        
+        //items은 서브젝트라 이벤트가 3개지만 드라이브는 1개이기 때문에 잘 안맞음
+        output.items.bind(to: tableView.rx.items(cellIdentifier: "MovieCell", cellType: UITableViewCell.self)){ row, element, cell in
+            cell.textLabel?.text = element.movieNm
+        }.disposed(by: disposeBag)
+        
+        
+        output.recentList
+//            .asDriver(onErrorJustReturn: []) //Driver<[String]>
+            .bind(to: collectionView.rx.items(cellIdentifier: "MovieCollectionCell", cellType: MovieCollectionViewCell.self)){ row, element, cell in
+            cell.label.text = element
+        }.disposed(by: disposeBag)
+        
+        //zip에서 itemselected + modelselected였기 때문에 data는 셋이고 (indexPath, String)이 들어가있다
+        Observable.zip(tableView.rx.itemSelected, tableView.rx.modelSelected(DailyBoxOfficeList.self))
+            .map{ $0.1.movieNm }
+//            .debug()
+            .subscribe(with: self) { owner, data in
+                //action을 어느정도 가공해서 보내도 괜찮다.
+                recentText.onNext(data)
+//                var temp = owner.recent.value//relay에선 추상화를 한번 더 했을 뿐
+//                temp.append(data)
+//                owner.recent.accept(temp) //Relay -> Accept
+                
+            }.disposed(by: disposeBag)
+        
+        
+    }
+    
+    func bindOld() {
         //items은 서브젝트라 이벤트가 3개지만 드라이브는 1개이기 때문에 잘 안맞음
         items.bind(to: tableView.rx.items(cellIdentifier: "MovieCell", cellType: UITableViewCell.self)){ row, element, cell in
             cell.textLabel?.text = element.movieNm
