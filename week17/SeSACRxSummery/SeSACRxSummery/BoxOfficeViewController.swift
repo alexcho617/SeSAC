@@ -28,6 +28,8 @@ class BoxOfficeViewController: UIViewController {
         super.viewDidLoad()
         configure()
         bindInOut()
+        //Moya test
+        APIManager.shared.signUp()
         
     }
     

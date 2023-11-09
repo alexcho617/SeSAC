@@ -32,6 +32,9 @@
 		57ADE56B2AFB22F7001DE1B2 /* BoxOfficeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADE56A2AFB22F7001DE1B2 /* BoxOfficeViewModel.swift */; };
 		57ADE56D2AFB3365001DE1B2 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57ADE56C2AFB3365001DE1B2 /* ViewModelProtocol.swift */; };
 		57FD1FF82AFC87EE0020FC7A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 57FD1FF72AFC87EE0020FC7A /* Moya */; };
+		57FD1FFC2AFC89580020FC7A /* APIMoya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD1FFB2AFC89580020FC7A /* APIMoya.swift */; };
+		57FD1FFE2AFCAE1D0020FC7A /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD1FFD2AFCAE1D0020FC7A /* APIModel.swift */; };
+		57FD20002AFCB0710020FC7A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD1FFF2AFCB0710020FC7A /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		57ADE5682AFB12CB001DE1B2 /* RxDatasourceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxDatasourceListViewController.swift; sourceTree = "<group>"; };
 		57ADE56A2AFB22F7001DE1B2 /* BoxOfficeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewModel.swift; sourceTree = "<group>"; };
 		57ADE56C2AFB3365001DE1B2 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		57FD1FFB2AFC89580020FC7A /* APIMoya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMoya.swift; sourceTree = "<group>"; };
+		57FD1FFD2AFCAE1D0020FC7A /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		57FD1FFF2AFCB0710020FC7A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,9 @@
 				04A4FD522AF9B5ED006055FA /* MovieCollectionViewCell.swift */,
 				57ADE5672AFB12A8001DE1B2 /* RxDataSourceExample */,
 				04A4FD4E2AF9B597006055FA /* Network.swift */,
+				57FD1FFB2AFC89580020FC7A /* APIMoya.swift */,
+				57FD1FFF2AFCB0710020FC7A /* APIManager.swift */,
+				57FD1FFD2AFCAE1D0020FC7A /* APIModel.swift */,
 				57ADE4862AFA0140001DE1B2 /* ValidateViewController.swift */,
 				04A4FD1A2AF8CD54006055FA /* Main.storyboard */,
 				04A4FD1D2AF8CD54006055FA /* Assets.xcassets */,
@@ -334,8 +343,11 @@
 			files = (
 				57ADE4FF2AFA05E4001DE1B2 /* ValidateViewModel.swift in Sources */,
 				57ADE5692AFB12CB001DE1B2 /* RxDatasourceListViewController.swift in Sources */,
+				57FD1FFE2AFCAE1D0020FC7A /* APIModel.swift in Sources */,
 				04A4FD4F2AF9B597006055FA /* Network.swift in Sources */,
 				04A4FD192AF8CD54006055FA /* BoxOfficeViewController.swift in Sources */,
+				57FD1FFC2AFC89580020FC7A /* APIMoya.swift in Sources */,
+				57FD20002AFCB0710020FC7A /* APIManager.swift in Sources */,
 				57ADE56B2AFB22F7001DE1B2 /* BoxOfficeViewModel.swift in Sources */,
 				04A4FD152AF8CD54006055FA /* AppDelegate.swift in Sources */,
 				04A4FD512AF9B5C1006055FA /* Model.swift in Sources */,
