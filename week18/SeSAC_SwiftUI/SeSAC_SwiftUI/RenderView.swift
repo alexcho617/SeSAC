@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct RenderView: View {
+    init() {
+        print("RenderView Init")
+        print("Heavy networking task...")
+    }
     var bran: some View{
         Text("Bran, \(Int.random(in: 1...100))")
     }
     
+    //시스템에서 정의된 값을 감지하고 뷰를 업데이트 할 수 있음
+//    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme //하나의 뷰가 아닌 다른 화면에서도 통용되는 값들. 글로벌 같은건가
+//    @Environment(\.isPresented) var isPresented
+    @Environment(\.dismiss) var dismiss
     @State var age = 10
     
     var body: some View {
@@ -49,9 +58,13 @@ struct RenderView: View {
                 Text("Jack, \(Int.random(in: 1...100))")
                 bran
                 Koko()
-                Button("CLicke") {
+                
+                Button(colorScheme == .dark ? "Dark" : "Light") {
                     age = Int.random(in: 1...100)
+//                    presentationMode.wrappedValue.dismiss()
+                    dismiss.callAsFunction()
                 }
+                
             }
             //UIKIt storyboard에서도 타이틀을 네비콘트롤러 하위 뷰에서 정해줬음
             .navigationTitle("HOME")

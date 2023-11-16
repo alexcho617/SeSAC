@@ -11,7 +11,8 @@ import SwiftUI
 struct SeSAC_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+//            HomeView()
+            SearchView()
         }
     }
 }
