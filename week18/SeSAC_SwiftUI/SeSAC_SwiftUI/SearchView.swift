@@ -9,12 +9,14 @@ import SwiftUI
 
 struct Movie: Hashable, Identifiable{
     let id = UUID()
+    let count = Int.random(in: 20...50)
     let name: String
     let color = Color.random()
 }
 struct SearchView: View{
+    
     @State private var searchQuery = ""
-
+    @State private var isChartPresented = false
     let movies = [
         Movie(name: "Aarry Potter"),
         Movie(name: "Barry Potter"),
@@ -32,6 +34,7 @@ struct SearchView: View{
     var body: some View{
         NavigationStack {
             List{
+//                SecureField("hi", text: $searchQuery)
                 ForEach(filterMovie, id: \.self){movie in
                     //cell accessory 에 > 표시 자동으로 생김
                     //버튼과 같은것
@@ -57,17 +60,39 @@ struct SearchView: View{
                 }
             }
             .navigationTitle("검색")
+            .navigationBarTitleDisplayMode(.large)
+            //navigation bar, tabbar toolbar 다 가능
+            .toolbar{
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button {
+                        print("Right Click")
+                        isChartPresented.toggle()
+                    } label: {
+                        Image(systemName: "star")
+                    }
+                }
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button {
+                        print("Right Click")
+                    } label: {
+                        Image(systemName: "pencil")
+                    }
+
+                }
+            }
+            .searchable(text: $searchQuery, placement: .navigationBarDrawer, prompt: "Search")
+            .onSubmit(of: .search) {
+                print("Search: \(searchQuery)")
+            }
+            //data 기반
+            .sheet(isPresented: $isChartPresented) {
+                ChartView(movies: movies)
+            }
             //Diffable Datasource 유사
             //ios 16 navigation stack + navigationd destination
             .navigationDestination(for: Movie.self) { movie in
                 SearchDetailView(movie: movie)
             }
-            
-        }
-        //왜 처음 시작에 searchbar 안떠있지? -> navigation title 위치 바꾸니까 해결 되네
-        .searchable(text: $searchQuery, placement: .navigationBarDrawer, prompt: "Search")
-        .onSubmit(of: .search) {
-            print("Search: \(searchQuery)")
         }
     }
     
