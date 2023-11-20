@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		574B8BFC2B0AFFED00018EBD /* CoinOrderBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8BFB2B0AFFED00018EBD /* CoinOrderBookApp.swift */; };
+		574B8BFE2B0AFFED00018EBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8BFD2B0AFFED00018EBD /* ContentView.swift */; };
+		574B8C002B0AFFEF00018EBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 574B8BFF2B0AFFEF00018EBD /* Assets.xcassets */; };
+		574B8C032B0AFFEF00018EBD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 574B8C022B0AFFEF00018EBD /* Preview Assets.xcassets */; };
+		574B8C0D2B0AFFEF00018EBD /* CoinOrderBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C0C2B0AFFEF00018EBD /* CoinOrderBookTests.swift */; };
+		574B8C172B0AFFEF00018EBD /* CoinOrderBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C162B0AFFEF00018EBD /* CoinOrderBookUITests.swift */; };
+		574B8C192B0AFFEF00018EBD /* CoinOrderBookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C182B0AFFEF00018EBD /* CoinOrderBookUITestsLaunchTests.swift */; };
+		574B8C272B0B090300018EBD /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C252B0B090300018EBD /* Banner.swift */; };
+		574B8C282B0B090300018EBD /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C262B0B090300018EBD /* Money.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		574B8C092B0AFFEF00018EBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 574B8BF02B0AFFED00018EBD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 574B8BF72B0AFFED00018EBD;
+			remoteInfo = CoinOrderBook;
+		};
+		574B8C132B0AFFEF00018EBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 574B8BF02B0AFFED00018EBD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 574B8BF72B0AFFED00018EBD;
+			remoteInfo = CoinOrderBook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		574B8BF82B0AFFED00018EBD /* CoinOrderBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinOrderBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		574B8BFB2B0AFFED00018EBD /* CoinOrderBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinOrderBookApp.swift; sourceTree = "<group>"; };
+		574B8BFD2B0AFFED00018EBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		574B8BFF2B0AFFEF00018EBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		574B8C022B0AFFEF00018EBD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		574B8C082B0AFFEF00018EBD /* CoinOrderBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinOrderBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		574B8C0C2B0AFFEF00018EBD /* CoinOrderBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinOrderBookTests.swift; sourceTree = "<group>"; };
+		574B8C122B0AFFEF00018EBD /* CoinOrderBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinOrderBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		574B8C162B0AFFEF00018EBD /* CoinOrderBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinOrderBookUITests.swift; sourceTree = "<group>"; };
+		574B8C182B0AFFEF00018EBD /* CoinOrderBookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinOrderBookUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		574B8C252B0B090300018EBD /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Banner.swift; path = ../../231120_DummyData/Banner.swift; sourceTree = "<group>"; };
+		574B8C262B0B090300018EBD /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Money.swift; path = ../../231120_DummyData/Money.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		574B8BF52B0AFFED00018EBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		574B8C052B0AFFEF00018EBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		574B8C0F2B0AFFEF00018EBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		574B8BEF2B0AFFED00018EBD = {
+			isa = PBXGroup;
+			children = (
+				574B8BFA2B0AFFED00018EBD /* CoinOrderBook */,
+				574B8C0B2B0AFFEF00018EBD /* CoinOrderBookTests */,
+				574B8C152B0AFFEF00018EBD /* CoinOrderBookUITests */,
+				574B8BF92B0AFFED00018EBD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		574B8BF92B0AFFED00018EBD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				574B8BF82B0AFFED00018EBD /* CoinOrderBook.app */,
+				574B8C082B0AFFEF00018EBD /* CoinOrderBookTests.xctest */,
+				574B8C122B0AFFEF00018EBD /* CoinOrderBookUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		574B8BFA2B0AFFED00018EBD /* CoinOrderBook */ = {
+			isa = PBXGroup;
+			children = (
+				574B8C252B0B090300018EBD /* Banner.swift */,
+				574B8C262B0B090300018EBD /* Money.swift */,
+				574B8BFB2B0AFFED00018EBD /* CoinOrderBookApp.swift */,
+				574B8BFD2B0AFFED00018EBD /* ContentView.swift */,
+				574B8BFF2B0AFFEF00018EBD /* Assets.xcassets */,
+				574B8C012B0AFFEF00018EBD /* Preview Content */,
+			);
+			path = CoinOrderBook;
+			sourceTree = "<group>";
+		};
+		574B8C012B0AFFEF00018EBD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				574B8C022B0AFFEF00018EBD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		574B8C0B2B0AFFEF00018EBD /* CoinOrderBookTests */ = {
+			isa = PBXGroup;
+			children = (
+				574B8C0C2B0AFFEF00018EBD /* CoinOrderBookTests.swift */,
+			);
+			path = CoinOrderBookTests;
+			sourceTree = "<group>";
+		};
+		574B8C152B0AFFEF00018EBD /* CoinOrderBookUITests */ = {
+			isa = PBXGroup;
+			children = (
+				574B8C162B0AFFEF00018EBD /* CoinOrderBookUITests.swift */,
+				574B8C182B0AFFEF00018EBD /* CoinOrderBookUITestsLaunchTests.swift */,
+			);
+			path = CoinOrderBookUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		574B8BF72B0AFFED00018EBD /* CoinOrderBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 574B8C1C2B0AFFEF00018EBD /* Build configuration list for PBXNativeTarget "CoinOrderBook" */;
+			buildPhases = (
+				574B8BF42B0AFFED00018EBD /* Sources */,
+				574B8BF52B0AFFED00018EBD /* Frameworks */,
+				574B8BF62B0AFFED00018EBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoinOrderBook;
+			productName = CoinOrderBook;
+			productReference = 574B8BF82B0AFFED00018EBD /* CoinOrderBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		574B8C072B0AFFEF00018EBD /* CoinOrderBookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 574B8C1F2B0AFFEF00018EBD /* Build configuration list for PBXNativeTarget "CoinOrderBookTests" */;
+			buildPhases = (
+				574B8C042B0AFFEF00018EBD /* Sources */,
+				574B8C052B0AFFEF00018EBD /* Frameworks */,
+				574B8C062B0AFFEF00018EBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				574B8C0A2B0AFFEF00018EBD /* PBXTargetDependency */,
+			);
+			name = CoinOrderBookTests;
+			productName = CoinOrderBookTests;
+			productReference = 574B8C082B0AFFEF00018EBD /* CoinOrderBookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		574B8C112B0AFFEF00018EBD /* CoinOrderBookUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 574B8C222B0AFFEF00018EBD /* Build configuration list for PBXNativeTarget "CoinOrderBookUITests" */;
+			buildPhases = (
+				574B8C0E2B0AFFEF00018EBD /* Sources */,
+				574B8C0F2B0AFFEF00018EBD /* Frameworks */,
+				574B8C102B0AFFEF00018EBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				574B8C142B0AFFEF00018EBD /* PBXTargetDependency */,
+			);
+			name = CoinOrderBookUITests;
+			productName = CoinOrderBookUITests;
+			productReference = 574B8C122B0AFFEF00018EBD /* CoinOrderBookUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		574B8BF02B0AFFED00018EBD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					574B8BF72B0AFFED00018EBD = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					574B8C072B0AFFEF00018EBD = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 574B8BF72B0AFFED00018EBD;
+					};
+					574B8C112B0AFFEF00018EBD = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 574B8BF72B0AFFED00018EBD;
+					};
+				};
+			};
+			buildConfigurationList = 574B8BF32B0AFFED00018EBD /* Build configuration list for PBXProject "CoinOrderBook" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 574B8BEF2B0AFFED00018EBD;
+			productRefGroup = 574B8BF92B0AFFED00018EBD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				574B8BF72B0AFFED00018EBD /* CoinOrderBook */,
+				574B8C072B0AFFEF00018EBD /* CoinOrderBookTests */,
+				574B8C112B0AFFEF00018EBD /* CoinOrderBookUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		574B8BF62B0AFFED00018EBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				574B8C032B0AFFEF00018EBD /* Preview Assets.xcassets in Resources */,
+				574B8C002B0AFFEF00018EBD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		574B8C062B0AFFEF00018EBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		574B8C102B0AFFEF00018EBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		574B8BF42B0AFFED00018EBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				574B8BFE2B0AFFED00018EBD /* ContentView.swift in Sources */,
+				574B8BFC2B0AFFED00018EBD /* CoinOrderBookApp.swift in Sources */,
+				574B8C282B0B090300018EBD /* Money.swift in Sources */,
+				574B8C272B0B090300018EBD /* Banner.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		574B8C042B0AFFEF00018EBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				574B8C0D2B0AFFEF00018EBD /* CoinOrderBookTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		574B8C0E2B0AFFEF00018EBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				574B8C172B0AFFEF00018EBD /* CoinOrderBookUITests.swift in Sources */,
+				574B8C192B0AFFEF00018EBD /* CoinOrderBookUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		574B8C0A2B0AFFEF00018EBD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 574B8BF72B0AFFED00018EBD /* CoinOrderBook */;
+			targetProxy = 574B8C092B0AFFEF00018EBD /* PBXContainerItemProxy */;
+		};
+		574B8C142B0AFFEF00018EBD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 574B8BF72B0AFFED00018EBD /* CoinOrderBook */;
+			targetProxy = 574B8C132B0AFFEF00018EBD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		574B8C1A2B0AFFEF00018EBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		574B8C1B2B0AFFEF00018EBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		574B8C1D2B0AFFEF00018EBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CoinOrderBook/Preview Content\"";
+				DEVELOPMENT_TEAM = YTV3AHP8X4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexcho617.CoinOrderBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		574B8C1E2B0AFFEF00018EBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CoinOrderBook/Preview Content\"";
+				DEVELOPMENT_TEAM = YTV3AHP8X4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexcho617.CoinOrderBook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		574B8C202B0AFFEF00018EBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTV3AHP8X4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexcho617.CoinOrderBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinOrderBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CoinOrderBook";
+			};
+			name = Debug;
+		};
+		574B8C212B0AFFEF00018EBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTV3AHP8X4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexcho617.CoinOrderBookTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinOrderBook.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CoinOrderBook";
+			};
+			name = Release;
+		};
+		574B8C232B0AFFEF00018EBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTV3AHP8X4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexcho617.CoinOrderBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoinOrderBook;
+			};
+			name = Debug;
+		};
+		574B8C242B0AFFEF00018EBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YTV3AHP8X4;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexcho617.CoinOrderBookUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CoinOrderBook;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		574B8BF32B0AFFED00018EBD /* Build configuration list for PBXProject "CoinOrderBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				574B8C1A2B0AFFEF00018EBD /* Debug */,
+				574B8C1B2B0AFFEF00018EBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		574B8C1C2B0AFFEF00018EBD /* Build configuration list for PBXNativeTarget "CoinOrderBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				574B8C1D2B0AFFEF00018EBD /* Debug */,
+				574B8C1E2B0AFFEF00018EBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		574B8C1F2B0AFFEF00018EBD /* Build configuration list for PBXNativeTarget "CoinOrderBookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				574B8C202B0AFFEF00018EBD /* Debug */,
+				574B8C212B0AFFEF00018EBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		574B8C222B0AFFEF00018EBD /* Build configuration list for PBXNativeTarget "CoinOrderBookUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				574B8C232B0AFFEF00018EBD /* Debug */,
+				574B8C242B0AFFEF00018EBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 574B8BF02B0AFFED00018EBD /* Project object */;
+}
