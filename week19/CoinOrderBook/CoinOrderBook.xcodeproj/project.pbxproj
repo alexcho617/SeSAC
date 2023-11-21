@@ -16,6 +16,12 @@
 		574B8C192B0AFFEF00018EBD /* CoinOrderBookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C182B0AFFEF00018EBD /* CoinOrderBookUITestsLaunchTests.swift */; };
 		574B8C272B0B090300018EBD /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C252B0B090300018EBD /* Banner.swift */; };
 		574B8C282B0B090300018EBD /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C262B0B090300018EBD /* Money.swift */; };
+		574B8C312B0C4A2500018EBD /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C302B0C4A2500018EBD /* OverlayView.swift */; };
+		574B8C342B0C4E7800018EBD /* UpbitAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C332B0C4E7800018EBD /* UpbitAPI.swift */; };
+		574B8C362B0C596B00018EBD /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C352B0C596B00018EBD /* ContentViewModel.swift */; };
+		574B8C382B0C733300018EBD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C372B0C733300018EBD /* ListView.swift */; };
+		574B8C3A2B0C735A00018EBD /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C392B0C735A00018EBD /* ListViewModel.swift */; };
+		574B8C3C2B0C809D00018EBD /* BannerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C3B2B0C809D00018EBD /* BannerTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +52,14 @@
 		574B8C122B0AFFEF00018EBD /* CoinOrderBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinOrderBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		574B8C162B0AFFEF00018EBD /* CoinOrderBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinOrderBookUITests.swift; sourceTree = "<group>"; };
 		574B8C182B0AFFEF00018EBD /* CoinOrderBookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinOrderBookUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		574B8C252B0B090300018EBD /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Banner.swift; path = ../../231120_DummyData/Banner.swift; sourceTree = "<group>"; };
-		574B8C262B0B090300018EBD /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Money.swift; path = ../../231120_DummyData/Money.swift; sourceTree = "<group>"; };
+		574B8C252B0B090300018EBD /* Banner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		574B8C262B0B090300018EBD /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		574B8C302B0C4A2500018EBD /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		574B8C332B0C4E7800018EBD /* UpbitAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpbitAPI.swift; sourceTree = "<group>"; };
+		574B8C352B0C596B00018EBD /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		574B8C372B0C733300018EBD /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		574B8C392B0C735A00018EBD /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		574B8C3B2B0C809D00018EBD /* BannerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +110,14 @@
 		574B8BFA2B0AFFED00018EBD /* CoinOrderBook */ = {
 			isa = PBXGroup;
 			children = (
-				574B8C252B0B090300018EBD /* Banner.swift */,
-				574B8C262B0B090300018EBD /* Money.swift */,
+				574B8C2F2B0C437400018EBD /* Data */,
 				574B8BFB2B0AFFED00018EBD /* CoinOrderBookApp.swift */,
+				574B8C352B0C596B00018EBD /* ContentViewModel.swift */,
 				574B8BFD2B0AFFED00018EBD /* ContentView.swift */,
+				574B8C3B2B0C809D00018EBD /* BannerTestView.swift */,
+				574B8C372B0C733300018EBD /* ListView.swift */,
+				574B8C392B0C735A00018EBD /* ListViewModel.swift */,
+				574B8C302B0C4A2500018EBD /* OverlayView.swift */,
 				574B8BFF2B0AFFEF00018EBD /* Assets.xcassets */,
 				574B8C012B0AFFEF00018EBD /* Preview Content */,
 			);
@@ -131,6 +147,24 @@
 				574B8C182B0AFFEF00018EBD /* CoinOrderBookUITestsLaunchTests.swift */,
 			);
 			path = CoinOrderBookUITests;
+			sourceTree = "<group>";
+		};
+		574B8C2F2B0C437400018EBD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				574B8C322B0C4E5100018EBD /* Network */,
+				574B8C252B0B090300018EBD /* Banner.swift */,
+				574B8C262B0B090300018EBD /* Money.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		574B8C322B0C4E5100018EBD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				574B8C332B0C4E7800018EBD /* UpbitAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +298,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				574B8BFE2B0AFFED00018EBD /* ContentView.swift in Sources */,
+				574B8C342B0C4E7800018EBD /* UpbitAPI.swift in Sources */,
+				574B8C382B0C733300018EBD /* ListView.swift in Sources */,
 				574B8BFC2B0AFFED00018EBD /* CoinOrderBookApp.swift in Sources */,
+				574B8C362B0C596B00018EBD /* ContentViewModel.swift in Sources */,
+				574B8C3A2B0C735A00018EBD /* ListViewModel.swift in Sources */,
 				574B8C282B0B090300018EBD /* Money.swift in Sources */,
 				574B8C272B0B090300018EBD /* Banner.swift in Sources */,
+				574B8C3C2B0C809D00018EBD /* BannerTestView.swift in Sources */,
+				574B8C312B0C4A2500018EBD /* OverlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
