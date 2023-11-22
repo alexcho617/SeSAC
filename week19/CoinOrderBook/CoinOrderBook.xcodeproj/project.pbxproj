@@ -22,6 +22,9 @@
 		574B8C382B0C733300018EBD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C372B0C733300018EBD /* ListView.swift */; };
 		574B8C3A2B0C735A00018EBD /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C392B0C735A00018EBD /* ListViewModel.swift */; };
 		574B8C3C2B0C809D00018EBD /* BannerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C3B2B0C809D00018EBD /* BannerTestView.swift */; };
+		574B8C442B0D85EA00018EBD /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C432B0D85EA00018EBD /* WalletView.swift */; };
+		574B8C462B0D992400018EBD /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C452B0D992400018EBD /* WalletDetailView.swift */; };
+		574B8C482B0DA53200018EBD /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C472B0DA53200018EBD /* CardModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		574B8C372B0C733300018EBD /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		574B8C392B0C735A00018EBD /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		574B8C3B2B0C809D00018EBD /* BannerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTestView.swift; sourceTree = "<group>"; };
+		574B8C432B0D85EA00018EBD /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		574B8C452B0D992400018EBD /* WalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailView.swift; sourceTree = "<group>"; };
+		574B8C472B0DA53200018EBD /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 				574B8C352B0C596B00018EBD /* ContentViewModel.swift */,
 				574B8BFD2B0AFFED00018EBD /* ContentView.swift */,
 				574B8C3B2B0C809D00018EBD /* BannerTestView.swift */,
+				574B8C422B0D85D500018EBD /* Animation */,
 				574B8C372B0C733300018EBD /* ListView.swift */,
 				574B8C392B0C735A00018EBD /* ListViewModel.swift */,
 				574B8C302B0C4A2500018EBD /* OverlayView.swift */,
@@ -165,6 +172,16 @@
 				574B8C332B0C4E7800018EBD /* UpbitAPI.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		574B8C422B0D85D500018EBD /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				574B8C432B0D85EA00018EBD /* WalletView.swift */,
+				574B8C472B0DA53200018EBD /* CardModel.swift */,
+				574B8C452B0D992400018EBD /* WalletDetailView.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,11 +316,14 @@
 			files = (
 				574B8BFE2B0AFFED00018EBD /* ContentView.swift in Sources */,
 				574B8C342B0C4E7800018EBD /* UpbitAPI.swift in Sources */,
+				574B8C442B0D85EA00018EBD /* WalletView.swift in Sources */,
 				574B8C382B0C733300018EBD /* ListView.swift in Sources */,
 				574B8BFC2B0AFFED00018EBD /* CoinOrderBookApp.swift in Sources */,
 				574B8C362B0C596B00018EBD /* ContentViewModel.swift in Sources */,
 				574B8C3A2B0C735A00018EBD /* ListViewModel.swift in Sources */,
 				574B8C282B0B090300018EBD /* Money.swift in Sources */,
+				574B8C482B0DA53200018EBD /* CardModel.swift in Sources */,
+				574B8C462B0D992400018EBD /* WalletDetailView.swift in Sources */,
 				574B8C272B0B090300018EBD /* Banner.swift in Sources */,
 				574B8C3C2B0C809D00018EBD /* BannerTestView.swift in Sources */,
 				574B8C312B0C4A2500018EBD /* OverlayView.swift in Sources */,
