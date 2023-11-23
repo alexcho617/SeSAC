@@ -17,7 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        let vc = BoxOfficeViewController() //Entry Point View Controller
+        let vc = RxDatasourceListViewController() //Entry Point View Controller
+//        let vc = BoxOfficeViewController() //Entry Point View Controller
         window?.rootViewController = UINavigationController(rootViewController: vc)
         window?.makeKeyAndVisible()
     }
