@@ -22,6 +22,7 @@
 		57877FCD2B0EF59D00046F9B /* ButonWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57877FCC2B0EF59D00046F9B /* ButonWrapper.swift */; };
 		57877FCF2B0EF8DD00046F9B /* MainNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57877FCE2B0EF8DD00046F9B /* MainNavigationView.swift */; };
 		57877FD12B0EF97E00046F9B /* NavigationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57877FD02B0EF97E00046F9B /* NavigationWrapper.swift */; };
+		57877FDA2B0F174A00046F9B /* NavigationBarWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57877FD92B0F174A00046F9B /* NavigationBarWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		57877FCC2B0EF59D00046F9B /* ButonWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButonWrapper.swift; sourceTree = "<group>"; };
 		57877FCE2B0EF8DD00046F9B /* MainNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationView.swift; sourceTree = "<group>"; };
 		57877FD02B0EF97E00046F9B /* NavigationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationWrapper.swift; sourceTree = "<group>"; };
+		57877FD92B0F174A00046F9B /* NavigationBarWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationBarWrapper.swift; path = Wrapper/NavigationBarWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				57877F962B0EDE4300046F9B /* VersionControlApp.swift */,
 				57877F982B0EDE4300046F9B /* ContentView.swift */,
 				57877FCE2B0EF8DD00046F9B /* MainNavigationView.swift */,
+				57877FD92B0F174A00046F9B /* NavigationBarWrapper.swift */,
 				57877FC62B0EE72100046F9B /* TabBadgeView.swift */,
 				57877FCA2B0EF23100046F9B /* ButtonView.swift */,
 				57877FC32B0EE45600046F9B /* Wrapper */,
@@ -299,6 +302,7 @@
 			files = (
 				57877FC22B0EDF8400046F9B /* PointBackgroundText.swift in Sources */,
 				57877F992B0EDE4300046F9B /* ContentView.swift in Sources */,
+				57877FDA2B0F174A00046F9B /* NavigationBarWrapper.swift in Sources */,
 				57877FC72B0EE72100046F9B /* TabBadgeView.swift in Sources */,
 				57877FC92B0EE84900046F9B /* BadgeWrapper.swift in Sources */,
 				57877FC52B0EE46F00046F9B /* ForegroundWrapper.swift in Sources */,

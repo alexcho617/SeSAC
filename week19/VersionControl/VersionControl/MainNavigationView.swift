@@ -11,9 +11,21 @@ struct MainNavigationView: View {
     var sampleTest = false
     
     var body: some View {
-        Text("HI")
+        
         NavigationWrapper {
-            sampleView //TODO: 왜 안뜨지?
+            Text("HI")
+            sampleView
+                .navigationTitle("Main")
+                .navigationBar {
+                    Image(systemName: "star")
+                } trailing: {
+                    Image(systemName: "circle")
+                }
+
+//                .navigationBarItems(
+//                    leading: Text("Left"),
+//                    trailing: EmptyView()
+//                )
         }
         
     }
