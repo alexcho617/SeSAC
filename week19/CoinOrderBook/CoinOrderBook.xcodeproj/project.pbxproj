@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5740B0A02B141E6C008A7808 /* MyWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740B09F2B141E6C008A7808 /* MyWebView.swift */; };
+		5740B0A22B1421AC008A7808 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740B0A12B1421AC008A7808 /* MyTextField.swift */; };
+		5740B0A42B14298C008A7808 /* SeSACView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740B0A32B14298C008A7808 /* SeSACView.swift */; };
+		5740B0A62B14326B008A7808 /* HorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740B0A52B14326B008A7808 /* HorizontalView.swift */; };
+		5740B0A92B143575008A7808 /* HorizontalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740B0A82B143575008A7808 /* HorizontalData.swift */; };
+		5740B0AB2B143C68008A7808 /* HorizontalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740B0AA2B143C68008A7808 /* HorizontalViewModel.swift */; };
 		574B8BFC2B0AFFED00018EBD /* CoinOrderBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8BFB2B0AFFED00018EBD /* CoinOrderBookApp.swift */; };
 		574B8BFE2B0AFFED00018EBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8BFD2B0AFFED00018EBD /* ContentView.swift */; };
 		574B8C002B0AFFEF00018EBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 574B8BFF2B0AFFEF00018EBD /* Assets.xcassets */; };
@@ -45,6 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5740B09F2B141E6C008A7808 /* MyWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWebView.swift; sourceTree = "<group>"; };
+		5740B0A12B1421AC008A7808 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
+		5740B0A32B14298C008A7808 /* SeSACView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeSACView.swift; sourceTree = "<group>"; };
+		5740B0A52B14326B008A7808 /* HorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalView.swift; sourceTree = "<group>"; };
+		5740B0A82B143575008A7808 /* HorizontalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalData.swift; sourceTree = "<group>"; };
+		5740B0AA2B143C68008A7808 /* HorizontalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalViewModel.swift; sourceTree = "<group>"; };
 		574B8BF82B0AFFED00018EBD /* CoinOrderBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinOrderBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		574B8BFB2B0AFFED00018EBD /* CoinOrderBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinOrderBookApp.swift; sourceTree = "<group>"; };
 		574B8BFD2B0AFFED00018EBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +105,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5740B09C2B141D91008A7808 /* WithUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				5740B09F2B141E6C008A7808 /* MyWebView.swift */,
+				5740B0A32B14298C008A7808 /* SeSACView.swift */,
+				5740B0A12B1421AC008A7808 /* MyTextField.swift */,
+			);
+			path = WithUIKit;
+			sourceTree = "<group>";
+		};
+		5740B0A72B14326F008A7808 /* Horizontal */ = {
+			isa = PBXGroup;
+			children = (
+				5740B0A52B14326B008A7808 /* HorizontalView.swift */,
+				5740B0AA2B143C68008A7808 /* HorizontalViewModel.swift */,
+				5740B0A82B143575008A7808 /* HorizontalData.swift */,
+			);
+			path = Horizontal;
+			sourceTree = "<group>";
+		};
 		574B8BEF2B0AFFED00018EBD = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +153,8 @@
 				574B8C352B0C596B00018EBD /* ContentViewModel.swift */,
 				574B8BFD2B0AFFED00018EBD /* ContentView.swift */,
 				574B8C3B2B0C809D00018EBD /* BannerTestView.swift */,
+				5740B0A72B14326F008A7808 /* Horizontal */,
+				5740B09C2B141D91008A7808 /* WithUIKit */,
 				574B8C422B0D85D500018EBD /* Animation */,
 				574B8C372B0C733300018EBD /* ListView.swift */,
 				574B8C392B0C735A00018EBD /* ListViewModel.swift */,
@@ -318,14 +352,20 @@
 				574B8C342B0C4E7800018EBD /* UpbitAPI.swift in Sources */,
 				574B8C442B0D85EA00018EBD /* WalletView.swift in Sources */,
 				574B8C382B0C733300018EBD /* ListView.swift in Sources */,
+				5740B0A42B14298C008A7808 /* SeSACView.swift in Sources */,
 				574B8BFC2B0AFFED00018EBD /* CoinOrderBookApp.swift in Sources */,
 				574B8C362B0C596B00018EBD /* ContentViewModel.swift in Sources */,
 				574B8C3A2B0C735A00018EBD /* ListViewModel.swift in Sources */,
+				5740B0A02B141E6C008A7808 /* MyWebView.swift in Sources */,
+				5740B0A92B143575008A7808 /* HorizontalData.swift in Sources */,
 				574B8C282B0B090300018EBD /* Money.swift in Sources */,
 				574B8C482B0DA53200018EBD /* CardModel.swift in Sources */,
+				5740B0A22B1421AC008A7808 /* MyTextField.swift in Sources */,
+				5740B0A62B14326B008A7808 /* HorizontalView.swift in Sources */,
 				574B8C462B0D992400018EBD /* WalletDetailView.swift in Sources */,
 				574B8C272B0B090300018EBD /* Banner.swift in Sources */,
 				574B8C3C2B0C809D00018EBD /* BannerTestView.swift in Sources */,
+				5740B0AB2B143C68008A7808 /* HorizontalViewModel.swift in Sources */,
 				574B8C312B0C4A2500018EBD /* OverlayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

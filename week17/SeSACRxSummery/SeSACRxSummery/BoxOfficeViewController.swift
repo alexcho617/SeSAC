@@ -82,7 +82,7 @@ class BoxOfficeViewController: UIViewController {
         
         searchBar.rx.searchButtonClicked
             .throttle(.milliseconds(1000), scheduler: MainScheduler.instance)
-            .withLatestFrom(searchBar.rx.text.orEmpty, resultSelector: { $1 })
+            .withLatestFrom(searchBar.rx.text.orEmpty, resultSelector: {$1})
             //validation 가능
             .map{ text -> Int in
                 guard text.count == 8, let newText = Int(text) else {return 20231106}
