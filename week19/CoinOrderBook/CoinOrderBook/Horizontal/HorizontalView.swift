@@ -8,41 +8,58 @@
 import SwiftUI
 
 struct HorizontalView: View {
-    
-    @StateObject var viewModel = HorizontalViewModel()
+    //Default
+    @StateObject var viewModel = HorizontalViewModel(market: Market(market: "krw-btc", korean_name: "비트코인", english_name: "Bitcoin"))
     
     var body: some View {
         ScrollView {
+            Text("\(viewModel.market.market) - \(Int(viewModel.value))초")
             GeometryReader { proxy in
+                let graphWidth = proxy.size.width * 0.7
                 VStack {
-                    Text("\(viewModel.value)")
-                    ForEach(horizontalDummy) { dummy in
+                    Text("매수")
+                    ForEach(viewModel.bidOrderbook, id: \.self) { item in
                         HStack {
-                            Text(dummy.data)
-                                .frame(width: proxy.size.width * 0.2)
+                            Text("\(Int(item.price).formatted())원")
+                                .frame(width: graphWidth * 0.4)
                             ZStack(alignment: .leading){
+                                //최대값을 기준으로 상대적 길이 계산
+                                let barSize = CGFloat(item.size) / viewModel.largestBidSize() * graphWidth
                                 Rectangle()
-                                    .frame(width: CGFloat(dummy.point) / 20)
-                                    .frame(maxWidth: .infinity)
-                                    .foregroundStyle(Color.blue.opacity(0.5))
-                                Text("\(dummy.point)")
+                                    .frame(width: barSize)
+                                    .frame(maxWidth: graphWidth, alignment: .leading)
+                                .foregroundStyle(Color.red.opacity(0.5))
+                                Text("\(item.size)")
+                                    .frame(width: graphWidth)
                             }
-                            .frame(width: CGFloat(dummy.point) / 100)
-                            .frame(maxWidth: proxy.size.width * 0.7)
-                            .background(Color.gray)
+                            .frame(maxWidth: graphWidth, alignment: .leading)
                         }
                     }
-                   
+                    //
+                    Text("매도")
+                    ForEach(viewModel.askOrderbook, id: \.self) { item in
+                        HStack {
+                            Text("\(Int(item.price).formatted())원")
+                                .frame(width: graphWidth * 0.4)
+                            ZStack(alignment: .leading){
+                                //최대값을 기준으로 상대적 길이 계산
+                                let barSize = CGFloat(item.size) / viewModel.largestAskSize() * graphWidth
+                                Rectangle()
+                                    .frame(width: barSize)
+                                    .frame(maxWidth: graphWidth, alignment: .leading)
+                                .foregroundStyle(Color.blue.opacity(0.5))
+                                Text("\(item.size)")
+                                    .frame(width: graphWidth)
+                            }
+                            .frame(maxWidth: graphWidth, alignment: .leading)
+                        }
+                    }
                 }
-                .background(Color.green)
-                .onTapGesture {
-                    print(proxy.size)
-//                    viewModel.timer()
-//                    print(horizontalDummy)
-                    print(largest())
-                }
+                
             }
-        }
+        }.onAppear(perform: {
+            viewModel.timer()
+        })
     }
 }
 

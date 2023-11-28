@@ -31,6 +31,7 @@
 		574B8C442B0D85EA00018EBD /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C432B0D85EA00018EBD /* WalletView.swift */; };
 		574B8C462B0D992400018EBD /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C452B0D992400018EBD /* WalletDetailView.swift */; };
 		574B8C482B0DA53200018EBD /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574B8C472B0DA53200018EBD /* CardModel.swift */; };
+		577C935A2B157F3D005EEB53 /* OrderbookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577C93592B157F3D005EEB53 /* OrderbookModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		574B8C432B0D85EA00018EBD /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		574B8C452B0D992400018EBD /* WalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailView.swift; sourceTree = "<group>"; };
 		574B8C472B0DA53200018EBD /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		577C93592B157F3D005EEB53 /* OrderbookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderbookModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				5740B0A52B14326B008A7808 /* HorizontalView.swift */,
 				5740B0AA2B143C68008A7808 /* HorizontalViewModel.swift */,
+				577C93592B157F3D005EEB53 /* OrderbookModel.swift */,
 				5740B0A82B143575008A7808 /* HorizontalData.swift */,
 			);
 			path = Horizontal;
@@ -359,6 +362,7 @@
 				5740B0A02B141E6C008A7808 /* MyWebView.swift in Sources */,
 				5740B0A92B143575008A7808 /* HorizontalData.swift in Sources */,
 				574B8C282B0B090300018EBD /* Money.swift in Sources */,
+				577C935A2B157F3D005EEB53 /* OrderbookModel.swift in Sources */,
 				574B8C482B0DA53200018EBD /* CardModel.swift in Sources */,
 				5740B0A22B1421AC008A7808 /* MyTextField.swift in Sources */,
 				5740B0A62B14326B008A7808 /* HorizontalView.swift in Sources */,
