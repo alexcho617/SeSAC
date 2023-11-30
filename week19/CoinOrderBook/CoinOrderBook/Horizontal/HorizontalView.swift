@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import WidgetKit
 struct HorizontalView: View {
     //Default
     @StateObject var viewModel = HorizontalViewModel(market: Market(market: "krw-btc", korean_name: "비트코인", english_name: "Bitcoin"))
@@ -59,6 +59,21 @@ struct HorizontalView: View {
             }
         }.onAppear(perform: {
             viewModel.timer()
+            //MARK: UserDefaults App Group
+            print("APP Before", UserDefaults.groupShared.value(forKey: "Market"))
+            print("APP Before", UserDefaults.groupShared.value(forKey: "Price"))
+
+            UserDefaults.groupShared.set(viewModel.market.korean_name, forKey: "Market") //이렇게 되면 클릭한 상세 코인에 대해서 같은 키로 들어가게 됨, 따라서 조회한 제일 최근의 데이터가 들어가게 됨
+            UserDefaults.groupShared.set(viewModel.largestAskSize() ?? 11111111, forKey: "Price") //이렇게 되면 클릭한 상세 코인에 대해서 같은 키로 들어가게 됨, 따라서 조회한 제일 최근의 데이터가 들어가게 됨
+
+            print("APP After", UserDefaults.groupShared.value(forKey: "Market"))
+            print("APP Before", UserDefaults.groupShared.value(forKey: "Price"))
+            
+            //위젯 갱신 요청, import widgetkit
+//            WidgetCenter.shared.reloadAllTimelines()
+            WidgetCenter.shared.reloadTimelines(ofKind: "CoinWidget") //CoinWidget.kind
+            
+            
         })
     }
 }

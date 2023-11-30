@@ -11,7 +11,8 @@ import SwiftUI
 struct CoinOrderBookApp: App {
     var body: some Scene {
         WindowGroup {
-            WalletView()
+//            ContentView()
+            WidgetTabView()
         }
     }
 }
