@@ -68,29 +68,29 @@ class SearchViewController: UIViewController, UISearchBarDelegate{
         dataSource.apply(snapshot)
     }
     
-    //아이템 넓이 고정, 높이를 유동적으로
-    static func configurePinterestLayout() -> UICollectionViewLayout{
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .estimated(150))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(150))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 2)
-        group.interItemSpacing = .fixed(10)
-
-        
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 10
-        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-        
-    
-        let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.scrollDirection = .vertical
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        layout.configuration = config
-        
-        return layout
-    }
+//    //아이템 넓이 고정, 높이를 유동적으로
+//    static func configurePinterestLayout() -> UICollectionViewLayout{
+//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .estimated(150))
+//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+//        
+//        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(150))
+//        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 2)
+//        group.interItemSpacing = .fixed(10)
+//
+//        
+//        
+//        let section = NSCollectionLayoutSection(group: group)
+//        section.interGroupSpacing = 10
+//        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+//        
+//    
+//        let config = UICollectionViewCompositionalLayoutConfiguration()
+//        config.scrollDirection = .vertical
+//        let layout = UICollectionViewCompositionalLayout(section: section)
+//        layout.configuration = config
+//        
+//        return layout
+//    }
     
     //MARK: compositional layout
     //크기는 3가지 종류로 잡을 수 있음: .fractional, .absolute, .estimated
@@ -111,7 +111,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate{
         section.interGroupSpacing = 10
         section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
         
-        //수평 스크롤
+        //수직 스크롤
         //layout config
         let config = UICollectionViewCompositionalLayoutConfiguration()
         config.scrollDirection = .vertical
