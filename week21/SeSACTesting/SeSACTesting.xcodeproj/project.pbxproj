@@ -14,6 +14,7 @@
 		5700579A2B22A61300E28F87 /* SeSACTestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570057992B22A61300E28F87 /* SeSACTestingTests.swift */; };
 		570057A42B22A61300E28F87 /* SeSACTestingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570057A32B22A61300E28F87 /* SeSACTestingUITests.swift */; };
 		570057A62B22A61300E28F87 /* SeSACTestingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570057A52B22A61300E28F87 /* SeSACTestingUITestsLaunchTests.swift */; };
+		57221C762B27EBC300C62A15 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57221C752B27EBC300C62A15 /* DI.swift */; };
 		573AE94D2B269AE200EBF0A2 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 573AE94C2B269AE200EBF0A2 /* Login.storyboard */; };
 		573AE9512B269B7F00EBF0A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AE9502B269B7F00EBF0A2 /* LoginViewController.swift */; };
 		573AE9552B26A8B200EBF0A2 /* LoginTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AE9542B26A8B200EBF0A2 /* LoginTestCase.swift */; };
@@ -50,6 +51,7 @@
 		5700579F2B22A61300E28F87 /* SeSACTestingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeSACTestingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		570057A32B22A61300E28F87 /* SeSACTestingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTestingUITests.swift; sourceTree = "<group>"; };
 		570057A52B22A61300E28F87 /* SeSACTestingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACTestingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		57221C752B27EBC300C62A15 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		573AE94C2B269AE200EBF0A2 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		573AE9502B269B7F00EBF0A2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		573AE9542B26A8B200EBF0A2 /* LoginTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestCase.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				573AE9502B269B7F00EBF0A2 /* LoginViewController.swift */,
 				573AE9562B26AE9D00EBF0A2 /* LoginUpdateViewController.swift */,
 				5700578A2B22A61000E28F87 /* ContentView.swift */,
+				57221C742B27EBB600C62A15 /* DI */,
 				5700578C2B22A61200E28F87 /* Assets.xcassets */,
 				5700578E2B22A61200E28F87 /* Preview Content */,
 			);
@@ -139,6 +142,14 @@
 				570057A52B22A61300E28F87 /* SeSACTestingUITestsLaunchTests.swift */,
 			);
 			path = SeSACTestingUITests;
+			sourceTree = "<group>";
+		};
+		57221C742B27EBB600C62A15 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				57221C752B27EBC300C62A15 /* DI.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 				573AE9512B269B7F00EBF0A2 /* LoginViewController.swift in Sources */,
 				573AE9572B26AE9D00EBF0A2 /* LoginUpdateViewController.swift in Sources */,
 				5700578B2B22A61000E28F87 /* ContentView.swift in Sources */,
+				57221C762B27EBC300C62A15 /* DI.swift in Sources */,
 				570057892B22A61000E28F87 /* SeSACTestingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
