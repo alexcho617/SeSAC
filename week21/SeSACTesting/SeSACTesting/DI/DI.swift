@@ -147,14 +147,3 @@ let dipDiner: Diner = KokojongsDinerDIP(owner: dipOwner)
 let dipHue = HueDIP(diner: dipDiner)
 
 
-protocol NetworkProvider{
-    func fetchLotto()
-}
-
-class NetworkManager{
-    //인터넷 연결과 같은 외부환경에 의해 테스트가 의존된다면 안됨.
-    //테스트는 일관된 결과를 도춣해야함. 따라서 MockData로 네트워크 통신을하지 않고 테스트를 진행하는것이 적합함.
-    func fetchLotto() { //실제 네트워크 통신
-        //alamofire json statuscode error network connection
-    }
-}
