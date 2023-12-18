@@ -7,6 +7,15 @@
 
 import UIKit
 import StoreKit
+/*
+ 1. 유료 계약 활성화 / 개발자 계정 / 앱스토어 커넥트 Capabilities
+ 2. Appstore ocnnect in app product registration
+ 3. in app purchase: check if payment possible + look up product -> SKProductRequest
+ 4. SKProductRequestDelegate: Look up product information
+ 5. SKPaymentTransactionObserver check payment status -> exception, error
+ 6. Logic done -> Check recipt, manage in app purchases in userdefaults
+ 7. Recipt check: if server exists, server can do it. if no server, client can (but prone to 탈취)
+ */
 
 class InAppPurchaseViewController: UIViewController {
     
@@ -15,7 +24,7 @@ class InAppPurchaseViewController: UIViewController {
         let reciptFileURL = Bundle.main.appStoreReceiptURL
         let reciptData = try? Data(contentsOf: reciptFileURL!)
         let reciptString = reciptData?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
-        print(reciptString)
+        print(reciptString ?? "no recipt")
         
     }
     //1 상품 정의
@@ -49,7 +58,7 @@ class InAppPurchaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
 }
@@ -92,7 +101,7 @@ extension InAppPurchaseViewController: SKPaymentTransactionObserver{
                 print("restored")
             default:
                 print("DEfault")
-            
+                
             }
         }
     }

@@ -22,6 +22,10 @@
 		573AE9582B26AE9D00EBF0A2 /* LoginUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AE9562B26AE9D00EBF0A2 /* LoginUpdateViewController.swift */; };
 		573AE9592B26AE9D00EBF0A2 /* LoginUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573AE9562B26AE9D00EBF0A2 /* LoginUpdateViewController.swift */; };
 		578FEFFE2B2BE31B00909508 /* InAppPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578FEFFD2B2BE31B00909508 /* InAppPurchaseViewController.swift */; };
+		57946AA22B2FE75F00BB5347 /* sesacXCTest.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 57946AA12B2FE75E00BB5347 /* sesacXCTest.storekit */; };
+		57946AA42B2FEA4400BB5347 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57946AA32B2FEA4400BB5347 /* StoreView.swift */; };
+		57946AA62B2FEAE800BB5347 /* SeSACShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57946AA52B2FEAE800BB5347 /* SeSACShop.swift */; };
+		57946AA82B2FED1500BB5347 /* SeSACShop.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 57946AA72B2FED1500BB5347 /* SeSACShop.storekit */; };
 		57C6DED82B293DAF005B536C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C6DED72B293DAF005B536C /* NetworkManager.swift */; };
 		57C6DEDB2B293E28005B536C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 57C6DEDA2B293E28005B536C /* Alamofire */; };
 		57C6DEDD2B29418D005B536C /* NetworkTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C6DEDC2B29418D005B536C /* NetworkTestCase.swift */; };
@@ -62,6 +66,10 @@
 		573AE9542B26A8B200EBF0A2 /* LoginTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestCase.swift; sourceTree = "<group>"; };
 		573AE9562B26AE9D00EBF0A2 /* LoginUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUpdateViewController.swift; sourceTree = "<group>"; };
 		578FEFFD2B2BE31B00909508 /* InAppPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseViewController.swift; sourceTree = "<group>"; };
+		57946AA12B2FE75E00BB5347 /* sesacXCTest.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = sesacXCTest.storekit; sourceTree = "<group>"; };
+		57946AA32B2FEA4400BB5347 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
+		57946AA52B2FEAE800BB5347 /* SeSACShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACShop.swift; sourceTree = "<group>"; };
+		57946AA72B2FED1500BB5347 /* SeSACShop.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = SeSACShop.storekit; sourceTree = "<group>"; };
 		57C6DED72B293DAF005B536C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		57C6DEDC2B29418D005B536C /* NetworkTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTestCase.swift; sourceTree = "<group>"; };
 		57C6DEDE2B294DBA005B536C /* NetworkMockTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMockTestCase.swift; sourceTree = "<group>"; };
@@ -123,6 +131,10 @@
 				578FEFFD2B2BE31B00909508 /* InAppPurchaseViewController.swift */,
 				5700578A2B22A61000E28F87 /* ContentView.swift */,
 				57C6DED72B293DAF005B536C /* NetworkManager.swift */,
+				57946AA32B2FEA4400BB5347 /* StoreView.swift */,
+				57946AA52B2FEAE800BB5347 /* SeSACShop.swift */,
+				57946AA12B2FE75E00BB5347 /* sesacXCTest.storekit */,
+				57946AA72B2FED1500BB5347 /* SeSACShop.storekit */,
 				57221C742B27EBB600C62A15 /* DI */,
 				5700578C2B22A61200E28F87 /* Assets.xcassets */,
 				5700578E2B22A61200E28F87 /* Preview Content */,
@@ -277,7 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				570057902B22A61200E28F87 /* Preview Assets.xcassets in Resources */,
+				57946AA22B2FE75F00BB5347 /* sesacXCTest.storekit in Resources */,
 				5700578D2B22A61200E28F87 /* Assets.xcassets in Resources */,
+				57946AA82B2FED1500BB5347 /* SeSACShop.storekit in Resources */,
 				573AE94D2B269AE200EBF0A2 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +319,9 @@
 			files = (
 				57C6DED82B293DAF005B536C /* NetworkManager.swift in Sources */,
 				573AE9512B269B7F00EBF0A2 /* LoginViewController.swift in Sources */,
+				57946AA42B2FEA4400BB5347 /* StoreView.swift in Sources */,
 				573AE9572B26AE9D00EBF0A2 /* LoginUpdateViewController.swift in Sources */,
+				57946AA62B2FEAE800BB5347 /* SeSACShop.swift in Sources */,
 				578FEFFE2B2BE31B00909508 /* InAppPurchaseViewController.swift in Sources */,
 				5700578B2B22A61000E28F87 /* ContentView.swift in Sources */,
 				57221C762B27EBC300C62A15 /* DI.swift in Sources */,
