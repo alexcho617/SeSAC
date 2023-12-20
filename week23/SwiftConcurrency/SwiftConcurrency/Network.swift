@@ -86,39 +86,45 @@ final class Network{
      anwNl1xbzXoj5Ax1nVw3WoDzHlw.jpg
      8YaP48tVfngbURGldWk1I5odsBK.jpg
      */
+    
+    @MainActor //이걸 쓰면 전부다 메인큐로 돌아가는걸 확인할 수 있다.
     func fetchThumbnailAsyncAwait(path: String) async throws -> UIImage {
+        print(#function, "1", Thread.isMainThread)
         let url = URL(string: "https://www.themoviedb.org/t/p/w1280/\(path)")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 3)
         
         //await: 비동기 처리
         let (data, response) =  try await URLSession.shared.data(for: request)
-        
+        print(#function, "2", Thread.isMainThread)
         //예외처리
         guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw AlexError.invalidResponse}
         guard let image = UIImage(data: data) else {throw AlexError.invalidImage}
         
         print(url.description)
+        print(#function, "3", Thread.isMainThread)
         //전달
         return image
     }
     
     //비동기 wrapper: 좋으나 콜 갯수 유한
     func fetchThumbnailAsyncLet() async throws -> [UIImage] {
-        print(#function)
-        
+        print(#function, "1", Thread.isMainThread)
         //async let에서 try await가 없기 때문에 각각 독립적으로 수행 후 3개가 다 끝났을때 이미지 배열 리턴 돔
         async let image = Network.shared.fetchThumbnailAsyncAwait(path: stone)
         async let image2 = Network.shared.fetchThumbnailAsyncAwait(path: chamber)
         async let image3 = Network.shared.fetchThumbnailAsyncAwait(path: prisoner)
-        
+        print(#function, "2", Thread.isMainThread)
         return try await [image,image2, image3]
     }
     
     //taskgroup 콜 갯수 동적: dynamic child tasks
     func fetchThumbnailTaskGroup() async throws -> [UIImage]{
+        print(#function, "1", Thread.isMainThread)
+
         let posters = [stone,chamber,prisoner]
         
         return try await withThrowingTaskGroup(of: UIImage.self) { group in //받고싶은 데이터 타입 명시, 그룹으로 관리
+            print(#function, "2", Thread.isMainThread)
             //GCD Dispatch Group enter and leave 랑 비슷
             for poster in posters {
                 group.addTask { //group에 child task 갯수 알려줌
@@ -127,7 +133,7 @@ final class Network{
             }
             var resultImages: [UIImage] = []
 
-            
+            print(#function, "3", Thread.isMainThread)
             for try await item in group{
                 resultImages.append(item)
             }

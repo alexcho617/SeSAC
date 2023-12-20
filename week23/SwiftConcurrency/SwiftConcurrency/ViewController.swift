@@ -7,6 +7,10 @@
 
 import UIKit
 
+/*
+ @MainActor: Swift Concurrency를 작성한 코드에서 다시 메인쓰레드로 돌려주는 역할을 수행
+ */
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var posterImageView: UIImageView!
@@ -15,23 +19,29 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var posterImageView3: UIImageView!
     
+    @IBOutlet weak var leakButton: UIButton!
+    
+    
+    @IBAction func leakButtonClick(_ sender: UIButton) {
+//        present(DetailVC(), animated: true)
+        
+        let vc = HostingTestView(rootView: TestView())
+        present(vc, animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Task{
-            let images = try await Network.shared.fetchThumbnailTaskGroup()
+            print(#function, "1", Thread.isMainThread)
+//            let images = try await Network.shared.fetchThumbnailTaskGroup()
+            let images = try await Network.shared.fetchThumbnailAsyncLet()
+            print(#function, "2", Thread.isMainThread)
             posterImageView.image = images[0]
             posterImageView2.image = images[1]
             posterImageView3.image = images[2]
+            print(#function, "3", Thread.isMainThread)
         }
         
-//        Task{
-//            let images = try await Network.shared.fetchThumbnailAsyncLet()
-//            posterImageView.image = images[0]
-//            posterImageView2.image = images[1]
-//            posterImageView3.image = images[2]
-//            
-//        }
 //        print("1")
 //        //비동기
 //        Task{ //순서대로 실행: FCFS으로 되기 때문에 콘보이 현상 발생 문제
@@ -102,3 +112,38 @@ class ViewController: UIViewController {
 //    
 }
 
+
+
+
+class DetailVC: UIViewController{
+    override func viewDidLoad() {
+        print("DetailVC",#function)
+        view.backgroundColor = .brown
+        
+        let a = MyClassA()
+        let b = MyClassB()
+        
+        a.target = b
+        b.target = a
+        
+        a.target = nil
+    }
+    deinit {
+        print("DetailVC Deinit")
+    }
+}
+
+
+class MyClassA{
+    var target: MyClassB?
+    deinit {
+        print("ClassA Deinit")
+    }
+}
+
+class MyClassB{
+    var target: MyClassA?
+    deinit {
+        print("ClassB Deinit")
+    }
+}
