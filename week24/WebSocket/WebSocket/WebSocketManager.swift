@@ -84,13 +84,14 @@ final class WebSocketManager: NSObject {
     }
     
     //연결이 끊어지지 않도록 주기적으로 핑을 서버에 보냄
-    //TODO: ping 5초마다 안뜨고 있음. 타이머 에러 추정
     func ping(){
         print(#function)
         self.timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { [weak self] _ in
             self?.webSocket?.sendPing(pongReceiveHandler: { error in
                 if let error{
                     print("Ping Error", error)
+                }else{
+                    print("Ping")
                 }
             })
         })

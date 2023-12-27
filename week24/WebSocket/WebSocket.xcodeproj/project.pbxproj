@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5764CF1A2B3BB97300B1D8CE /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764CF192B3BB97300B1D8CE /* SwiftViewController.swift */; };
 		57BD20C82B3A61470017E541 /* WebSocketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BD20C72B3A61470017E541 /* WebSocketApp.swift */; };
 		57BD20CA2B3A61470017E541 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BD20C92B3A61470017E541 /* ContentView.swift */; };
 		57BD20CC2B3A61480017E541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57BD20CB2B3A61480017E541 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5764CF192B3BB97300B1D8CE /* SwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftViewController.swift; sourceTree = "<group>"; };
 		57BD20C42B3A61470017E541 /* WebSocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebSocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57BD20C72B3A61470017E541 /* WebSocketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketApp.swift; sourceTree = "<group>"; };
 		57BD20C92B3A61470017E541 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				57BD20F72B3A7CF00017E541 /* SocketModel.swift */,
 				57BD20F12B3A62850017E541 /* WebSocketManager.swift */,
 				57BD20F32B3A6AFA0017E541 /* SocketViewModel.swift */,
+				5764CF192B3BB97300B1D8CE /* SwiftViewController.swift */,
 				57BD20CB2B3A61480017E541 /* Assets.xcassets */,
 				57BD20CD2B3A61480017E541 /* Preview Content */,
 			);
@@ -275,6 +278,7 @@
 				57BD20F42B3A6AFA0017E541 /* SocketViewModel.swift in Sources */,
 				57BD20C82B3A61470017E541 /* WebSocketApp.swift in Sources */,
 				57BD20F22B3A62850017E541 /* WebSocketManager.swift in Sources */,
+				5764CF1A2B3BB97300B1D8CE /* SwiftViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
